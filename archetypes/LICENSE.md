@@ -13,3 +13,7 @@ under a later version of the licence). Attribution: NPO openEHR Japan and the
 translators named in each file's `translations["ja"]`.
 
 The glossary (`glossary-ja.md`) is likewise CC BY-SA 4.0.
+
+Contributors agree (see `CONTRIBUTING.md`) that, should the openEHR Foundation change the
+licence of the source archetypes in future (for example to CC0 1.0 to harmonise with HL7 FHIR),
+these translations may be re-released under that same licence.
