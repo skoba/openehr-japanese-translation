@@ -10,5 +10,5 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
       - run: tools/setup_openehr.sh
-      - run: source .env && make check
+      - run: source .env && bundle exec make check
         shell: bash
