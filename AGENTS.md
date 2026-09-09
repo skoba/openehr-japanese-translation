@@ -1,4 +1,4 @@
-# AGENTS.md — openehr-japanese-translation-splint（Codex 等のエージェント向け。内容は CLAUDE.md と同一）
+# AGENTS.md — openehr-japanese-translation（Codex 等のエージェント向け。内容は CLAUDE.md と同一）
 
 このリポジトリは openEHR CKM 国際版アーキタイプ（ADL 1.4）に日本語（`ja`）翻訳を追加するためのものです。
 成果物は `archetypes/<id>/<id>.ja.adl`（`["ja"]` ブロックを追記した ADL）で、レビュー後に CKM へアップロードします。

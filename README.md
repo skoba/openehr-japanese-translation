@@ -1,4 +1,4 @@
-# openehr-japanese-translation-splint
+# openehr-japanese-translation
 
 openEHR CKM 国際版アーキタイプの日本語翻訳スプリント。NPO 日本 openEHR 協会（openEHR.jp）の活動として、
 紹介状（診療情報提供書）を構成するアーキタイプ群を起点に、JAMI チュートリアルと年内公開に必要な基本セットまでを対象とする。

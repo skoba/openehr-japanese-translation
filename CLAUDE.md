@@ -1,4 +1,4 @@
-# CLAUDE.md — openehr-japanese-translation-splint
+# CLAUDE.md — openehr-japanese-translation
 
 このリポジトリは openEHR CKM 国際版アーキタイプ（ADL 1.4）に日本語（`ja`）翻訳を追加するためのものです。
 成果物は `archetypes/<id>/<id>.ja.adl`（`["ja"]` ブロックを追記した ADL）で、レビュー後に CKM へアップロードします。
