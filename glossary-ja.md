@@ -88,6 +88,48 @@
 | coding with a coding system is desirable, if available | 利用可能であれば、コード体系によりコード化することが望ましい | comment の定型句（terminology 版と区別） |
 | allows multiple occurrences | 複数回の出現を許容する | comment の定型句 |
 | follow-up appointment | フォローアップ受診 | |
+| problem / diagnosis / condition | 問題 / 診断 / 病態 | 訳し分ける。problem_diagnosis |
+| health problem | 健康上の問題 | |
+| healthcare professional | 医療従事者 | healthcare provider と同じ訳（要確認） |
+| carer | 介護者 | |
+| wellbeing / well-being | ウェルビーイング | 要確認（他候補：健康と幸福、安寧） |
+| injury / disability | 外傷 / 障害 | |
+| Problem List | 問題リスト | COMPOSITION.problem_list |
+| Discharge Summary | 退院時サマリー | |
+| clinical consultation | 診察 | 紹介の consultation（コンサルテーション）とは区別 |
+| clinical decision support | 臨床意思決定支援 | |
+| Problem Oriented Medical Record | 問題志向型診療記録 | Larry Weed は英字のまま |
+| problem/diagnosis name | 問題/診断名 | |
+| date/time clinically recognised | 臨床的認識日時 | 要確認 |
+| date/time of onset | 発症日時 | |
+| date/time of resolution | 解消日時 | resolution or remission＝解消または寛解（要確認） |
+| severity: mild / moderate / severe | 重症度：軽度 / 中等度 / 重度 | |
+| body site / anatomical location | 身体部位 / 解剖学的部位 | 訳し分ける |
+| structured body site | 構造化身体部位 | CLUSTER スロット |
+| status (qualifier slot) | 状態 | request status＝依頼状態 に合わせる（要確認） |
+| clinical description / course description | 臨床的説明 / 経過の説明 | |
+| diagnostic certainty: suspected / probable / confirmed | 診断の確からしさ：疑い / ほぼ確実 / 確定 | 要確認（指定難病の Definite/Probable/Possible の慣用訳に合わせた） |
+| cause / aetiology | 原因 / 病因 | |
+| variant / subtype | 亜型 / サブタイプ | 要確認 |
+| impact | 影響 | |
+| comment (element) | コメント | |
+| last updated | 最終更新日 | |
+| precoordinated code | 事前調整されたコード | SNOMED CT の pre-coordination |
+| terminology / external terminology | 用語集 / 外部用語集 | |
+| valueset | 値セット | |
+| partial dates are acceptable | 部分的な日付も許容される | comment の定型句 |
+| examination findings | 診察所見 | |
+| laboratory test result | 臨床検査結果 | |
+| imaging examination / imaging diagnosis | 画像検査 / 画像診断 | |
+| pathological diagnosis | 病理診断 | |
+| procedure | 処置 | |
+| differential diagnosis | 鑑別診断 | |
+| presenting complaint | 主訴 | chief complaint と同じ |
+| health risk | 健康リスク | |
+| adverse reaction / allergy / intolerance | 有害反応 / アレルギー / 不耐性 | |
+| exclusion | 除外 | |
+| Common Terminology Criteria for Adverse Events | 有害事象共通用語規準（CTCAE） | JCOG 訳 |
+| Guillain-Barre Syndrome / acute motor axonal neuropathy | ギラン・バレー症候群 / 急性運動性軸索型ニューロパチー | |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -97,3 +139,4 @@
 | openEHR-EHR-EVALUATION.reason_for_encounter.v1 | 受診理由 | at0002 受診区分、at0004 受診時の問題（主訴を同義語として明記） |
 | openEHR-EHR-SECTION.referral_details.v0 | 紹介状の詳細 | at0001 紹介依頼、at0002 詳細 |
 | openEHR-EHR-INSTRUCTION.service_request.v1 (1.1.2) | サービス依頼 | 緊急度の値：緊急／至急／通常 |
+| openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | 問題/診断 | 要確認（候補：傷病名）。重症度 軽度／中等度／重度、診断の確からしさ 疑い／ほぼ確実／確定、at0046 状態 |
