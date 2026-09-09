@@ -47,5 +47,5 @@ make build ID=openEHR-EHR-CLUSTER.organisation.v1
 
 ## ライセンス
 
-翻訳の対象となるアーキタイプは openEHR Foundation の著作物で CC BY-SA 3.0/4.0 の下で提供されている。
-このリポジトリの翻訳文も同じ条件で提供する。ツール（`tools/`）は Apache-2.0。
+- `archetypes/` と `glossary-ja.md`：翻訳の対象となるアーキタイプは openEHR Foundation の著作物で CC BY-SA 3.0/4.0 の下で提供されている。翻訳は二次的著作物なので同じ条件、**CC BY-SA 4.0** で提供する（`archetypes/LICENSE.md`）。
+- それ以外（`tools/`、`scripts/`、`Makefile`、CI 設定、文書）：**Apache License 2.0**（リポジトリ直下の `LICENSE`。openehr-ruby と同じ）。
