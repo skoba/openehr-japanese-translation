@@ -1,0 +1,11 @@
+archetype	section	code	field	context	source	target	note
+openEHR-EHR-SECTION.referral_details.v0	description	-	purpose		To provide an example framework for modelling a referral within a template.		
+openEHR-EHR-SECTION.referral_details.v0	description	-	use		Use to provide an example framework for modelling a referral within a template.\n\nThis archetype is intended to be nested within the COMPOSITION.request or any relevant COMPOSITION archetype.		
+openEHR-EHR-SECTION.referral_details.v0	description	-	keywords		referral | request		
+openEHR-EHR-SECTION.referral_details.v0	description	-	copyright		© openEHR Foundation		
+openEHR-EHR-SECTION.referral_details.v0	term	at0000	text	SECTION	Referral details		
+openEHR-EHR-SECTION.referral_details.v0	term	at0000	description	SECTION	Example framework for modelling a template for a referral.		
+openEHR-EHR-SECTION.referral_details.v0	term	at0001	text	SECTION > items/INSTRUCTION	Referral request		
+openEHR-EHR-SECTION.referral_details.v0	term	at0001	description	SECTION > items/INSTRUCTION	Details about the referral request.		
+openEHR-EHR-SECTION.referral_details.v0	term	at0002	text	SECTION > items/ENTRY	Details		
+openEHR-EHR-SECTION.referral_details.v0	term	at0002	description	SECTION > items/ENTRY	Additional clinical details supporting the referral.		

@@ -1,0 +1,37 @@
+group	seq	archetype_id	concept_ja	ckm_state	codes	note
+A	1	openEHR-EHR-EVALUATION.problem_diagnosis.v1	問題/診断（傷病名）	published 1.7.4	27	傷病名・過去の病名。ProblemList デモでも使用。スロット: problem_qualifier, anatomical_location
+A	2	openEHR-EHR-CLUSTER.problem_qualifier.v2	問題/診断修飾子	published 2.1.1	52	既往/現在、疑い、主/副、エピソード等。値セットが多い
+A	3	openEHR-EHR-OBSERVATION.story.v1	病歴/経過	published	8	症状経過（現病歴）・既往歴 narrative
+A	4	openEHR-EHR-EVALUATION.clinical_synopsis.v1	臨床要約	published	5	治療経過
+A	5	openEHR-EHR-SECTION.adhoc.v1	任意見出し	published	1	傷病名・主訴／既往歴・家族歴／備考の節。ほぼ全テンプレートで使用
+A	6	openEHR-EHR-CLUSTER.organisation.v1	組織（医療機関/部門）	published 1.0.4	10	紹介先・紹介元機関（service_request の receiver/requester スロット）
+A	7	openEHR-EHR-CLUSTER.person.v1	人	published 1.0.5	12	紹介先担当医・紹介元医師・患者
+A	8	openEHR-EHR-CLUSTER.structured_name.v1	構造化氏名	published	5	漢字/カナ表記の扱いは占有 2 回で対応を検討
+A	9	openEHR-EHR-CLUSTER.address.v1	住所	published	22	郵便番号・都道府県の対応付けを use に注記
+A	10	openEHR-EHR-CLUSTER.electronic_communication.v1	電子的連絡先	published	14	電話・FAX・メール
+A	11	openEHR-EHR-CLUSTER.media_file.v1	メディアファイル	published	10	添付資料。service_request / person / lab / family_history のスロットにも入る
+B	12	openEHR-EHR-EVALUATION.adverse_reaction_risk.v2	有害反応リスク（アレルギー・不耐性）	published 2.0.2	30	JP-CLINS AllergyIntolerance 対応
+B	13	openEHR-EHR-CLUSTER.adverse_reaction_event.v1	有害反応イベント	published	26	12 のスロット
+B	14	openEHR-EHR-EVALUATION.family_history.v2	家族歴要約	in_development 2.0.5-alpha（審査中）	41	骨格必須。公開時に差分追従が要る前提で着手
+B	15	openEHR-EHR-EVALUATION.social_summary.v1	社会歴要約（生活歴）	published	7	小さい
+B	16	openEHR-EHR-EVALUATION.infectious_disease_summary.v0	感染症要約	in_development v0（en のみ）	14	骨格 No.17。v0 なので改版リスクあり
+C	17	openEHR-EHR-INSTRUCTION.medication_order.v3	薬剤オーダー	published 3.2.1	57	最大（約 18k 字）。JP-CLINS MedicationRequest 対応
+C	18	openEHR-EHR-CLUSTER.medication.v2	薬剤詳細	published	25	17 のスロット
+C	19	openEHR-EHR-CLUSTER.therapeutic_direction.v1	治療指示	published	12	17 のスロット。dosage / timing を束ねる
+C	20	openEHR-EHR-CLUSTER.dosage.v2	用量	published	9	19 のスロット
+C	21	openEHR-EHR-CLUSTER.timing_daily.v1	服用タイミング（日内）	published	15	20 のスロット。「1日3回毎食後」などの用法
+D	22	openEHR-EHR-OBSERVATION.laboratory_test_result.v1	臨床検査結果	published 1.2.8	41	紹介状の検査結果欄＋LabResultReport デモ
+D	23	openEHR-EHR-CLUSTER.laboratory_test_analyte.v1	検査項目結果	published	23	22 のスロット
+D	24	openEHR-EHR-CLUSTER.specimen.v1	検体	published	43	22 のスロット。感染症検体検査にも
+D	25	openEHR-EHR-COMPOSITION.report-result.v1	結果報告書	published	7	LabResultReport / bmi_calculation デモの親
+D	26	openEHR-EHR-COMPOSITION.report.v1	報告書	published	6	25 の親アーキタイプ（特殊化元）
+D	27	openEHR-EHR-COMPOSITION.encounter.v1	診察	published	3	patient_blood_pressure / CardiologyEncounter デモ
+D	28	openEHR-EHR-COMPOSITION.problem_list.v2	問題リスト	published	3	ProblemList デモ
+D	29	openEHR-EHR-OBSERVATION.height.v2	身長（立位/臥位）	published	15	BMI デモ
+D	30	openEHR-EHR-OBSERVATION.body_mass_index.v2	BMI	published	15	BMI デモ
+E	31	openEHR-EHR-OBSERVATION.pulse.v2	脈拍/心拍	published	50	デモの heart_rate-pulse.v1（旧）を置換
+E	32	openEHR-EHR-OBSERVATION.respiration.v2	呼吸	published	31
+E	33	openEHR-EHR-OBSERVATION.pulse_oximetry.v1	パルスオキシメトリ	published	24
+diff	34	openEHR-EHR-OBSERVATION.body_temperature.v2	体温（差分翻訳）	published（ja あり）	—	at0060 / at0061 / at0064 / at0066 の未訳項目（at0062 Extension は訳さない）
+diff	35	openEHR-EHR-OBSERVATION.body_weight.v2	体重（差分翻訳）	published（ja あり）	—	at0001 / at0002 / at0008 / at0015（構造ノード。`*` を外す）
+diff	36	openEHR-EHR-OBSERVATION.blood_pressure.v2	血圧（差分翻訳）	published（ja あり）	—	at0007（構造ノード）
