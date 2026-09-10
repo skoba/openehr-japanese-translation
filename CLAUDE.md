@@ -33,7 +33,7 @@ status.tsv（リポジトリ直下）  列: archetype_id, state, revision, ckm_u
 | `todo` | 対象に決まったが未着手 | 人間（`make set-status`） |
 | `in_progress` | `make new` 済み。`work/fill.rb` を埋めている | `make new` が自動 |
 | `review` | `make build` が通り `upload/<id>.adl` がある。PR・レビュー中、またはマージ後まだ CKM 未登録 | `make build` が自動 |
-| `uploaded` | `upload/<id>.adl` を CKM にアップロード済み（審査中）。`ckm_url` に CKM の URL を書く | 人間（`make set-status`） |
+| `uploaded` | `upload/<id>.adl` を CKM にアップロード済み（審査中）。`ckm_url` にはそのアーキタイプの CKM ページ URL（`https://ckm.openehr.org/ckm/archetypes/1013.1.NNN`）を書く。翻訳が CKM に反映される前でもよい（反映後も URL は変わらない）。ベース URL（`https://ckm.openehr.org/ckm/`）は書かない | 人間（`make set-status`） |
 | `accepted` | CKM で審査完了・公開済み | 人間（`make set-status`） |
 
 `revision` は `source/<id>.adl` の `["revision"]` から自動で取る。`make status` で一覧を表示する。
