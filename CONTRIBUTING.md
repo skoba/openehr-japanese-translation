@@ -2,7 +2,7 @@
 
 ## 翻訳への貢献とライセンス
 
-- `archetypes/` 以下の翻訳（`["ja"]` ブロック、`*.ja.adl`、`*.ja.tsv`、`fill.rb`）と `glossary-ja.md` は、
+- `archetypes/` 以下の翻訳（`["ja"]` ブロック、`upload/<id>.adl`、`work/*.tsv`、`work/fill.rb`）と `glossary-ja.md` は、
   元アーキタイプと同じ **CC BY-SA 4.0** で公開します（`archetypes/LICENSE.md`）。
 - openEHR Foundation は、HL7 FHIR とのハーモナイズのため、仕様およびアーキタイプを将来 **CC0** に
   移行する可能性を示しています。翻訳は元アーキタイプの二次的著作物なので、元がより緩い条件になれば

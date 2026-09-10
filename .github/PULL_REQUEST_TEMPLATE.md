@@ -13,4 +13,5 @@ Closes #
 
 ## 確認
 - [ ] `make check` が通る
-- [ ] definition 節・他言語・other_details に差分がない（`git diff` で ja ブロックの追記のみ）
+- [ ] definition 節・他言語・other_details に差分がない（`source/<id>.adl` と `upload/<id>.adl` の差分が ja ブロックの追記のみ）
+- [ ] `status.tsv` は `make build` が付けた `review` のまま（`uploaded` / `accepted` は人間が付ける）
