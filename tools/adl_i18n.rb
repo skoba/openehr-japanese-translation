@@ -292,7 +292,7 @@ module AdlI18n
         ti = t[c].items
         (si.keys - ti.keys).each { |f| report.call("#{label} #{c}.#{f} missing in #{target}") }
         ti.each do |f, v|
-          report.call("#{label} #{c}.#{f} empty") if v.to_s.strip.empty?
+          report.call("#{label} #{c}.#{f} empty") if v.to_s.strip.empty? && !si[f].to_s.strip.empty? # an empty source (e.g. description = <"">) may stay empty
           report.call("#{label} #{c}.#{f} still placeholder: #{v}") if v.to_s.start_with?('*') && v.to_s.end_with?(')')
         end
       end
