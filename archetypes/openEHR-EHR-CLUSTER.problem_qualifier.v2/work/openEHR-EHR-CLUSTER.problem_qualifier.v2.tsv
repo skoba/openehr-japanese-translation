@@ -1,0 +1,122 @@
+archetype	section	code	field	context	source	target	note
+openEHR-EHR-CLUSTER.problem_qualifier.v2	description	-	purpose		To record a clinical context-specific or time-specific qualifier for a specified problem or diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	description	-	use		Use to record a relevant context-specific or time-specific qualifier that provides additional detail which is relevant at the time of recording or within the clinical context where a problem or diagnosis is recorded. The qualifier may not be appropriate at another time or in another clinical context. \n\nThis archetype is designed to be included in Status SLOT in the EVALUATION.problem_diagnosis archetype. The intent is for the EVALUATION.problem_diagnosis archetype to hold all of the information that applies in all contexts, in contrast to this archetype describing only information that depends on the context of use.\n\nIMPORTANT NOTES FOR IMPLEMENTATION: \n- It is not intended or implied that any or all of these qualifiers should be used within the same context or period of time. In contrast to the usual design of archetypes, this archetype has been deliberately designed to collect a number of common qualifiers into one place in an effort to attempt some simple standardisation within a very messy area of clinical practice. It is acknowledged that the data elements contained in this archetype embrace many different, and sometimes even competing, concepts. This has been done mainly to prevent the need for multiple qualifier archetypes, each containing only one or two data elements. \n- Some of these data elements are potentially directly conflicting if used simultaneously within the same context, for example it would not make sense to have an 'inactive' problem together with an Episode that is 'ongoing'. As such, these status qualifiers should be used with extreme care as they are variably applied in practice and interoperability cannot be assured unless usage guidelines are clearly defined within the clinical community in which the 'Problem/Diagnosis' and 'Problem/Diagnosis qualifier' archetype pair may be shared. \n\nFull DRG coding will require the DRG-related data elements from this archetype in combination with data elements from other archetypes.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	description	-	misuse		Not to be used to represent a differential diagnosis - use the archetype EVALUATION.differential_diagnosis for this purpose.\n\nNot to be used to represent diagnostic certainty - use the 'Diagnostic certainty' data element within the EVALUATION.problem_diagnosis archetype.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	description	-	keywords		problem | active | inactive | status | episode | diagnosis		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	description	-	copyright		© openEHR Foundation		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0000	text	CLUSTER	Problem/Diagnosis qualifier		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0000	description	CLUSTER	Contextual or temporal qualifier for a specified problem or diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0001	text	CLUSTER > items/ELEMENT	Episodicity		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0001	description	CLUSTER > items/ELEMENT	Category of this episode for the identified problem/diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0001	comment	CLUSTER > items/ELEMENT	For example: 'New' will enable clinicians to distinguish a new, acute episode of otitis media that may have arisen soon after a previous diagnosis, to distinguish it from an unresolved or 'Ongoing' diagnosis of chronic otitis media. Treatment of recurring, new and acute, episodes of a condition may differ significantly from the same condition that is not resolving or responding to treatment. In many situations the clinician will not be able to tell, and so indeterminate may be appropriate.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0003	text	CLUSTER > items/ELEMENT	Active/Inactive?		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0003	description	CLUSTER > items/ELEMENT	Category that supports division of problems and diagnoses into Active or Inactive problem lists.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0003	comment	CLUSTER > items/ELEMENT	The Active/Inactive and Current/Past data elements have similar clinical impact but represent slightly different semantics. Both are actively used in different clinical settings, but usually not together. If a Current/Past qualifier is recorded, then this data element is likely to be redundant. An exception where a condition can be current but inactive is asthma that is not causing acute symptoms.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0004	text	CLUSTER > items/ELEMENT	Diagnostic status		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0004	description	CLUSTER > items/ELEMENT	Stage or phase of diagnostic process.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0004	comment	CLUSTER > items/ELEMENT	The status is usually determined by a combination of the timing of diagnosis plus level of clinical certainty resulting from diagnostic tests and clinical evidence available. This data element and 'Diagnostic certainty' in EVALUATION.problem_diagnosis are two important axes of the diagnostic process, and valid combinations will need to be presented by software that exposes both data elements, so it is not possible for users to select conflicting combinations. \nPreliminary or working diagnoses are intended to represent the single most likely choice out of all differential diagnosis options.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0016	text		Preliminary		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0016	description		The initial diagnosis made, usually associated with a low level of clinical certainty. It may change as test results or advice become available.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0017	text		Working		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0017	description		Interim diagnosis, based on a reasonable amount of clinical certainty but pending further test results or clinical advice. It may still change as test results or advice become available.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0018	text		Established		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0018	description		Final substantiated diagnosis, based on a high level of clinical certainty, which may include clinical evidence from test results. It is not expected to change.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0026	text		Active		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0026	description		The problem or diagnosis is currently active and clinically relevant.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0027	text		Inactive		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0027	description		The problem or diagnosis is not completely resolved but is inactive or felt less relevant to the current clinical context.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0034	text		New		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0034	description		A new occurrence of either a new or existing problem or diagnosis. A flag for 'First occurrence' can be recorded separately to distinguish the first from other occurrences.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0035	text		Ongoing		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0035	description		The issue, problem or diagnosis continues, without new, acute episodes occurring.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0060	text	CLUSTER > items/ELEMENT	Current/Past?		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0060	description	CLUSTER > items/ELEMENT	Category that supports division of problems and diagnoses into Current or Past problem lists.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0060	comment	CLUSTER > items/ELEMENT	The Current/Past and Active/Inactive data elements have similar clinical impact but represent slightly different semantics. Both are actively used in different clinical settings, but usually not together. If an Active/Inactive qualifier is recorded, then this data element is likely to be redundant. An exception where a condition can be current but inactive is asthma that is not causing acute symptoms.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0061	text		Past		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0061	description		An issue which ocurred in the past.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0062	text		Current		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0062	description		An issue occuring at present.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0063	text	CLUSTER > items/ELEMENT	Diagnostic category		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0063	description	CLUSTER > items/ELEMENT	Category of the problem or diagnosis within a specified episode of care and/or local care context.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0063	comment	CLUSTER > items/ELEMENT	This data element contains a value set commonly used in diagnostic categorisation. In episodic care contexts (commonly secondary care) it is common to categorise/organise diagnoses according to their relationship to the principal diagnosis being addressed during that episode of care. These categories may also be used for clinical coding, reporting and billing purposes. In some countries the diagnostic category may be known as a DRG.\n In addition, the free text choice permits use of other local value sets, as required.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0064	text		Principal diagnosis		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0064	description		The diagnosis determined to be the primary reason for an episode of admitted patient care, an episode of residential care or an attendance at the health care establishment.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0066	text		Secondary diagnosis		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0066	description		A problem or diagnosis that occurs at the same time as the primary problem or diagnosis. May also be known as a comorbid condition.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0070	text		Indeterminate		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0070	description		It is not possible to determine if this occurrence of the problem or diagnosis is new or ongoing.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0071	text	CLUSTER > items/ELEMENT	Occurrence		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0071	description	CLUSTER > items/ELEMENT	Category of the occurrence for this problem or diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0071	comment	CLUSTER > items/ELEMENT	This data element can be an additional qualifier to the 'New' value in the 'Episodicity' value set, that is a condition such as asthma can have recurring new episodes that have periods of resolution in between. However it can be important to identify the first ever episode of asthma from all of the other episodes.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0073	text	CLUSTER > items/ELEMENT	Admission diagnosis?		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0073	description	CLUSTER > items/ELEMENT	Was the problem or diagnosis present at admission?		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0073	comment	CLUSTER > items/ELEMENT	Record as True or 'Yes' if the problem or diagnosis was present on admission. This data element is a requirement from DRG reporting in some countries.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0076	text		Complication		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0076	description		An unfavorable evolution of a problem or diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0077	text	CLUSTER > items/ELEMENT	Course label		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0077	description	CLUSTER > items/ELEMENT	Category reflecting the speed of onset and/or duration and persistence of the problem or diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0077	comment	CLUSTER > items/ELEMENT	Definitions of acute vs chronic will differ for each diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0079	text		Chronic		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0079	description		A problem or diagnosis with persistent or long-lasting effects, or that evolves over time.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0081	text		Acute		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0081	description		A problem or diagnosis with a rapid onset, a short course, or both.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0083	text	CLUSTER > items/ELEMENT	Resolution phase		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0083	description	CLUSTER > items/ELEMENT	Phase of healing for an acute problem or diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0083	comment	CLUSTER > items/ELEMENT	For example: tracking the progress of resolution of a middle ear infection.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0084	text		Resolved		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0084	description		Problem or diagnosis has completed the normal phases of restoration or healing and can be considered resolved.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0085	text		Resolving		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0085	description		Problem or diagnosis is progressing satisfactorily through the normal stages of restoration or healing towards resolution.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0086	text		Not resolving		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0086	description		Problem or diagnosis is not progressing satisfactorily through the normal stages of restoration or healing towards resolution.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0087	text		Indeterminate		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0087	description		It is not possible to determine the resolution or healing status of the problem or diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0088	text		Refuted		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0088	description		The previously recorded diagnosis has been clinically reassessed or disproved with a high level of clinical certainty. This status is used to correct an error in the health record.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0089	text	CLUSTER > items/ELEMENT	Remission status		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0089	description	CLUSTER > items/ELEMENT	Status of the remission of an incurable diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0089	comment	CLUSTER > items/ELEMENT	For example: the status of a cancer or haematological diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0090	text		In remission		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0090	description		No ongoing signs or symptoms of the disease have been identified.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0092	text		Not in remission		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0092	description		No diminution of the signs or symptoms of the disease have been identified.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0093	text		Indeterminate		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0093	description		It is not possible to determine if there have been diminution of the signs or symptoms of the disease have been identified.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0094	text		Acute-on-chronic		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0094	description		A problem or diagnosis with an acute exacerbation of a chronic condition.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0095	text		First occurrence		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0095	description		This is the first ever occurrence of this problem or diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0096	text		Recurrence		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0096	description		New occurrence of the same problem or diagnosis after a previous episode was resolved.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0097	text		Relapsed		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0097	description		Problem or diagnosis has deteriorated after a period of temporary improvement.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0098	text	CLUSTER > items/ELEMENT	Level of control		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0098	description	CLUSTER > items/ELEMENT	Category of the level of control of the problem or diagnosis by the current management.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0099	text		Controlled		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0099	description		The problem or diagnosis is controlled by current management.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0100	text		Indeterminate		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0100	description		It is not possible to determine if the problem or diagnosis is controlled by current management.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0101	text		Not controlled		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0101	description		The problem or diagnosis is not controlled by current management.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0102	text	CLUSTER > items/ELEMENT	Progression		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0102	description	CLUSTER > items/ELEMENT	Category of the progression through the course of a chronic problem or diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0103	text		Improving		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0103	description		The problem or diagnosis is improving.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0104	text		Stable		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0104	description		The problem or diagnosis is unchanged.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0105	text		Worsening		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0105	description		The problem or diagnosis is worsening.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0106	text		Indeterminate		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0106	description		It is not possible to determine the progression of the problem or diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0107	text	CLUSTER > items/ELEMENT	Reason for an ongoing episode		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0107	description	CLUSTER > items/ELEMENT	Reason for a problem or diagnosis not resolving as expected.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0107	comment	CLUSTER > items/ELEMENT	For example: incomplete or failed treatment.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0108	text		Yes		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0108	description				
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0109	text		No		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0109	description				
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0110	text	CLUSTER > items/ELEMENT	Comment		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0110	description	CLUSTER > items/ELEMENT	Additional narrative about the Problem/Diagnosis qualifier values, not captured in other fields.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0111	text	CLUSTER > items/ELEMENT	Disorder category		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0111	description	CLUSTER > items/ELEMENT	A high‑level grouping of the problem or diagnosis.		
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0111	comment	CLUSTER > items/ELEMENT	For example: 'Cancer', 'Mental health and/or addiction', 'Infectious disease', 'Rare disease'. \nCoding with a terminology is preferred, where possible.		

@@ -131,6 +131,24 @@
 | exclusion | 除外 | |
 | Common Terminology Criteria for Adverse Events | 有害事象共通用語規準（CTCAE） | JCOG 訳 |
 | Guillain-Barre Syndrome / acute motor axonal neuropathy | ギラン・バレー症候群 / 急性運動性軸索型ニューロパチー | |
+| qualifier | 修飾子 | problem_qualifier 概念名。problem_diagnosis 校正版の comment には「修飾語」も残る（要確認） |
+| episodicity: new / ongoing / indeterminate | エピソード区分：新規 / 継続中 / 判定不能 | problem_qualifier |
+| active / inactive | 活動性 / 非活動性 | 要確認（他候補：アクティブ / 非アクティブ） |
+| current / past | 現在 / 過去 | |
+| diagnostic status: preliminary / working / established | 診断の段階：初期 / 暫定 / 最終 | 診断確度（疑い / 推定 / 確定）とは別軸なので「確定」を避けた（要確認） |
+| diagnostic category: principal diagnosis / secondary diagnosis / complication | 診断カテゴリ：主診断 / 副診断 / 合併症 | 「主傷病名」は使わない（要確認） |
+| comorbid condition | 併存疾患 | |
+| occurrence: first occurrence / recurrence / relapsed | 発生区分：初発 / 再発 / 再燃 | recurrence＝再発、relapse＝再燃（腫瘍学の慣用） |
+| admission diagnosis | 入院時診断 | DRG 報告用 |
+| course label: acute / chronic / acute-on-chronic | 経過区分：急性 / 慢性 / 慢性の急性増悪 | 要確認 |
+| resolution phase: resolved / resolving / not resolving / refuted | 治癒の段階：治癒 / 回復中 / 未回復 / 否定 | resolution＝治癒に合わせる（要確認） |
+| remission status: in remission / not in remission | 寛解状態：寛解中 / 非寛解 | |
+| level of control: controlled / not controlled | コントロール状態：コントロール良好 / コントロール不良 | 要確認 |
+| progression: improving / stable / worsening | 進行状況：改善 / 安定 / 悪化 | |
+| indeterminate | 判定不能 | 要確認（他候補：不明） |
+| disorder category | 疾患カテゴリ | 例：がん、精神保健および／または依存症、感染症、希少疾患 |
+| episode of care | ケアエピソード | |
+| DRG | DRG | 英字のまま |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -141,3 +159,4 @@
 | openEHR-EHR-SECTION.referral_details.v0 | 紹介状の詳細 | at0001 紹介依頼、at0002 詳細 |
 | openEHR-EHR-INSTRUCTION.service_request.v1 (1.1.2) | サービス依頼 | 緊急度の値：緊急／至急／通常 |
 | openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | プロブレム・診断 | 校正済み（2026-09-10）。重症度 軽症／中等症／重症、診断確度 疑い／推定／確定、at0046 状態 |
+| openEHR-EHR-CLUSTER.problem_qualifier.v2 (2.1.1) | プロブレム・診断の修飾子 | EVALUATION.problem_diagnosis の「状態」スロット用。値セットは共通語表の各行を参照 |
