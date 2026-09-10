@@ -7,18 +7,23 @@ openEHR CKM 国際版アーキタイプの日本語翻訳スプリント。NPO �
 - 用語集・文体規則：`glossary-ja.md`
 - 作業手順・ポリシー：`CLAUDE.md`（Claude Code 用。`AGENTS.md` は同内容の Codex 用）
 - 運用の詳細：`docs/workflow.md`
+- 進捗：`status.tsv`（`make status`）
 
 ## 成果物
 
-`archetypes/<archetype id>/`
+`archetypes/<archetype id>/` の下を作業段階ごとのディレクトリに分ける。
 
-| ファイル | 内容 |
-|---|---|
-| `<id>.adl` | CKM からダウンロードした元 ADL（変更しない） |
-| `<id>.tsv` | 翻訳対象の文字列を 1 行 1 フィールドに抽出したもの（`make new` が生成） |
-| `fill.rb` | 日本語訳を Ruby ハッシュで持つ。**編集するのはこのファイルだけ** |
-| `<id>.ja.tsv` | 訳文と note（要確認）を埋めた TSV。レビュー用 |
-| `<id>.ja.adl` | `["ja"]` ブロックを追記した ADL。**CKM にアップロードするもの** |
+| ファイル | 段階 | 内容 |
+|---|---|---|
+| `source/<id>.adl` | 翻訳前 | CKM からダウンロードした元 ADL（変更しない） |
+| `work/<id>.tsv` | 翻訳中 | 翻訳対象の文字列を 1 行 1 フィールドに抽出したもの（`make new` が生成） |
+| `work/fill.rb` | 翻訳中 | 日本語訳を Ruby ハッシュで持つ。**編集するのはこのファイルだけ** |
+| `work/<id>.ja.tsv` | レビュー | 訳文と note（要確認）を埋めた TSV。レビュー用 |
+| `upload/<id>.adl` | 翻訳後 | `["ja"]` ブロックを追記した ADL。**CKM にはこのファイル名のままアップロードする** |
+
+`upload/<id>.adl` が元と同じファイル名なのは、CKM が元アーキタイプと同じファイル名でないと該当アーキタイプの翻訳として認識しないため。
+各アーキタイプの状態はリポジトリ直下の `status.tsv`（`todo → in_progress → review → uploaded → accepted`）で管理する。
+`make new` / `make build` が `in_progress` / `review` を自動で付け、`uploaded` / `accepted` は人間が `make set-status` で付ける。
 
 ## セットアップ
 
@@ -26,19 +31,20 @@ openEHR CKM 国際版アーキタイプの日本語翻訳スプリント。NPO �
 bundle install            # openehr-ruby の依存 gem
 tools/setup_openehr.sh    # openehr-ruby を vendor/ に取得し、.v0 対応パッチを適用
 source .env
-make check                # 既存の .ja.adl がすべて通れば準備完了
+make check                # 既存の archetypes/*/upload/*.adl がすべて通れば準備完了
 ```
 
 ## 1 本訳す
 
 ```bash
 make new ADL=~/Downloads/openEHR-EHR-CLUSTER.organisation.v1.adl
-$EDITOR archetypes/openEHR-EHR-CLUSTER.organisation.v1/fill.rb
+$EDITOR archetypes/openEHR-EHR-CLUSTER.organisation.v1/work/fill.rb
 make build ID=openEHR-EHR-CLUSTER.organisation.v1
 ```
 
 `make build` は訳文の書き戻しと検証（en と ja の at/ac コード集合と全フィールドの一致）まで行う。
-通ったら PR を出し、レビュー後に `.ja.adl` を CKM の翻訳アップロードから登録する。
+通ったら PR を出し、レビュー後に `upload/<id>.adl` を CKM の翻訳アップロードから登録し、
+`make set-status ID=<id> STATE=uploaded CKM_URL=<CKM の URL>` で `status.tsv` に記録する。
 
 ## チケット運用
 

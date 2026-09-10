@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 #
-# scaffold_fill.rb - generate a fill.rb skeleton from an extracted TSV.
+# scaffold_fill.rb - generate a work/fill.rb skeleton from an extracted TSV.
 #
-#   ruby tools/scaffold_fill.rb archetypes/<id>/<id>.tsv > archetypes/<id>/fill.rb
+#   ruby tools/scaffold_fill.rb archetypes/<id>/work/<id>.tsv > archetypes/<id>/work/fill.rb
 #
 # The skeleton lists every (section, code, field) key with the English source
 # as a comment and an empty target string.  The translator (human or agent)

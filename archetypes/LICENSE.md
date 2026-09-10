@@ -5,7 +5,7 @@ contributors named in each file's `other_contributors` / `original_author`, and 
 distributed under the Creative Commons Attribution-ShareAlike licence stated in each
 file's `["licence"]` (CC BY-SA 3.0 or 4.0).
 
-The Japanese translations added here (`["ja"]` blocks, `*.ja.adl`, `*.ja.tsv`, `fill.rb`)
+The Japanese translations added here (`["ja"]` blocks, `upload/<id>.adl`, `work/*.tsv`, `work/fill.rb`)
 are derivative works of those archetypes and are therefore released under the same
 terms: **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**,
 https://creativecommons.org/licenses/by-sa/4.0/ (CC BY-SA 3.0 permits derivatives
