@@ -38,7 +38,7 @@ This archetype is intended to be nested within the COMPOSITION.request or any re
 			purpose = <"テンプレート内で紹介状をモデル化するための枠組みの例を提供するため。">
 			use = <"テンプレート内で紹介状をモデル化するための枠組みの例を提供するために用いる。
 
-本アーキタイプは、COMPOSITION.request または関連する任意の COMPOSITION アーキタイプの中に入れ子にして用いることを意図している。">
+本archetypeは、COMPOSITION.request または関連する任意の COMPOSITION archetypeの中に入れ子にして用いることを意図している。">
 			keywords = <"紹介", "依頼", "紹介状">
 			copyright = <"© openEHR Foundation">
 		>
