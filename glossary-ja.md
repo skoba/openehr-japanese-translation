@@ -48,7 +48,7 @@
 | Tree | Tree | 訳さない |
 | reason for encounter | 受診理由 | 概念名のみ国内慣用を優先（encounter＝診察の例外） |
 | contact type | 受診区分 | 管理上の区分（初診・再診・救急・予定入院など） |
-| presenting problem | 受診時の問題 | 「主訴」は同義語としてテンプレートで使用可 |
+| presenting problem | 受診時のプロブレム | 「主訴」は同義語としてテンプレートで使用可 |
 | chief complaint | 主訴 | |
 | administrative category | 管理上の区分 | |
 | health issues / symptoms / physical signs | 健康上の問題 / 症状 / 身体的徴候 | |
@@ -79,7 +79,7 @@
 | service name / service type | サービス名 / サービス種別 | |
 | request status | 依頼状態 | |
 | distribution list | 配布先リスト | |
-| specific details | 具体的な詳細 | CLUSTER スロット |
+| specific details | 詳細記録 | CLUSTER スロット。problem_diagnosis 校正（2026-09-10）で「具体的な詳細」から変更 |
 | complex timing | 複雑なタイミング | CLUSTER.service_direction スロット |
 | clinical indication | 臨床的適応 | |
 | indefinite? | 無期限？ | Boolean。原文の疑問符を踏襲 |
@@ -88,27 +88,27 @@
 | coding with a coding system is desirable, if available | 利用可能であれば、コード体系によりコード化することが望ましい | comment の定型句（terminology 版と区別） |
 | allows multiple occurrences | 複数回の出現を許容する | comment の定型句 |
 | follow-up appointment | フォローアップ受診 | |
-| problem / diagnosis / condition | 問題 / 診断 / 病態 | 訳し分ける。problem_diagnosis |
-| health problem | 健康上の問題 | |
+| problem / diagnosis / condition | プロブレム / 診断 / 病態 | 訳し分ける。日本でのPOMRの文脈ではProblemは問題や課題と翻訳されることもあるが、主にプロブレムとされることが多い。ここでもそれを踏襲する。problem_diagnosis |
+| health problem | 健康上のプロブレム | problem＝プロブレムに合わせる（problem_diagnosis 校正 2026-09-10。「health issues」は引き続き「健康上の問題」） |
 | healthcare professional | 医療従事者 | healthcare provider と同じ訳（要確認） |
 | carer | 介護者 | |
-| wellbeing / well-being | ウェルビーイング | 要確認（他候補：健康と幸福、安寧） |
+| wellbeing / well-being | ウェルビーイング | OK |
 | injury / disability | 外傷 / 障害 | |
-| Problem List | 問題リスト | COMPOSITION.problem_list |
+| Problem List | プロブレムリスト | COMPOSITION.problem_list |
 | Discharge Summary | 退院時サマリー | |
 | clinical consultation | 診察 | 紹介の consultation（コンサルテーション）とは区別 |
 | clinical decision support | 臨床意思決定支援 | |
-| Problem Oriented Medical Record | 問題志向型診療記録 | Larry Weed は英字のまま |
-| problem/diagnosis name | 問題/診断名 | |
-| date/time clinically recognised | 臨床的認識日時 | 要確認 |
+| Problem Oriented Medical Record | プロブレム志向型診療記録 | Larry Weed は英字のまま |
+| problem/diagnosis name | プロブレム・診断の名称 | 概念名「プロブレム・診断」に合わせ区切りは「・」（problem_diagnosis 校正 2026-09-10）。要確認：校正前の用語集は「プロブレム/診断名」 |
+| date/time clinically recognised | 臨床的に認識された日時 | problem_diagnosis 校正（2026-09-10）で「臨床的認識日時」から変更 |
 | date/time of onset | 発症日時 | |
-| date/time of resolution | 解消日時 | resolution or remission＝解消または寛解（要確認） |
-| severity: mild / moderate / severe | 重症度：軽度 / 中等度 / 重度 | |
+| date/time of resolution | 治癒した日時 | resolution or remission＝解消または寛解（要確認） |
+| severity: mild / moderate / severe | 重症度：軽症 / 中等症 / 重症 | |
 | body site / anatomical location | 身体部位 / 解剖学的部位 | 訳し分ける |
-| structured body site | 構造化身体部位 | CLUSTER スロット |
+| structured body site | 構造化された身体部位表現 | CLUSTER スロット。problem_diagnosis 校正（2026-09-10）で採用 |
 | status (qualifier slot) | 状態 | request status＝依頼状態 に合わせる（要確認） |
-| clinical description / course description | 臨床的説明 / 経過の説明 | |
-| diagnostic certainty: suspected / probable / confirmed | 診断の確からしさ：疑い / ほぼ確実 / 確定 | 要確認（指定難病の Definite/Probable/Possible の慣用訳に合わせた） |
+| clinical description / course description | 臨床的説明 / 経過記載 | problem_diagnosis 校正（2026-09-10）で「経過の説明」→「経過記載」 |
+| diagnostic certainty: suspected / probable / confirmed | 診断確度：疑い / 推定 / 確定 | problem_diagnosis 校正（2026-09-10）で採用。校正前は「診断の確からしさ：疑い / ほぼ確実 / 確定」（指定難病の慣用訳） |
 | cause / aetiology | 原因 / 病因 | |
 | variant / subtype | 亜型 / サブタイプ | 要確認 |
 | impact | 影響 | |
@@ -139,4 +139,4 @@
 | openEHR-EHR-EVALUATION.reason_for_encounter.v1 | 受診理由 | at0002 受診区分、at0004 受診時の問題（主訴を同義語として明記） |
 | openEHR-EHR-SECTION.referral_details.v0 | 紹介状の詳細 | at0001 紹介依頼、at0002 詳細 |
 | openEHR-EHR-INSTRUCTION.service_request.v1 (1.1.2) | サービス依頼 | 緊急度の値：緊急／至急／通常 |
-| openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | 問題/診断 | 要確認（候補：傷病名）。重症度 軽度／中等度／重度、診断の確からしさ 疑い／ほぼ確実／確定、at0046 状態 |
+| openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | プロブレム・診断 | 校正済み（2026-09-10）。重症度 軽症／中等症／重症、診断確度 疑い／推定／確定、at0046 状態 |
