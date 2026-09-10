@@ -10,7 +10,7 @@
 1. **`definition` 節、他言語の翻訳、`other_details`（uid / build_uid / revision / MD5）を変更しない。** `upload/<id>.adl` は `source/<id>.adl` に `["ja"]` ブロックを追記しただけの状態でなければならない（両者の `diff` で追記行のみ）。書き戻しは必ず `tools/adl_i18n.rb inject` で行い、ADL を手で編集しない。
 2. **用語集 `glossary-ja.md` に従う。** 用語集にある語は必ずその訳を使う。用語集にない語を新しく決めたら、使う前に用語集に追記する（同じ PR で）。
 3. **迷ったら決めて、印を残す。** 訳語に複数候補があるときは一つを採用し、TSV の note 列に `要確認: 採用案（他候補: …）理由` と書く。空欄にしない。
-4. **1 アーキタイプ = 1 Issue = 1 ブランチ = 1 PR。** Issue が無い翻訳作業は始めない（下記「チケット運用」）。
+5. 訳文の正本は `archetypes/<id>/work/fill.rb` の Ruby ハッシュ（再現可能・diff 可能にするため）。エージェントは `work/fill.rb` を編集する。人間の校正は `work/<id>.ja.tsv` の `target` / `note` 列を直接編集して `make import ID=<id>` で `work/fill.rb` に取り込む（下記「校正の手順」。取り込まずに `make build` すると TSV の手直しは fill.rb の内容で上書きされる）。ADL は直接編集しない。
 5. 訳文は `archetypes/<id>/work/fill.rb` の Ruby ハッシュに置く（再現可能・diff 可能にするため）。TSV や ADL を直接編集しない。
 6. **`status.tsv` の `uploaded` / `accepted` は人間が付ける。エージェントが状態を `uploaded` 以降に進めてはいけない**（`make set-status` を実行しない）。エージェントが動かしてよいのは `make new` / `make build` が自動で付ける `in_progress` / `review` まで。
 
@@ -45,6 +45,7 @@ source .env                                   # 初回は tools/setup_openehr.sh
 make new ADL=path/to/<id>.adl                 # archetypes/<id>/source/ に元 ADL、work/ に TSV・fill.rb 雛形。状態 in_progress
 #   work/fill.rb の空文字列をすべて埋める（英文はコメントで並んでいる）
 make build ID=<id>                            # work/fill.rb → work/<id>.ja.tsv → inject → upload/<id>.adl → check（自動）。状態 review
+make import ID=<id>                           # 人間の校正: work/<id>.ja.tsv を直接編集したあと、fill.rb に取り込んで build（「校正の手順」）
 make check                                    # 全 archetypes/*/upload/*.adl の検証
 make status                                   # status.tsv の一覧
 ```
@@ -53,6 +54,23 @@ make status                                   # status.tsv の一覧
 - `make build` が `FAILED` を返したら、欠けているコード／空フィールドを `work/fill.rb` に足して再実行する。`*...(en)` のようなプレースホルダを残してはいけない。
 - 原文が空のフィールド（`misuse = <"">` など）は TSV に現れない。訳さなくてよい。
 - 翻訳が終わったら、`work/<id>.ja.tsv` の「要確認」行と用語集の差分を PR 本文に転記する。
+
+## 校正の手順（人間が訳文をまとめて手直しするとき）
+
+訳語を一つ二つ指すだけなら下記「レビュー反映の手順」でエージェントに任せてよいが、大幅に手直しするときは
+**`work/<id>.ja.tsv` を直接編集して `make import` で取り込む**。往復は発生しない。
+
+1. `archetypes/<id>/work/<id>.ja.tsv` をテキストエディタで開き、`target` 列（訳文）と `note` 列を直す。
+   - 列は `archetype, section, code, field, context, source, target, note`（タブ区切り、1 行 1 フィールド）。`source` が原文、`target` が訳文。
+   - 行の追加・削除・並べ替えはしない。`target` 以外の列も触らない。
+   - 改行は `\n` と書く（原文の段落構成に合わせる）。フィールド内にタブは使えない（空白にする）。
+   - 直した行の `note` の `要確認:` は消すか、決めた理由に書き換える。残っている `要確認:` はレビュー未了の印。
+   - Excel は引用符や書式を勝手に付けるので使わない。VS Code などのテキストエディタ、または TSV をそのまま保存できるツールを使う。
+2. `make import ID=<id>` を実行する。TSV から `work/fill.rb` を生成し直し、続けて `make build`（inject → `upload/<id>.adl` → check）まで行う。
+   `git diff archetypes/<id>/work/<id>.ja.tsv` が手直しした行だけになっていれば往復は成功（`status.tsv` の状態は変わらない）。
+   最初の `make import` では `work/fill.rb` が生成形式に整形し直されるため、差分が大きく見えるが訳文の内容は TSV どおり。
+3. そのままコミットして PR（タイトル `review: <id> 校正`）を出す。用語集に関わる変更（他アーキタイプにも波及させたい訳語）があれば、
+   PR 本文か指示に「glossary に反映して波及させて」と書く。以降はエージェントが「レビュー反映の手順」の 3〜6 を行う。
 
 ## 文体・訳し方（詳細は glossary-ja.md）
 
@@ -87,8 +105,9 @@ CKM 側でアーキタイプが改版されたら、新しい元 ADL で `make n
 手直しは訳語の指定だけが人間の仕事。波及はエージェントが行う。
 1. 変更元を特定する：PR レビューコメント／`glossary-ja.md` の直近コミット／
    `archetypes/<id>/work/ckm-reviewed.adl`（CKM から取得した修正済み ADL）に対する
-   `tools/adl_i18n.rb diff archetypes/<id>/work/<id>.ja.tsv archetypes/<id>/work/ckm-reviewed.adl` の出力、のいずれか。
-2. 該当アーキタイプの `work/fill.rb` を直す。
+   `tools/adl_i18n.rb diff archetypes/<id>/work/<id>.ja.tsv archetypes/<id>/work/ckm-reviewed.adl` の出力、／
+   人間が `work/<id>.ja.tsv` を直接校正して `make import` した差分（`git diff` の `target` 列）、のいずれか。
+2. 該当アーキタイプの `work/fill.rb` を直す（変更元が校正済み TSV なら `make import` 済みなので不要）。
 3. 訳語の変更なら `glossary-ja.md` を更新し、備考欄に理由を一言書く。
 4. 旧訳語を `grep -rn` で全 `archetypes/*/work/fill.rb` から探し、同じ意味の箇所に同じ変更を適用する。
    文脈が違って変えない箇所は PR 本文に理由を列挙する。

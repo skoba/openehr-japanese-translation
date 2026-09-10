@@ -18,7 +18,7 @@ openEHR CKM 国際版アーキタイプの日本語翻訳スプリント。NPO �
 | `source/<id>.adl` | 翻訳前 | CKM からダウンロードした元 ADL（変更しない） |
 | `work/<id>.tsv` | 翻訳中 | 翻訳対象の文字列を 1 行 1 フィールドに抽出したもの（`make new` が生成） |
 | `work/fill.rb` | 翻訳中 | 日本語訳を Ruby ハッシュで持つ。**編集するのはこのファイルだけ** |
-| `work/<id>.ja.tsv` | レビュー | 訳文と note（要確認）を埋めた TSV。レビュー用 |
+| `work/<id>.ja.tsv` | レビュー | 訳文と note（要確認）を埋めた TSV。**人間の校正はこのファイルを直接編集**し、`make import` で `work/fill.rb` に取り込む |
 | `upload/<id>.adl` | 翻訳後 | `["ja"]` ブロックを追記した ADL。**CKM にはこのファイル名のままアップロードする** |
 
 `upload/<id>.adl` が元と同じファイル名なのは、CKM が元アーキタイプと同じファイル名でないと該当アーキタイプの翻訳として認識しないため。
@@ -40,6 +40,8 @@ make check                # 既存の archetypes/*/upload/*.adl がすべて通�
 make new ADL=~/Downloads/openEHR-EHR-CLUSTER.organisation.v1.adl
 $EDITOR archetypes/openEHR-EHR-CLUSTER.organisation.v1/work/fill.rb
 make build ID=openEHR-EHR-CLUSTER.organisation.v1
+# 校正: work/<id>.ja.tsv の target 列を直接直してから
+make import ID=openEHR-EHR-CLUSTER.organisation.v1
 ```
 
 `make build` は訳文の書き戻しと検証（en と ja の at/ac コード集合と全フィールドの一致）まで行う。
