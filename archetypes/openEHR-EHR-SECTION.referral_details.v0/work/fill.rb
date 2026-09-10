@@ -5,7 +5,7 @@ T = {
   ['description', '-', 'purpose'] =>
     'テンプレート内で紹介状をモデル化するための枠組みの例を提供するため。',
   ['description', '-', 'use'] =>
-    "テンプレート内で紹介状をモデル化するための枠組みの例を提供するために用いる。\n\n本アーキタイプは、COMPOSITION.request または関連する任意の COMPOSITION アーキタイプの中に入れ子にして用いることを意図している。",
+    "テンプレート内で紹介状をモデル化するための枠組みの例を提供するために用いる。\n\n本archetypeは、COMPOSITION.request または関連する任意の COMPOSITION archetypeの中に入れ子にして用いることを意図している。",
   ['description', '-', 'keywords'] => '紹介 | 依頼 | 紹介状',
   ['description', '-', 'copyright'] => '© openEHR Foundation',
   ['term', 'at0000', 'text'] => '紹介状の詳細',

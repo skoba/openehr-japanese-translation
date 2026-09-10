@@ -9,7 +9,7 @@
 - `text`（ノード名）は名詞句。句点なし。画面ラベルに使われる前提で簡潔に。
 - `description` / `comment` / `purpose` / `use` / `misuse` は「〜。」で終える常体（である調）。
 - 原文の段落・箇条書き（`- `）・空行はそのまま保つ。箇条書き末尾の `;` は「；」、末尾の `and` は「および」として行内に残す。
-- アーキタイプ名（`COMPOSITION.encounter` など）、RM クラス名、`FHIR`/`CIMI` 等の固有名は英字のまま。
+- アーキタイプ名（`COMPOSITION.encounter` など）、RM クラス名、`FHIR`/`CIMI` 等の固有名は英字のまま。 「archetype」という語自体も英字のまま書き、「アーキタイプ」とは訳さない（2026-09-10 校正で統一）。
 - `@ internal @` は訳さない。内部ノード名 `Tree` / `List` / `History` 等も他言語版（de/sv/nb/nl）に倣い英字のまま残す。
 - CLUSTER スロット `Extension` も訳さず英字のまま（description / comment は訳す）。
 - `copyright` は原文どおり（`© openEHR Foundation`）。
@@ -46,6 +46,7 @@
 | reference models/formalisms | 参照モデル／形式体系 | |
 | additional metadata | 追加メタデータ | |
 | Tree | Tree | 訳さない |
+| archetype | archetype | 英字のまま。「アーキタイプ」と書かない（problem_diagnosis 校正 2026-09-10 で統一。「本archetype」「CLUSTER archetype群」のように続ける） |
 | reason for encounter | 受診理由 | 概念名のみ国内慣用を優先（encounter＝診察の例外） |
 | contact type | 受診区分 | 管理上の区分（初診・再診・救急・予定入院など） |
 | presenting problem | 受診時のプロブレム | 「主訴」は同義語としてテンプレートで使用可 |
