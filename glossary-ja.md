@@ -151,7 +151,7 @@
 | episode of care | ケアエピソード | |
 | DRG | DRG | 英字のまま |
 | Story/History | 病歴 | OBSERVATION.story 概念名。story 校正（2026-09-11）で「ストーリー・病歴」→「病歴」 |
-| story (narrative element) | 病歴の記述 | OBSERVATION.story at0004。対比文脈（story と history を並べるとき）の story は「語り」 |
+| story (narrative element) | 病歴の記述 | OBSERVATION.story at0004。対比文脈（story と history を並べるとき）の story は「語り」。keywords では検索語として「ストーリー」を併記可 |
 | clinical history | 病歴 | |
 | Event Series | Event Series | HISTORY の内部ノード名。Tree と同じく訳さない |
 | Any event | 任意のイベント | OBSERVATION の既定イベント名（要確認） |
