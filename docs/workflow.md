@@ -9,6 +9,10 @@
 5. マージ後、`archetypes/<id>/upload/<id>.adl` をそのファイル名のまま CKM の翻訳アップロードから登録し（CKM は元と同じファイル名でないと認識しない）、`make set-status ID=<id> STATE=uploaded CKM_URL=<CKM の URL>` で `status.tsv` に記録して Issue をクローズ。審査が完了したら `STATE=accepted`。`uploaded` / `accepted` を付けるのは人間だけ。
 6. CKM 上で微修正した場合は、CKM からダウンロードした ADL（審査完了後）または翻訳画面のテキストを使って `archetypes/<id>/work/ckm-reviewed.adl` に置き、`tools/adl_i18n.rb diff archetypes/<id>/work/<id>.ja.tsv archetypes/<id>/work/ckm-reviewed.adl` を取って、差分を `work/fill.rb` と用語集に反映する（手順は `CLAUDE.md`「レビュー反映の手順」）。
 
+## セッション開始時の確認（エージェント）
+
+エージェントは作業開始前に `make status` を実行し、`uploaded` の行が残っていれば CKM の審査状況（accepted になったか）を小林先生に確認する。accepted なら `make set-status ID=<id> STATE=accepted` と該当 Issue のクローズを提案する（状態を付けるのは人間）。
+
 ## エージェントに一括で頼むとき
 
 用語のぶれを防ぐため、**一度に渡すのは同じ群の中の数本まで**にし、群をまたぐときは用語集の更新をマージしてから次へ進む。

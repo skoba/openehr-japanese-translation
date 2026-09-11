@@ -35,3 +35,4 @@ E	33	openEHR-EHR-OBSERVATION.pulse_oximetry.v1	パルスオキシメトリ	publi
 diff	34	openEHR-EHR-OBSERVATION.body_temperature.v2	体温（差分翻訳）	published（ja あり）	—	at0060 / at0061 / at0064 / at0066 の未訳項目（at0062 Extension は訳さない）
 diff	35	openEHR-EHR-OBSERVATION.body_weight.v2	体重（差分翻訳）	published（ja あり）	—	at0001 / at0002 / at0008 / at0015（構造ノード。`*` を外す）
 diff	36	openEHR-EHR-OBSERVATION.blood_pressure.v2	血圧（差分翻訳）	published（ja あり）	—	at0007（構造ノード）
+A	37	openEHR-EHR-CLUSTER.symptom_sign.v2	症状・徴候	published 2.1.4	55	story.v1 のスロット。story の直後に着手。大物（約 14.5k 字）

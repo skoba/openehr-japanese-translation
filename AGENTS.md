@@ -38,6 +38,11 @@ status.tsv（リポジトリ直下）  列: archetype_id, state, revision, ckm_u
 
 `revision` は `source/<id>.adl` の `["revision"]` から自動で取る。`make status` で一覧を表示する。
 
+## セッション開始時の確認
+
+- 作業を始める前に `make status` を実行する。`uploaded` の行が残っていれば、その archetype の CKM での審査が完了して公開された（accepted）かどうかを人間に確認するよう促す。
+- accepted であれば、`make set-status ID=<id> STATE=accepted` の実行と、該当 Issue のクローズ（CKM の URL を書き添える）を提案する。状態を付けるのは人間（絶対規則 6）。
+
 ## 1 アーキタイプの手順
 
 ```bash
