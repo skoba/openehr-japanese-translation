@@ -47,7 +47,8 @@ rows.each do |r|
   src_c = unescape.call(source).lines.map { |l| "  # #{l.chomp}" }.join("\n")
   puts "  # #{context}" unless context.to_s.empty?
   puts src_c
-  val = target.to_s.empty? ? PREFILL.call(field, source) : unescape.call(target)
+  placeholder = target.to_s.start_with?('*') && target.to_s.end_with?(')') # CKM "*...(en)" = untranslated
+  val = (target.to_s.empty? || placeholder) ? PREFILL.call(field, source) : unescape.call(target)
   puts "  #{key} => #{val ? val.inspect : "''"},"
   puts
   notes << [key, note] unless note.to_s.empty?
