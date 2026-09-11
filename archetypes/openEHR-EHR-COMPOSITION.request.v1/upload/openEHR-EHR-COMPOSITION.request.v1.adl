@@ -47,9 +47,9 @@ language
 		["ja"] = <
 			language = <[ISO_639-1::ja]>
 			author = <
-				["name"] = <"Shinji Kobayashi">
-				["organisation"] = <"Gifu University">
-				["email"] = <"shnj.kobayashi@gmail.com">
+				["name"] = <"Shinji KOBAYASHI">
+				["organisation"] = <"NPO openEHR Japan">
+				["email"] = <"skoba@moss.gr.jp">
 			>
 		>
 	>
