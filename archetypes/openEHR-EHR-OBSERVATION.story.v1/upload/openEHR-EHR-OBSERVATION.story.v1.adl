@@ -902,7 +902,7 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"病歴">
+					text = <"病歴の記述">
 					description = <"ケア対象者が語る病歴、または客観的記録に基づく病歴の叙述的な記述。">
 				>
 				["at0006"] = <

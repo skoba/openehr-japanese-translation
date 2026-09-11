@@ -12,7 +12,7 @@ openEHR-EHR-OBSERVATION.story.v1	term	at0002	text	OBSERVATION > data/HISTORY > e
 openEHR-EHR-OBSERVATION.story.v1	term	at0002	description	OBSERVATION > data/HISTORY > events/EVENT	Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.	既定の、特定されていない時点または期間のイベント。テンプレートまたは実行時に明示的に定義できる。	
 openEHR-EHR-OBSERVATION.story.v1	term	at0003	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE	Tree	Tree	
 openEHR-EHR-OBSERVATION.story.v1	term	at0003	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE	@ internal @	@ internal @	
-openEHR-EHR-OBSERVATION.story.v1	term	at0004	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Story	病歴	
+openEHR-EHR-OBSERVATION.story.v1	term	at0004	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Story	病歴の記述	
 openEHR-EHR-OBSERVATION.story.v1	term	at0004	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Narrative description of the story or clinical history for the subject of care.	ケア対象者が語る病歴、または客観的記録に基づく病歴の叙述的な記述。	
 openEHR-EHR-OBSERVATION.story.v1	term	at0006	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/CLUSTER	Structured detail	構造化された詳細記録	
 openEHR-EHR-OBSERVATION.story.v1	term	at0006	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/CLUSTER	Structured detail about the individual's story or patient's history.	本人の語りまたは客観的記録に基づく病歴についての構造化された詳細記録。	

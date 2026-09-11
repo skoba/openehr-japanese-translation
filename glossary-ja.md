@@ -151,7 +151,7 @@
 | episode of care | ケアエピソード | |
 | DRG | DRG | 英字のまま |
 | Story/History | 病歴 | OBSERVATION.story 概念名。story 校正（2026-09-11）で「ストーリー・病歴」→「病歴」 |
-| story (narrative element) | 病歴（叙述的な記録） | OBSERVATION.story at0004 |
+| story (narrative element) | 病歴の記述 | OBSERVATION.story at0004。対比文脈（story と history を並べるとき）の story は「語り」 |
 | clinical history | 病歴 | |
 | Event Series | Event Series | HISTORY の内部ノード名。Tree と同じく訳さない |
 | Any event | 任意のイベント | OBSERVATION の既定イベント名（要確認） |
@@ -172,4 +172,4 @@
 | openEHR-EHR-INSTRUCTION.service_request.v1 (1.1.2) | サービス依頼 | 緊急度の値：緊急／至急／通常 |
 | openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | プロブレム・診断 | 校正済み（2026-09-10）。重症度 軽症／中等症／重症、診断確度 疑い／推定／確定、at0046 状態 |
 | openEHR-EHR-CLUSTER.problem_qualifier.v2 (2.1.1) | プロブレム・診断の修飾子 | EVALUATION.problem_diagnosis の「状態」スロット用。値セットは共通語表の各行を参照 |
-| openEHR-EHR-OBSERVATION.story.v1 (1.3.3) | 病歴 | 校正済み（2026-09-11）。at0004 病歴、at0006 構造化された詳細記録、at0002 任意のイベント |
+| openEHR-EHR-OBSERVATION.story.v1 (1.3.3) | 病歴 | 校正済み（2026-09-11）。at0004 病歴の記述、at0006 構造化された詳細記録、at0002 任意のイベント |

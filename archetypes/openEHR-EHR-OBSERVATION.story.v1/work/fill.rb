@@ -63,7 +63,7 @@ T = {
 
   # OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT
   # Story
-  ['term', 'at0004', 'text'] => "病歴",
+  ['term', 'at0004', 'text'] => "病歴の記述",
 
   # OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT
   # Narrative description of the story or clinical history for the subject of care.
