@@ -3,7 +3,7 @@
 このリポジトリは openEHR CKM 国際版アーキタイプ（ADL 1.4）に日本語（`ja`）翻訳を追加するためのものです。
 成果物は `archetypes/<id>/upload/<id>.adl`（元 ADL に `["ja"]` ブロックを追記した ADL）で、レビュー後に CKM へアップロードします。
 **CKM は元アーキタイプと同じファイル名（`<id>.adl`）でないと該当アーキタイプの翻訳として認識しない**ため、言語サフィックスを付けた別名のファイルは作らず、作業段階ごとのディレクトリ（`source/` `work/` `upload/`）と `status.tsv` で状態を区別します（下記「ディレクトリ構成と状態」）。
-作業者は Claude Code / Codex などのエージェントと人間の両方です。**このファイルと `glossary-ja.md` を必ず最初に読んでください。**
+作業者は Claude Code / Codex などのエージェントと人間の両方です。**このファイルと `glossary-ja.md`、`docs/decisions-ja.md`（用語以外の決定事項の正本）を必ず最初に読んでください。**
 
 ## 絶対に守ること
 
@@ -37,11 +37,6 @@ status.tsv（リポジトリ直下）  列: archetype_id, state, revision, ckm_u
 | `accepted` | CKM で審査完了・公開済み | 人間（`make set-status`） |
 
 `revision` は `source/<id>.adl` の `["revision"]` から自動で取る。`make status` で一覧を表示する。
-
-## セッション開始時の確認
-
-- 作業を始める前に `make status` を実行する。`uploaded` の行が残っていれば、その archetype の CKM での審査が完了して公開された（accepted）かどうかを人間に確認するよう促す。
-- accepted であれば、`make set-status ID=<id> STATE=accepted` の実行と、該当 Issue のクローズ（CKM の URL を書き添える）を提案する。状態を付けるのは人間（絶対規則 6）。
 
 ## 1 アーキタイプの手順
 
