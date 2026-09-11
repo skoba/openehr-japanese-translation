@@ -1,0 +1,7 @@
+archetype	section	code	field	context	source	target	note
+openEHR-EHR-SECTION.adhoc.v1	description	-	purpose		To provide a generic section header which will be renamed in a template to suit a specific clinical context.	テンプレート内で特定の臨床的文脈に合わせて名前を変更して使う、汎用のセクション見出しを提供するため。	
+openEHR-EHR-SECTION.adhoc.v1	description	-	use		Use to construct a section heading in a template that will be renamed to suit the specific clinical context. For example: \"Ad hoc heading\" renamed to \"Examination findings\".	テンプレート内で、特定の臨床的文脈に合わせて名前を変更するセクション見出しを構成するために用いる。例：「任意見出し」を「診察所見」に変更する。	
+openEHR-EHR-SECTION.adhoc.v1	description	-	misuse		Not to be left unchanged in a template.	テンプレート内で名前を変更せずにそのまま残してはならない。	
+openEHR-EHR-SECTION.adhoc.v1	description	-	copyright		© openEHR Foundation	© openEHR Foundation	
+openEHR-EHR-SECTION.adhoc.v1	term	at0000	text	SECTION	Ad hoc heading	任意見出し	要確認: 「任意見出し」を採用（targets.tsv の案。他候補: アドホック見出し、汎用見出し）。テンプレートで必ず改名される前提のラベル
+openEHR-EHR-SECTION.adhoc.v1	term	at0000	description	SECTION	A generic section header which should be renamed in a template to suit a specific clinical context.	テンプレート内で特定の臨床的文脈に合わせて名前を変更すべき、汎用のセクション見出し。	

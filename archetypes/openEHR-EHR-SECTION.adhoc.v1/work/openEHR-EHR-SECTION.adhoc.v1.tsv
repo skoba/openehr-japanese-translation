@@ -1,0 +1,7 @@
+archetype	section	code	field	context	source	target	note
+openEHR-EHR-SECTION.adhoc.v1	description	-	purpose		To provide a generic section header which will be renamed in a template to suit a specific clinical context.		
+openEHR-EHR-SECTION.adhoc.v1	description	-	use		Use to construct a section heading in a template that will be renamed to suit the specific clinical context. For example: \"Ad hoc heading\" renamed to \"Examination findings\".		
+openEHR-EHR-SECTION.adhoc.v1	description	-	misuse		Not to be left unchanged in a template.		
+openEHR-EHR-SECTION.adhoc.v1	description	-	copyright		© openEHR Foundation		
+openEHR-EHR-SECTION.adhoc.v1	term	at0000	text	SECTION	Ad hoc heading		
+openEHR-EHR-SECTION.adhoc.v1	term	at0000	description	SECTION	A generic section header which should be renamed in a template to suit a specific clinical context.		
