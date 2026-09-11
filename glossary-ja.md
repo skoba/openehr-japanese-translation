@@ -136,13 +136,13 @@
 | episodicity: new / ongoing / indeterminate | エピソード区分：新規 / 継続中 / 判定不能 | problem_qualifier |
 | active / inactive | アクティブ / インアクティブ |  |
 | current / past | 現病 / 既往 | 診断、病歴の文脈では現在、過去よりもこちらが適切と考えられる |
-| diagnostic status: preliminary / working / established | 診断状況：予備的 / 暫定 / 最終 | 診断確度（疑い / 推定 / 確定）とは別軸。校正（2026-09-11）で「診断の段階」→「診断状況」、「初期」→「予備的」 |
+| diagnostic status: preliminary / working / established / refuted | 診断状況：予備的 / 暫定 / 最終 / 否定 | 診断確度（疑い / 推定 / 確定）とは別軸。校正（2026-09-11）で「診断の段階」→「診断状況」、「初期」→「予備的」 |
 | diagnostic category: principal diagnosis / secondary diagnosis / complication | 診断区分：主病名 / 副病名 / 合併症 | Category＝区分（校正 2026-09-11） |
 | comorbid condition | 併存疾患 | |
-| occurrence: first occurrence / recurrence / relapsed | 発生区分：初発 / 再発 / 再燃 | recurrence＝再発、relapse＝再燃（腫瘍学の慣用） |
+| occurrence: first occurrence / recurrence | 発生区分：初発 / 再発 | recurrence＝再発（腫瘍学の慣用） |
 | admission diagnosis | 入院時診断 | DRG 報告用 |
 | course label: acute / chronic / acute-on-chronic | 経過区分：急性 / 慢性 / 慢性疾患の急性増悪 | at0094 text に合わせた（校正 2026-09-11） |
-| resolution phase: resolved / resolving / not resolving / refuted | 治癒段階：治癒 / 回復中 / 未回復 / 否定 | at0083 text に合わせ「治癒段階」（校正 2026-09-11） |
+| resolution phase: resolved / resolving / not resolving / relapsed | 治癒段階：治癒 / 回復中 / 未回復 / 再燃 | at0083 text に合わせ「治癒段階」（校正 2026-09-11） |
 | remission status: in remission / not in remission | 寛解状態：寛解中 / 非寛解 | |
 | level of control: controlled / not controlled | コントロール状況：コントロール良好 / コントロール不良 | 校正（2026-09-11）で「コントロール状態」→「コントロール状況」 |
 | progression: improving / stable / worsening | 進行状況：改善 / 安定 / 悪化 | |
@@ -156,7 +156,7 @@
 | Archetype | at0000 text | 備考 |
 |---|---|---|
 | openEHR-EHR-COMPOSITION.request.v1 | 診療依頼書 | 候補：依頼書／サービス依頼。国内の「診療情報提供書」とは区別 |
-| openEHR-EHR-EVALUATION.reason_for_encounter.v1 | 受診理由 | at0002 受診区分、at0004 受診時の問題（主訴を同義語として明記） |
+| openEHR-EHR-EVALUATION.reason_for_encounter.v1 | 受診理由 | at0002 受診区分、at0004 受診時のプロブレム（主訴を同義語として明記） |
 | openEHR-EHR-SECTION.referral_details.v0 | 紹介状の詳細 | at0001 紹介依頼、at0002 詳細 |
 | openEHR-EHR-INSTRUCTION.service_request.v1 (1.1.2) | サービス依頼 | 緊急度の値：緊急／至急／通常 |
 | openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | プロブレム・診断 | 校正済み（2026-09-10）。重症度 軽症／中等症／重症、診断確度 疑い／推定／確定、at0046 状態 |
