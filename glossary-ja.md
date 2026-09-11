@@ -52,6 +52,7 @@
 | presenting problem | 受診時のプロブレム | 「主訴」は同義語としてテンプレートで使用可 |
 | chief complaint | 主訴 | |
 | administrative category | 管理上の区分 | |
+| category | 区分 | 断りがなければ「区分」（校正 2026-09-11。「カテゴリ」は使わない） |
 | health issues / symptoms / physical signs | 健康上の問題 / 症状 / 身体的徴候 | |
 | paramedical staff | 救急救命士 | 文脈により「救急隊員」 |
 | routine antenatal visit | 定期の妊婦健診 | |
@@ -85,7 +86,7 @@
 | clinical indication | 臨床的適応 | |
 | indefinite? | 無期限？ | Boolean。原文の疑問符を踏襲 |
 | narrative description | 叙述的な説明 | |
-| data element / data point | データ要素 / データ項目 | |
+| data element / data point | データエレメント / データ項目 | 校正（2026-09-11）で「データ要素」→「データエレメント」に統一 |
 | coding with a coding system is desirable, if available | 利用可能であれば、コード体系によりコード化することが望ましい | comment の定型句（terminology 版と区別） |
 | allows multiple occurrences | 複数回の出現を許容する | comment の定型句 |
 | follow-up appointment | フォローアップ受診 | |
@@ -131,6 +132,24 @@
 | exclusion | 除外 | |
 | Common Terminology Criteria for Adverse Events | 有害事象共通用語規準（CTCAE） | JCOG 訳 |
 | Guillain-Barre Syndrome / acute motor axonal neuropathy | ギラン・バレー症候群 / 急性運動性軸索型ニューロパチー | |
+| qualifier | 修飾子 | 単独で用語集を構成するものとして「修飾子」を用いることとする。用語集とは関わりなく資源言語の語句として診断名に付属して意味を加えるものは修飾語として区別する。 |
+| episodicity: new / ongoing / indeterminate | エピソード区分：新規 / 継続中 / 判定不能 | problem_qualifier |
+| active / inactive | アクティブ / インアクティブ |  |
+| current / past | 現病 / 既往 | 診断、病歴の文脈では現在、過去よりもこちらが適切と考えられる |
+| diagnostic status: preliminary / working / established | 診断状況：予備的 / 暫定 / 最終 | 診断確度（疑い / 推定 / 確定）とは別軸。校正（2026-09-11）で「診断の段階」→「診断状況」、「初期」→「予備的」 |
+| diagnostic category: principal diagnosis / secondary diagnosis / complication | 診断区分：主病名 / 副病名 / 合併症 | Category＝区分（校正 2026-09-11） |
+| comorbid condition | 併存疾患 | |
+| occurrence: first occurrence / recurrence / relapsed | 発生区分：初発 / 再発 / 再燃 | recurrence＝再発、relapse＝再燃（腫瘍学の慣用） |
+| admission diagnosis | 入院時診断 | DRG 報告用 |
+| course label: acute / chronic / acute-on-chronic | 経過区分：急性 / 慢性 / 慢性疾患の急性増悪 | at0094 text に合わせた（校正 2026-09-11） |
+| resolution phase: resolved / resolving / not resolving / refuted | 治癒段階：治癒 / 回復中 / 未回復 / 否定 | at0083 text に合わせ「治癒段階」（校正 2026-09-11） |
+| remission status: in remission / not in remission | 寛解状態：寛解中 / 非寛解 | |
+| level of control: controlled / not controlled | コントロール状況：コントロール良好 / コントロール不良 | 校正（2026-09-11）で「コントロール状態」→「コントロール状況」 |
+| progression: improving / stable / worsening | 進行状況：改善 / 安定 / 悪化 | |
+| indeterminate | 判定不能 |  |
+| disorder category | 疾患区分 | 例：がん、精神保健および／または依存症、感染症、希少疾患 |
+| episode of care | ケアエピソード | |
+| DRG | DRG | 英字のまま |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -141,3 +160,4 @@
 | openEHR-EHR-SECTION.referral_details.v0 | 紹介状の詳細 | at0001 紹介依頼、at0002 詳細 |
 | openEHR-EHR-INSTRUCTION.service_request.v1 (1.1.2) | サービス依頼 | 緊急度の値：緊急／至急／通常 |
 | openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | プロブレム・診断 | 校正済み（2026-09-10）。重症度 軽症／中等症／重症、診断確度 疑い／推定／確定、at0046 状態 |
+| openEHR-EHR-CLUSTER.problem_qualifier.v2 (2.1.1) | プロブレム・診断の修飾子 | EVALUATION.problem_diagnosis の「状態」スロット用。値セットは共通語表の各行を参照 |

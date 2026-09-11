@@ -4,3 +4,4 @@ openEHR-EHR-EVALUATION.problem_diagnosis.v1	uploaded	1.7.4	https://ckm.openehr.o
 openEHR-EHR-EVALUATION.reason_for_encounter.v1	review	1.0.3		2026-09-10
 openEHR-EHR-INSTRUCTION.service_request.v1	review	1.1.2		2026-09-10
 openEHR-EHR-SECTION.referral_details.v0	review	0.0.1-alpha		2026-09-10
+openEHR-EHR-CLUSTER.problem_qualifier.v2	uploaded	2.1.1	https://ckm.openehr.org/ckm/archetypes/1013.1.6653	2026-09-11
