@@ -16,7 +16,7 @@
 - EVALUATION.family_history.v2（2.0.5-alpha、審査中）は、alpha 版への翻訳の扱いについて CKM 側（Discourse）の回答が出るまで着手しない。
 - INSTRUCTION.service_request.v1 は 1.1.3 公開後に差分翻訳する。
 
-## CKM との往復
+## status.tsv と CKM の審査状態
 
 - CKM は翻訳入り ADL のアップロードを受け付ける（元と同じファイル名 `<id>.adl` が必須）。build_uid / revision は CKM が管理する。
 - `status.tsv` は CKM の審査状態を自動では追わない。セッション開始時に `make status` を実行し、`uploaded` が残っていれば CKM で accepted になったかを人間に確認するよう促す。accepted なら `make set-status ID=<id> STATE=accepted CKM_URL=<url>` と Issue クローズを提案する（状態を付けるのは人間）。
