@@ -167,6 +167,9 @@
 | meta observation | メタ観察 | clinical_synopsis use |
 | report (document) | 報告書 | COMPOSITION.report |
 | List | List | 内部ノード名。訳さない |
+| ad hoc heading | 任意見出し | SECTION.adhoc 概念名（要確認。他候補：アドホック見出し）。テンプレートで改名される前提 |
+| section heading / section header | セクション見出し | |
+| renamed in a template | テンプレート内で名前を変更 | |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -180,3 +183,4 @@
 | openEHR-EHR-CLUSTER.problem_qualifier.v2 (2.1.1) | プロブレム・診断の修飾子 | EVALUATION.problem_diagnosis の「状態」スロット用。値セットは共通語表の各行を参照 |
 | openEHR-EHR-OBSERVATION.story.v1 (1.3.3) | 病歴 | 校正済み（2026-09-11）。at0004 病歴の記述、at0006 構造化された詳細記録、at0002 任意のイベント |
 | openEHR-EHR-EVALUATION.clinical_synopsis.v1 (1.0.5) | 臨床要約 | at0002 要約 |
+| openEHR-EHR-SECTION.adhoc.v1 (1.0.12) | 任意見出し | use の例：「任意見出し」→「診察所見」 |
