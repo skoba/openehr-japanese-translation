@@ -135,7 +135,7 @@
 | qualifier | 修飾子 | 単独で用語集を構成するものとして「修飾子」を用いることとする。用語集とは関わりなく資源言語の語句として診断名に付属して意味を加えるものは修飾語として区別する。 |
 | episodicity: new / ongoing / indeterminate | エピソード区分：新規 / 継続中 / 判定不能 | problem_qualifier |
 | active / inactive | アクティブ / インアクティブ |  |
-| current / past | 現症 / 既往 | 診断、病歴の文脈では現在、過去よりもこちらが適切と考えられる |
+| current / past | 現病 / 既往 | 診断、病歴の文脈では現在、過去よりもこちらが適切と考えられる |
 | diagnostic status: preliminary / working / established | 診断状況：予備的 / 暫定 / 最終 | 診断確度（疑い / 推定 / 確定）とは別軸。校正（2026-09-11）で「診断の段階」→「診断状況」、「初期」→「予備的」 |
 | diagnostic category: principal diagnosis / secondary diagnosis / complication | 診断区分：主病名 / 副病名 / 合併症 | Category＝区分（校正 2026-09-11） |
 | comorbid condition | 併存疾患 | |

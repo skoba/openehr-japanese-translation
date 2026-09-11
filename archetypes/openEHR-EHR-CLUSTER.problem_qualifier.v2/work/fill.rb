@@ -59,7 +59,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # The Active/Inactive and Current/Past data elements have similar clinical impact but represent slightly different semantics. Both are actively used in different clinical settings, but usually not together. If a Current/Past qualifier is recorded, then this data element is likely to be redundant. An exception where a condition can be current but inactive is asthma that is not causing acute symptoms.
-  ['term', 'at0003', 'comment'] => "「アクティブ/インアクティブ」と「現症/既往」のデータエレメントは、臨床的な影響は似ているが意味がわずかに異なる。どちらも異なる臨床現場で実際に使われているが、通常は一緒には使われない。「現症/既往」の修飾子が記録されている場合、このデータエレメントは冗長になる可能性が高い。現症ではあるがインアクティブという例外として、急性症状を起こしていない喘息がある。",
+  ['term', 'at0003', 'comment'] => "「アクティブ/インアクティブ」と「現病/既往」のデータエレメントは、臨床的な影響は似ているが意味がわずかに異なる。どちらも異なる臨床現場で実際に使われているが、通常は一緒には使われない。「現病/既往」の修飾子が記録されている場合、このデータエレメントは冗長になる可能性が高い。現病ではあるがインアクティブという例外として、急性症状を起こしていない喘息がある。",
 
   # CLUSTER > items/ELEMENT
   # Diagnostic status
@@ -118,15 +118,15 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Current/Past?
-  ['term', 'at0060', 'text'] => "現症/既往？",
+  ['term', 'at0060', 'text'] => "現病/既往？",
 
   # CLUSTER > items/ELEMENT
   # Category that supports division of problems and diagnoses into Current or Past problem lists.
-  ['term', 'at0060', 'description'] => "プロブレムと診断を「現症」と「既往」のプロブレムリストに分けることを支援する区分。",
+  ['term', 'at0060', 'description'] => "プロブレムと診断を「現病」と「既往」のプロブレムリストに分けることを支援する区分。",
 
   # CLUSTER > items/ELEMENT
   # The Current/Past and Active/Inactive data elements have similar clinical impact but represent slightly different semantics. Both are actively used in different clinical settings, but usually not together. If an Active/Inactive qualifier is recorded, then this data element is likely to be redundant. An exception where a condition can be current but inactive is asthma that is not causing acute symptoms.
-  ['term', 'at0060', 'comment'] => "「現症/既往」と「アクティブ/インアクティブ」のデータエレメントは、臨床的な影響は似ているが意味がわずかに異なる。どちらも異なる臨床現場で実際に使われているが、通常は一緒には使われない。「アクティブ/インアクティブ」の修飾子が記録されている場合、このデータエレメントは冗長になる可能性が高い。現症ではあるがインアクティブという例外として、急性症状を起こしていない喘息がある。",
+  ['term', 'at0060', 'comment'] => "「現病/既往」と「アクティブ/インアクティブ」のデータエレメントは、臨床的な影響は似ているが意味がわずかに異なる。どちらも異なる臨床現場で実際に使われているが、通常は一緒には使われない。「アクティブ/インアクティブ」の修飾子が記録されている場合、このデータエレメントは冗長になる可能性が高い。現病ではあるがインアクティブという例外として、急性症状を起こしていない喘息がある。",
 
   # Past
   ['term', 'at0061', 'text'] => "既往",
@@ -135,7 +135,7 @@ T = {
   ['term', 'at0061', 'description'] => "過去に発生した問題。",
 
   # Current
-  ['term', 'at0062', 'text'] => "現症",
+  ['term', 'at0062', 'text'] => "現病",
 
   # An issue occuring at present.
   ['term', 'at0062', 'description'] => "現在発生している問題。",
