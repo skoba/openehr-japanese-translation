@@ -43,7 +43,7 @@
 | targeted / untargeted (request) | 宛先指定あり / 宛先指定なし | |
 | Extension | Extension | 訳さない |
 | local context | ローカルな文脈 | |
-| reference models/formalisms | 参照モデル／形式体系 | |
+| reference models/formalisms | 参照モデルや形式手法 | problem_diagnosis 校正版（at0071 Extension description）に合わせた（2026-09-11、要確認） |
 | additional metadata | 追加メタデータ | |
 | Tree | Tree | 訳さない |
 | archetype | archetype | 英字のまま。「アーキタイプ」と書かない（problem_diagnosis 校正 2026-09-10 で統一。「本archetype」「CLUSTER archetype群」のように続ける） |
@@ -150,6 +150,17 @@
 | disorder category | 疾患区分 | 例：がん、精神保健および／または依存症、感染症、希少疾患 |
 | episode of care | ケアエピソード | |
 | DRG | DRG | 英字のまま |
+| Story/History | 病歴 | OBSERVATION.story 概念名。story 校正（2026-09-11）で「ストーリー・病歴」→「病歴」 |
+| story (narrative element) | 病歴の記述 | OBSERVATION.story at0004。対比文脈（story と history を並べるとき）の story は「語り」 |
+| clinical history | 病歴 | |
+| Event Series | Event Series | HISTORY の内部ノード名。Tree と同じく訳さない |
+| Any event | 任意のイベント | OBSERVATION の既定イベント名（要確認） |
+| structured detail | 構造化された詳細記録 | CLUSTER スロット。story 校正（2026-09-11）で「詳細記録」に揃えた |
+| personal health record | 個人健康記録 | PHR |
+| clinical questionnaire | 臨床質問票 | |
+| health event | 健康イベント | CLUSTER.health_event |
+| care-giver | 介護者 | carer と同じ |
+| narrative | 叙述 | narrative description＝叙述的な記述 |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -161,3 +172,4 @@
 | openEHR-EHR-INSTRUCTION.service_request.v1 (1.1.2) | サービス依頼 | 緊急度の値：緊急／至急／通常 |
 | openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | プロブレム・診断 | 校正済み（2026-09-10）。重症度 軽症／中等症／重症、診断確度 疑い／推定／確定、at0046 状態 |
 | openEHR-EHR-CLUSTER.problem_qualifier.v2 (2.1.1) | プロブレム・診断の修飾子 | EVALUATION.problem_diagnosis の「状態」スロット用。値セットは共通語表の各行を参照 |
+| openEHR-EHR-OBSERVATION.story.v1 (1.3.3) | 病歴 | 校正済み（2026-09-11）。at0004 病歴の記述、at0006 構造化された詳細記録、at0002 任意のイベント |
