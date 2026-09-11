@@ -8,3 +8,4 @@ openEHR-EHR-CLUSTER.problem_qualifier.v2	uploaded	2.1.1	https://ckm.openehr.org/
 openEHR-EHR-OBSERVATION.story.v1	review	1.3.3		2026-09-11
 openEHR-EHR-EVALUATION.clinical_synopsis.v1	review	1.0.5		2026-09-11
 openEHR-EHR-SECTION.adhoc.v1	review	1.0.12		2026-09-11
+openEHR-EHR-CLUSTER.symptom_sign.v2	review	2.1.4		2026-09-11

@@ -170,6 +170,26 @@
 | ad hoc heading | 任意見出し | SECTION.adhoc 概念名（要確認。他候補：アドホック見出し）。テンプレートで改名される前提 |
 | section heading / section header | セクション見出し | |
 | renamed in a template | テンプレート内で名前を変更 | |
+| symptom / sign / reported sign | 症状 / 徴候 / 報告された徴候 | CLUSTER.symptom_sign |
+| Symptom/Sign name | 症状・徴候の名称 | at0001 |
+| description (element) | 説明 | 叙述的な記述を入れる要素名（要確認。他候補：記述） |
+| pattern | パターン | symptom_sign at0003（要確認） |
+| character | 性状 | symptom_sign at0189（要確認） |
+| nadir | 最悪時 | symptom_sign at0200（要確認。他候補：ナディア） |
+| onset timing | 発症時期 | symptom_sign at0164（要確認） |
+| episode onset / episode duration | エピソードの発症日時 / エピソードの持続期間 | symptom_sign at0152 / at0028（要確認） |
+| previous episodes / number of previous episodes | 過去のエピソード / 過去のエピソードの回数 | symptom_sign at0146 / at0031 |
+| associated symptom/sign | 随伴症状・徴候 | symptom_sign at0063（要確認。他候補：関連する症状・徴候） |
+| factor / factor detail | 因子 / 因子の詳細 | symptom_sign |
+| modifying / precipitating / resolving factor | 修飾因子 / 誘発因子 / 寛解因子 | symptom_sign at0018 / at0165 / at0190（要確認。寛解因子は OPQRST の慣用） |
+| effect: relieves / no effect / worsens | 影響：軽減 / 影響なし / 増悪 | symptom_sign at0017（要確認。at0155 Impact も「影響」） |
+| progression (symptom): improving / unchanged / worsening / resolved | 進行状況：改善 / 不変 / 悪化 / 治癒 | symptom_sign at0180。Unchanged＝不変（qualifier の Stable＝安定 とは別語、要確認） |
+| severity category / severity rating | 重症度 / 重症度評価 | symptom_sign at0021 / at0198（要確認：重症度評価） |
+| resolution date/time | 治癒日時 | symptom_sign at0161（date/time of resolution＝治癒した日時 に揃える） |
+| time interval | 時間間隔 | symptom_sign at0171 / at0195 |
+| screening details (slot) | スクリーニングの詳細 | OBSERVATION.symptom_sign_screening |
+| VAS / NRS | VAS / NRS | 英字のまま |
+| heartburn / claudication | 胸やけ / 跛行 | 例示 |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -184,3 +204,4 @@
 | openEHR-EHR-OBSERVATION.story.v1 (1.3.3) | 病歴 | 校正済み（2026-09-11）。at0004 病歴の記述、at0006 構造化された詳細記録、at0002 任意のイベント |
 | openEHR-EHR-EVALUATION.clinical_synopsis.v1 (1.0.5) | 臨床要約 | at0002 要約 |
 | openEHR-EHR-SECTION.adhoc.v1 (1.0.12) | 任意見出し | use の例：「任意見出し」→「診察所見」 |
+| openEHR-EHR-CLUSTER.symptom_sign.v2 (2.1.4) | 症状・徴候 | story.v1 のスロット。エピソード区分・発生区分・重症度・進行状況の値は problem_qualifier / problem_diagnosis と同じ |
