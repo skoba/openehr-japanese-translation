@@ -16,7 +16,7 @@ T = {
   # - Some of these data elements are potentially directly conflicting if used simultaneously within the same context, for example it would not make sense to have an 'inactive' problem together with an Episode that is 'ongoing'. As such, these status qualifiers should be used with extreme care as they are variably applied in practice and interoperability cannot be assured unless usage guidelines are clearly defined within the clinical community in which the 'Problem/Diagnosis' and 'Problem/Diagnosis qualifier' archetype pair may be shared. 
   # 
   # Full DRG coding will require the DRG-related data elements from this archetype in combination with data elements from other archetypes.
-  ['description', '-', 'use'] => "記録時点、またはプロブレムや診断が記録される臨床的な文脈において追加の意味を持つ詳細情報を提供するために、固有の文脈や固有の時点への修飾子を記録する。その修飾子は、別の時点や別の臨床的な文脈では適切でないことがある。 \n\n本archetypeは、EVALUATION.problem_diagnosis archetypeの「状態」SLOT に含めて使うよう設計されている。EVALUATION.problem_diagnosis archetypeがあらゆる文脈で当てはまる情報をすべて保持するのに対し、本archetypeは使用文脈に依存する情報だけを記述する、という意図である。\n\n実装上の重要な注意： \n- これらの修飾子のいずれか、またはすべてを同じ文脈や同じ期間の中で使うことを意図したり示唆したりするものではない。通常のarchetype設計とは対照的に、本archetypeは、臨床実践の中でも非常に混沌とした領域にいくらかの単純な標準化を試みるため、よく使われる多数の修飾子を意図的に一か所に集めて設計されている。本archetypeに含まれるデータ要素が、多くの異なる、ときには互いに競合する概念を包含していることは認識している。これは主に、データ要素を1つか2つしか持たない修飾子archetypeが多数必要になるのを避けるためである。 \n- これらのデータ要素の一部は、同じ文脈の中で同時に使うと直接矛盾する可能性がある。例えば、「インアクティブ」のプロブレムに「継続中」のエピソードが同時に付くのは意味をなさない。したがって、これらの状態修飾子は実践の中でさまざまに適用されており、「プロブレム・診断」と「プロブレム・診断の修飾子」のarchetypeの組を共有しうる臨床コミュニティの中で使用指針が明確に定義されない限り相互運用性は保証できないため、細心の注意を払って使うこと。 \n\nDRG コーディングを完全に行うには、本archetypeの DRG 関連データ要素を他のarchetypeのデータ要素と組み合わせる必要がある。",
+  ['description', '-', 'use'] => "記録時点、またはプロブレムや診断が記録される臨床的な文脈において追加の意味を持つ詳細情報を提供するために、固有の文脈や固有の時点への修飾子を記録する。その修飾子は、別の時点や別の臨床的な文脈では適切でないことがある。 \n\n本archetypeは、EVALUATION.problem_diagnosis archetypeの「状態」SLOT に含めて使うよう設計されている。EVALUATION.problem_diagnosis archetypeがあらゆる文脈で当てはまる情報をすべて保持するのに対し、本archetypeは使用文脈に依存する情報だけを記述する、という意図である。\n\n実装上の重要な注意： \n- これらの修飾子のいずれか、またはすべてを同じ文脈や同じ期間の中で使うことを意図したり示唆したりするものではない。通常のarchetype設計とは対照的に、本archetypeは、臨床実践の中でも非常に混沌とした領域にいくらかの単純な標準化を試みるため、よく使われる多数の修飾子を意図的に一か所に集めて設計されている。本archetypeに含まれるデータエレメントが、多くの異なる、ときには互いに競合する概念を包含していることは認識している。これは主に、データエレメントを1つか2つしか持たない修飾子archetypeが多数必要になるのを避けるためである。 \n- これらのデータエレメントの一部は、同じ文脈の中で同時に使うと直接矛盾する可能性がある。例えば、「インアクティブ」のプロブレムに「継続中」のエピソードが同時に付くのは意味をなさない。したがって、これらの状態修飾子は実践の中でさまざまに適用されており、「プロブレム・診断」と「プロブレム・診断の修飾子」のarchetypeの組を共有しうる臨床コミュニティの中で使用指針が明確に定義されない限り相互運用性は保証できないため、細心の注意を払って使うこと。 \n\nDRG コーディングを完全に行うには、本archetypeの DRG 関連データエレメントを他のarchetypeのデータエレメントと組み合わせる必要がある。",
 
   # Not to be used to represent a differential diagnosis - use the archetype EVALUATION.differential_diagnosis for this purpose.
   # 
@@ -59,7 +59,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # The Active/Inactive and Current/Past data elements have similar clinical impact but represent slightly different semantics. Both are actively used in different clinical settings, but usually not together. If a Current/Past qualifier is recorded, then this data element is likely to be redundant. An exception where a condition can be current but inactive is asthma that is not causing acute symptoms.
-  ['term', 'at0003', 'comment'] => "「アクティブ/インアクティブ」と「現症/既往」のデータ要素は、臨床的な影響は似ているが意味がわずかに異なる。どちらも異なる臨床現場で実際に使われているが、通常は一緒には使われない。「現症/既往」の修飾子が記録されている場合、このデータ要素は冗長になる可能性が高い。現症ではあるがインアクティブという例外として、急性症状を起こしていない喘息がある。",
+  ['term', 'at0003', 'comment'] => "「アクティブ/インアクティブ」と「現症/既往」のデータエレメントは、臨床的な影響は似ているが意味がわずかに異なる。どちらも異なる臨床現場で実際に使われているが、通常は一緒には使われない。「現症/既往」の修飾子が記録されている場合、このデータエレメントは冗長になる可能性が高い。現症ではあるがインアクティブという例外として、急性症状を起こしていない喘息がある。",
 
   # CLUSTER > items/ELEMENT
   # Diagnostic status
@@ -72,7 +72,7 @@ T = {
   # CLUSTER > items/ELEMENT
   # The status is usually determined by a combination of the timing of diagnosis plus level of clinical certainty resulting from diagnostic tests and clinical evidence available. This data element and 'Diagnostic certainty' in EVALUATION.problem_diagnosis are two important axes of the diagnostic process, and valid combinations will need to be presented by software that exposes both data elements, so it is not possible for users to select conflicting combinations. 
   # Preliminary or working diagnoses are intended to represent the single most likely choice out of all differential diagnosis options.
-  ['term', 'at0004', 'comment'] => "この状況は通常、診断の時期と、実施した臨床検査および得られている臨床的根拠から導かれる臨床的確度の水準との組み合わせで決まる。このデータ要素と EVALUATION.problem_diagnosis の「診断確度」は診断プロセスの2つの重要な軸であり、両方のデータ要素を提示するソフトウェアは、利用者が矛盾する組み合わせを選べないように、妥当な組み合わせを提示する必要がある。 \n予備的診断または暫定診断は、すべての鑑別診断の選択肢の中で最も可能性の高い単一の選択を表すことを意図している。",
+  ['term', 'at0004', 'comment'] => "この状況は通常、診断の時期と、実施した臨床検査および得られている臨床的根拠から導かれる臨床的確度の水準との組み合わせで決まる。このデータエレメントと EVALUATION.problem_diagnosis の「診断確度」は診断プロセスの2つの重要な軸であり、両方のデータエレメントを提示するソフトウェアは、利用者が矛盾する組み合わせを選べないように、妥当な組み合わせを提示する必要がある。 \n予備的診断または暫定診断は、すべての鑑別診断の選択肢の中で最も可能性の高い単一の選択を表すことを意図している。",
 
   # Preliminary
   ['term', 'at0016', 'text'] => "予備的",
@@ -126,7 +126,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # The Current/Past and Active/Inactive data elements have similar clinical impact but represent slightly different semantics. Both are actively used in different clinical settings, but usually not together. If an Active/Inactive qualifier is recorded, then this data element is likely to be redundant. An exception where a condition can be current but inactive is asthma that is not causing acute symptoms.
-  ['term', 'at0060', 'comment'] => "「現症/既往」と「アクティブ/インアクティブ」のデータ要素は、臨床的な影響は似ているが意味がわずかに異なる。どちらも異なる臨床現場で実際に使われているが、通常は一緒には使われない。「アクティブ/インアクティブ」の修飾子が記録されている場合、このデータ要素は冗長になる可能性が高い。現症ではあるがインアクティブという例外として、急性症状を起こしていない喘息がある。",
+  ['term', 'at0060', 'comment'] => "「現症/既往」と「アクティブ/インアクティブ」のデータエレメントは、臨床的な影響は似ているが意味がわずかに異なる。どちらも異なる臨床現場で実際に使われているが、通常は一緒には使われない。「アクティブ/インアクティブ」の修飾子が記録されている場合、このデータエレメントは冗長になる可能性が高い。現症ではあるがインアクティブという例外として、急性症状を起こしていない喘息がある。",
 
   # Past
   ['term', 'at0061', 'text'] => "既往",
@@ -142,16 +142,16 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Diagnostic category
-  ['term', 'at0063', 'text'] => "診断カテゴリ",
+  ['term', 'at0063', 'text'] => "診断区分",
 
   # CLUSTER > items/ELEMENT
   # Category of the problem or diagnosis within a specified episode of care and/or local care context.
-  ['term', 'at0063', 'description'] => "特定のケアエピソードおよび／またはローカルなケアの文脈における、プロブレムまたは診断のカテゴリ。",
+  ['term', 'at0063', 'description'] => "特定のケアエピソードおよび／またはローカルなケアの文脈における、プロブレムまたは診断の区分。",
 
   # CLUSTER > items/ELEMENT
   # This data element contains a value set commonly used in diagnostic categorisation. In episodic care contexts (commonly secondary care) it is common to categorise/organise diagnoses according to their relationship to the principal diagnosis being addressed during that episode of care. These categories may also be used for clinical coding, reporting and billing purposes. In some countries the diagnostic category may be known as a DRG.
   #  In addition, the free text choice permits use of other local value sets, as required.
-  ['term', 'at0063', 'comment'] => "このデータ要素は、診断の分類でよく使われる値セットを含む。エピソード型のケアの文脈（一般には二次医療）では、そのケアエピソードで扱われる主病名との関係に従って診断を分類・整理するのが一般的である。これらのカテゴリは、臨床コーディング、報告、請求の目的にも使われることがある。国によっては、診断カテゴリは DRG として知られている場合がある。\n さらに、自由記述の選択肢により、必要に応じて他のローカルな値セットも使用できる。",
+  ['term', 'at0063', 'comment'] => "このデータエレメントは、診断の分類でよく使われる値セットを含む。エピソード型のケアの文脈（一般には二次医療）では、そのケアエピソードで扱われる主病名との関係に従って診断を分類・整理するのが一般的である。これらの区分は、臨床コーディング、報告、請求の目的にも使われることがある。国によっては、診断区分は DRG として知られている場合がある。\n さらに、自由記述の選択肢により、必要に応じて他のローカルな値セットも使用できる。",
 
   # Principal diagnosis
   ['term', 'at0064', 'text'] => "主病名",
@@ -181,7 +181,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # This data element can be an additional qualifier to the 'New' value in the 'Episodicity' value set, that is a condition such as asthma can have recurring new episodes that have periods of resolution in between. However it can be important to identify the first ever episode of asthma from all of the other episodes.
-  ['term', 'at0071', 'comment'] => "このデータ要素は、「エピソード区分」の値セットの「新規」に対する追加の修飾子になりうる。すなわち、喘息のような病態は、間に治癒している期間を挟んで新規のエピソードを繰り返すことがある。しかし、喘息の最初のエピソードを他のすべてのエピソードから識別することが重要な場合がある。",
+  ['term', 'at0071', 'comment'] => "このデータエレメントは、「エピソード区分」の値セットの「新規」に対する追加の修飾子になりうる。すなわち、喘息のような病態は、間に治癒している期間を挟んで新規のエピソードを繰り返すことがある。しかし、喘息の最初のエピソードを他のすべてのエピソードから識別することが重要な場合がある。",
 
   # CLUSTER > items/ELEMENT
   # Admission diagnosis?
@@ -193,7 +193,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Record as True or 'Yes' if the problem or diagnosis was present on admission. This data element is a requirement from DRG reporting in some countries.
-  ['term', 'at0073', 'comment'] => "入院時にそのプロブレムまたは診断が存在していた場合は True または「はい」と記録する。このデータ要素は、国によっては DRG 報告の要件である。",
+  ['term', 'at0073', 'comment'] => "入院時にそのプロブレムまたは診断が存在していた場合は True または「はい」と記録する。このデータエレメントは、国によっては DRG 報告の要件である。",
 
   # Complication
   ['term', 'at0076', 'text'] => "合併症",
@@ -413,7 +413,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Disorder category
-  ['term', 'at0111', 'text'] => "疾患カテゴリ",
+  ['term', 'at0111', 'text'] => "疾患区分",
 
   # CLUSTER > items/ELEMENT
   # A high‑level grouping of the problem or diagnosis.
@@ -430,7 +430,7 @@ T = {
 NOTES = {
   ['term', 'at0064', 'text'] => "日本では保険上の取り扱いもあり、主診断や主要病名というよりも主病名が一般的と考える。",
   ['term', 'at0071', 'text'] => "要確認: 「発生区分」を採用（他候補: 発生、出現）",
-  ['term', 'at0111', 'text'] => "要確認: 「疾患カテゴリ」を採用（他候補: 疾患区分）。例示の Mental health and/or addiction は「精神保健および／または依存症」",
+  ['term', 'at0111', 'text'] => "校正（2026-09-11）で「疾患区分」に決定（Category は断りがなければ「区分」）。例示の Mental health and/or addiction は「精神保健および／または依存症」",
 }.freeze
 
 src, dst = ARGV
