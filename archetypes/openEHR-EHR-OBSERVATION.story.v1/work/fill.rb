@@ -18,7 +18,7 @@ T = {
   # - as a container archetype to enable recording of a detailed structured history by inclusion of relevant CLUSTER archetypes within the 'Detail' SLOT. For example: CLUSTER.symptom, CLUSTER.issue or CLUSTER.health_event archetypes can be appropriately used in this SLOT.
   # 
   # Use to incorporate the narrative descriptions of clinical history captured from existing or legacy clinical systems into an archetyped format, using the 'Story' text data element.
-  ['description', '-', 'use'] => "ケア対象者の視点からの、健康に関する主観的な観察や印象についての記述を記録するために用いる。 \n\n医療実務の文脈で臨床医が記録する場合、病歴は、本人、親、介護者、またはその他の関係者から報告された病歴を捉えるために使える。本人が記録する場合は、症状や健康上の経験についての本人が語る「病歴」の記述として使え、医療従事者と共有したり、本人の個人健康記録に残したりするために用いることができる。\n\n用途：\n- 単純な叙述を記録する；および／または \n- 「詳細」SLOT に関連する CLUSTER archetypeを含めることで、詳細な構造化された病歴を記録できるようにするコンテナarchetypeとして。例：CLUSTER.symptom、CLUSTER.issue、CLUSTER.health_event の各archetypeをこの SLOT で適切に使用できる。\n\n既存または旧来の臨床システムから取り込んだ病歴の叙述的な記述を、Storyテキストデータエレメントを用いて archetype化された形式に組み込むために用いる。",
+  ['description', '-', 'use'] => "ケア対象者の視点からの、健康に関する主観的な観察や印象についての記述を記録するために用いる。 \n\n医療実務の文脈で臨床医が記録する場合、病歴は、本人、親、介護者、またはその他の関係者から報告された病歴を捉えるために使える。本人が記録する場合は、症状や健康上の経験についての本人が語る「病歴」の記述として使え、医療従事者と共有したり、本人の個人健康記録に残したりするために用いることができる。\n\n用途：\n- 単純な叙述を記録する；および／または \n- 「詳細」SLOT に関連する CLUSTER archetypeを含めることで、詳細な構造化された病歴を記録できるようにするコンテナarchetypeとして。例：CLUSTER.symptom、CLUSTER.issue、CLUSTER.health_event の各archetypeをこの SLOT で適切に使用できる。\n\n既存または旧来の臨床システムから取り込んだ病歴の叙述的な記述を、「病歴の記述」（Story）テキストデータエレメントを用いて archetype化された形式に組み込むために用いる。",
 
   # Not to be used to record formal assessments by clinicians which would usually be recorded using the EVALUATION class of archetypes.
   ['description', '-', 'misuse'] => "臨床医による正式な評価を記録するために用いてはならない。それらは通常、EVALUATION クラスのarchetypeを用いて記録する。",
@@ -35,7 +35,7 @@ T = {
 
   # OBSERVATION
   # The subjective clinical history of the subject of care as recorded directly by the subject, or reported to a clinician by the subject or a carer.
-  ['term', 'at0000', 'description'] => "ケア対象者の主観的な語りで、本人が直接記録したもの、または本人や介護者から臨床医に報告されたもの。",
+  ['term', 'at0000', 'description'] => "ケア対象者の主観的な病歴で、本人が直接記録したもの、または本人や介護者から臨床医に報告されたもの。",
 
   # OBSERVATION > data/HISTORY
   # Event Series
@@ -67,7 +67,7 @@ T = {
 
   # OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT
   # Narrative description of the story or clinical history for the subject of care.
-  ['term', 'at0004', 'description'] => "ケア対象者が語る病歴、または客観的記録に基づく病歴の叙述的な記述。",
+  ['term', 'at0004', 'description'] => "ケア対象者の語り、または臨床家が聴取した病歴の叙述的な記述。",
 
   # OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/CLUSTER
   # Structured detail
@@ -75,7 +75,7 @@ T = {
 
   # OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/CLUSTER
   # Structured detail about the individual's story or patient's history.
-  ['term', 'at0006', 'description'] => "本人の語りまたは客観的記録に基づく病歴についての構造化された詳細記録。",
+  ['term', 'at0006', 'description'] => "本人の語りまたは臨床家が聴取した病歴についての構造化された詳細記録。",
 
   # OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/CLUSTER
   # For example: a specific symptom such as nausea or pain; an event such as a fall off a bicycle; or an issue such as a desire to quit using tobacco.
