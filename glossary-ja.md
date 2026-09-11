@@ -131,21 +131,21 @@
 | exclusion | 除外 | |
 | Common Terminology Criteria for Adverse Events | 有害事象共通用語規準（CTCAE） | JCOG 訳 |
 | Guillain-Barre Syndrome / acute motor axonal neuropathy | ギラン・バレー症候群 / 急性運動性軸索型ニューロパチー | |
-| qualifier | 修飾子 | problem_qualifier 概念名。problem_diagnosis 校正版の comment には「修飾語」も残る（要確認） |
+| qualifier | 修飾子 | 単独で用語集を構成するものとして「修飾子」を用いることとする。用語集とは関わりなく資源言語の語句として診断名に付属して意味を加えるものは修飾語として区別する。 |
 | episodicity: new / ongoing / indeterminate | エピソード区分：新規 / 継続中 / 判定不能 | problem_qualifier |
-| active / inactive | 活動性 / 非活動性 | 要確認（他候補：アクティブ / 非アクティブ） |
-| current / past | 現在 / 過去 | |
-| diagnostic status: preliminary / working / established | 診断の段階：初期 / 暫定 / 最終 | 診断確度（疑い / 推定 / 確定）とは別軸なので「確定」を避けた（要確認） |
-| diagnostic category: principal diagnosis / secondary diagnosis / complication | 診断カテゴリ：主診断 / 副診断 / 合併症 | 「主傷病名」は使わない（要確認） |
+| active / inactive | アクティブ / インアクティブ |  |
+| current / past | 現症 / 既往 | 診断、病歴の文脈では現在、過去よりもこちらが適切と考えられる |
+| diagnostic status: preliminary / working / established | 診断状況：予備的 / 暫定 / 最終 | 診断確度（疑い / 推定 / 確定）とは別軸。校正（2026-09-11）で「診断の段階」→「診断状況」、「初期」→「予備的」 |
+| diagnostic category: principal diagnosis / secondary diagnosis / complication | 診断カテゴリ：主病名 / 副病名 / 合併症 |  |
 | comorbid condition | 併存疾患 | |
 | occurrence: first occurrence / recurrence / relapsed | 発生区分：初発 / 再発 / 再燃 | recurrence＝再発、relapse＝再燃（腫瘍学の慣用） |
 | admission diagnosis | 入院時診断 | DRG 報告用 |
-| course label: acute / chronic / acute-on-chronic | 経過区分：急性 / 慢性 / 慢性の急性増悪 | 要確認 |
-| resolution phase: resolved / resolving / not resolving / refuted | 治癒の段階：治癒 / 回復中 / 未回復 / 否定 | resolution＝治癒に合わせる（要確認） |
+| course label: acute / chronic / acute-on-chronic | 経過区分：急性 / 慢性 / 慢性疾患の急性増悪 | at0094 text に合わせた（校正 2026-09-11） |
+| resolution phase: resolved / resolving / not resolving / refuted | 治癒段階：治癒 / 回復中 / 未回復 / 否定 | at0083 text に合わせ「治癒段階」（校正 2026-09-11） |
 | remission status: in remission / not in remission | 寛解状態：寛解中 / 非寛解 | |
-| level of control: controlled / not controlled | コントロール状態：コントロール良好 / コントロール不良 | 要確認 |
+| level of control: controlled / not controlled | コントロール状況：コントロール良好 / コントロール不良 | 校正（2026-09-11）で「コントロール状態」→「コントロール状況」 |
 | progression: improving / stable / worsening | 進行状況：改善 / 安定 / 悪化 | |
-| indeterminate | 判定不能 | 要確認（他候補：不明） |
+| indeterminate | 判定不能 |  |
 | disorder category | 疾患カテゴリ | 例：がん、精神保健および／または依存症、感染症、希少疾患 |
 | episode of care | ケアエピソード | |
 | DRG | DRG | 英字のまま |
