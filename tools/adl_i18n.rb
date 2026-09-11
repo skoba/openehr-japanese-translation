@@ -6,7 +6,7 @@
 #   ruby adl_i18n.rb extract  ARCHETYPE.adl [--lang en] [--target ja] > terms.tsv
 #   ruby adl_i18n.rb inject   ARCHETYPE.adl terms.tsv --target ja \
 #          --author "Name" --organisation "Org" --email "mail" [--accreditation "..."] \
-#          -o ARCHETYPE.ja.adl
+#          [--merge] -o ARCHETYPE.ja.adl
 #   ruby adl_i18n.rb check    ARCHETYPE.adl [--target ja]
 #   ruby adl_i18n.rb diff     MINE.tsv CKM_EXPORT.adl [--target ja] > edits.tsv
 #
@@ -17,8 +17,17 @@
 #          ADL text (translations, description.details, ontology.term_definitions,
 #          ontology.constraint_definitions) without touching the definition
 #          section, then re-parses the result and runs `check`.
+#          With --merge, an ADL that already carries a target-language block
+#          (e.g. a CKM archetype with a partial ja translation) is updated in
+#          place: only values that are still CKM placeholders (`*...(en)`) are
+#          replaced from the TSV, fields/codes absent from the existing block are
+#          added, and everything else - existing translations, the translator
+#          block in `translations` - is left untouched.  Without --merge an
+#          existing target block is an error.
 # check:   asserts that every code present in the source language exists in the
-#          target language (and vice versa) and that no field is left untranslated.
+#          target language (and vice versa), that no field is left untranslated
+#          or still a `*...(en)` placeholder, and that each section holds at
+#          most one target-language block.
 # diff:    compares the target column of a TSV (the draft that was handed over)
 #          with the target-language text found in an ADL exported from CKM after
 #          editing, and prints only the rows whose text was changed (draft vs CKM).
@@ -134,7 +143,7 @@ module AdlI18n
   end
 
   # ----------------------------------------------------------------- inject
-  def inject(path, tsv, target:, author:, out:)
+  def inject(path, tsv, target:, author:, out:, merge: false)
     rows = read_tsv(tsv)
     # an empty source (e.g. misuse = <"">) legitimately stays empty
     missing = rows.select { |r| r['target'].to_s.strip.empty? && !r['source'].to_s.strip.empty? }
@@ -150,10 +159,21 @@ module AdlI18n
     lines = src.split(/\r?\n/, -1)
     rows.each { |r| r['target'] = r['target'].gsub("\r\n", "\n").gsub("\n", eol) }
 
-    lines = inject_translation_header(lines, target, author)
-    lines = inject_details(lines, target, rows.select { |r| r['section'] == 'description' })
-    lines = inject_terms(lines, 'term_definitions', target, rows.select { |r| r['section'] == 'term' })
-    lines = inject_terms(lines, 'constraint_definitions', target, rows.select { |r| r['section'] == 'constraint' })
+    details = rows.select { |r| r['section'] == 'description' }
+    terms = rows.select { |r| r['section'] == 'term' }
+    constraints = rows.select { |r| r['section'] == 'constraint' }
+    if merge
+      # keep an existing translator block; only add one when the language is new
+      lines = inject_translation_header(lines, target, author) unless lang_block_range(lines, 'translations', target)
+      lines = merge_details(lines, target, details)
+      lines = merge_terms(lines, 'term_definitions', target, terms)
+      lines = merge_terms(lines, 'constraint_definitions', target, constraints)
+    else
+      lines = inject_translation_header(lines, target, author)
+      lines = inject_details(lines, target, details)
+      lines = inject_terms(lines, 'term_definitions', target, terms)
+      lines = inject_terms(lines, 'constraint_definitions', target, constraints)
+    end
 
     File.write(out, bom + lines.join(eol), encoding: 'UTF-8')
     out
@@ -232,6 +252,95 @@ module AdlI18n
     open_idx + 1 + j
   end
 
+  # ------------------------------------------------------------------ merge
+  # [open, close] line indexes of the `["lang"] = <` block inside the top-level
+  # +section+ (translations / details / term_definitions / constraint_definitions),
+  # or nil when the section or the language block is absent.
+  def lang_block_range(lines, section, lang)
+    i = lines.index { |l| l =~ /\A\t#{section} = <\s*\z/ } or return nil
+    close = find_close(lines, i, "\t")
+    o = (i...close).find { |x| lines[x] =~ /\A\t\t\["#{lang}"\] = </ } or return nil
+    [o, find_close(lines, o, "\t\t")]
+  end
+
+  # Last line index of the quoted value that starts on line +k+ (values may
+  # span several lines; a value line ends with `">`).
+  def value_end(lines, k)
+    return k if lines[k] =~ /">\z/
+    j = lines[(k + 1)..].index { |l| l =~ /">\z/ }
+    raise "unterminated value at line #{k + 1}" unless j
+    k + 1 + j
+  end
+
+  # CKM writes untranslated values as `"*<source text>(en)"`.
+  def placeholder_value?(text)
+    text.match?(/"\*[^"]*\)"/)
+  end
+
+  def keywords_line(joined)
+    kws = joined.split('|').map(&:strip).reject(&:empty?)
+    "\t\t\tkeywords = <#{kws.map { |k| quote(k) }.join(', ')}>"
+  end
+
+  # Update the existing details[lang] block: replace placeholder fields, add
+  # missing ones, keep everything else.  Falls back to inject_details when the
+  # block does not exist yet.
+  def merge_details(lines, lang, rows)
+    return lines if rows.empty?
+    return inject_details(lines, lang, rows) unless lang_block_range(lines, 'details', lang)
+    by = rows.to_h { |r| [r['field'], r['target']] }
+    DETAIL_FIELDS.each do |f|
+      next unless by.key?(f)
+      new_line = f == 'keywords' ? keywords_line(by[f]) : "\t\t\t#{f} = <#{quote(by[f])}>"
+      o, c = lang_block_range(lines, 'details', lang)
+      k = ((o + 1)...c).find { |x| lines[x] =~ /\A\t\t\t#{f} = </ }
+      if k
+        j = value_end(lines, k)
+        next unless placeholder_value?(lines[k..j].join("\n"))
+        lines = lines[0...k] + [new_line] + lines[(j + 1)..]
+      else
+        lines = lines[0...c] + [new_line] + lines[c..]
+      end
+    end
+    lines
+  end
+
+  # Update the existing <section>[lang] block item by item: replace placeholder
+  # fields, add missing fields, append missing codes.  Falls back to
+  # inject_terms when the block does not exist yet.
+  def merge_terms(lines, section, lang, rows)
+    return lines if rows.empty?
+    return inject_terms(lines, section, lang, rows) unless lang_block_range(lines, section, lang)
+    rows.group_by { |r| r['code'] }.each do |code, rs|
+      by = rs.to_h { |r| [r['field'], r['target']] }
+      o, c = lang_block_range(lines, section, lang)
+      k = ((o + 1)...c).find { |x| lines[x] == "\t\t\t\t[\"#{code}\"] = <" }
+      if k
+        TERM_FIELDS.each do |f|
+          next unless by.key?(f)
+          new_line = "\t\t\t\t\t#{f} = <#{quote(by[f])}>"
+          ic = find_close(lines, k, "\t\t\t\t")
+          fk = ((k + 1)...ic).find { |x| lines[x] =~ /\A\t\t\t\t\t#{f} = </ }
+          if fk
+            j = value_end(lines, fk)
+            next unless placeholder_value?(lines[fk..j].join("\n"))
+            lines = lines[0...fk] + [new_line] + lines[(j + 1)..]
+          else
+            lines = lines[0...ic] + [new_line] + lines[ic..]
+          end
+        end
+      else
+        items_open = ((o + 1)...c).find { |x| lines[x] == "\t\t\titems = <" } or raise "#{section}[#{lang}] has no items block"
+        items_close = find_close(lines, items_open, "\t\t\t")
+        block = ["\t\t\t\t[\"#{code}\"] = <"]
+        TERM_FIELDS.each { |f| block << "\t\t\t\t\t#{f} = <#{quote(by[f])}>" if by.key?(f) }
+        block << "\t\t\t\t>"
+        lines = lines[0...items_close] + block + lines[items_close..]
+      end
+    end
+    lines
+  end
+
   # ------------------------------------------------------------------- diff
   # rows whose target text differs between a draft TSV and an ADL that carries
   # the reviewed translation (e.g. downloaded from CKM after editing there).
@@ -262,6 +371,17 @@ module AdlI18n
     ok = true
     report = ->(msg) { io.puts "  #{msg}"; ok = false }
 
+    # text-level: each section may hold at most one [target] block (a second
+    # one would be silently shadowed by parsers and rejected by CKM)
+    text = File.read(path, encoding: 'UTF-8').delete_prefix([0xFEFF].pack('U'))
+    tl = text.split(/\r?\n/, -1)
+    %w[translations details term_definitions constraint_definitions].each do |sec|
+      i = tl.index { |l| l =~ /\A\t#{sec} = <\s*\z/ } or next
+      c = find_close(tl, i, "\t")
+      n = tl[i...c].count { |l| l =~ /\A\t\t\["#{target}"\] = </ }
+      report.call("#{sec}: #{n} [#{target}] blocks (expected 1)") if n > 1
+    end
+
     trans = a.translations || {}
     report.call("translations[#{target}] missing") unless trans.key?(target)
     details = a.description.details
@@ -271,6 +391,10 @@ module AdlI18n
         sv = details[src]&.send(f)
         next if sv.nil? || sv.strip.empty?
         report.call("details[#{target}].#{f} empty") if v.nil? || v.strip.empty?
+        report.call("details[#{target}].#{f} still placeholder: #{v}") if v.to_s.start_with?('*') && v.to_s.end_with?(')')
+      end
+      Array(details[target].keywords).each do |kw|
+        report.call("details[#{target}].keywords still placeholder: #{kw}") if kw.to_s.start_with?('*') && kw.to_s.end_with?(')')
       end
     else
       report.call("description.details[#{target}] missing")
@@ -314,6 +438,7 @@ if $PROGRAM_NAME == __FILE__
     o.on('--email MAIL') { |v| opts[:author]['email'] = v }
     o.on('--accreditation ACC') { |v| opts[:author]['accreditation'] = v }
     o.on('-o', '--out FILE') { |v| opts[:out] = v }
+    o.on('--merge', 'update an existing target-language block in place (replace *...(en) placeholders only)') { opts[:merge] = true }
   end
   args = parser.parse(ARGV)
 
@@ -322,7 +447,7 @@ if $PROGRAM_NAME == __FILE__
     AdlI18n.extract(args[0], src: opts[:src], target: opts[:target])
   when 'inject'
     out = opts[:out] || args[0].sub(/\.adl\z/, ".#{opts[:target]}.adl")
-    AdlI18n.inject(args[0], args[1], target: opts[:target], author: opts[:author], out: out)
+    AdlI18n.inject(args[0], args[1], target: opts[:target], author: opts[:author], out: out, merge: opts[:merge] || false)
     $stderr.puts "wrote #{out}"
     exit(AdlI18n.check(out, src: opts[:src], target: opts[:target]) ? 0 : 1)
   when 'check'

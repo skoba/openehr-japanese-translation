@@ -1,5 +1,5 @@
 # make new ADL=path/to/openEHR-EHR-XXX.yyy.v1.adl   -> archetypes/<id>/source/<id>.adl, work/<id>.tsv, work/fill.rb skeleton; state in_progress
-# make build ID=openEHR-EHR-XXX.yyy.v1                -> work/fill.rb -> work/<id>.ja.tsv -> inject -> upload/<id>.adl (+ check); state review
+# make build ID=openEHR-EHR-XXX.yyy.v1                -> work/fill.rb -> work/<id>.ja.tsv -> inject -> upload/<id>.adl (+ check); state review. Passes --merge when source/<id>.adl already has a ["ja"] block
 # make import ID=openEHR-EHR-XXX.yyy.v1               -> work/<id>.ja.tsv (proofread in place) -> work/fill.rb, then build
 # make check                                          -> check every archetypes/*/upload/*.adl
 # make status                                         -> list status.tsv (alias: make list)
@@ -29,7 +29,8 @@ build:
 	@test -n "$(ID)" || (echo "usage: make build ID=openEHR-EHR-..."; exit 2)
 	@d=archetypes/$(ID); mkdir -p $$d/upload; \
 	 $(RUBY) $$d/work/fill.rb $$d/work/$(ID).tsv $$d/work/$(ID).ja.tsv && \
-	 $(TOOL) inject $$d/source/$(ID).adl $$d/work/$(ID).ja.tsv --target ja \
+	 m=$$(grep -q '\["ja"\] = <' $$d/source/$(ID).adl && echo --merge); \
+	 $(TOOL) inject $$d/source/$(ID).adl $$d/work/$(ID).ja.tsv --target ja $$m \
 	   --author "$(AUTHOR)" --organisation "$(ORG)" --email "$(EMAIL)" -o $$d/upload/$(ID).adl && \
 	 $(STATUS) set $(ID) review
 
