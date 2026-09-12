@@ -77,10 +77,10 @@ openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0161	description	CLUSTER > items/ELEM
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0161	comment	CLUSTER > items/ELEMENT	If 'Date/time of onset' and 'Duration' are used in systems, this data element may be calculated, or alternatively, considered redundant. While partial dates are permitted, the exact date and time of resolution can be recorded, if appropriate.	システムで「発症日時」と「持続期間」を使う場合、このデータエレメントは計算で求められるか、あるいは冗長とみられることがある。部分的な日付も許容されるが、適切であれば消失の正確な日時を記録できる。	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0163	text	CLUSTER > items/ELEMENT	Comment	コメント	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0163	description	CLUSTER > items/ELEMENT	Additional narrative about the symptom or sign not captured in other fields.	他の項目では捉えられない、症状または徴候についての追加の記述。	
-openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0164	text	CLUSTER > items/ELEMENT	Onset timing	発症時期	要確認: 「発症時期」（指示の候補。他候補: 発症のタイミング）
+openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0164	text	CLUSTER > items/ELEMENT	Onset timing	発症時期	校正（2026-09-12）で確定: 「発症時期」（指示の候補。他候補: 発症のタイミング）
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0164	description	CLUSTER > items/ELEMENT	Timing of the onset and development of the symptom or sign.	症状または徴候の発症と進展のタイミング。	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0164	comment	CLUSTER > items/ELEMENT	The type of the onset can be coded with a terminology, if desired. For example: gradual; or sudden.	発症の型は、必要に応じて用語集によりコード化できる。例：緩徐；または突発。	
-openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0165	text	CLUSTER > items/CLUSTER	Precipitating factor	誘発因子	要確認: Precipitating factor＝「誘発因子」
+openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0165	text	CLUSTER > items/CLUSTER	Precipitating factor	誘発因子	校正（2026-09-12）で確定: Precipitating factor＝「誘発因子」
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0165	description	CLUSTER > items/CLUSTER	Details about specified factors that are associated with the precipitation of the symptom or sign.	症状または徴候の誘発に関連する特定の因子についての詳細。	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0165	comment	CLUSTER > items/CLUSTER	For example: lying down leads to heartburn; or walking up a hill leads to claudication.	例：横になると胸やけが生じる；または坂を上ると跛行が生じる。	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0170	text	CLUSTER > items/CLUSTER > items/ELEMENT	Factor	因子	
@@ -101,7 +101,7 @@ openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0180	description	CLUSTER > items/ELEM
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0180	comment	CLUSTER > items/ELEMENT	Occurrences of this data element are set to 0..* to allow multiple types of progression to be separated out in a template if desired - for example, severity or frequency. The Text data type is added as an option, to support other value sets than the ones included in the archetype.	このデータエレメントの出現回数は 0..* に設定されており、必要に応じてテンプレートで複数の種類の進行状況（例えば重症度や頻度）を分けて表せる。archetypeに含まれる値セット以外の値セットに対応するため、テキストデータ型が選択肢として追加されている。	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0181	text		Improving	改善	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0181	description		The severity of the symptom or sign has improved overall during this episode.	このエピソードの間に、症状または徴候の重症度は全体として改善した。	
-openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0182	text		Unchanged	不変	要確認: Unchanged＝「不変」（qualifier の Stable＝安定 とは別語）
+openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0182	text		Unchanged	不変	校正（2026-09-12）で確定: Unchanged＝「不変」（qualifier の Stable＝安定 とは別語）
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0182	description		The severity of the symptom or sign has not changed overall during this episode.	このエピソードの間に、症状または徴候の重症度は全体として変化していない。	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0183	text		Worsening	悪化	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0183	description		The severity of the symptom or sign has worsened overall during this episode.	このエピソードの間に、症状または徴候の重症度は全体として悪化した。	
@@ -115,10 +115,10 @@ openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0187	text		First occurrence	初発
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0187	description		This is the first ever occurrence of this symptom or sign.	この症状または徴候の、初めての発生である。	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0188	text		Recurrence	再発	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0188	description		New occurrence of the same symptom or sign after a previous episode was resolved.	以前のエピソードが消失した後の、同じ症状または徴候の新たな発生。	
-openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0189	text	CLUSTER > items/ELEMENT	Character	性状	要確認: 「性状」（指示の候補）
+openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0189	text	CLUSTER > items/ELEMENT	Character	性状	校正（2026-09-12）で確定: 「性状」（指示の候補）
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0189	description	CLUSTER > items/ELEMENT	Word or short phrase describing the nature of the symptom or sign.	症状または徴候の性質を表す語または短い句。	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0189	comment	CLUSTER > items/ELEMENT	For example: pain could be described as 'gnawing', 'burning', or 'like an electric shock'; a headache could be 'throbbing' or 'constant'. Coding with an external terminology is preferred, where possible.	例：疼痛は「うずくような」「灼けるような」「電気が走るような」と記述されうる；頭痛は「拍動性」または「持続性」でありうる。可能であれば、外部用語集によりコード化することが望ましい。	
-openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0190	text	CLUSTER > items/CLUSTER	Resolving factor	寛解因子	要確認: Resolving factor＝「寛解因子」を採用（OPQRST の増悪・寛解因子の慣用。他候補: 解消因子、治癒因子）。description では resolution＝消失
+openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0190	text	CLUSTER > items/CLUSTER	Resolving factor	寛解因子	校正（2026-09-12）で確定: Resolving factor＝「寛解因子」を採用（OPQRST の増悪・寛解因子の慣用。他候補: 解消因子、治癒因子）。description では resolution＝消失
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0190	description	CLUSTER > items/CLUSTER	Details about specified factors that are associated with the resolution of the symptom or sign.	症状または徴候の消失に関連する特定の因子についての詳細。	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0190	comment	CLUSTER > items/CLUSTER	For example: upright posture stops heartburn; or resting stops claudication.	例：直立姿勢で胸やけが止まる；または休息で跛行が止まる。	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0193	text	CLUSTER > items/CLUSTER > items/ELEMENT	Factor	因子	
@@ -132,7 +132,7 @@ openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0196	text	CLUSTER > items/CLUSTER > i
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0196	description	CLUSTER > items/CLUSTER > items/ELEMENT	Narrative description about the effect of the factor on the identified symptom or sign.	因子が特定された症状または徴候に及ぼす影響についての叙述的な記述。	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0197	text	CLUSTER > items/CLUSTER > items/CLUSTER	Factor detail	因子の詳細	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0197	description	CLUSTER > items/CLUSTER > items/CLUSTER	Structured detail about the factor associated with the identified symptom or sign.	特定された症状または徴候に関連する因子についての構造化された詳細記録。	
-openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0198	text	CLUSTER > items/CLUSTER	Severity rating	重症度評価	要確認: 「重症度評価」を採用（他候補: 重症度スコア、重症度スケール）
+openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0198	text	CLUSTER > items/CLUSTER	Severity rating	重症度評価	校正（2026-09-12）で確定: 「重症度評価」を採用（他候補: 重症度スコア、重症度スケール）
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0198	description	CLUSTER > items/CLUSTER	Numerical rating scale representing the overall severity of the symptom or sign.	症状または徴候の全体的な重症度を表す数値評価スケール。	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0198	comment	CLUSTER > items/CLUSTER	Symptom severity can be rated by the individual by recording a score for example from 0 (ie symptom not present) to 10 (ie symptom is as severe as the individual can imagine).	症状の重症度は、例えば 0（症状なし）から 10（本人が想像しうる最も重い症状）までのスコアを記録することで、本人が評価できる。	
 openEHR-EHR-CLUSTER.symptom_sign.v2	term	at0200	text	CLUSTER > items/ELEMENT	Nadir	最悪時	

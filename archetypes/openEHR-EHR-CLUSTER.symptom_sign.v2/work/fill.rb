@@ -546,12 +546,12 @@ T = {
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['term', 'at0164', 'text'] => "要確認: 「発症時期」（指示の候補。他候補: 発症のタイミング）",
-  ['term', 'at0165', 'text'] => "要確認: Precipitating factor＝「誘発因子」",
-  ['term', 'at0182', 'text'] => "要確認: Unchanged＝「不変」（qualifier の Stable＝安定 とは別語）",
-  ['term', 'at0189', 'text'] => "要確認: 「性状」（指示の候補）",
-  ['term', 'at0190', 'text'] => "要確認: Resolving factor＝「寛解因子」を採用（OPQRST の増悪・寛解因子の慣用。他候補: 解消因子、治癒因子）。description では resolution＝消失",
-  ['term', 'at0198', 'text'] => "要確認: 「重症度評価」を採用（他候補: 重症度スコア、重症度スケール）",
+  ['term', 'at0164', 'text'] => "校正（2026-09-12）で確定: 「発症時期」（指示の候補。他候補: 発症のタイミング）",
+  ['term', 'at0165', 'text'] => "校正（2026-09-12）で確定: Precipitating factor＝「誘発因子」",
+  ['term', 'at0182', 'text'] => "校正（2026-09-12）で確定: Unchanged＝「不変」（qualifier の Stable＝安定 とは別語）",
+  ['term', 'at0189', 'text'] => "校正（2026-09-12）で確定: 「性状」（指示の候補）",
+  ['term', 'at0190', 'text'] => "校正（2026-09-12）で確定: Resolving factor＝「寛解因子」を採用（OPQRST の増悪・寛解因子の慣用。他候補: 解消因子、治癒因子）。description では resolution＝消失",
+  ['term', 'at0198', 'text'] => "校正（2026-09-12）で確定: 「重症度評価」を採用（他候補: 重症度スコア、重症度スケール）",
 }.freeze
 
 src, dst = ARGV
