@@ -157,7 +157,7 @@
 | Any event | 任意のイベント | OBSERVATION の既定イベント名（要確認） |
 | structured detail | 構造化された詳細記録 | CLUSTER スロット。story 校正（2026-09-11）で「詳細記録」に揃えた |
 | personal health record | 個人健康記録 | PHR |
-| clinical questionnaire | 臨床質問票 | |
+| clinical questionnaire / questionnaire | 臨床問診票 / 問診票 | 校正（2026-09-12）で「質問票」→「問診票」。screening questionnaire＝スクリーニング問診票 |
 | health event | 健康イベント | CLUSTER.health_event |
 | care-giver | 介護者 | carer と同じ |
 | narrative | 叙述 | narrative description＝叙述的な記述 |
@@ -181,11 +181,11 @@
 | previous episodes / number of previous episodes | 過去のエピソード / 過去のエピソードの回数 | symptom_sign at0146 / at0031 |
 | associated symptom/sign | 随伴症状・徴候 | symptom_sign at0063（要確認。他候補：関連する症状・徴候） |
 | factor / factor detail | 因子 / 因子の詳細 | symptom_sign |
-| modifying / precipitating / resolving factor | 修飾因子 / 誘発因子 / 寛解因子 | symptom_sign at0018 / at0165 / at0190（要確認。寛解因子は OPQRST の慣用） |
+| modifying / precipitating / resolving factor | 修飾因子 / 誘発因子 / 寛解因子 | symptom_sign at0018 / at0165 / at0190（要確認。寛解因子は OPQRST の慣用。description の resolution は「消失」） |
 | effect: relieves / no effect / worsens | 影響：軽減 / 影響なし / 増悪 | symptom_sign at0017（要確認。at0155 Impact も「影響」） |
-| progression (symptom): improving / unchanged / worsening / resolved | 進行状況：改善 / 不変 / 悪化 / 治癒 | symptom_sign at0180。Unchanged＝不変（qualifier の Stable＝安定 とは別語、要確認） |
+| progression (symptom): improving / unchanged / worsening / resolved | 進行状況：改善 / 不変 / 悪化 / 消失 | symptom_sign at0180。Unchanged＝不変（qualifier の Stable＝安定 とは別語、要確認） |
 | severity category / severity rating | 重症度 / 重症度評価 | symptom_sign at0021 / at0198（要確認：重症度評価） |
-| resolution date/time | 治癒日時 | symptom_sign at0161（date/time of resolution＝治癒した日時 に揃える） |
+| resolution date/time (symptom/sign) | 消失日時 | symptom_sign at0161。症状・徴候の resolution は「消失」、プロブレム・診断の resolution は「治癒」（problem_diagnosis 治癒した日時）と訳し分ける（校正 2026-09-12） |
 | time interval | 時間間隔 | symptom_sign at0171 / at0195 |
 | screening details (slot) | スクリーニングの詳細 | OBSERVATION.symptom_sign_screening |
 | VAS / NRS | VAS / NRS | 英字のまま |
