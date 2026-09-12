@@ -7,7 +7,7 @@ T = {
   # To record a narrative description of the clinical history of the subject of care and to provide a framework in which to nest detailed CLUSTER archetypes, each of which will support the narrative with additional structured detail for symptoms, health events and related topics.
   # 
   # Use to record detail about the clinical history as reported by an individual, parent, care-giver or other party. It may be recorded by a clinician as part of a clinical history record as reported to them, or self-recorded as part of a clinical questionnaire or personal health record.
-  ['description', '-', 'purpose'] => "ケア対象者の病歴を叙述的に記録するため。叙述を詳細な記録で補うため、症状、健康イベント、および関連する話題について構造化された CLUSTER archetype群を入れ子にするための枠組みを提供する。\n\n本人、親、介護者、またはその他の関係者から報告された病歴の詳細を記録するために用いる。臨床医が報告を受けた病歴の記録の一部として記録することも、臨床質問票や個人健康記録の一部として本人が自ら記録することもある。",
+  ['description', '-', 'purpose'] => "ケア対象者の病歴を叙述的に記録するため。叙述を詳細な記録で補うため、症状、健康イベント、および関連する話題について構造化された CLUSTER archetype群を入れ子にするための枠組みを提供する。\n\n本人、親、介護者、またはその他の関係者から報告された病歴の詳細を記録するために用いる。臨床医が報告を受けた病歴の記録の一部として記録することも、臨床問診票や個人健康記録の一部として本人が自ら記録することもある。",
 
   # Use to record a description about subjective health-related observations or impressions from the point of view of the subject of care. 
   # 
