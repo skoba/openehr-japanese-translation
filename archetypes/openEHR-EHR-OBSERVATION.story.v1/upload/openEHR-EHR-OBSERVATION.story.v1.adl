@@ -328,7 +328,7 @@ Use to incorporate the narrative descriptions of clinical history captured from 
 - 単純な叙述を記録する；および／または 
 - 「詳細」SLOT に関連する CLUSTER archetypeを含めることで、詳細な構造化された病歴を記録できるようにするコンテナarchetypeとして。例：CLUSTER.symptom、CLUSTER.issue、CLUSTER.health_event の各archetypeをこの SLOT で適切に使用できる。
 
-既存または旧来の臨床システムから取り込んだ病歴の叙述的な記述を、Storyテキストデータエレメントを用いて archetype化された形式に組み込むために用いる。">
+既存または旧来の臨床システムから取り込んだ病歴の叙述的な記述を、「病歴の記述」（Story）テキストデータエレメントを用いて archetype化された形式に組み込むために用いる。">
 			misuse = <"臨床医による正式な評価を記録するために用いてはならない。それらは通常、EVALUATION クラスのarchetypeを用いて記録する。">
 			keywords = <"病歴", "現病歴", "主訴", "ストーリー", "症状", "健康", "記録", "既往歴", "アナムネーゼ", "問診">
 			copyright = <"© openEHR Foundation">
@@ -887,7 +887,7 @@ ontology
 			items = <
 				["at0000"] = <
 					text = <"病歴">
-					description = <"ケア対象者の主観的な語りで、本人が直接記録したもの、または本人や介護者から臨床医に報告されたもの。">
+					description = <"ケア対象者の主観的な病歴で、本人が直接記録したもの、または本人や介護者から臨床医に報告されたもの。">
 				>
 				["at0001"] = <
 					text = <"Event Series">
@@ -903,11 +903,11 @@ ontology
 				>
 				["at0004"] = <
 					text = <"病歴の記述">
-					description = <"ケア対象者が語る病歴、または客観的記録に基づく病歴の叙述的な記述。">
+					description = <"ケア対象者の語り、または臨床家が聴取した病歴の叙述的な記述。">
 				>
 				["at0006"] = <
 					text = <"構造化された詳細記録">
-					description = <"本人の語りまたは客観的記録に基づく病歴についての構造化された詳細記録。">
+					description = <"本人の語りまたは臨床家が聴取した病歴についての構造化された詳細記録。">
 					comment = <"例：悪心や疼痛のような特定の症状、自転車からの転落のようなイベント、禁煙したいという希望のような問題。">
 				>
 				["at0007"] = <
