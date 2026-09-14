@@ -14,7 +14,7 @@
 | 2 | openEHR-EHR-CLUSTER.problem_qualifier.v2 | 問題/診断修飾子 | published 2.1.1 | 52 | 既往/現在、疑い、主/副、エピソード等。値セットが多い |
 | 3 | openEHR-EHR-OBSERVATION.story.v1 | 病歴/経過 | published | 8 | 症状経過（現病歴）・既往歴 narrative |
 | 4 | openEHR-EHR-EVALUATION.clinical_synopsis.v1 | 臨床要約 | published | 5 | 治療経過 |
-| 5 | openEHR-EHR-SECTION.adhoc.v1 | 任意見出し | published | 1 | 傷病名・主訴／既往歴・家族歴／備考の節。ほぼ全テンプレートで使用 |
+| 5 | openEHR-EHR-SECTION.adhoc.v1 | 仮見出し | published | 1 | 傷病名・主訴／既往歴・家族歴／備考の節。ほぼ全テンプレートで使用 |
 | 6 | openEHR-EHR-CLUSTER.organisation.v1 | 組織（医療機関/部門） | published 1.0.4 | 10 | 紹介先・紹介元機関（service_request の receiver/requester スロット） |
 | 7 | openEHR-EHR-CLUSTER.person.v1 | 人 | published 1.0.5 | 12 | 紹介先担当医・紹介元医師・患者 |
 | 8 | openEHR-EHR-CLUSTER.structured_name.v1 | 構造化氏名 | published | 5 | 漢字/カナ表記の扱いは占有 2 回で対応を検討 |
