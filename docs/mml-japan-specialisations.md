@@ -120,7 +120,19 @@ MML の Id 形式（値・type・tableId・checkDigit・checkDigitSchema）は�
 4. **識別子のチェックディジット要素は持ち込まない**。DV_IDENTIFIER の type / issuer で足りる。
 5. **施設と診療科は organisation.v1 の Parent organisation 入れ子**で表す。組織名の読みは name_reading_jp（暫定）→ CR（本命）。
 6. 資格（MML0026）と保険（hoken）は今回のスプリント外。候補として本資料に残す。
-7. 命名は既決どおり `-japan` 擬似特殊化を踏襲せず、`_jp` の新規 CLUSTER とする。MML の `-japan` / `-mml` は旧版 CKM の特殊化であり、現行版には当てられない。
+7. 命名は既決どおり、特殊化ではなく `_jp` を概念名に含む新規 CLUSTER とする。MML の `-japan` / `-mml` は ADL の正規の特殊化記法（`<概念名>-<特殊化名>`、`specialise` 節あり）で作られた特殊化だが、親が旧版 CKM archetype なので現行版には当てられない。なお、現行版を `-jp` で特殊化する選択肢自体は openEHR 上は正当であり、要素の追加も特殊化で可能なので、新規 CLUSTER 方式との比較は §4 末尾に記す。
+
+### 補足: 特殊化（`-jp`）と新規 CLUSTER（`_jp`）の比較
+
+| 観点 | 現行版の特殊化（例: `openEHR-EHR-CLUSTER.address-jp.v1`） | スロットに挿す新規 CLUSTER（例: `openEHR-EHR-CLUSTER.structured_address_jp.v0`） |
+|---|---|---|
+| openEHR 上の正当性 | 正規の記法。要素の追加・制約の強化ができる | 正規。国際版はそのまま使い、スロットで拡張 |
+| 親の改版への追従 | 親の新リビジョンごとに特殊化を作り直す（MML の `-japan` が旧版に取り残された原因） | 親の改版の影響を受けにくい（スロットの include 制約が変わらない限り） |
+| 国際 CKM の ja 訳との関係 | 特殊化は国際 CKM に載らないため、親の ja 訳を再利用しつつ別管理 | 国際版の ja 訳をそのまま使える。新規 CLUSTER は NPO 側で ja / en を持つ |
+| テンプレート・AQL | 特殊化した archetype_id で問い合わせる（国際版との互換パスは失われる） | 国際版のパスが保たれ、日本固有部分だけ別 archetype_id |
+| 国際版で表せない要素 | 特殊化内に追加できる（表記種別など） | 追加要素はすべて新規 CLUSTER 側。表記種別は CR で国際版に入れるのが本命 |
+
+`localisation-ja.md` の方針決定（2026-09-11）は後者を採っている。前者が有利になるのは、スロットが無い場所に要素を足したい場合（例: structured_name.v1 に表記種別を足す）だが、それは CR で国際版に入れる方針なので、当面は新規 CLUSTER 方式で進める。
 
 ## 5. 参照
 

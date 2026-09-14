@@ -24,7 +24,7 @@
 ## ローカライズ方針（2026-09-11）
 
 - Demographics 系（CLUSTER.address.v1 / CLUSTER.person.v1 / CLUSTER.structured_name.v1 / CLUSTER.organisation.v1）は翻訳だけでは完結しない。住所の表記規則、氏名・住所・医療機関名のふりがな（表記種別）は、**NPO openEHR Japan で使う分はローカライズで対応する**。国際版への変更要求（CR）は並行して出すが、採否・時期は読めないので待たない。
-- 国際アーキタイプの擬似特殊化（`-japan` 等の命名）はしない。新しいデータ要素が要るときは、既存スロット（address.v1 の Structured address、person.v1 / organisation.v1 の Additional details）に挿す新規 CLUSTER（概念名＋`_jp`）か、CKM への CR で解決する。
+- 国際アーキタイプの特殊化（ADL の `<概念名>-<特殊化名>` 記法。旧 MML の `-japan` はこれ）は作らない。新しいデータ要素が要るときは、既存スロット（address.v1 の Structured address、person.v1 / organisation.v1 の Additional details）に挿す新規 CLUSTER（概念名＋`_jp`）か、CKM への CR で解決する。
 - 翻訳層でできるのは、comment に日本の対応物を例示すること（「例：都道府県」「例：市区町村」）まで。原文の意味は変えない。
 - 詳細は `docs/localisation-ja.md`。
 

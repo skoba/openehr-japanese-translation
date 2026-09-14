@@ -10,7 +10,7 @@
 | テンプレート層（jp_referral 等 OPT） | 表示順・改名・出現回数・値セット・書式注記 | 住所の表示順を大→小に、都道府県を JIS X 0401 の 47 値に制約、氏名 CLUSTER を 2 回占有して「氏名」「氏名（カナ）」と改名 | Anlage 側 |
 | アーキタイプ層（新規 CLUSTER／CKM への変更要求） | 国際版に無いデータ要素 | 日本の構造化住所 CLUSTER（address.v1 の Structured address スロットに挿入）、structured_name.v1 への「表記種別」追加の CR | NPO openEHR Japan |
 
-原則：国際アーキタイプの擬似特殊化（`-japan` 命名）はしない。新要素が要るときは、スロットに挿す新規 CLUSTER か、国際版への CR で解決する。
+原則：国際アーキタイプの特殊化（ADL では `<概念名>-<特殊化名>`、旧 MML の `-japan` はこの正規の記法）は作らない。特殊化は親の改版ごとに追従が要り、国際 CKM への ja 訳とも別管理になるため。新要素が要るときは、スロットに挿す新規 CLUSTER か、国際版への CR で解決する。
 
 ## 住所（CLUSTER.address.v1）
 
@@ -70,7 +70,7 @@ Demographics 系はある程度ローカライズが必要。表記種別（syll
 
 1. `openEHR-EHR-CLUSTER.structured_address_jp.v0`（仮名）：address.v1 の Structured address スロット用。都道府県（JIS X 0401 コード）／市区町村（JIS X 0402）／町域／丁目／番地／号／建物名／部屋番号＋各カナ（案 A）。アドレス・ベース・レジストリ準拠。
 2. `openEHR-EHR-CLUSTER.name_reading_jp.v0`（仮名）：person.v1／organisation.v1 の Additional details スロット用。姓（カナ）／名（カナ）／名称（カナ）／ローマ字／仮名種別。氏名はテンプレートで structured_name を 2 回占有する案と併存させ、どちらを正にするかは jp_referral の実装時に決める。
-3. 命名規則：特殊化記号（ハイフン）は使わず、新規概念名＋`_jp` で国際版と区別する（旧資産の `-japan` 擬似特殊化は踏襲しない）。
+3. 命名規則：特殊化ではなく新規概念として作るので、特殊化記法（ハイフン）は使わず、概念名の一部として `_jp` を付けて国際版と区別する（例：`openEHR-EHR-CLUSTER.structured_address_jp.v0`）。旧 MML 資産の `-japan` / `-mml` は正規の特殊化だが、親が旧版 CKM のため踏襲しない。
 4. 置き場：NPO openEHR Japan のローカルアーキタイプリポジトリ（GitHub、CKM-mirror と同じ配置で Archetype Designer に読み込める形）。国際 CKM には出さない。
 5. CR：structured_name.v1 と organisation.v1 の Name に「Representation（表記種別）」を追加する提案を CKM Discourse に出す。根拠は ISO 22220／ISO 21090 EN.representation、DEMOGRAPHIC-PARTY_IDENTITY.person_name.v0 の先例、JP Core の iso21090-EN-representation 拡張との整合。
 
