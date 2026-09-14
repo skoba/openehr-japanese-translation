@@ -73,3 +73,7 @@ Demographics 系はある程度ローカライズが必要。表記種別（syll
 3. 命名規則：特殊化記号（ハイフン）は使わず、新規概念名＋`_jp` で国際版と区別する（旧資産の `-japan` 擬似特殊化は踏襲しない）。
 4. 置き場：NPO openEHR Japan のローカルアーキタイプリポジトリ（GitHub、CKM-mirror と同じ配置で Archetype Designer に読み込める形）。国際 CKM には出さない。
 5. CR：structured_name.v1 と organisation.v1 の Name に「Representation（表記種別）」を追加する提案を CKM Discourse に出す。根拠は ISO 22220／ISO 21090 EN.representation、DEMOGRAPHIC-PARTY_IDENTITY.person_name.v0 の先例、JP Core の iso21090-EN-representation 拡張との整合。
+
+## 参考資料
+
+- `docs/mml-japan-specialisations.md`（2026-09-14）: 旧 MML 作業の `-japan` / `-mml` 特殊化が何を足していたかの調査。表記種別（I / A / P）が住所・人名・組織名の 3 か所で同型だったことなど、上記設計の裏付けと引き継ぐ要件をまとめた。
