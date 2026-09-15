@@ -211,6 +211,12 @@
 | MML4 電話番号表現形式: area / city / number / extension / full / country / memo / telEquipType | 市外局番 / 局番 / 加入番号 / 内線番号 / 一連電話番号 / 国番号 / メモ（使用時間帯など） / 装置の種類 | doc/MML4/phone.adoc。electronic_communication.v1 で使う |
 | MML4 施設情報形式 / 診療科情報形式 | 施設（施設名称・施設 ID） / 診療科（診療科名称・診療科 ID） | doc/MML4/facility.adoc, department.adoc。organisation.v1 で使う |
 | MML4 Id 形式: type / checkDigit / checkDigitSchema | ID の種類 / チェックディジット / チェックディジット方式 | doc/MML4/id.adoc |
+| title (name) | 敬称 | structured_name at0001。MML4 prefix＝肩書き（要確認。他候補：肩書き、称号） |
+| given name / family name | 名 / 姓 | structured_name at0002 / at0005（MML4 人名表現形式） |
+| suffix (name) | 接尾辞 | structured_name at0006（要確認。他候補：サフィックス）。MML4 degree＝学位 はここ |
+| first name / middle name / preferred name / nickname | ファーストネーム / ミドルネーム / 通称 / ニックネーム | structured_name at0002 comment |
+| name usage | 氏名の用途 | structured_name use / misuse |
+| ISO 22220 | ISO 22220 | 英字のまま |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -227,3 +233,4 @@
 | openEHR-EHR-SECTION.adhoc.v1 (1.0.12) | 仮見出し | 校正済み（2026-09-13）。use の例：「仮見出し」→「診察所見」 |
 | openEHR-EHR-CLUSTER.symptom_sign.v2 (2.1.4) | 症状・徴候 | story.v1 のスロット。エピソード区分・発生区分・重症度・進行状況の値は problem_qualifier / problem_diagnosis と同じ |
 | openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | at0001 氏名、at0002 構造化された氏名、at0003 識別子、at0004 役割、at0006 電子的連絡先、at0007 組織 |
+| openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 人の構造化された氏名 | at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
