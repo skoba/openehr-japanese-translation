@@ -1,0 +1,35 @@
+archetype	section	code	field	context	source	target	note
+openEHR-EHR-CLUSTER.electronic_communication.v1	description	-	purpose		To record details about a specified type of electronic communication as it is known or understood in the course of clinical documentation.	臨床記録の作成に際して取得した、特定の種別の電子的な連絡先に関する詳細情報を記録するため。	
+openEHR-EHR-CLUSTER.electronic_communication.v1	description	-	use		Use to record details about a specified type of electronic communication for an individual or an organisation as it is known or understood in the course of clinical documentation. This is commonly ad hoc or when it is not appropriate or possible to use a formal register or index.	臨床記録の作成に際して取得した、個人または組織の特定の種別の電子的な連絡先に関する詳細情報を記録するために用いる。主に、必要に応じて情報を記録する場合や、正式な登録簿やインデックスの利用が適切でない、または利用できない場合を想定している。	
+openEHR-EHR-CLUSTER.electronic_communication.v1	description	-	misuse		Not to be used for complex communication representation or management, such as preferred phone numbers or valid dates of usage. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\n\nNot to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.	優先して使う電話番号や利用できる期間など、連絡先を複雑に表現・管理するために用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や医療従事者名簿（Health Provider Index）、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\n正式な個人識別情報の管理やその代替、または公式のデモグラフィック登録簿やインデックスの維持・管理に用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や医療従事者名簿（Health Provider Index）、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。	
+openEHR-EHR-CLUSTER.electronic_communication.v1	description	-	keywords		telephone, phone, mobile, email, fax, pager, chat, social media, asynchronous, communication, SoMe	電話 | 携帯電話 | 電子メール | ファクシミリ | ポケットベル | チャット | ソーシャルメディア | 非同期 | 通信 | SoMe | 電子的な連絡先	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0000	text	CLUSTER	Electronic communication	電子的な連絡先	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0000	description	CLUSTER	Details about a specified type of electronic communication.	特定の種別の電子的な連絡先に関する詳細情報。	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0001	text	CLUSTER > items/ELEMENT	Type	種別	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0001	description	CLUSTER > items/ELEMENT	The type or form of electronic communication.	電子的な連絡先の種別または形式。	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0001	comment	CLUSTER > items/ELEMENT	The DV_CODED_TEXT value set supports recording of the most common electronic communications used in health. If other alternatives are required the DV_TEXT data type can be used to record other types of electronic communication such as social media or video conferencing URLs within a template.	DV_CODED_TEXT の値セットを用いて、医療でよく使われる電子的な連絡先を記録できる。それ以外の種別が必要な場合は、テンプレート内で DV_TEXT データ型を用いる。ソーシャルメディアやビデオ会議の URL なども記録できる。	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0002	text	CLUSTER > items/ELEMENT	Value	値	要確認: 値（他候補: 連絡先の値）原文の汎用的なラベルを保ち、電話番号や電子メールアドレスなどを含められる訳を採用。
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0002	description	CLUSTER > items/ELEMENT	The unique combination of alphanumeric characters, relevant for representation of 'Type'.	「種別」に応じて連絡先を一意に表す英数字の組み合わせ。	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0002	comment	CLUSTER > items/ELEMENT	For example: area code + landline phone/pager number; country code + mobile phone number; or email address.	例：市外局番と固定電話番号またはポケットベル番号の組み合わせ、国番号と携帯電話番号の組み合わせ、電子メールアドレス。	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0003	text	CLUSTER > items/ELEMENT	Purpose	用途	要確認: 用途（他候補: 目的）値セットが業務用・個人用・業務用と個人用の両方を区別するため、住所の用途と同じ表現を採用。
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0003	description	CLUSTER > items/ELEMENT	The purpose or use for the identified type of electronic communication.	指定した種別の電子的な連絡先を何のために使うかを示す。	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0004	text	CLUSTER > items/ELEMENT	Comment	コメント	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0004	description	CLUSTER > items/ELEMENT	Additional narrative about the electronic communication not captured in other fields.	他の項目には収まらない電子的な連絡先についての追加の記述。	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0005	text		Mobile (cellular) telephone	携帯電話	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0005	description		For SMS or voice calls.	SMS または音声通話に用いる。	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0006	text		Telephone (excluding mobile telephone)	電話（携帯電話を除く）	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0006	description				
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0007	text		Email	電子メール	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0007	description				
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0008	text		Pager	ポケットベル	要確認: ポケットベル（他候補: ページャー、無線呼出受信機）日本語で認知しやすい呼称を採用。
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0008	description				
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0009	text		Fax	ファクシミリ	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0009	description				
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0010	text		Business use	業務用	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0010	description				
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0011	text		Personal use	個人用	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0011	description				
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0012	text		Both business and personal use	業務用・個人用の両方	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0012	description				
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0013	text	CLUSTER > items/CLUSTER	Additional details	追加の詳細	
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0013	description	CLUSTER > items/CLUSTER	Additional details about the electronic communication.	電子的な連絡先に関する追加の詳細情報。	

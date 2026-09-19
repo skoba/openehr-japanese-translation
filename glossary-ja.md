@@ -16,6 +16,19 @@
 - `keywords` は原文の語に加え、CKM で日本語検索されそうな語を少数追加してよい（例：「紹介状」）。
 - 括弧は全角「（）」、区切りは読点「、」。英数字は半角。
 
+### こなれた訳のための規則（2026-09-19、校正の傾向から）
+
+原文の構文をなぞらず、日本語の医療文書として自然に読めることを優先する。校正済み archetype（person.v1、problem_diagnosis.v1、symptom_sign.v2、story.v1）の `work/fill.rb` を訳の手本とし、同じ構文は同じ訳し方をする。
+
+1. 関係節が二重三重になる文は二文に分ける（一文 60 字程度を目安）。英文の一文を一文に対応させる必要はない。
+2. 「〜についての詳細」→「〜に関する詳細情報」。「〜の特定」「〜の記述」のような名詞化は、可能なら動詞に戻す（例：identification of X →「X を示す」「X を特定する」）。
+3. as (they are) known or understood in the course of clinical documentation →「臨床記録の作成に際して取得した」（定型）。
+4. Not to be used to record X - use Y for this purpose →「X の記録には、本archetypeではなく Y を用いる」。「〜ために用いてはならない。その目的には〜を用いること」を機械的に繰り返さない。
+5. 箇条書きの各項目は名詞句で止めず、「〜を用いて、〜を記録する。」のように動詞で終える。
+6. description / comment 内の the individual / a person は「個人」、健康記録の対象者本人は「本人」。「その人」は使わない。
+7. 「〜であって」「〜でありうる」「〜されうる」のような英文直訳の接続・助動詞は、「〜であり」「〜こともある」「〜できる」に言い換える。
+8. often ad hoc or when it is not appropriate or possible to … →「主に、必要に応じて記録する場合や、…の利用が適切でない、または利用できない場合を想定している」。
+
 ## 共通語（RM・アーキタイプ横断）
 
 | English | 日本語 | 備考 |
@@ -232,6 +245,16 @@
 | address lookup service | 住所検索サービス | |
 | landmark | 目印となる場所 | keywords では「目印」 |
 | street-level | 街区レベル | address.v1 |
+| type (electronic communication) | 種別 | electronic_communication.v1 at0001。address.v1 の Type に合わせる |
+| value (electronic communication) | 値 | electronic_communication.v1 at0002。番号・メールアドレス等を含む（要確認。他候補：連絡先の値） |
+| purpose (electronic communication) | 用途 | electronic_communication.v1 at0003。業務用・個人用を区別する（要確認。他候補：目的） |
+| mobile (cellular) telephone / telephone (excluding mobile telephone) | 携帯電話 / 電話（携帯電話を除く） | electronic_communication.v1 at0005 / at0006 |
+| email / email address / fax | 電子メール / 電子メールアドレス / ファクシミリ | electronic_communication.v1 at0007 / at0002 comment / at0009 |
+| pager | ポケットベル | electronic_communication.v1 at0008（要確認。他候補：ページャー、無線呼出受信機）。日本語での認知しやすさを優先 |
+| business use / personal use / both business and personal use | 業務用 / 個人用 / 業務用・個人用の両方 | electronic_communication.v1 at0010 / at0011 / at0012。場所ではなく用途を表す |
+| area code / country code (telephone) / landline phone number | 市外局番 / 国番号 / 固定電話番号 | electronic_communication.v1 at0002 comment。MML4 電話番号表現形式に合わせる |
+| chat / social media / asynchronous / communication | チャット / ソーシャルメディア / 非同期 / 通信 | electronic_communication.v1 keywords。SoMe は英字のまま保持 |
+| video conferencing / voice calls | ビデオ会議 / 音声通話 | electronic_communication.v1 at0001 comment / at0005 description。SMS は英字のまま保持 |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -250,3 +273,4 @@
 | openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 人の構造化された氏名 | at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
 | openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された氏名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0011 ラベル（識別用の説明） |
 | openEHR-EHR-CLUSTER.address.v1 (1.1.3) | 住所 | at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所。日本の対応物は comment の例示 |
+| openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | person.v1 校正（2026-09-19）の確定訳。at0001 種別、at0002 値、at0003 用途、at0013 追加の詳細 |
