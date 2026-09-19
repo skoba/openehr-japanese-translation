@@ -256,6 +256,14 @@
 | area code / country code (telephone) / landline phone number | 市外局番 / 国番号 / 固定電話番号 | electronic_communication.v1 at0002 comment。MML4 電話番号表現形式に合わせる |
 | chat / social media / asynchronous / communication | チャット / ソーシャルメディア / 非同期 / 通信 | electronic_communication.v1 keywords。SoMe は英字のまま保持 |
 | video conferencing / voice calls | ビデオ会議 / 音声通話 | electronic_communication.v1 at0001 comment / at0005 description。SMS は英字のまま保持 |
+| parent organisation | 親組織 | organisation.v1 at0021。企業に限らない上位組織を表す（要確認。他候補：上位組織） |
+| sub-organisation / satellite clinic | 下部組織 / 分院 | organisation.v1 use。病院に属する組織と診療拠点（要確認。他候補：傘下組織 / サテライト診療所） |
+| registered business / local community support group | 登録された事業者 / 地域の支援団体 | organisation.v1 use。正式な組織と非公式な集まりを区別する（要確認。他候補：登記事業者 / 地域の相互扶助団体） |
+| healthcare practice group / payer / insurer | 診療グループ / 支払者 / 保険者 | organisation.v1 at0000 comment。組織の例示であり、日本の特定の法人形態には限定しない（要確認。他候補：診療団体 / 費用負担者 / 保険事業者） |
+| oncologist / palliative care home nursing service | 腫瘍専門医 / 緩和ケアの訪問看護サービス | organisation.v1 at0004 comment。oncologist は原文どおり人の呼称を保持（要確認。他候補：腫瘍医 / 緩和ケアの在宅看護サービス） |
+| informal support network | 非公式な支援ネットワーク | organisation.v1 at0004 comment。正式な組織に限らない支援のつながり（要確認。他候補：インフォーマルな支援ネットワーク） |
+| location of care | ケアの実施場所 | organisation.v1 misuse。参照モデルの属性で記録する場所（要確認。他候補：ケア提供場所） |
+| network / group (organisation) | ネットワーク / 集団 | organisation.v1 keywords。法人格を持つ組織に限らない（要確認。他候補：つながり / グループ） |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -275,3 +283,4 @@
 | openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された氏名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0008 追加の詳細情報、at0011 ラベル（識別用の説明） |
 | openEHR-EHR-CLUSTER.address.v1 (1.1.3) | 住所 | at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所。日本の対応物は comment の例示 |
 | openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | 校正済み（2026-09-19）。at0001 種別、at0002 値、at0003 用途、at0006 固定電話、at0013 追加の詳細情報 |
+| openEHR-EHR-CLUSTER.organisation.v1 (1.0.4) | 組織 | 医療機関に限らず企業・団体・部門・ケアチーム等を含む。at0001 名称、at0002 連絡担当者、at0021 親組織（要確認） |
