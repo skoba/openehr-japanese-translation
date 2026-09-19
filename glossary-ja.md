@@ -16,6 +16,19 @@
 - `keywords` は原文の語に加え、CKM で日本語検索されそうな語を少数追加してよい（例：「紹介状」）。
 - 括弧は全角「（）」、区切りは読点「、」。英数字は半角。
 
+### こなれた訳のための規則（2026-09-19、校正の傾向から）
+
+原文の構文をなぞらず、日本語の医療文書として自然に読めることを優先する。校正済み archetype（person.v1、problem_diagnosis.v1、symptom_sign.v2、story.v1）の `work/fill.rb` を訳の手本とし、同じ構文は同じ訳し方をする。
+
+1. 関係節が二重三重になる文は二文に分ける（一文 60 字程度を目安）。英文の一文を一文に対応させる必要はない。
+2. 「〜についての詳細」→「〜に関する詳細情報」。「〜の特定」「〜の記述」のような名詞化は、可能なら動詞に戻す（例：identification of X →「X を示す」「X を特定する」）。
+3. as (they are) known or understood in the course of clinical documentation →「臨床記録の作成に際して取得した」（定型）。
+4. Not to be used to record X - use Y for this purpose →「X の記録には、本archetypeではなく Y を用いる」。「〜ために用いてはならない。その目的には〜を用いること」を機械的に繰り返さない。
+5. 箇条書きの各項目は名詞句で止めず、「〜を用いて、〜を記録する。」のように動詞で終える。
+6. description / comment 内の the individual / a person は「個人」、健康記録の対象者本人は「本人」。「その人」は使わない。
+7. 「〜であって」「〜でありうる」「〜されうる」のような英文直訳の接続・助動詞は、「〜であり」「〜こともある」「〜できる」に言い換える。
+8. often ad hoc or when it is not appropriate or possible to … →「主に、必要に応じて記録する場合や、…の利用が適切でない、または利用できない場合を想定している」。
+
 ## 共通語（RM・アーキタイプ横断）
 
 | English | 日本語 | 備考 |
