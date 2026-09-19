@@ -25,7 +25,7 @@ openEHR-EHR-CLUSTER.person.v1	term	at0006	description	CLUSTER > items/CLUSTER	De
 openEHR-EHR-CLUSTER.person.v1	term	at0007	text	CLUSTER > items/CLUSTER	Organisation	組織	
 openEHR-EHR-CLUSTER.person.v1	term	at0007	description	CLUSTER > items/CLUSTER	Details about the organisational context for the individual.	個人の所属など、組織との関わりに関する詳細情報。	
 openEHR-EHR-CLUSTER.person.v1	term	at0007	comment	CLUSTER > items/CLUSTER	For example: identifying the business or community organisation associated with the 'Role' of the individual.	例：個人の「役割」に関連する企業や地域団体がどこなのかを示す。	
-openEHR-EHR-CLUSTER.person.v1	term	at0008	text	CLUSTER > items/CLUSTER	Additional details	追加の詳細	
+openEHR-EHR-CLUSTER.person.v1	term	at0008	text	CLUSTER > items/CLUSTER	Additional details	追加の詳細情報	
 openEHR-EHR-CLUSTER.person.v1	term	at0008	description	CLUSTER > items/CLUSTER	Additional details about the individual.	個人に関する追加の詳細情報。	
 openEHR-EHR-CLUSTER.person.v1	term	at0009	text	CLUSTER > items/CLUSTER	Photo	写真	
 openEHR-EHR-CLUSTER.person.v1	term	at0009	description	CLUSTER > items/CLUSTER	Photograph of the individual.	個人の写真。	

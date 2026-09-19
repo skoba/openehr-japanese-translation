@@ -8,7 +8,7 @@ T = {
   ['description', '-', 'purpose'] => "臨床記録の作成に際して取得した、特定の種別の電子的な連絡先に関する詳細情報を記録するため。",
 
   # Use to record details about a specified type of electronic communication for an individual or an organisation as it is known or understood in the course of clinical documentation. This is commonly ad hoc or when it is not appropriate or possible to use a formal register or index.
-  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、個人または組織の特定の種別の電子的な連絡先に関する詳細情報を記録するために用いる。主に、必要に応じて情報を記録する場合や、正式な登録簿やインデックスの利用が適切でない、または利用できない場合を想定している。",
+  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、個人または組織の特定の種別の電子的な連絡先に関する詳細情報を記録するために用いる。必要となった連絡先をその都度記録する場合や、正式な登録簿やインデックスを利用することが適切でない、または利用できない場合が主に想定されている。",
 
   # Not to be used for complex communication representation or management, such as preferred phone numbers or valid dates of usage. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.
   # 
@@ -73,7 +73,7 @@ T = {
   ['term', 'at0005', 'description'] => "SMS または音声通話に用いる。",
 
   # Telephone (excluding mobile telephone)
-  ['term', 'at0006', 'text'] => "電話（携帯電話を除く）",
+  ['term', 'at0006', 'text'] => "固定電話",
 
 
   ['term', 'at0006', 'description'] => '',
@@ -116,7 +116,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # Additional details
-  ['term', 'at0013', 'text'] => "追加の詳細",
+  ['term', 'at0013', 'text'] => "追加の詳細情報",
 
   # CLUSTER > items/CLUSTER
   # Additional details about the electronic communication.
@@ -127,8 +127,6 @@ T = {
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
   ['term', 'at0002', 'text'] => "要確認: 値（他候補: 連絡先の値）原文の汎用的なラベルを保ち、電話番号や電子メールアドレスなどを含められる訳を採用。",
-  ['term', 'at0003', 'text'] => "要確認: 用途（他候補: 目的）値セットが業務用・個人用・業務用と個人用の両方を区別するため、住所の用途と同じ表現を採用。",
-  ['term', 'at0008', 'text'] => "要確認: ポケットベル（他候補: ページャー、無線呼出受信機）日本語で認知しやすい呼称を採用。",
 }.freeze
 
 src, dst = ARGV
