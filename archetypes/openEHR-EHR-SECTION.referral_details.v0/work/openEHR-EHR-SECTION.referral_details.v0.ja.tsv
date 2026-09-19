@@ -6,6 +6,6 @@ openEHR-EHR-SECTION.referral_details.v0	description	-	copyright		© openEHR Foun
 openEHR-EHR-SECTION.referral_details.v0	term	at0000	text	SECTION	Referral details	紹介状の詳細	要確認: SECTION 名。「紹介状の詳細」（他候補: 紹介詳細／紹介情報）
 openEHR-EHR-SECTION.referral_details.v0	term	at0000	description	SECTION	Example framework for modelling a template for a referral.	紹介状のテンプレートをモデル化するための枠組みの例。	
 openEHR-EHR-SECTION.referral_details.v0	term	at0001	text	SECTION > items/INSTRUCTION	Referral request	紹介依頼	要確認: INSTRUCTION.service_request のスロット。「紹介依頼」（service_request 本体の概念名とは別に、スロット名として簡潔に）
-openEHR-EHR-SECTION.referral_details.v0	term	at0001	description	SECTION > items/INSTRUCTION	Details about the referral request.	紹介依頼に関する詳細。	
+openEHR-EHR-SECTION.referral_details.v0	term	at0001	description	SECTION > items/INSTRUCTION	Details about the referral request.	紹介依頼に関する詳細情報。	
 openEHR-EHR-SECTION.referral_details.v0	term	at0002	text	SECTION > items/ENTRY	Details	詳細	clinical_synopsis / story / exam / imaging_exam_result / laboratory_test_result のスロット。「詳細」のまま
-openEHR-EHR-SECTION.referral_details.v0	term	at0002	description	SECTION > items/ENTRY	Additional clinical details supporting the referral.	紹介を裏付ける追加の臨床的詳細。	
+openEHR-EHR-SECTION.referral_details.v0	term	at0002	description	SECTION > items/ENTRY	Additional clinical details supporting the referral.	紹介を裏付ける追加の臨床的な詳細情報。	

@@ -98,11 +98,11 @@ ontology
 				>
 				["at0001"] = <
 					text = <"紹介依頼">
-					description = <"紹介依頼に関する詳細。">
+					description = <"紹介依頼に関する詳細情報。">
 				>
 				["at0002"] = <
 					text = <"詳細">
-					description = <"紹介を裏付ける追加の臨床的詳細。">
+					description = <"紹介を裏付ける追加の臨床的な詳細情報。">
 				>
 			>
 		>
