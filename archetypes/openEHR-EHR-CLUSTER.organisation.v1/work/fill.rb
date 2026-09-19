@@ -19,7 +19,7 @@ T = {
   # Not to be used to represent, replace or maintain an official register or index. Use a formal Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.
   # 
   # Not to be used to represent the location of care and similar data elements that should be represented formally in the health record using the Reference Model attributes.
-  ['description', '-', 'misuse'] => "公式の登録簿やインデックスの表現やその代替、または維持・管理に用いてはならない。これらの目的には、正式な「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\nケアの実施場所など、参照モデルの属性を用いて健康記録に正式に記録すべき情報を、本archetypeで記録してはならない。",
+  ['description', '-', 'misuse'] => "公式の登録簿やインデックスの表現、代替、または維持・管理に用いてはならない。これらの目的には、正式な「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\nケアの実施場所など、参照モデルの属性を用いて健康記録に正式に記録すべき情報を、本archetypeで記録してはならない。",
 
   # organisation, organization, provider, carer, network, group
   ['description', '-', 'keywords'] => "組織 | 医療提供者 | 介護者 | ネットワーク | 集団",
