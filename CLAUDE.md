@@ -54,6 +54,9 @@ make check                                    # 全 archetypes/*/upload/*.adl �
 make status                                   # status.tsv の一覧
 ```
 
+- 翻訳前に `docs/style-examples.md`（校正前 → 校正後の対応。`make examples` で `review:` コミットから再生成）を読み、NEW の方向で訳す。文体の規則は `glossary-ja.md`「こなれた訳のための規則」。
+- 翻訳を Codex に任せるときは `docs/codex-translate-prompt.md` のテンプレートを使う（`codex exec -s workspace-write`、起動前に `pwd` で対象リポジトリを確認）。Codex は作業ツリーだけを変更し、コミットしない。Claude Code が差分をレビューして `Implemented-by: Codex` トレーラ付きでコミットする。
+
 - 元 ADL は CKM からダウンロードしたもの、または https://github.com/openEHR/CKM-mirror の同一リビジョンを使う。Issue に書かれたリビジョンと `["revision"]` が一致することを確認する。
 - `make build` が `FAILED` を返したら、欠けているコード／空フィールドを `work/fill.rb` に足して再実行する。`*...(en)` のようなプレースホルダを残してはいけない。
 - 原文が空のフィールド（`misuse = <"">` など）は TSV に現れない。訳さなくてよい。
