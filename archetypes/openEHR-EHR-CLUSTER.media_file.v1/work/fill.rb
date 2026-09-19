@@ -25,15 +25,15 @@ T = {
   # If more than one media file has been captured, such as 'before' and 'after' images of a wound, use a separate instance of this archetype to represent each media file.
   # 
   # If a series of media files is represented as a single item, such as a CT scan, one instance of this archetype can be used to represent a URI path to the group.
-  ['description', '-', 'use'] => "医療プロセスの一環として取得または使用するメディアファイルと、関連するメタデータの詳細情報を記録するために用いる。\n\n本archetypeは、メディアファイルと、その取得に関するメタデータのみを保持することを意図している。他のarchetypeの中に入れ子にして用い、通常は OBSERVATION または ACTION に、メディアファイルの取得に関する背景や状況を記録する。例：放射線画像の撮影法、撮影方向、観察方向の詳細情報や DICOM の詳細情報は、OBSERVATION.imaging_exam_result archetypeに記録する。 \n\n以下のような使用例があるが、これらに限らない。\n- 外傷の写真を記録する；\n- 特定の臨床所見の位置を示す図を記録する；\n- 放射線画像を記録する；\n- 面談の録音や録画を記録する；\n- 病理標本スライドのスキャン画像を記録する；\n- 心電計などの医療機器から出力されたデータを記録する；または\n- 紙の文書や手書きの診療記録のスキャン画像を記録する。\n\n「コンテンツ」データエレメントでは、Multimedia データ型を用いてメディアファイルを健康記録に取り込み、保存できる。Multimedia データ型には、ファイルサイズや外部の参照先を示す URI など、多くの参照モデルの属性がある。https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class を参照。\n\n創傷の「前」と「後」の画像など、複数のメディアファイルを取得した場合は、各ファイルを本archetypeの別々のインスタンスで表す。\n\nCT画像のように一連のメディアファイルを一つの項目として表す場合は、本archetypeの一つのインスタンスを用いて、そのファイル群への URI パスを記録できる。",
+  ['description', '-', 'use'] => "医療プロセスの一環として取得または使用するメディアファイルと、関連するメタデータの詳細情報を記録するために用いる。\n\n本archetypeは、メディアファイルと、その取得に関するメタデータのみを保持することを意図している。本archetypeは他のarchetype（通常は OBSERVATION または ACTION）の中に入れ子にして用い、メディアファイルの取得に関する背景や状況はその親archetypeに記録する。例：放射線画像の撮影法、撮影方向、観察方向の詳細情報や DICOM の詳細情報は、OBSERVATION.imaging_exam_result archetypeに記録する。 \n\n以下のような使用例があるが、これらに限らない。\n- 外傷の写真を記録する。\n- 特定の臨床所見の位置を示す図を記録する。\n- 放射線画像を記録する。\n- 面談の録音や録画を記録する。\n- 病理標本スライドのスキャン画像を記録する。\n- 心電計などの医療機器から出力されたデータを記録する。\n- 紙の文書や手書きの診療記録のスキャン画像を記録する。\n\n「コンテンツ」データエレメントでは、Multimedia データ型を用いてメディアファイルを健康記録に取り込み、保存できる。Multimedia データ型には、ファイルサイズや外部の参照先を示す URI など、多くの参照モデルの属性がある。https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class を参照。\n\n創傷の「前」と「後」の画像など、複数のメディアファイルを取得した場合は、各ファイルを本archetypeの別々のインスタンスで表す。\n\nCT画像のように一連のメディアファイルを一つの項目として表す場合は、本archetypeの一つのインスタンスを用いて、そのファイル群への URI パスを記録できる。",
 
   # Not to be used to represent information, instructional or educational material supplied to an individual, or their carer, for example patient education leaflets. Use the CLUSTER.information_resource for this purpose.
   # 
   # Not to be used to record a reference to a knowledge base - use CLUSTER.knowledge_base_reference for this purpose.
-  ['description', '-', 'misuse'] => "患者教育用のリーフレットなど、個人やその介護者に提供する情報資料、指導資料、教育資料の表現に用いてはならない。これらの目的には、CLUSTER.information_resource を用いること。\n\n知識ベースへの参照の記録に用いてはならない。この記録には、CLUSTER.knowledge_base_reference を用いること。",
+  ['description', '-', 'misuse'] => "患者教育用のリーフレットなど、個人やその介護者に提供する情報資料、指導資料、教育資料の記録には、本archetypeではなく CLUSTER.information_resource を用いる。\n\n知識ベースへの参照の記録には、本archetypeではなく CLUSTER.knowledge_base_reference を用いる。",
 
   # image | audio | text | video | application | file | multimedia | audio | DICOM | digital | document | photo | voice
-  ['description', '-', 'keywords'] => "画像 | 音声 | テキスト | 動画 | アプリケーション | ファイル | マルチメディア | 音声 | DICOM | デジタル | 文書 | 写真 | 声 | メディアファイル",
+  ['description', '-', 'keywords'] => "画像 | 音声 | テキスト | 動画 | アプリケーション | ファイル | マルチメディア | 音声 | DICOM | デジタル | 文書 | 写真 | 録音 | メディアファイル",
 
   # © openEHR Foundation
   ['description', '-', 'copyright'] => "© openEHR Foundation",
@@ -84,7 +84,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Narrative description about the media file.
-  ['term', 'at0005', 'description'] => "メディアファイルに関する叙述的な説明。",
+  ['term', 'at0005', 'description'] => "メディアファイルに関する記述。",
 
   # CLUSTER > items/ELEMENT
   # Comment
@@ -128,7 +128,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # Additional structured details about the media file.
-  ['term', 'at0013', 'description'] => "メディアファイルに関する追加の詳細情報（構造化された情報）。",
+  ['term', 'at0013', 'description'] => "メディアファイルに関する構造化された追加の詳細情報。",
 
 }.freeze
 

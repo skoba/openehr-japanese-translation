@@ -298,15 +298,15 @@ Niet te gebruiken om een verwijzing naar een kennisbank op te nemen - gebruik hi
 			purpose = <"医療プロセスの一環として取得または使用するメディアファイルと、関連するメタデータの詳細情報を記録するため。">
 			use = <"医療プロセスの一環として取得または使用するメディアファイルと、関連するメタデータの詳細情報を記録するために用いる。
 
-本archetypeは、メディアファイルと、その取得に関するメタデータのみを保持することを意図している。他のarchetypeの中に入れ子にして用い、通常は OBSERVATION または ACTION に、メディアファイルの取得に関する背景や状況を記録する。例：放射線画像の撮影法、撮影方向、観察方向の詳細情報や DICOM の詳細情報は、OBSERVATION.imaging_exam_result archetypeに記録する。 
+本archetypeは、メディアファイルと、その取得に関するメタデータのみを保持することを意図している。本archetypeは他のarchetype（通常は OBSERVATION または ACTION）の中に入れ子にして用い、メディアファイルの取得に関する背景や状況はその親archetypeに記録する。例：放射線画像の撮影法、撮影方向、観察方向の詳細情報や DICOM の詳細情報は、OBSERVATION.imaging_exam_result archetypeに記録する。 
 
 以下のような使用例があるが、これらに限らない。
-- 外傷の写真を記録する；
-- 特定の臨床所見の位置を示す図を記録する；
-- 放射線画像を記録する；
-- 面談の録音や録画を記録する；
-- 病理標本スライドのスキャン画像を記録する；
-- 心電計などの医療機器から出力されたデータを記録する；または
+- 外傷の写真を記録する。
+- 特定の臨床所見の位置を示す図を記録する。
+- 放射線画像を記録する。
+- 面談の録音や録画を記録する。
+- 病理標本スライドのスキャン画像を記録する。
+- 心電計などの医療機器から出力されたデータを記録する。
 - 紙の文書や手書きの診療記録のスキャン画像を記録する。
 
 「コンテンツ」データエレメントでは、Multimedia データ型を用いてメディアファイルを健康記録に取り込み、保存できる。Multimedia データ型には、ファイルサイズや外部の参照先を示す URI など、多くの参照モデルの属性がある。https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class を参照。
@@ -314,10 +314,10 @@ Niet te gebruiken om een verwijzing naar een kennisbank op te nemen - gebruik hi
 創傷の「前」と「後」の画像など、複数のメディアファイルを取得した場合は、各ファイルを本archetypeの別々のインスタンスで表す。
 
 CT画像のように一連のメディアファイルを一つの項目として表す場合は、本archetypeの一つのインスタンスを用いて、そのファイル群への URI パスを記録できる。">
-			misuse = <"患者教育用のリーフレットなど、個人やその介護者に提供する情報資料、指導資料、教育資料の表現に用いてはならない。これらの目的には、CLUSTER.information_resource を用いること。
+			misuse = <"患者教育用のリーフレットなど、個人やその介護者に提供する情報資料、指導資料、教育資料の記録には、本archetypeではなく CLUSTER.information_resource を用いる。
 
-知識ベースへの参照の記録に用いてはならない。この記録には、CLUSTER.knowledge_base_reference を用いること。">
-			keywords = <"画像", "音声", "テキスト", "動画", "アプリケーション", "ファイル", "マルチメディア", "音声", "DICOM", "デジタル", "文書", "写真", "声", "メディアファイル">
+知識ベースへの参照の記録には、本archetypeではなく CLUSTER.knowledge_base_reference を用いる。">
+			keywords = <"画像", "音声", "テキスト", "動画", "アプリケーション", "ファイル", "マルチメディア", "音声", "DICOM", "デジタル", "文書", "写真", "録音", "メディアファイル">
 			copyright = <"© openEHR Foundation">
 		>
 	>
@@ -788,7 +788,7 @@ Hvis filen lagres et sted utenfor den elektroniske journalen, kan adressen til f
 				>
 				["at0005"] = <
 					text = <"説明">
-					description = <"メディアファイルに関する叙述的な説明。">
+					description = <"メディアファイルに関する記述。">
 				>
 				["at0007"] = <
 					text = <"コメント">
@@ -809,7 +809,7 @@ Hvis filen lagres et sted utenfor den elektroniske journalen, kan adressen til f
 				>
 				["at0013"] = <
 					text = <"追加の詳細情報">
-					description = <"メディアファイルに関する追加の詳細情報（構造化された情報）。">
+					description = <"メディアファイルに関する構造化された追加の詳細情報。">
 				>
 			>
 		>
