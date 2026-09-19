@@ -2881,7 +2881,7 @@ Si la ubicació anatòmica està inclosa en el Nom del símptoma mitjançant cod
 				["at0003"] = <
 					text = <"パターン">
 					description = <"このエピソードにおける症状または徴候のパターンについての叙述的な記述。">
-					comment = <"例：疼痛は持続性または間欠性と記述されうる。">
+					comment = <"例：疼痛は持続性または間欠性と記述できる。">
 				>
 				["at0017"] = <
 					text = <"影響">
@@ -2889,7 +2889,7 @@ Si la ubicació anatòmica està inclosa en el Nom del símptoma mitjançant cod
 				>
 				["at0018"] = <
 					text = <"修飾因子">
-					description = <"このエピソードにおいて、特定の因子が特定された症状または徴候にどのように影響するかについての詳細。">
+					description = <"このエピソードにおいて、特定の因子が特定された症状または徴候にどのように影響するかに関する詳細情報。">
 				>
 				["at0019"] = <
 					text = <"因子">
@@ -2939,7 +2939,7 @@ Si la ubicació anatòmica està inclosa en el Nom del símptoma mitjançant cod
 				["at0063"] = <
 					text = <"随伴症状・徴候">
 					description = <"同時に生じている随伴症状または徴候についての構造化された詳細記録。">
-					comment = <"連携された臨床システムでは、随伴する症状や徴候がすでに EHR 内に記録されていることがある。システムは、臨床医が関連する随伴症状・徴候に LINK できるようにしてよい。しかし、既存データへの LINK を持たないシステムやメッセージ、あるいは新規の患者の場合には、随伴症状・徴候を表すために symptom archetypeの追加のインスタンスをここに含めることができる。">
+					comment = <"連携している臨床システムでは、随伴する症状や徴候がすでに EHR 内に記録されていることがある。その場合、システムは、臨床医が関連する随伴症状・徴候への LINK を設定する機能を提供できる。一方、既存データへの LINK がないシステムやメッセージ、あるいは新規患者の場合には、この SLOT に Symptom archetypeのインスタンスを追加して、随伴症状・徴候を記録できる。">
 				>
 				["at0146"] = <
 					text = <"過去のエピソード">
@@ -2995,7 +2995,7 @@ Si la ubicació anatòmica està inclosa en el Nom del símptoma mitjançant cod
 				>
 				["at0163"] = <
 					text = <"コメント">
-					description = <"他の項目では捉えられない、症状または徴候についての追加の記述。">
+					description = <"他の項目には収まらない症状または徴候についての追加の記述。">
 				>
 				["at0164"] = <
 					text = <"発症時期">
@@ -3004,7 +3004,7 @@ Si la ubicació anatòmica està inclosa en el Nom del símptoma mitjançant cod
 				>
 				["at0165"] = <
 					text = <"誘発因子">
-					description = <"症状または徴候の誘発に関連する特定の因子についての詳細。">
+					description = <"症状または徴候の誘発に関連する特定の因子に関する詳細情報。">
 					comment = <"例：横になると胸やけが生じる；または坂を上ると跛行が生じる。">
 				>
 				["at0170"] = <
@@ -3072,11 +3072,11 @@ Si la ubicació anatòmica està inclosa en el Nom del símptoma mitjançant cod
 				["at0189"] = <
 					text = <"性状">
 					description = <"症状または徴候の性質を表す語または短い句。">
-					comment = <"例：疼痛は「うずくような」「灼けるような」「電気が走るような」と記述されうる；頭痛は「拍動性」または「持続性」でありうる。可能であれば、外部用語集によりコード化することが望ましい。">
+					comment = <"例：疼痛は「うずくような」「灼けるような」「電気が走るような」、頭痛は「拍動性」または「持続性」と記述できる。可能であれば、外部用語集によりコード化することが望ましい。">
 				>
 				["at0190"] = <
 					text = <"寛解因子">
-					description = <"症状または徴候の消失に関連する特定の因子についての詳細。">
+					description = <"症状または徴候の消失に関連する特定の因子に関する詳細情報。">
 					comment = <"例：直立姿勢で胸やけが止まる；または休息で跛行が止まる。">
 				>
 				["at0193"] = <

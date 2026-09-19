@@ -73,7 +73,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # For example: pain could be described as constant or intermittent.
-  ['term', 'at0003', 'comment'] => "例：疼痛は持続性または間欠性と記述されうる。",
+  ['term', 'at0003', 'comment'] => "例：疼痛は持続性または間欠性と記述できる。",
 
   # CLUSTER > items/CLUSTER > items/ELEMENT
   # Effect
@@ -89,7 +89,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # Detail about how a specific factor effects the identified symptom or sign during this episode.
-  ['term', 'at0018', 'description'] => "このエピソードにおいて、特定の因子が特定された症状または徴候にどのように影響するかについての詳細。",
+  ['term', 'at0018', 'description'] => "このエピソードにおいて、特定の因子が特定された症状または徴候にどのように影響するかに関する詳細情報。",
 
   # CLUSTER > items/CLUSTER > items/ELEMENT
   # Factor
@@ -195,7 +195,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # In linked clinical systems, it is possible that associated symptoms or signs are already recorded within the EHR. Systems can allow the clinician to LINK to relevant associated symptoms/signs. However in a system or message without LINKs to existing data or with a new patient, additional instances of the symptom archetype could be included here to represent associated symptoms/signs.
-  ['term', 'at0063', 'comment'] => "連携された臨床システムでは、随伴する症状や徴候がすでに EHR 内に記録されていることがある。システムは、臨床医が関連する随伴症状・徴候に LINK できるようにしてよい。しかし、既存データへの LINK を持たないシステムやメッセージ、あるいは新規の患者の場合には、随伴症状・徴候を表すために symptom archetypeの追加のインスタンスをここに含めることができる。",
+  ['term', 'at0063', 'comment'] => "連携している臨床システムでは、随伴する症状や徴候がすでに EHR 内に記録されていることがある。その場合、システムは、臨床医が関連する随伴症状・徴候への LINK を設定する機能を提供できる。一方、既存データへの LINK がないシステムやメッセージ、あるいは新規患者の場合には、この SLOT に Symptom archetypeのインスタンスを追加して、随伴症状・徴候を記録できる。",
 
   # CLUSTER > items/CLUSTER
   # Previous episodes
@@ -314,7 +314,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Additional narrative about the symptom or sign not captured in other fields.
-  ['term', 'at0163', 'description'] => "他の項目では捉えられない、症状または徴候についての追加の記述。",
+  ['term', 'at0163', 'description'] => "他の項目には収まらない症状または徴候についての追加の記述。",
 
   # CLUSTER > items/ELEMENT
   # Onset timing
@@ -334,7 +334,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # Details about specified factors that are associated with the precipitation of the symptom or sign.
-  ['term', 'at0165', 'description'] => "症状または徴候の誘発に関連する特定の因子についての詳細。",
+  ['term', 'at0165', 'description'] => "症状または徴候の誘発に関連する特定の因子に関する詳細情報。",
 
   # CLUSTER > items/CLUSTER
   # For example: lying down leads to heartburn; or walking up a hill leads to claudication.
@@ -460,7 +460,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # For example: pain could be described as 'gnawing', 'burning', or 'like an electric shock'; a headache could be 'throbbing' or 'constant'. Coding with an external terminology is preferred, where possible.
-  ['term', 'at0189', 'comment'] => "例：疼痛は「うずくような」「灼けるような」「電気が走るような」と記述されうる；頭痛は「拍動性」または「持続性」でありうる。可能であれば、外部用語集によりコード化することが望ましい。",
+  ['term', 'at0189', 'comment'] => "例：疼痛は「うずくような」「灼けるような」「電気が走るような」、頭痛は「拍動性」または「持続性」と記述できる。可能であれば、外部用語集によりコード化することが望ましい。",
 
   # CLUSTER > items/CLUSTER
   # Resolving factor
@@ -468,7 +468,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # Details about specified factors that are associated with the resolution of the symptom or sign.
-  ['term', 'at0190', 'description'] => "症状または徴候の消失に関連する特定の因子についての詳細。",
+  ['term', 'at0190', 'description'] => "症状または徴候の消失に関連する特定の因子に関する詳細情報。",
 
   # CLUSTER > items/CLUSTER
   # For example: upright posture stops heartburn; or resting stops claudication.
