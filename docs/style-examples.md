@@ -687,6 +687,54 @@
 - OLD: 例：「赤い扉の家の隣人」。
 - NEW: 例：「赤い扉の家に住む近所の人」。
 
+## openEHR-EHR-CLUSTER.electronic_communication.v1 — electronic_communication.v1 校正の取り込み（固定電話、追加の詳細情報 ほか）（2026-09-19）
+
+### description/-/use
+- EN : Use to record details about a specified type of electronic communication for an individual or an organisation as it is known or understood in the course of clinical documentation. This is commonly ad hoc or when it is not appropriate or possible to use a formal register or index.
+- OLD: 臨床記録の作成に際して取得した、個人または組織の特定の種別の電子的な連絡先に関する詳細情報を記録するために用いる。主に、必要に応じて情報を記録する場合や、正式な登録簿やインデックスの利用が適切でない、または利用できない場合を想定している。
+- NEW: 臨床記録の作成に際して取得した、個人または組織の特定の種別の電子的な連絡先に関する詳細情報を記録するために用いる。必要となった連絡先をその都度記録する場合や、正式な登録簿やインデックスを利用することが適切でない、または利用できない場合が主に想定されている。
+
+### term/at0006/text
+- EN : Telephone (excluding mobile telephone)
+- OLD: 電話（携帯電話を除く）
+- NEW: 固定電話
+
+### term/at0013/text
+- EN : Additional details
+- OLD: 追加の詳細
+- NEW: 追加の詳細情報
+
+## openEHR-EHR-CLUSTER.person.v1 — electronic_communication.v1 校正の取り込み（固定電話、追加の詳細情報 ほか）（2026-09-19）
+
+### term/at0008/text
+- EN : Additional details
+- OLD: 追加の詳細
+- NEW: 追加の詳細情報
+
+## openEHR-EHR-CLUSTER.organisation.v1 — organisation.v1 校正の取り込み（傘下組織、診療部門、支払機関、要確認 6 件を解消）（2026-09-19）
+
+### description/-/use
+- EN : Use to record details of an organisation as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index. Examples include:\n- the copyholder of an advanced care record, using the 'Copyholder' SLOT within the EVALUATION.advance_care_directive archetype; or\n- the name and contact details of an organisation providing home care to an individual.\n\nThis archetype has been designed to carry details of formally recognised entities, such as a registered business, a hospital and its recognised 'sub-organisations', such as an operationally separate or specialised satellite clinic or home care service. It may also be used to carry contact information about more informal networks or groups, such as a local community support group.\n\nThis archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see an organisations' details on an assessment form.
+- OLD: 臨床記録の作成に際して取得した、組織に関する詳細情報を記録するために用いる。主に、必要に応じて情報を記録する場合や、正式なデモグラフィック登録簿やインデックスの利用が適切でない、または利用できない場合を想定している。以下のような使用例がある。\n- EVALUATION.advance_care_directive archetypeの「写し保有者」SLOTを用いて、事前ケア記録の写しを保有する組織の情報を記録する；または\n- 個人に在宅ケアを提供する組織の名称と連絡先を記録する。\n\n本archetypeは、登録された事業者や病院、病院の正式な「下部組織」など、正式に認められた組織の詳細情報を記録するために設計されている。下部組織には、運営上独立した分院や専門分野に特化した分院、在宅ケアサービスなどがある。また、地域の支援団体など、より非公式なネットワークや集団の連絡先情報を記録するためにも使用できる。\n\n本archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィックデータの代用として使用することもできる。例えば、評価票の冒頭に組織の詳細情報が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。
+- NEW: 臨床記録の作成に際して取得した、組織に関する詳細情報を記録するために用いる。必要に応じて情報を記録する場合や、正式なデモグラフィック登録簿やインデックスの利用が適切でない、または利用できない場合を主に想定している。以下のような使用例がある。\n- EVALUATION.advance_care_directive archetypeの「写し保有者」SLOTを用いて、事前ケア記録の写しを保有する組織の情報を記録する。\n- 個人に在宅ケアを提供する組織の名称と連絡先を記録する。\n\n本archetypeは、登録された事業者や病院、病院の正式な「傘下組織」など、正式に認められた組織の詳細情報を記録するために設計されている。傘下組織には、運営上独立した分院や専門分野に特化した分院、在宅ケアサービスなどがある。また、地域の支援団体など、より非公式なネットワークや集団の連絡先情報を記録するためにも使用できる。\n\n本archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィックデータの代用として使用することもできる。例えば、評価票の冒頭に組織の詳細情報が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。
+
+### term/at0000/comment
+- EN : For example: a company, institution, association, network, department, community group, healthcare practice group, payer/insurer, care team, or a group of neighbours who provide care or support.
+- OLD: 例：企業、機関、協会、ネットワーク、部門、地域団体、診療グループ、支払者・保険者、ケアチーム、またはケアや支援を提供する近隣住民の集まり。
+- NEW: 例：企業、機関、協会、ネットワーク、診療部門、地域団体、診療グループ、支払機関・保険者、ケアチーム、またはケアや支援を提供する近隣住民の集まり。
+
+### term/at0021/description
+- EN : A larger organisation of which this organisation is a child or subsidiary.
+- OLD: この組織を下部組織または子会社として含む、より大きな組織。
+- NEW: この組織を傘下組織または子会社として含む、より大きな組織。
+
+## openEHR-EHR-CLUSTER.person.v1 — organisation.v1 校正の取り込み（傘下組織、診療部門、支払機関、要確認 6 件を解消）（2026-09-19）
+
+### description/-/use
+- EN : Use to record details of a person as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index. Examples include:\n- the copyholder of an advanced care record, using the 'Copyholder' SLOT within the EVALUATION.advance_care_directive archetype;\n- the role and contact details of a named contact person within an organisation, using the 'Contact person' SLOT within the CLUSTER.organisation archetype;\n- details about a relative in a family history record, using the 'Family member details' SLOT within the openEHR-EHR-EVALUATION.family_history archetype; \n- the name of the person who collected a laboratory specimen from a patient, using the 'Specimen collector details' within the CLUSTER.specimen archetype; or\n- a witness to a fall or accident, using the 'Witness' SLOT within the CLUSTER.health_event archetype.\n\nIn most simple clinical recording use cases, the unstructured 'Name' element within the CLUSTER.person archetype will be sufficient to record the name of a person as part of a health record. However, in circumstances where a structured name is necessary or desirable for clinical recording purposes, nest this archetype within the 'Structured name' SLOT in CLUSTER.person archetype. If the CLUSTER.structured_name archetype is nested within the 'Structured name' SLOT, any or all of the data elements can be combined together as a text string and represented in the 'Name' element, as long as they are consistent.\n\nThis archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see a person's details at the top of the assessment form.
+- OLD: 臨床記録の作成に際して取得した、その人に関する詳細情報を記録するために用いる。主に、必要に応じて情報を記録する場合や、正式なデモグラフィック登録簿やインデックスの利用が適切でない、または利用できない場合を想定している。以下のような使用例がある。\n- EVALUATION.advance_care_directive archetypeの「写し保有者」SLOTを用いて、事前ケア記録の写しを保有する人の情報を記録する。\n- CLUSTER.organisation archetypeの「連絡担当者」SLOTを用いて、組織内の特定の連絡担当者の役割と連絡先を記録する。\n- openEHR-EHR-EVALUATION.family_history archetypeの「家族構成員の詳細」SLOTを用いて、家族歴に登場する親族の詳細情報を記録する。 \n- CLUSTER.specimen archetypeの「検体採取者の詳細」を用いて、患者から検査用の検体を採取した人の氏名を記録する。\n- CLUSTER.health_event archetypeの「目撃者」SLOTを用いて、転倒や事故の目撃者の情報を記録する。\n\n臨床記録に人の氏名を記録するだけであれば、多くの場合、CLUSTER.person archetypeの非構造化の「氏名」要素で十分である。ただし、臨床記録の目的上、氏名を構造化して記録することが必要または望ましい場合は、CLUSTER.person archetypeの「構造化された氏名」SLOTにCLUSTER.structured_name archetypeを組み込む。この場合、各データエレメントの一部またはすべてを一つの文字列にまとめ、「氏名」要素に表示することもできる。ただし、構造化された氏名と「氏名」要素の内容が整合している必要がある。\n\n本archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィックデータの代用として使用することもできる。例えば、評価票の冒頭にその人の詳細情報が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。
+- NEW: 臨床記録の作成に際して取得した、その人に関する詳細情報を記録するために用いる。必要に応じて情報を記録する場合や、正式なデモグラフィック登録簿やインデックスの利用が適切でない、または利用できない場合を主に想定している。以下のような使用例がある。\n- EVALUATION.advance_care_directive archetypeの「写し保有者」SLOTを用いて、事前ケア記録の写しを保有する人の情報を記録する。\n- CLUSTER.organisation archetypeの「連絡担当者」SLOTを用いて、組織内の特定の連絡担当者の役割と連絡先を記録する。\n- openEHR-EHR-EVALUATION.family_history archetypeの「家族構成員の詳細」SLOTを用いて、家族歴に登場する親族の詳細情報を記録する。 \n- CLUSTER.specimen archetypeの「検体採取者の詳細」を用いて、患者から検査用の検体を採取した人の氏名を記録する。\n- CLUSTER.health_event archetypeの「目撃者」SLOTを用いて、転倒や事故の目撃者の情報を記録する。\n\n臨床記録に人の氏名を記録するだけであれば、多くの場合、CLUSTER.person archetypeの非構造化の「氏名」要素で十分である。ただし、臨床記録の目的上、氏名を構造化して記録することが必要または望ましい場合は、CLUSTER.person archetypeの「構造化された氏名」SLOTにCLUSTER.structured_name archetypeを組み込む。この場合、各データエレメントの一部またはすべてを一つの文字列にまとめ、「氏名」要素に表示することもできる。ただし、構造化された氏名と「氏名」要素の内容が整合している必要がある。\n\n本archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィックデータの代用として使用することもできる。例えば、評価票の冒頭にその人の詳細情報が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。
+
 ## openEHR-EHR-CLUSTER.symptom_sign.v2 — 校正の取り込み（2026-09-12、履歴は squash 済みのため静的に保存）
 
 ### description/-/purpose

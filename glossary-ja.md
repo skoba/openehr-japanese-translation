@@ -266,6 +266,22 @@
 | location of care | ケアの実施場所 | organisation.v1 misuse。参照モデルの属性で記録する場所（校正 2026-09-19 で確定） |
 | network / group (organisation) | ネットワーク / 集団 | organisation.v1 keywords。法人格を持つ組織に限らない（校正 2026-09-19 で確定） |
 
+| Content / Content name (media file) | コンテンツ / コンテンツ名 | media_file at0001 / at0002。ファイル本体とその名称を区別する（要確認。他候補：内容 / 内容名） |
+| Created (media file) | 作成日時 | media_file at0004。部分的な日付や期間も含む（要確認。他候補：作成時期） |
+| Source device | 作成機器 | media_file at0011。ファイルの生成・作成に用いた機器（要確認。他候補：取得元機器） |
+| Creator | 作成者 | media_file at0012。個人と組織の両方を含む（要確認。他候補：制作者） |
+| metadata | メタデータ | 既存の additional metadata＝追加メタデータに合わせる（要確認。他候補：付帯情報） |
+| modality / view / aspect (radiographic image) | 撮影法 / 撮影方向 / 観察方向 | media_file use。画像の取得方法と方向を区別する（要確認。他候補：モダリティ / 撮影像 / 側面） |
+| scanned pathology slide | 病理標本スライドのスキャン画像 | media_file use。保存するデジタル画像を表す（要確認。他候補：スキャンした病理標本） |
+| clinical device / ECG machine | 医療機器 / 心電計 | media_file use。データを出力する機器（要確認。他候補：臨床機器 / 心電図装置） |
+| information resource / knowledge base reference | 情報資料 / 知識ベースへの参照 | media_file misuse の参照先の意味。CLUSTER.information_resource / CLUSTER.knowledge_base_reference は英字のまま（要確認。他候補：情報資源 / ナレッジベース参照） |
+| healthcare process / health record | 医療プロセス / 健康記録 | media_file。Issue #11 の翻訳指示で確定 |
+| RM attributes / Reference Model attributes | 参照モデルの属性 | media_file。organisation 校正版および Issue #11 の翻訳指示に合わせる |
+| Multimedia data type | Multimedia データ型 | DV_MULTIMEDIA を指す。データ型名は英字のまま（Issue #11 の翻訳指示） |
+| image / audio / text / video / application / file / multimedia / digital / document / voice | 画像 / 音声 / テキスト / 動画 / アプリケーション / ファイル / マルチメディア / デジタル / 文書 / 声 | media_file keywords（要確認。他候補：video＝映像、voice＝音声）。audio と voice の対応を保持 |
+| radiological image / clinical finding | 放射線画像 / 臨床所見 | media_file use（要確認。他候補：放射線診断画像 / 診療所見） |
+| burn / wound / video consultation | 熱傷 / 創傷 / ビデオ診察 | media_file use, at0002 comment（要確認。他候補：やけど / 傷 / オンライン診察） |
+
 ## アーキタイプ別の確定訳（概念名）
 
 | Archetype | at0000 text | 備考 |
@@ -285,3 +301,4 @@
 | openEHR-EHR-CLUSTER.address.v1 (1.1.3) | 住所 | at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所。日本の対応物は comment の例示 |
 | openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | 校正済み（2026-09-19）。at0001 種別、at0002 値、at0003 用途、at0006 固定電話、at0013 追加の詳細情報 |
 | openEHR-EHR-CLUSTER.organisation.v1 (1.0.4) | 組織 | 校正済み（2026-09-19）。医療機関に限らず企業・団体・部門・ケアチーム等を含む。at0001 名称、at0002 連絡担当者、at0021 親組織 |
+| openEHR-EHR-CLUSTER.media_file.v1 (1.0.6) | メディアファイル | Issue #11 の翻訳指示で確定。at0001 コンテンツ、at0002 コンテンツ名、at0004 作成日時、at0011 作成機器、at0012 作成者（各ノード名は要確認） |
