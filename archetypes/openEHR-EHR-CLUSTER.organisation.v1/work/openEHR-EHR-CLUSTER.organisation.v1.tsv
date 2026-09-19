@@ -1,0 +1,30 @@
+archetype	section	code	field	context	source	target	note
+openEHR-EHR-CLUSTER.organisation.v1	description	-	purpose		To record details about an organisation as they are known or understood in the course of clinical documentation.		
+openEHR-EHR-CLUSTER.organisation.v1	description	-	use		Use to record details of an organisation as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index. Examples include:\n- the copyholder of an advanced care record, using the 'Copyholder' SLOT within the EVALUATION.advance_care_directive archetype; or\n- the name and contact details of an organisation providing home care to an individual.\n\nThis archetype has been designed to carry details of formally recognised entities, such as a registered business, a hospital and its recognised 'sub-organisations', such as an operationally separate or specialised satellite clinic or home care service. It may also be used to carry contact information about more informal networks or groups, such as a local community support group.\n\nThis archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see an organisations' details on an assessment form.		
+openEHR-EHR-CLUSTER.organisation.v1	description	-	misuse		Not to be used to represent, replace or maintain an official register or index. Use a formal Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\n\nNot to be used to represent the location of care and similar data elements that should be represented formally in the health record using the Reference Model attributes.		
+openEHR-EHR-CLUSTER.organisation.v1	description	-	keywords		organisation, organization, provider, carer, network, group		
+openEHR-EHR-CLUSTER.organisation.v1	description	-	copyright		© openEHR Foundation		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0000	text	CLUSTER	Organisation		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0000	description	CLUSTER	An entity comprising one or more people and having a particular purpose.		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0000	comment	CLUSTER	For example: a company, institution, association, network, department, community group, healthcare practice group, payer/insurer, care team, or a group of neighbours who provide care or support.		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0001	text	CLUSTER > items/ELEMENT	Name		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0001	description	CLUSTER > items/ELEMENT	The unstructured name or label for the organisation.		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0001	comment	CLUSTER > items/ELEMENT	For example: 'Royal Children's Hospital'; 'ABC District Nursing Service'; 'YNWA Oslo' or 'JB Smith Lawyers'.		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0002	text	CLUSTER > items/CLUSTER	Contact person		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0002	description	CLUSTER > items/CLUSTER	Details about one or more people within the organisation.		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0003	text	CLUSTER > items/ELEMENT	Identifier		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0003	description	CLUSTER > items/ELEMENT	Identifier associated with the organisation.		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0003	comment	CLUSTER > items/ELEMENT	Occurrences for this data element is set to 0..* to allow for more than one Identifier to be recorded. Note that the ID data type contains multiple subcomponents for recording the ID value, type, issuer and assigner.		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0004	text	CLUSTER > items/ELEMENT	Role		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0004	description	CLUSTER > items/ELEMENT	The relationship or role of the organisation to the individual or subject of care.		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0004	comment	CLUSTER > items/ELEMENT	For example: oncologist; palliative care home nursing service; or informal support network.		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0005	text	CLUSTER > items/CLUSTER	Address		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0005	description	CLUSTER > items/CLUSTER	Details about an address for the organisation.		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0017	text	CLUSTER > items/CLUSTER	Additional details		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0017	description	CLUSTER > items/CLUSTER	Additional details about the organisation.		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0019	text	CLUSTER > items/ELEMENT	Comment		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0019	description	CLUSTER > items/ELEMENT	Additional narrative about the organisation not captured in other fields.		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0021	text	CLUSTER > items/CLUSTER	Parent organisation		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0021	description	CLUSTER > items/CLUSTER	A larger organisation of which this organisation is a child or subsidiary.		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0022	text	CLUSTER > items/CLUSTER	Electronic communication		
+openEHR-EHR-CLUSTER.organisation.v1	term	at0022	description	CLUSTER > items/CLUSTER	Details about one or more types of electronic communication for the organisation.		
