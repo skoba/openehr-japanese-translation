@@ -14,7 +14,7 @@ T = {
   # This archetype has been designed to carry details of formally recognised entities, such as a registered business, a hospital and its recognised 'sub-organisations', such as an operationally separate or specialised satellite clinic or home care service. It may also be used to carry contact information about more informal networks or groups, such as a local community support group.
   # 
   # This archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see an organisations' details on an assessment form.
-  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、組織に関する詳細情報を記録するために用いる。主に、必要に応じて情報を記録する場合や、正式なデモグラフィック登録簿やインデックスの利用が適切でない、または利用できない場合を想定している。以下のような使用例がある。\n- EVALUATION.advance_care_directive archetypeの「写し保有者」SLOTを用いて、事前ケア記録の写しを保有する組織の情報を記録する；または\n- 個人に在宅ケアを提供する組織の名称と連絡先を記録する。\n\n本archetypeは、登録された事業者や病院、病院の正式な「下部組織」など、正式に認められた組織の詳細情報を記録するために設計されている。下部組織には、運営上独立した分院や専門分野に特化した分院、在宅ケアサービスなどがある。また、地域の支援団体など、より非公式なネットワークや集団の連絡先情報を記録するためにも使用できる。\n\n本archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィックデータの代用として使用することもできる。例えば、評価票の冒頭に組織の詳細情報が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。",
+  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、組織に関する詳細情報を記録するために用いる。必要に応じて情報を記録する場合や、正式なデモグラフィック登録簿やインデックスの利用が適切でない、または利用できない場合を主に想定している。以下のような使用例がある。\n- EVALUATION.advance_care_directive archetypeの「写し保有者」SLOTを用いて、事前ケア記録の写しを保有する組織の情報を記録する。\n- 個人に在宅ケアを提供する組織の名称と連絡先を記録する。\n\n本archetypeは、登録された事業者や病院、病院の正式な「傘下組織」など、正式に認められた組織の詳細情報を記録するために設計されている。傘下組織には、運営上独立した分院や専門分野に特化した分院、在宅ケアサービスなどがある。また、地域の支援団体など、より非公式なネットワークや集団の連絡先情報を記録するためにも使用できる。\n\n本archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィックデータの代用として使用することもできる。例えば、評価票の冒頭に組織の詳細情報が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。",
 
   # Not to be used to represent, replace or maintain an official register or index. Use a formal Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.
   # 
@@ -37,7 +37,7 @@ T = {
 
   # CLUSTER
   # For example: a company, institution, association, network, department, community group, healthcare practice group, payer/insurer, care team, or a group of neighbours who provide care or support.
-  ['term', 'at0000', 'comment'] => "例：企業、機関、協会、ネットワーク、部門、地域団体、診療グループ、支払者・保険者、ケアチーム、またはケアや支援を提供する近隣住民の集まり。",
+  ['term', 'at0000', 'comment'] => "例：企業、機関、協会、ネットワーク、診療部門、地域団体、診療グループ、支払機関・保険者、ケアチーム、またはケアや支援を提供する近隣住民の集まり。",
 
   # CLUSTER > items/ELEMENT
   # Name
@@ -113,7 +113,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # A larger organisation of which this organisation is a child or subsidiary.
-  ['term', 'at0021', 'description'] => "この組織を下部組織または子会社として含む、より大きな組織。",
+  ['term', 'at0021', 'description'] => "この組織を傘下組織または子会社として含む、より大きな組織。",
 
   # CLUSTER > items/CLUSTER
   # Electronic communication
@@ -127,12 +127,7 @@ T = {
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['term', 'at0021', 'text'] => "要確認: 親組織（他候補: 上位組織）企業に限らず、部門やケアチーム等の上位にある組織も含むため。",
-  ['description', '-', 'use'] => "要確認: 下部組織、分院、登録された事業者、地域の支援団体（他候補: 傘下組織、サテライト診療所、登記事業者、地域の相互扶助団体）正式な組織と非公式な集まりの両方を含め、特定の法人形態に限定しない訳を採用。",
-  ['term', 'at0000', 'comment'] => "要確認: 診療グループ、支払者、保険者（他候補: 診療団体、費用負担者、保険事業者）組織の例示として、日本の特定の法人形態や支払制度に限定しない訳を採用。",
-  ['term', 'at0004', 'comment'] => "要確認: 腫瘍専門医、緩和ケアの訪問看護サービス、非公式な支援ネットワーク（他候補: 腫瘍医、緩和ケアの在宅看護サービス、インフォーマルな支援ネットワーク）oncologist は組織の役割の例示としては人の呼称だが原文を保持。home nursing は訪問看護と解釈。",
-  ['description', '-', 'misuse'] => "要確認: ケアの実施場所（他候補: ケア提供場所）参照モデルの属性で表す場所を指す。person.v1 と異なり、原文には患者マスターインデックスやケア対象者等の例示はないため含めない。",
-  ['description', '-', 'keywords'] => "要確認: ネットワーク、集団（他候補: つながり、グループ）正式な組織に限らない人のつながりや集まりも含むため。",
+  # ['term', 'at0000', 'text'] => '要確認: ...',
 }.freeze
 
 src, dst = ARGV
