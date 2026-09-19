@@ -17,7 +17,7 @@ Issue #<N>: openEHR-EHR-<ID> の日本語訳。`make new` は実行済みで、�
 
 ## やること
 1. fill.rb の T をすべて埋める（原文が空の description は '' のまま）。原文の段落・改行（\n）・箇条書き・末尾の空白は保つ。
-2. 訳語は glossary-ja.md にある語を必ず使う。確定済みの語（例）: data element＝データエレメント、archetype は英字のまま、Comment＝コメント、Additional details＝追加の詳細、subject of care＝ケア対象者、healthcare provider＝医療従事者、problem＝プロブレム、Extension・Tree は訳さない。用語集に無い語は決めて NOTES に要確認を残し、glossary-ja.md の共通語表の末尾と概念名表の末尾に行を追加する（既存行は変更しない）。
+2. 訳語は glossary-ja.md にある語を必ず使う。確定済みの語（例）: data element＝データエレメント、archetype は英字のまま、Comment＝コメント、Additional details＝追加の詳細情報、subject of care＝ケア対象者、healthcare provider＝医療従事者、problem＝プロブレム、Extension・Tree は訳さない。用語集に無い語は決めて NOTES に要確認を残し、glossary-ja.md の共通語表の末尾と概念名表の末尾に行を追加する（既存行は変更しない）。
 3. 検証: `export PATH="$HOME/.rbenv/shims:$PATH"; source .env; make build ID=openEHR-EHR-<ID>` が `OK: … [ja] complete` になるまで直し、`make check` が全件 OK であることを確認する。
 4. git commit / push / PR はしない。status.tsv は make build に任せる。
 5. 最後に、要確認にした訳語と用語集に追加した行を簡潔に報告する。
