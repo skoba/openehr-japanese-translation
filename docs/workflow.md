@@ -28,6 +28,11 @@ make new → work/fill.rb → make build を通し、PR を出してください
 
 大物（medication_order、laboratory_test_result、problem_diagnosis、adverse_reaction_risk、family_history、specimen、problem_qualifier）は必ず 1 本ずつ。
 
+## 翻訳の手本と Codex の使い方
+
+- 校正が終わった archetype の校正前 → 校正後の対応は `make examples` で `docs/style-examples.md` に集約される（`review:` コミットから自動生成、履歴が squash されたものは `docs/style-examples/*.md` に静的に置く）。翻訳するエージェントはこれを few-shot の手本として読む。
+- Codex に翻訳させる場合は `docs/codex-translate-prompt.md` のテンプレートを渡す。Codex は作業ツリーだけを変更し、Claude Code がレビューしてコミットする（`Implemented-by: Codex`）。
+
 ## 用語集の育て方
 
 - 決定した訳語は `glossary-ja.md` の「共通語」表に 1 行で追加する（English / 日本語 / 備考）。

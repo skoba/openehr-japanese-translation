@@ -3,6 +3,7 @@
 # make import ID=openEHR-EHR-XXX.yyy.v1               -> work/<id>.ja.tsv (proofread in place) -> work/fill.rb, then build
 # make check                                          -> check every archetypes/*/upload/*.adl
 # make status                                         -> list status.tsv (alias: make list)
+# make examples                                       -> regenerate docs/style-examples.md (proofread before/after corpus) from git history
 # make set-status ID=... STATE=uploaded|accepted [CKM_URL=...]   -> humans only (see CLAUDE.md); FORCE=1 allows going backwards
 #
 # upload/<id>.adl keeps the original file name on purpose: CKM only recognises a
@@ -14,7 +15,7 @@ RUBY   := ruby
 TOOL   := $(RUBY) tools/adl_i18n.rb
 STATUS := $(RUBY) tools/status.rb
 
-.PHONY: new build import check status list set-status
+.PHONY: new build import check status list set-status examples
 
 new:
 	@test -n "$(ADL)" || (echo "usage: make new ADL=file.adl"; exit 2)
@@ -53,3 +54,6 @@ status list:
 set-status:
 	@test -n "$(ID)" && test -n "$(STATE)" || (echo "usage: make set-status ID=openEHR-EHR-... STATE=uploaded|accepted [CKM_URL=https://...] [FORCE=1]"; exit 2)
 	@$(STATUS) set $(ID) $(STATE) $(CKM_URL)
+
+examples:
+	@$(RUBY) tools/style_examples.rb > docs/style-examples.md && echo "wrote docs/style-examples.md"
