@@ -13,7 +13,7 @@ T = {
   # Not to be used for complex communication representation or management, such as preferred phone numbers or valid dates of usage. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.
   # 
   # Not to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.
-  ['description', '-', 'misuse'] => "優先して使う電話番号や利用できる期間など、連絡先を複雑に表現・管理するために用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や医療従事者名簿（Health Provider Index）、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\n正式な個人識別情報の管理やその代替、または公式のデモグラフィック登録簿やインデックスの維持・管理に用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や医療従事者名簿（Health Provider Index）、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。",
+  ['description', '-', 'misuse'] => "優先して使う電話番号や利用できる期間など、連絡先を複雑に表現・管理するために用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\n正式な個人識別情報の管理やその代替、または公式のデモグラフィック登録簿やインデックスの維持・管理に用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。",
 
   # telephone, phone, mobile, email, fax, pager, chat, social media, asynchronous, communication, SoMe
   ['description', '-', 'keywords'] => "電話 | 携帯電話 | 電子メール | ファクシミリ | ポケットベル | チャット | ソーシャルメディア | 非同期 | 通信 | SoMe | 電子的な連絡先",
