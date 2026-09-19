@@ -8,7 +8,7 @@ A	6	openEHR-EHR-CLUSTER.organisation.v1	組織（医療機関/部門）	publishe
 A	7	openEHR-EHR-CLUSTER.person.v1	人	published 1.0.5	12	紹介先担当医・紹介元医師・患者
 A	8	openEHR-EHR-CLUSTER.structured_name.v1	構造化氏名	published	5	漢字/カナ表記の扱いは占有 2 回で対応を検討
 A	9	openEHR-EHR-CLUSTER.address.v1	住所	published	22	郵便番号・都道府県の対応付けを use に注記
-A	10	openEHR-EHR-CLUSTER.electronic_communication.v1	電子的連絡先	published	14	電話・FAX・メール
+A	10	openEHR-EHR-CLUSTER.electronic_communication.v1	電子的な連絡先	published	14	電話・FAX・メール
 A	11	openEHR-EHR-CLUSTER.media_file.v1	メディアファイル	published	10	添付資料。service_request / person / lab / family_history のスロットにも入る
 B	12	openEHR-EHR-EVALUATION.adverse_reaction_risk.v2	有害反応リスク（アレルギー・不耐性）	published 2.0.2	30	JP-CLINS AllergyIntolerance 対応
 B	13	openEHR-EHR-CLUSTER.adverse_reaction_event.v1	有害反応イベント	published	26	12 のスロット

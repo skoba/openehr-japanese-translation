@@ -190,21 +190,21 @@
 | screening details (slot) | スクリーニングの詳細 | OBSERVATION.symptom_sign_screening |
 | VAS / NRS | VAS / NRS | 英字のまま |
 | heartburn / claudication | 胸やけ / 跛行 | 例示 |
-| person (CLUSTER.person) | 人 | 概念名（要確認。他候補：個人、人物）。subject 以外の人一般 |
-| name (person) | 氏名 | MML4 人名表現形式・個人情報形式の「氏名」（要確認） |
+| person (CLUSTER.person) | 人 | 概念名（校正 2026-09-19 で確定）。subject 以外の人一般 |
+| name (person) | 氏名 | MML4 人名表現形式・個人情報形式の「氏名」（校正 2026-09-19 で確定） |
 | structured name | 構造化された氏名 | CLUSTER.structured_name（概念名は #8 で確定） |
 | identifier | 識別子 | person at0003。MML4 の Id 形式は「ID」 |
-| role (person) | 役割 | person at0004。健康記録の対象者との関係または役割（要確認） |
-| electronic communication | 電子的連絡先 | CLUSTER.electronic_communication（targets #10） |
+| role (person) | 役割 | person at0004。健康記録の対象者との関係または役割（校正 2026-09-19 で確定） |
+| electronic communication | 電子的な連絡先 | CLUSTER.electronic_communication（targets #10）。person 校正（2026-09-19）で「電子的連絡先」→「電子的な連絡先」 |
 | organisation (slot in person) | 組織 | 医療機関に限らないので「組織」。organisation.v1 の概念名は #6 で確定 |
 | additional details (slot) | 追加の詳細 | |
 | photo | 写真 | |
-| label (person) | ラベル | person at0011 |
+| label (person) | ラベル（識別用の説明） | person at0011（校正 2026-09-19） |
 | demographic register / index | デモグラフィック登録簿 / インデックス | 要確認 |
-| Master Patient Index / Health Provider Index | 患者マスターインデックス（MPI） / 医療従事者インデックス | 要確認 |
+| Master Patient Index / Health Provider Index | 患者マスターインデックス（MPI） / 医療従事者名簿（Health Provider Index） | person 校正（2026-09-19）で確定 |
 | Demographic Information Model | デモグラフィック情報モデル | openEHR RM（要確認） |
 | next-of-kin | 近親者 | |
-| copyholder / contact person / family member details / specimen collector details / witness (slots) | 写し保持者 / 連絡担当者 / 家族構成員の詳細 / 検体採取者の詳細 / 目撃者 | 未訳 archetype のスロット名の仮訳（要確認。該当 archetype の翻訳時に確定） |
+| copyholder / contact person / family member details / specimen collector details / witness (slots) | 写し保有者 / 連絡担当者 / 家族構成員の詳細 / 検体採取者の詳細 / 目撃者 | 未訳 archetype のスロット名の仮訳（要確認。該当 archetype の翻訳時に確定） |
 | MML4 人名表現形式: family / given / middle / fullname / prefix / degree | 姓 / 名 / ミドルネーム / フルネーム / 肩書き（敬称） / 学位 | skoba/mml doc/MML4/name.adoc。structured_name.v1 で使う |
 | MML4 住所表現形式: full / prefecture / city / town / homeNumber / zip / countryCode | 一連住所 / 都道府県 / 市・区・郡 / 町・村 / 番地（丁目・建物名・部屋番号） / 郵便番号 / 国コード | doc/MML4/address.adoc。address.v1 で使う |
 | MML4 住所の種類: current / permanent / mailing / business / office / home / birth | 現住所 / 本籍 / 郵送先 / 勤務先 / 事務所 / 自宅 / 出生地 | MML0002（要確認。address.v1 の値セットと照合） |
@@ -232,5 +232,5 @@
 | openEHR-EHR-EVALUATION.clinical_synopsis.v1 (1.0.5) | 臨床要約 | at0002 要約 |
 | openEHR-EHR-SECTION.adhoc.v1 (1.0.12) | 仮見出し | 校正済み（2026-09-13）。use の例：「仮見出し」→「診察所見」 |
 | openEHR-EHR-CLUSTER.symptom_sign.v2 (2.1.4) | 症状・徴候 | story.v1 のスロット。エピソード区分・発生区分・重症度・進行状況の値は problem_qualifier / problem_diagnosis と同じ |
-| openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | at0001 氏名、at0002 構造化された氏名、at0003 識別子、at0004 役割、at0006 電子的連絡先、at0007 組織 |
 | openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 人の構造化された氏名 | at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
+| openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された氏名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0011 ラベル（識別用の説明） |

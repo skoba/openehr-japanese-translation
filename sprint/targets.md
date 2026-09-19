@@ -19,7 +19,7 @@
 | 7 | openEHR-EHR-CLUSTER.person.v1 | 人 | published 1.0.5 | 12 | 紹介先担当医・紹介元医師・患者 |
 | 8 | openEHR-EHR-CLUSTER.structured_name.v1 | 構造化氏名 | published | 5 | 漢字/カナ表記の扱いは占有 2 回で対応を検討 |
 | 9 | openEHR-EHR-CLUSTER.address.v1 | 住所 | published | 22 | 郵便番号・都道府県の対応付けを use に注記 |
-| 10 | openEHR-EHR-CLUSTER.electronic_communication.v1 | 電子的連絡先 | published | 14 | 電話・FAX・メール |
+| 10 | openEHR-EHR-CLUSTER.electronic_communication.v1 | 電子的な連絡先 | published | 14 | 電話・FAX・メール |
 | 11 | openEHR-EHR-CLUSTER.media_file.v1 | メディアファイル | published | 10 | 添付資料。service_request / person / lab / family_history のスロットにも入る |
 
 ## B. 「既往歴及び家族歴」欄
