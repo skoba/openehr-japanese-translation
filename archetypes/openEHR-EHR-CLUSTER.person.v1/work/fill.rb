@@ -120,7 +120,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # Additional details
-  ['term', 'at0008', 'text'] => "追加の詳細",
+  ['term', 'at0008', 'text'] => "追加の詳細情報",
 
   # CLUSTER > items/CLUSTER
   # Additional details about the individual.

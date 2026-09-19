@@ -210,7 +210,7 @@
 | role (person) | 役割 | person at0004。健康記録の対象者との関係または役割（校正 2026-09-19 で確定） |
 | electronic communication | 電子的な連絡先 | CLUSTER.electronic_communication（targets #10）。person 校正（2026-09-19）で「電子的連絡先」→「電子的な連絡先」 |
 | organisation (slot in person) | 組織 | 医療機関に限らないので「組織」。organisation.v1 の概念名は #6 で確定 |
-| additional details (slot) | 追加の詳細 | |
+| additional details (slot) | 追加の詳細情報 | electronic_communication 校正（2026-09-19）で「追加の詳細」→「追加の詳細情報」。person.v1 at0008 にも波及 |
 | photo | 写真 | |
 | label (person) | ラベル（識別用の説明） | person at0011（校正 2026-09-19） |
 | demographic register / index | デモグラフィック登録簿 / インデックス | 要確認 |
@@ -248,7 +248,8 @@
 | type (electronic communication) | 種別 | electronic_communication.v1 at0001。address.v1 の Type に合わせる |
 | value (electronic communication) | 値 | electronic_communication.v1 at0002。番号・メールアドレス等を含む（要確認。他候補：連絡先の値） |
 | purpose (electronic communication) | 用途 | electronic_communication.v1 at0003。業務用・個人用を区別する（要確認。他候補：目的） |
-| mobile (cellular) telephone / telephone (excluding mobile telephone) | 携帯電話 / 電話（携帯電話を除く） | electronic_communication.v1 at0005 / at0006 |
+| telephone / phone | 電話 | 一般語（keywords など）。値セットの「Telephone (excluding mobile telephone)」は固定電話 |
+| mobile (cellular) telephone / telephone (excluding mobile telephone) | 携帯電話 / 固定電話 | electronic_communication.v1 at0005 / at0006 |
 | email / email address / fax | 電子メール / 電子メールアドレス / ファクシミリ | electronic_communication.v1 at0007 / at0002 comment / at0009 |
 | pager | ポケットベル | electronic_communication.v1 at0008（要確認。他候補：ページャー、無線呼出受信機）。日本語での認知しやすさを優先 |
 | business use / personal use / both business and personal use | 業務用 / 個人用 / 業務用・個人用の両方 | electronic_communication.v1 at0010 / at0011 / at0012。場所ではなく用途を表す |
@@ -271,6 +272,6 @@
 | openEHR-EHR-SECTION.adhoc.v1 (1.0.12) | 仮見出し | 校正済み（2026-09-13）。use の例：「仮見出し」→「診察所見」 |
 | openEHR-EHR-CLUSTER.symptom_sign.v2 (2.1.4) | 症状・徴候 | story.v1 のスロット。エピソード区分・発生区分・重症度・進行状況の値は problem_qualifier / problem_diagnosis と同じ |
 | openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 人の構造化された氏名 | at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
-| openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された氏名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0011 ラベル（識別用の説明） |
+| openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された氏名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0008 追加の詳細情報、at0011 ラベル（識別用の説明） |
 | openEHR-EHR-CLUSTER.address.v1 (1.1.3) | 住所 | at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所。日本の対応物は comment の例示 |
-| openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | person.v1 校正（2026-09-19）の確定訳。at0001 種別、at0002 値、at0003 用途、at0013 追加の詳細 |
+| openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | 校正済み（2026-09-19）。at0001 種別、at0002 値、at0003 用途、at0006 固定電話、at0013 追加の詳細情報 |

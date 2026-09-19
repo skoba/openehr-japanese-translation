@@ -965,7 +965,7 @@ Om individen som beskrivs med denna arketyp är den som själva journalen gälle
 					comment = <"例：個人の「役割」に関連する企業や地域団体がどこなのかを示す。">
 				>
 				["at0008"] = <
-					text = <"追加の詳細">
+					text = <"追加の詳細情報">
 					description = <"個人に関する追加の詳細情報。">
 				>
 				["at0009"] = <
