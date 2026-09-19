@@ -107,7 +107,7 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # If severity is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. Note: more specific grading of severity can be recorded using the Specific details SLOT.
-  ['term', 'at0005', 'comment'] => "事前調整コード（precoordinated codes）によってプロブレムや診断の名称に重症度が含まれている場合、このデータエレメントは冗長となる。注：「Specific details（詳細情報）」slotを使用することで、より詳細な重症度分類を記録することが可能である。",
+  ['term', 'at0005', 'comment'] => "事前調整コード（precoordinated codes）によってプロブレムや診断の名称に重症度が含まれている場合、このデータエレメントは冗長となる。注：「Specific details（詳細記録）」slotを使用することで、より詳細な重症度分類を記録することが可能である。",
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Clinical description
@@ -115,7 +115,7 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Narrative description about the problem or diagnosis.
-  ['term', 'at0009', 'description'] => "問題または診断についての叙述的な説明。",
+  ['term', 'at0009', 'description'] => "プロブレムまたは診断についての叙述的な説明。",
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Use to provide background and context, including evolution, episodes or exacerbations, progress and any other relevant details, about the problem or diagnosis.
@@ -244,7 +244,7 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Narrative description about the course of the problem or diagnosis since onset.
-  ['term', 'at0072', 'description'] => "発症以降の問題または診断の経過についての叙述的な説明。",
+  ['term', 'at0072', 'description'] => "発症以降のプロブレムまたは診断の経過についての叙述的な説明。",
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Diagnostic certainty
@@ -268,7 +268,7 @@ T = {
   ['term', 'at0075', 'text'] => "推定",
 
   # The diagnosis has been identified with a high level of certainty.
-  ['term', 'at0075', 'description'] => "確度が高いが確定にまでは至らない診断",
+  ['term', 'at0075', 'description'] => "確度が高いが確定にまでは至らない診断。",
 
   # Confirmed
   ['term', 'at0076', 'text'] => "確定",
