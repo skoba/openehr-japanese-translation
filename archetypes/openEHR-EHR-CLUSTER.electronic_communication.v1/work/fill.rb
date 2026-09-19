@@ -5,15 +5,15 @@
 
 T = {
   # To record details about a specified type of electronic communication as it is known or understood in the course of clinical documentation.
-  ['description', '-', 'purpose'] => "臨床記録の作成に際して把握または理解された、特定の種別の電子的な連絡先についての詳細を記録するため。",
+  ['description', '-', 'purpose'] => "臨床記録の作成に際して取得した、特定の種別の電子的な連絡先に関する詳細情報を記録するため。",
 
   # Use to record details about a specified type of electronic communication for an individual or an organisation as it is known or understood in the course of clinical documentation. This is commonly ad hoc or when it is not appropriate or possible to use a formal register or index.
-  ['description', '-', 'use'] => "臨床記録の作成に際して把握または理解された、個人または組織の特定の種別の電子的な連絡先についての詳細を記録するために用いる。多くはその場限りの記録であるか、正式な登録簿やインデックスを使うことが適切でない、または不可能な場合である。",
+  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、個人または組織の特定の種別の電子的な連絡先に関する詳細情報を記録するために用いる。主に、必要に応じて情報を記録する場合や、正式な登録簿やインデックスの利用が適切でない、または利用できない場合を想定している。",
 
   # Not to be used for complex communication representation or management, such as preferred phone numbers or valid dates of usage. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.
   # 
   # Not to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.
-  ['description', '-', 'misuse'] => "優先する電話番号や使用の有効期間など、連絡先の複雑な表現や管理に用いてはならない。その目的には、正式な患者マスターインデックス（MPI）や医療従事者名簿（Health Provider Index）、または openEHR デモグラフィック情報モデルに基づくarchetypeを用いる。\n\n正式な個人識別情報の管理やその代替、または公式のデモグラフィック登録簿やインデックスの維持・管理に用いてはならない。その目的には、正式な患者マスターインデックス（MPI）や医療従事者名簿（Health Provider Index）、または openEHR デモグラフィック情報モデルに基づくarchetypeを用いる。",
+  ['description', '-', 'misuse'] => "優先して使う電話番号や利用できる期間など、連絡先を複雑に表現・管理するために用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や医療従事者名簿（Health Provider Index）、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\n正式な個人識別情報の管理やその代替、または公式のデモグラフィック登録簿やインデックスの維持・管理に用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や医療従事者名簿（Health Provider Index）、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。",
 
   # telephone, phone, mobile, email, fax, pager, chat, social media, asynchronous, communication, SoMe
   ['description', '-', 'keywords'] => "電話 | 携帯電話 | 電子メール | ファクシミリ | ポケットベル | チャット | ソーシャルメディア | 非同期 | 通信 | SoMe | 電子的な連絡先",
@@ -24,7 +24,7 @@ T = {
 
   # CLUSTER
   # Details about a specified type of electronic communication.
-  ['term', 'at0000', 'description'] => "特定の種別の電子的な連絡先についての詳細。",
+  ['term', 'at0000', 'description'] => "特定の種別の電子的な連絡先に関する詳細情報。",
 
   # CLUSTER > items/ELEMENT
   # Type
@@ -36,7 +36,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # The DV_CODED_TEXT value set supports recording of the most common electronic communications used in health. If other alternatives are required the DV_TEXT data type can be used to record other types of electronic communication such as social media or video conferencing URLs within a template.
-  ['term', 'at0001', 'comment'] => "DV_CODED_TEXT の値セットは、医療で最も一般的に使われる電子的な連絡先の記録に対応している。他の選択肢が必要な場合は、テンプレート内で DV_TEXT データ型を用いて、ソーシャルメディアやビデオ会議の URL など、他の種別の電子的な連絡先を記録できる。",
+  ['term', 'at0001', 'comment'] => "DV_CODED_TEXT の値セットを用いて、医療でよく使われる電子的な連絡先を記録できる。それ以外の種別が必要な場合は、テンプレート内で DV_TEXT データ型を用いる。ソーシャルメディアやビデオ会議の URL なども記録できる。",
 
   # CLUSTER > items/ELEMENT
   # Value
@@ -44,11 +44,11 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # The unique combination of alphanumeric characters, relevant for representation of 'Type'.
-  ['term', 'at0002', 'description'] => "「種別」に応じた表現に用いる、英数字の一意の組み合わせ。",
+  ['term', 'at0002', 'description'] => "「種別」に応じて連絡先を一意に表す英数字の組み合わせ。",
 
   # CLUSTER > items/ELEMENT
   # For example: area code + landline phone/pager number; country code + mobile phone number; or email address.
-  ['term', 'at0002', 'comment'] => "例：市外局番 + 固定電話番号／ポケットベル番号；国番号 + 携帯電話番号；または電子メールアドレス。",
+  ['term', 'at0002', 'comment'] => "例：市外局番と固定電話番号またはポケットベル番号の組み合わせ、国番号と携帯電話番号の組み合わせ、電子メールアドレス。",
 
   # CLUSTER > items/ELEMENT
   # Purpose
@@ -56,7 +56,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # The purpose or use for the identified type of electronic communication.
-  ['term', 'at0003', 'description'] => "指定された種別の電子的な連絡先の目的または用途。",
+  ['term', 'at0003', 'description'] => "指定した種別の電子的な連絡先を何のために使うかを示す。",
 
   # CLUSTER > items/ELEMENT
   # Comment
@@ -64,7 +64,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Additional narrative about the electronic communication not captured in other fields.
-  ['term', 'at0004', 'description'] => "他の項目では捉えられない、電子的な連絡先についての追加の記述。",
+  ['term', 'at0004', 'description'] => "他の項目には収まらない電子的な連絡先についての追加の記述。",
 
   # Mobile (cellular) telephone
   ['term', 'at0005', 'text'] => "携帯電話",
@@ -120,7 +120,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # Additional details about the electronic communication.
-  ['term', 'at0013', 'description'] => "電子的な連絡先についての追加の詳細。",
+  ['term', 'at0013', 'description'] => "電子的な連絡先に関する追加の詳細情報。",
 
 }.freeze
 
