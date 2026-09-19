@@ -8,7 +8,7 @@
 
 - `text`（ノード名）は名詞句。句点なし。画面ラベルに使われる前提で簡潔に。
 - `description` / `comment` / `purpose` / `use` / `misuse` は「〜。」で終える常体（である調）。
-- 原文の段落・箇条書き（`- `）・空行はそのまま保つ。箇条書き末尾の `;` は「；」、末尾の `and` は「および」として行内に残す。
+- 原文の段落・箇条書き（`- `）・空行はそのまま保つ。箇条書きの各項目は「。」で終え、原文末尾の `;` / `; or` / `; and` は「；」「；または」「；および」として残さない（organisation.v1 校正 2026-09-19 で改訂。旧規則は「；」「および」を行内に残していた）。
 - アーキタイプ名（`COMPOSITION.encounter` など）、RM クラス名、`FHIR`/`CIMI` 等の固有名は英字のまま。 「archetype」という語自体も英字のまま書き、「アーキタイプ」とは訳さない（2026-09-10 校正で統一）。
 - `@ internal @` は訳さない。内部ノード名 `Tree` / `List` / `History` 等も他言語版（de/sv/nb/nl）に倣い英字のまま残す。
 - CLUSTER スロット `Extension` も訳さず英字のまま（description / comment は訳す）。
@@ -18,7 +18,7 @@
 
 ### こなれた訳のための規則（2026-09-19、校正の傾向から）
 
-原文の構文をなぞらず、日本語の医療文書として自然に読めることを優先する。校正済み archetype（person.v1、problem_diagnosis.v1、symptom_sign.v2、story.v1）の `work/fill.rb` を訳の手本とし、同じ構文は同じ訳し方をする。
+原文の構文をなぞらず、日本語の医療文書として自然に読めることを優先する。校正済み archetype（person.v1、electronic_communication.v1、organisation.v1、problem_diagnosis.v1、problem_qualifier.v2、symptom_sign.v2、story.v1、clinical_synopsis.v1、adhoc.v1）の `work/fill.rb` と docs/style-examples.md を訳の手本とし、同じ構文は同じ訳し方をする。
 
 1. 関係節が二重三重になる文は二文に分ける（一文 60 字程度を目安）。英文の一文を一文に対応させる必要はない。
 2. 「〜についての詳細」→「〜に関する詳細情報」。「〜の特定」「〜の記述」のような名詞化は、可能なら動詞に戻す（例：identification of X →「X を示す」「X を特定する」）。
@@ -27,7 +27,7 @@
 5. 箇条書きの各項目は名詞句で止めず、「〜を用いて、〜を記録する。」のように動詞で終える。
 6. description / comment 内の the individual / a person は「個人」、健康記録の対象者本人は「本人」。「その人」は使わない。
 7. 「〜であって」「〜でありうる」「〜されうる」のような英文直訳の接続・助動詞は、「〜であり」「〜こともある」「〜できる」に言い換える。
-8. often ad hoc or when it is not appropriate or possible to … →「主に、必要に応じて記録する場合や、…の利用が適切でない、または利用できない場合を想定している」。
+8. often ad hoc or when it is not appropriate or possible to … →「必要に応じて情報を記録する場合や、…の利用が適切でない、または利用できない場合を主に想定している」（electronic_communication.v1 / organisation.v1 校正 2026-09-19。旧形「主に、…を想定している」は使わない）。
 
 ## 共通語（RM・アーキタイプ横断）
 
