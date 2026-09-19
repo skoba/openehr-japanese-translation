@@ -72,7 +72,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Identifier associated with the individual.
-  ['term', 'at0003', 'description'] => "その人に関連付けられた識別子。",
+  ['term', 'at0003', 'description'] => "個人に関連付けられた識別子。",
 
   # CLUSTER > items/ELEMENT
   # Occurrences for this data element is set to 0..* to allow for more than one Identifier to be recorded. Note that the DV_IDENTIFIER data type contains multiple subcomponents for recording the ID value, type, issuer and assigned. For example - social security number; driver's license; or passport number.
@@ -84,7 +84,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # The relationship or role of the individual to the subject of the health record.
-  ['term', 'at0004', 'description'] => "健康記録の対象者に対するその人の関係または役割。",
+  ['term', 'at0004', 'description'] => "健康記録の対象者に対する個人の関係または役割。",
 
   # CLUSTER > items/ELEMENT
   # For example - the copyholder of an advance care record; contact person in an organisation; relative in a family history entry; specimen collector; or witness to a fall or accident. If the individual being described using this archetype is the subject of the health record, then this data element is redundant.
