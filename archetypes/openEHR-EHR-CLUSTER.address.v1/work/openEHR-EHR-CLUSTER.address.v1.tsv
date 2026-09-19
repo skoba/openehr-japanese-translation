@@ -1,0 +1,62 @@
+archetype	section	code	field	context	source	target	note
+openEHR-EHR-CLUSTER.address.v1	description	-	purpose		To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.		
+openEHR-EHR-CLUSTER.address.v1	description	-	use		Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\n- the business address of an organisation providing home care to an individual; or\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\n- the physical location of a fall or accident.\n\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\n- 'Town' to represent a suburb, town, city, village, or community;\n- 'District/County' to represent a local government district;\n- 'State/Territory/Province’ to represent a major government district;\n- ‘Postcode’, and \n- ‘Country'.\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\n\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.		
+openEHR-EHR-CLUSTER.address.v1	description	-	misuse		Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\n\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\n\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.		
+openEHR-EHR-CLUSTER.address.v1	description	-	keywords		address | postal | mailing | home | business | physical | landmark		
+openEHR-EHR-CLUSTER.address.v1	term	at0000	text	CLUSTER	Address		
+openEHR-EHR-CLUSTER.address.v1	term	at0000	description	CLUSTER	Details about the location of a person, physical building or landmark.		
+openEHR-EHR-CLUSTER.address.v1	term	at0001	text	CLUSTER > items/ELEMENT	Address line		
+openEHR-EHR-CLUSTER.address.v1	term	at0001	description	CLUSTER > items/ELEMENT	An unstructured address line representing all relevant street-level or post-box details that would support the identification of a location.		
+openEHR-EHR-CLUSTER.address.v1	term	at0001	comment	CLUSTER > items/ELEMENT	Occurrences for this data element is set to 0..* to allow one or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded within the context of a specified 'Town'. Multiple address lines can be represented in a template, renamed as 'Address line 1', 'Address line 2,' etc. For example: '7A/52 Davis Street' or 'Apartment 7A' as Address line 1 with '52 Davis Street' as Address line 2; a roadside mail box location, such as 'RMB 725, Princes Highway'; or using a descriptive landmark, such as or 'Corner of Smith & Brown Streets' or 'Second house north of the general store with the red door'.		
+openEHR-EHR-CLUSTER.address.v1	term	at0002	text	CLUSTER > items/ELEMENT	City/Town		
+openEHR-EHR-CLUSTER.address.v1	term	at0002	description	CLUSTER > items/ELEMENT	The name of the lowest level locality that contains the address.		
+openEHR-EHR-CLUSTER.address.v1	term	at0002	comment	CLUSTER > items/ELEMENT	For example: suburb, town, city, settlement, village, or community. Coding with an external terminology is preferred, where possible. For example: 'Fitzroy'; 'Manchester'; 'Kingston' or 'Bergen'.		
+openEHR-EHR-CLUSTER.address.v1	term	at0003	text	CLUSTER > items/ELEMENT	District/County		
+openEHR-EHR-CLUSTER.address.v1	term	at0003	description	CLUSTER > items/ELEMENT	The name of a local government district or geographical area that contains the address.		
+openEHR-EHR-CLUSTER.address.v1	term	at0003	comment	CLUSTER > items/ELEMENT	Coding with an external terminology is preferred, where possible. For example: 'Surf Coast' and 'Yarra' local government councils in Victoria, Australia;and the Parishes of 'Saint Andrew' and 'Kingston' in Jamaica..		
+openEHR-EHR-CLUSTER.address.v1	term	at0004	text	CLUSTER > items/ELEMENT	State/Territory/Province		
+openEHR-EHR-CLUSTER.address.v1	term	at0004	description	CLUSTER > items/ELEMENT	The name of a major government district or geographical area that contains the address.		
+openEHR-EHR-CLUSTER.address.v1	term	at0004	comment	CLUSTER > items/ELEMENT	Coding with an external terminology is preferred, where possible. For example: 'New South Wales' and 'Queensland' in Australia; 'British Columbia' and 'Nova Scotia' in Canada; and the Counties of 'Cornwall', 'Middlesex' & 'Surrey' in Jamaica.		
+openEHR-EHR-CLUSTER.address.v1	term	at0005	text	CLUSTER > items/ELEMENT	Postal code		
+openEHR-EHR-CLUSTER.address.v1	term	at0005	description	CLUSTER > items/ELEMENT	The code for a postal delivery area containing the address, as defined by the relevant postal delivery service.		
+openEHR-EHR-CLUSTER.address.v1	term	at0005	comment	CLUSTER > items/ELEMENT	Also known as a postcode or ZIP code.\n		
+openEHR-EHR-CLUSTER.address.v1	term	at0006	text	CLUSTER > items/ELEMENT	Country		
+openEHR-EHR-CLUSTER.address.v1	term	at0006	description	CLUSTER > items/ELEMENT	The name of the country containing the address.		
+openEHR-EHR-CLUSTER.address.v1	term	at0006	comment	CLUSTER > items/ELEMENT	For example: Australia; Canada; Jamaica; or Norway. Coding with an external terminology, such as EN ISO 3166–1 Alpha 2 country code, is recommended.		
+openEHR-EHR-CLUSTER.address.v1	term	at0007	text	CLUSTER > items/ELEMENT	Latitude		
+openEHR-EHR-CLUSTER.address.v1	term	at0007	description	CLUSTER > items/ELEMENT	Horizontal (y) coordinate of a geolocation for the address.		
+openEHR-EHR-CLUSTER.address.v1	term	at0007	comment	CLUSTER > items/ELEMENT	Latitude is represented by positive values north of the equator and negative values south of the equator. For example the latitude of the Eiffel Tower is 48.858093.		
+openEHR-EHR-CLUSTER.address.v1	term	at0008	text	CLUSTER > items/ELEMENT	Longitude		
+openEHR-EHR-CLUSTER.address.v1	term	at0008	description	CLUSTER > items/ELEMENT	Horizontal (x) coordinate of a geolocation for the address.		
+openEHR-EHR-CLUSTER.address.v1	term	at0008	comment	CLUSTER > items/ELEMENT	Longitude is represented by negative values west of Prime Meridian and positive values east of Prime Meridian. For example the longitude of the Eiffel Tower is 2.294694.		
+openEHR-EHR-CLUSTER.address.v1	term	at0009	text	CLUSTER > items/ELEMENT	Altitude		
+openEHR-EHR-CLUSTER.address.v1	term	at0009	description	CLUSTER > items/ELEMENT	The vertical coordinate of a geolocation representing height or depth of the address.		
+openEHR-EHR-CLUSTER.address.v1	term	at0009	comment	CLUSTER > items/ELEMENT	For example, the altitude of the top of the Eiffel Tower is +324m.		
+openEHR-EHR-CLUSTER.address.v1	term	at0010	text	CLUSTER > items/ELEMENT	Type		
+openEHR-EHR-CLUSTER.address.v1	term	at0010	description	CLUSTER > items/ELEMENT	The type of address.		
+openEHR-EHR-CLUSTER.address.v1	term	at0010	comment	CLUSTER > items/ELEMENT	For example: physical or postal.		
+openEHR-EHR-CLUSTER.address.v1	term	at0011	text		Physical		
+openEHR-EHR-CLUSTER.address.v1	term	at0011	description		A physical location that can be visited.		
+openEHR-EHR-CLUSTER.address.v1	term	at0012	text		Postal		
+openEHR-EHR-CLUSTER.address.v1	term	at0012	description		Address used as a destination for mailing letters or parcels.		
+openEHR-EHR-CLUSTER.address.v1	term	at0013	text		Both		
+openEHR-EHR-CLUSTER.address.v1	term	at0013	description		Address of a physical location, also used as a destination for mail.		
+openEHR-EHR-CLUSTER.address.v1	term	at0014	text	CLUSTER > items/ELEMENT	Use		
+openEHR-EHR-CLUSTER.address.v1	term	at0014	description	CLUSTER > items/ELEMENT	The primary purpose or use for the address.		
+openEHR-EHR-CLUSTER.address.v1	term	at0015	text		Business		
+openEHR-EHR-CLUSTER.address.v1	term	at0015	description		Address of the physical location of a business or office.		
+openEHR-EHR-CLUSTER.address.v1	term	at0016	text		Residential		
+openEHR-EHR-CLUSTER.address.v1	term	at0016	description		Address of where a person is living on a regular basis.		
+openEHR-EHR-CLUSTER.address.v1	term	at0017	text		Temporary accommodation		
+openEHR-EHR-CLUSTER.address.v1	term	at0017	description		Address of where a person is living on a temporary basis.		
+openEHR-EHR-CLUSTER.address.v1	term	at0018	text	CLUSTER > items/ELEMENT	Comment		
+openEHR-EHR-CLUSTER.address.v1	term	at0018	description	CLUSTER > items/ELEMENT	Additional narrative about the address not captured in other fields.		
+openEHR-EHR-CLUSTER.address.v1	term	at0019	text	CLUSTER > items/ELEMENT	Map URL		
+openEHR-EHR-CLUSTER.address.v1	term	at0019	description	CLUSTER > items/ELEMENT	Link to a location on an online map.		
+openEHR-EHR-CLUSTER.address.v1	term	at0019	comment	CLUSTER > items/ELEMENT	For example: a location on a Google or iOS map.		
+openEHR-EHR-CLUSTER.address.v1	term	at0020	text	CLUSTER > items/CLUSTER	Structured address		
+openEHR-EHR-CLUSTER.address.v1	term	at0020	description	CLUSTER > items/CLUSTER	Structured details or extensions to the address.		
+openEHR-EHR-CLUSTER.address.v1	term	at0020	comment	CLUSTER > items/CLUSTER	For example: to represent a  structured, fine-grained address, or be used as standardised concepts that can be concatenated together to consistently construct a single 'Address line'.		
+openEHR-EHR-CLUSTER.address.v1	term	at0021	text	CLUSTER > items/ELEMENT	Geolocation code		
+openEHR-EHR-CLUSTER.address.v1	term	at0021	description	CLUSTER > items/ELEMENT	Unique identifier that represents a precise geographical location.		
+openEHR-EHR-CLUSTER.address.v1	term	at0021	comment	CLUSTER > items/ELEMENT	Also known as a geocode. For example: GPS coordinates concatenating longitude, latitude +/-altitude; Open Location Code or Plus Code; Universal Transverse Mercator (UTM); and geohash.		

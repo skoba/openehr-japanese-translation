@@ -217,6 +217,21 @@
 | first name / middle name / preferred name / nickname | ファーストネーム / ミドルネーム / 通称 / ニックネーム | structured_name at0002 comment |
 | name usage | 氏名の用途 | structured_name use / misuse |
 | ISO 22220 | ISO 22220 | 英字のまま |
+| address line | 住所行 | address.v1 at0001。日本では町域〜部屋番号を 1 行（要確認） |
+| city/town | 市区町村 | address.v1 at0002。政令指定都市は市＋区。JIS X 0402（localisation-ja.md） |
+| district/county | 地区／郡 | address.v1 at0003。日本では町村の郡（要確認） |
+| state/territory/province | 都道府県／州 | address.v1 at0004。JIS X 0401（要確認） |
+| postal code / postcode / ZIP code | 郵便番号 / ポストコード / ZIP コード | address.v1 at0005。日本は 7 桁 |
+| country | 国 | ISO 3166-1 alpha-2（日本は JP） |
+| latitude / longitude / altitude | 緯度 / 経度 / 高度 | address.v1 |
+| address type: physical / postal / both | 種別：物理的所在地 / 郵送先 / 両方 | address.v1 at0010（要確認） |
+| address use: business / residential / temporary accommodation | 用途：事業所 / 自宅 / 一時滞在先 | address.v1 at0014。MML4 business＝勤務先、home＝自宅（要確認） |
+| map URL | 地図 URL | |
+| structured address (slot) | 構造化された住所 | address.v1 at0020。structured_address_jp を入れる想定 |
+| geolocation code / geocode | 位置情報コード / ジオコード | address.v1 at0021（要確認） |
+| address lookup service | 住所検索サービス | |
+| landmark | 目印となる場所 | keywords では「目印」 |
+| street-level | 街区レベル | address.v1 |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -234,3 +249,4 @@
 | openEHR-EHR-CLUSTER.symptom_sign.v2 (2.1.4) | 症状・徴候 | story.v1 のスロット。エピソード区分・発生区分・重症度・進行状況の値は problem_qualifier / problem_diagnosis と同じ |
 | openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 人の構造化された氏名 | at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
 | openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された氏名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0011 ラベル（識別用の説明） |
+| openEHR-EHR-CLUSTER.address.v1 (1.1.3) | 住所 | at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所。日本の対応物は comment の例示 |
