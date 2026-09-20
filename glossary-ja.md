@@ -266,7 +266,7 @@
 | informal support network | 非公式な支援ネットワーク | organisation.v1 at0004 comment。正式な組織に限らない支援のつながり（校正 2026-09-19 で確定） |
 | location of care | ケアの実施場所 | organisation.v1 misuse。参照モデルの属性で記録する場所（校正 2026-09-19 で確定） |
 | network / group (organisation) | ネットワーク / 集団 | organisation.v1 keywords。法人格を持つ組織に限らない（校正 2026-09-19 で確定） |
-| Content / Content name (media file) | コンテンツ / コンテンツ名 | media_file at0001 / at0002。ファイル本体とその名称を区別する（要確認。他候補：内容 / 内容名） |
+| Content / Content name (media file) | コンテンツ / コンテンツ名 | media_file at0001 / at0002。ファイル本体とその名称を区別する（校正 2026-09-20 で確定。他候補：内容 / 内容名） |
 | Created (media file) | 作成日時 | media_file at0004。部分的な日付や期間も含む（校正 2026-09-19 で確定。他候補：作成時期） |
 | Source device | 作成機器 | media_file at0011。ファイルの生成・作成に用いた機器（校正 2026-09-20 で確定。他候補：取得元機器） |
 | Creator | 作成者 | media_file at0012。個人と組織の両方を含む（校正 2026-09-19 で確定。他候補：制作者） |
@@ -301,4 +301,4 @@
 | openEHR-EHR-CLUSTER.address.v1 (1.1.3) | 住所 | 校正済み（2026-09-20）。at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所表記（校正 2026-09-20）。日本の対応物は comment の例示 |
 | openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | 校正済み（2026-09-19、再レビュー分 2026-09-20 確認）。at0001 種別、at0002 値、at0003 用途、at0006 固定電話、at0013 追加の詳細情報 |
 | openEHR-EHR-CLUSTER.organisation.v1 (1.0.4) | 組織 | 校正済み（2026-09-19、再レビュー分 2026-09-20 確認）。医療機関に限らず企業・団体・部門・ケアチーム等を含む。at0001 名称、at0002 連絡担当者、at0021 親組織 |
-| openEHR-EHR-CLUSTER.media_file.v1 (1.0.6) | メディアファイル | 校正済み（2026-09-19）。概念名は Issue #11 の訳語案。at0001 コンテンツ、at0002 コンテンツ名、at0004 作成日時、at0011 作成機器、at0012 作成者（at0001 コンテンツ、at0002 コンテンツ名は要確認） |
+| openEHR-EHR-CLUSTER.media_file.v1 (1.0.6) | メディアファイル | 校正済み（2026-09-19）。概念名は Issue #11 の訳語案。at0001 コンテンツ、at0002 コンテンツ名、at0004 作成日時、at0011 作成機器、at0012 作成者（全ノード確定 2026-09-20） |
