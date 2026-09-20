@@ -27,7 +27,7 @@
 5. 箇条書きの各項目は名詞句で止めず、「〜を用いて、〜を記録する。」のように動詞で終える。
 6. description / comment 内の the individual / a person は「個人」、健康記録の対象者本人は「本人」。「その人」は使わない。
 7. 「〜であって」「〜でありうる」「〜されうる」のような英文直訳の接続・助動詞は、「〜であり」「〜こともある」「〜できる」に言い換える。
-8. often ad hoc or when it is not appropriate or possible to … →「必要に応じて情報を記録する場合や、…の利用が適切でない、または利用できない場合を主に想定している」（electronic_communication.v1 / organisation.v1 校正 2026-09-19。旧形「主に、…を想定している」は使わない）。
+8. often ad hoc or when it is not appropriate or possible to … →「正式な登録簿や公式の一覧によらずに知り得た情報をその場で記録する場合や、…の利用が適切でない、または利用できない場合を主に想定している」（校正 2026-09-20。ad hoc は「公式の出所によらず、診療のその場で知り得た情報を記録する」こと。「必要に応じて」「その都度」「臨時に」「一時的に」は使わない）。
 
 ## 共通語（RM・アーキタイプ横断）
 
@@ -213,7 +213,7 @@
 | additional details (slot) | 追加の詳細情報 | electronic_communication 校正（2026-09-19）で「追加の詳細」→「追加の詳細情報」。person.v1 at0008 にも波及 |
 | photo | 写真 | |
 | label (person) | ラベル（識別用の説明） | person at0011（校正 2026-09-19） |
-| demographic register / index | デモグラフィック登録簿 / インデックス | 要確認 |
+| demographic register / index | 登録簿 / 一覧（address.v1 では 住所登記簿 / 公式の住所一覧） | 校正 2026-09-20 で確定。「インデックス」「デモグラフィック登録簿」は使わない（患者マスターインデックス（MPI）は固有名として残す） |
 | Master Patient Index / Health Provider Index | 患者マスターインデックス（MPI） / 医療従事者名簿（Health Provider Index） | person 校正（2026-09-19）で確定 |
 | Demographic Information Model | デモグラフィック情報モデル | openEHR RM（要確認） |
 | next-of-kin | 近親者 | |

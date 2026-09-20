@@ -14,12 +14,12 @@ T = {
   # This archetype has been designed to carry details of formally recognised entities, such as a registered business, a hospital and its recognised 'sub-organisations', such as an operationally separate or specialised satellite clinic or home care service. It may also be used to carry contact information about more informal networks or groups, such as a local community support group.
   # 
   # This archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see an organisations' details on an assessment form.
-  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、組織に関する詳細情報を記録するために用いる。必要に応じて情報を記録する場合や、正式なデモグラフィック登録簿やインデックスの利用が適切でない、または利用できない場合を主に想定している。以下のような使用例がある。\n- EVALUATION.advance_care_directive archetypeの「写し保有者」SLOTを用いて、事前ケア記録の写しを保有する組織の情報を記録する。\n- 個人に在宅ケアを提供する組織の名称と連絡先を記録する。\n\n本archetypeは、登録された事業者や病院、病院の正式な「傘下組織」など、正式に認められた組織の詳細情報を記録するために設計されている。傘下組織には、運営上独立した分院や専門分野に特化した分院、在宅ケアサービスなどがある。また、地域の支援団体など、より非公式なネットワークや集団の連絡先情報を記録するためにも使用できる。\n\n本archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィックデータの代用として使用することもできる。例えば、評価票の冒頭に組織の詳細情報が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。",
+  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、組織に関する詳細情報を記録するために用いる。正式な登録簿や公式の一覧によらずに知り得た情報をその場で記録する場合や、正式な登録簿や一覧の利用が適切でない、または利用できない場合を主に想定している。以下のような使用例がある。\n- EVALUATION.advance_care_directive archetypeの「写し保有者」SLOTを用いて、事前ケア記録の写しを保有する組織の情報を記録する。\n- 個人に在宅ケアを提供する組織の名称と連絡先を記録する。\n\n本archetypeは、登録された事業者や病院、病院の正式な「傘下組織」など、正式に認められた組織の詳細情報を記録するために設計されている。傘下組織には、運営上独立した分院や専門分野に特化した分院、在宅ケアサービスなどがある。また、地域の支援団体など、より非公式なネットワークや集団の連絡先情報を記録するためにも使用できる。\n\n本archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィックデータの代用として使用することもできる。例えば、評価票の冒頭に組織の詳細情報が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。",
 
   # Not to be used to represent, replace or maintain an official register or index. Use a formal Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.
   # 
   # Not to be used to represent the location of care and similar data elements that should be represented formally in the health record using the Reference Model attributes.
-  ['description', '-', 'misuse'] => "公式の登録簿やインデックスの表現、代替、または維持・管理に用いてはならない。これらの目的には、正式な「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\nケアの実施場所など、参照モデルの属性を用いて健康記録に正式に記録すべき情報を、本archetypeで記録してはならない。",
+  ['description', '-', 'misuse'] => "公式の登録簿や一覧の表現、代替、または維持・管理に用いてはならない。これらの目的には、正式な「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\nケアの実施場所など、参照モデルの属性を用いて健康記録に正式に記録すべき情報を、本archetypeで記録してはならない。",
 
   # organisation, organization, provider, carer, network, group
   ['description', '-', 'keywords'] => "組織 | 医療提供者 | 介護者 | ネットワーク | 集団",

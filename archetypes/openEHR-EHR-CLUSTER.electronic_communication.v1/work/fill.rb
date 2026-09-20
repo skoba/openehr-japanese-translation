@@ -8,12 +8,12 @@ T = {
   ['description', '-', 'purpose'] => "臨床記録の作成に際して取得した、特定の種別の電子的な連絡先に関する詳細情報を記録するため。",
 
   # Use to record details about a specified type of electronic communication for an individual or an organisation as it is known or understood in the course of clinical documentation. This is commonly ad hoc or when it is not appropriate or possible to use a formal register or index.
-  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、個人または組織の特定の種別の電子的な連絡先に関する詳細情報を記録するために用いる。必要となった連絡先をその都度記録する場合や、正式な登録簿やインデックスを利用することが適切でない、または利用できない場合が主に想定されている。",
+  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、個人または組織の特定の種別の電子的な連絡先に関する詳細情報を記録するために用いる。正式な登録簿や公式の一覧によらずに知り得た連絡先をその場で記録する場合や、正式な登録簿や一覧を利用することが適切でない、または利用できない場合が主に想定されている。",
 
   # Not to be used for complex communication representation or management, such as preferred phone numbers or valid dates of usage. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.
   # 
   # Not to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.
-  ['description', '-', 'misuse'] => "優先して使う電話番号や利用できる期間など、連絡先を複雑に表現・管理するために用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\n正式な個人識別情報の管理やその代替、または公式のデモグラフィック登録簿やインデックスの維持・管理に用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。",
+  ['description', '-', 'misuse'] => "優先して使う電話番号や利用できる期間など、連絡先を複雑に表現・管理するために用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\n正式な個人識別情報の管理やその代替、または公式の登録簿や一覧の維持・管理に用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。",
 
   # telephone, phone, mobile, email, fax, pager, chat, social media, asynchronous, communication, SoMe
   ['description', '-', 'keywords'] => "電話 | 携帯電話 | 電子メール | ファクシミリ | ポケットベル | チャット | ソーシャルメディア | 非同期 | 通信 | SoMe | 電子的な連絡先",

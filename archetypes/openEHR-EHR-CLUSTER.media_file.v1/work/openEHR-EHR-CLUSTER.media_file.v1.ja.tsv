@@ -20,7 +20,7 @@ openEHR-EHR-CLUSTER.media_file.v1	term	at0007	text	CLUSTER > items/ELEMENT	Comme
 openEHR-EHR-CLUSTER.media_file.v1	term	at0007	description	CLUSTER > items/ELEMENT	Additional narrative about the media file not captured in other fields.	他の項目には収まらないメディアファイルについての追加の記述。	
 openEHR-EHR-CLUSTER.media_file.v1	term	at0010	text	CLUSTER > items/ELEMENT	Identifier	識別子	
 openEHR-EHR-CLUSTER.media_file.v1	term	at0010	description	CLUSTER > items/ELEMENT	Unique ID for the media file.	メディアファイルの一意の識別子。	
-openEHR-EHR-CLUSTER.media_file.v1	term	at0011	text	CLUSTER > items/CLUSTER	Source device	作成機器	要確認: 作成機器（他候補: 取得元機器）ファイルの生成または作成に用いた機器という description に合わせた。
+openEHR-EHR-CLUSTER.media_file.v1	term	at0011	text	CLUSTER > items/CLUSTER	Source device	作成機器	
 openEHR-EHR-CLUSTER.media_file.v1	term	at0011	description	CLUSTER > items/CLUSTER	Details about the device used to generate or author the media file.	メディアファイルの生成または作成に用いた機器に関する詳細情報。	
 openEHR-EHR-CLUSTER.media_file.v1	term	at0011	comment	CLUSTER > items/CLUSTER	For example: the camera used to capture an image.	例：画像の撮影に用いたカメラ。	
 openEHR-EHR-CLUSTER.media_file.v1	term	at0012	text	CLUSTER > items/CLUSTER	Creator	作成者	
