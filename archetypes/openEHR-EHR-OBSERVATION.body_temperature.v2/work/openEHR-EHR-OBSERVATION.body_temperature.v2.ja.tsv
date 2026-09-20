@@ -1,0 +1,78 @@
+archetype	section	code	field	context	source	target	note
+openEHR-EHR-OBSERVATION.body_temperature.v2	description	-	purpose		To record the measured temperature of a person - as a surrogate for the core body temperature.	深部体温の代用として計測された人の体温を記録するため。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	description	-	use		Used for recording the measurement of an individual's body temperature, which is a surrogate for the core body temperature of the individual.\n\nAdditional clusters can be included to provide additional state data - including environmental conditions and exertion details, where appropriate.\n\nPlease Note: The site and method of recording may need to be displayed to the end user to facilitate accurate interpretation of the temperature recorded.	測定対象の個人の深部体温の代用として計測された体温を記録するために用いられる。\nさらに状態データを表すために、追加のクラスタを内包することもできる。たとえば、環境条件や、月経周期の詳細、労作についての詳細を必要に応じて内包する。\n注意：計測された温度を正確に解釈するためにエンドユーザーに記録方法や部位を示す必要があるかもしれない。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	description	-	misuse		This archetype is not to be used to record the temperature of any other object.\n\nThis archetype is not to be used to record the temperature of a part of the body in isolation e.g. temperature of the sole of the foot as a part of chronic diabetes management.	このアーキタイプは、体温以外を計測するためには用いられない。\nこのアーキタイプは、身体において独立した一部の温度を記録するためには用いられない。たとえば、糖尿病の慢性期管理の一環として、足底温を計測すること。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	description	-	keywords		temperature | body | core | fever | hypothermia | hyperthermia	体温 | 人体 | 深部体温 | 発熱 | 低体温 | 高体温	
+openEHR-EHR-OBSERVATION.body_temperature.v2	description	-	copyright		© openEHR Foundation	© openEHR Foundation	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0000	text	OBSERVATION	Body temperature	体温	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0000	description	OBSERVATION	A measurement of the body temperature, which is a surrogate for the core body temperature of the individual.	測定対象の個人の深部体温の代替として測定された体温	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0001	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE	Tree	Tree	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0001	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE	@ internal @	@ internal @	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0002	text	OBSERVATION > data/HISTORY	History	History	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0002	description	OBSERVATION > data/HISTORY	@ internal @	@ internal @	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0003	text	OBSERVATION > data/HISTORY > events/EVENT	Any event	任意のイベント	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0003	description	OBSERVATION > data/HISTORY > events/EVENT	Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.	デフォルトではテンプレートや実行時に明示的に定義される特定されない時点あるいは一定の間隔のイベント	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0004	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Temperature	体温	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0004	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	The measured temperature.	計測された体温	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0020	text	OBSERVATION > protocol/ITEM_TREE	Protocol	Protocol	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0020	description	OBSERVATION > protocol/ITEM_TREE	@ internal @	@ internal @	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0021	text	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Location of measurement	計測部位	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0021	description	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Simple description about the site of measurement.	計測部位についての簡単な記述。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0022	text		Mouth	口腔	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0022	description		Temperature is measured within the mouth.	口腔内で計測された温度	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0023	text		Ear canal	外耳道	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0023	description		Temperature is measured from within the external auditory canal.	外耳道内で計測された温度。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0024	text		Axilla	腋窩	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0024	description		Temperature is measured from the skin of the axilla with the arm positioned down by the side.	腕を脇につけた状態で測定された腋窩の皮膚から計測された温度。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0025	text		Rectum	直腸	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0025	description		Temperature measured within the rectum.	直腸内で計測された温度。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0026	text		Nasopharynx	鼻咽頭	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0026	description		Temperature is measured within the nasopharynx.	鼻咽頭内で計測された温度。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0027	text		Urinary bladder	膀胱	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0027	description		Temperature is measured in the urinary bladder.	膀胱内で計測された温度	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0028	text		Intravascular	血管内	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0028	description		Temperature is measured within the vascular system.	血管系の内部で計測された温度。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0029	text	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE	State	状態	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0029	description	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE	State information about the patient.	患者の状態についての情報	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0030	text	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	Body exposure	身体暴露	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0030	description	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	The degree of exposure of the individual at the time of measurement.	体温を計測した際の対象個人の露出状況	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0031	text		Naked	裸体	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0031	description		No clothing, bedding or covering.	着衣、寝具や被服がない状態	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0032	text		Reduced clothing/bedding	着衣や寝具が減らされている状態	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0032	description		The person is covered by a lesser amount of clothing or bedding than deemed appropriate for the environmental circumstances.	計測対象が周辺環境として適切と見なされるよりも少ない着衣や寝具に覆われた状態	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0033	text		Appropriate clothing/bedding	適切な着衣、寝具が与えられている状態	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0033	description		The person is covered by an amount of clothing or bedding deemed appropriate for the environmental circumstances.	計測対象者が着衣や寝具が周囲の環境として適切と考えられる量で覆われている状態	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0034	text		Increased clothing/bedding	過剰な着衣や寝具	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0034	description		The person is covered by an increased amount of clothing or bedding than deemed appropriate for the environmental circumstances.	計測対象者が環境として適切であると考えられる量よりも多くの着衣や寝具で覆われている状態。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0041	text	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	Description of thermal stress	熱応力についての記載	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0041	description	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	Narrative description of the conditions applied to the subject that might influence their measured body temperature.	計測された体温に影響を与えうる対象個人の状況についての叙述的記録	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0043	text		Skin	皮膚	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0043	description		Temperature is measured from exposed skin.	露出された皮膚で計測された温度。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0051	text		Vagina	膣	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0051	description		Temperature is measured within the vagina.	膣内で計測された温度。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0054	text		Oesophagus	食道	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0054	description		Temperatue is measured within the oesophagus.	食道内で計測された温度。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0055	text		Inguinal skin crease	鼠径ひだ状皮膚	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0055	description		Temperature is measured in the inguinal skin crease between the leg and abdominal wall.	歌詞と腹壁の間にある鼠径ひだ状皮膚で計測された温度。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0056	text	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/CLUSTER	Environmental conditions	環境条件	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0056	description	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/CLUSTER	Details about the environmental conditions at the time of temperature measurement.	体温を計測した時点での環境条件についての詳細。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0057	text	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/CLUSTER	Exertion	労作	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0057	description	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/CLUSTER	Details about the exertion of the person at the time of temperature measurement.	体温を計測した時点での労作状態についての詳細	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0059	text	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	Device	機器	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0059	description	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	Details about the device used to measure body temperature.	体温の計測に用いた機器に関する詳細情報。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0060	text		Temple	こめかみ	要確認: こめかみ（他候補: 側頭部）。原文 temple は浅側頭動脈上の測定部位。
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0060	description		Temperature is measured at the temple, over the superficial temporal artery.	こめかみ（浅側頭動脈の上）で計測された温度。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0061	text		Forehead	額	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0061	description		Temperature is measured on the forehead.	額で計測された温度。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0062	text	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	Extension	Extension	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0062	description	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	Additional information required to extend the model with local content or to align with other reference models or formalisms.	ローカルコンテンツでモデルを拡張するため、あるいは他の参照モデルや形式手法と整合させるために必要な追加情報。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0062	comment	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	For example: local information requirements; or additional metadata to align with FHIR.	例：ローカルな情報要件や、FHIR に適合させるための追加メタデータ。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0063	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Comment	コメント	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0063	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Additional comment about the body temperature measurement not captured in other fields.	他のフィールドで記録されない体温についての追加コメント	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0064	text	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	Structured measurement location	構造化された計測部位	要確認: 構造化された計測部位。既存訳 at0021「計測部位」に合わせて「計測」を使用（他 archetype の「測定」とは不統一）。
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0064	description	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	Structured details about the location of measurement.	計測部位に関する構造化された詳細情報。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0065	text	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	Day of menstrual cycle	月経周期の日	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0065	description	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	Current day of the menstrual cycle.	月経周期における現在の日	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0065	comment	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	The first day of menstruation is considered to be Day 1 of each menstrual cycle.	月経初日をそれぞれの月経周期で1日目と考える。	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0066	text	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	Confounding factors	交絡因子	要確認: 交絡因子（他候補: 影響因子、修飾因子）。疫学用語の confounding に合わせた。
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0066	description	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	Additional issues or factors that may impact on the measurement of body temperature, not captured in other fields.	他の項目には収まらない、体温の計測に影響する可能性のある問題や因子。	
