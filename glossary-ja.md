@@ -195,7 +195,7 @@
 | previous episodes / number of previous episodes | 過去のエピソード / 過去のエピソードの回数 | symptom_sign at0146 / at0031 |
 | associated symptom/sign | 随伴症状・徴候 | symptom_sign at0063 |
 | factor / factor detail | 因子 / 因子の詳細 | symptom_sign |
-| modifying / precipitating / resolving factor | 修飾因子 / 誘発因子 / 寛解因子 | symptom_sign at0018 / at0165 / at0190（寛解因子は OPQRST の慣用。description の resolution は「消失」） |
+| modifying / precipitating / resolving factor | 修飾因子 / 誘発因子 / 消失因子 | symptom_sign at0018 / at0165 / at0190（消失因子に統一 2026-09-20。resolve は症状・徴候では「消失」、プロブレム・診断では「治癒」、remission は「寛解」。旧「寛解因子」は OPQRST の慣用。description の resolution は「消失」） |
 | effect: relieves / no effect / worsens | 影響：軽減 / 影響なし / 増悪 | symptom_sign at0017。at0155 Impact も「影響」 |
 | progression (symptom): improving / unchanged / worsening / resolved | 進行状況：改善 / 不変 / 悪化 / 消失 | symptom_sign at0180。Unchanged＝不変（qualifier の Stable＝安定 とは別語） |
 | severity category / severity rating | 重症度 / 重症度評価 | symptom_sign at0021 / at0198 |
