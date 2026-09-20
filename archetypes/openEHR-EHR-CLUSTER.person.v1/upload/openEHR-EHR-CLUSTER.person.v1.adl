@@ -307,7 +307,7 @@ No debe utilizarse para registrar detalles biométricos o biomarcadores sobre un
 - CLUSTER.specimen archetypeの「検体採取者の詳細」を用いて、患者から検査用の検体を採取した人の氏名を記録する。
 - CLUSTER.health_event archetypeの「目撃者」SLOTを用いて、転倒や事故の目撃者の情報を記録する。
 
-臨床記録に人の氏名を記録するだけであれば、多くの場合、CLUSTER.person archetypeの非構造化の「氏名」要素で十分である。ただし、臨床記録の目的上、氏名を構造化して記録することが必要または望ましい場合は、CLUSTER.person archetypeの「構造化された氏名」SLOTにCLUSTER.structured_name archetypeを組み込む。この場合、各データエレメントの一部またはすべてを一つの文字列にまとめ、「氏名」要素に表示することもできる。ただし、構造化された氏名と「氏名」要素の内容が整合している必要がある。
+臨床記録に人の氏名を記録するだけであれば、多くの場合、CLUSTER.person archetypeの非構造化の「氏名」要素で十分である。ただし、臨床記録の目的上、氏名を構造化して記録することが必要または望ましい場合は、CLUSTER.person archetypeの「構造化された人名」SLOTにCLUSTER.structured_name archetypeを組み込む。この場合、各データエレメントの一部またはすべてを一つの文字列にまとめ、「氏名」要素に表示することもできる。ただし、構造化された人名と「氏名」要素の内容が整合している必要がある。
 
 本archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィックデータの代用として使用することもできる。例えば、評価票の冒頭にその人の詳細情報が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。">
 			misuse = <"正式な個人識別情報の管理やその代替、または公式の登録簿や一覧の維持・管理に用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。
@@ -937,9 +937,9 @@ Om individen som beskrivs med denna arketyp är den som själva journalen gälle
 					comment = <"このデータエレメントの内容は、CLUSTER.structured_name の1つ以上の構成要素をテキスト文字列として結合して導いてもよい。例：「John Markham」、「Professor Sir John Markham」、「John Markham Jnr MP」。">
 				>
 				["at0002"] = <
-					text = <"構造化された氏名">
+					text = <"構造化された人名">
 					description = <"個人の氏名全体を、姓・名などの独立した構成要素に分けて構造化した表現。非構造情報としての氏名に代わる表現として用いる。">
-					comment = <"構造化された氏名の要素の一部またはすべてを一つの文字列にまとめ、本archetypeの「氏名」データエレメントに記録することができる。">
+					comment = <"構造化された人名の要素の一部またはすべてを一つの文字列にまとめ、本archetypeの「氏名」データエレメントに記録することができる。">
 				>
 				["at0003"] = <
 					text = <"識別子">

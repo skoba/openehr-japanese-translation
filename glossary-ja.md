@@ -206,7 +206,7 @@
 | heartburn / claudication | 胸やけ / 跛行 | 例示 |
 | person (CLUSTER.person) | 人 | 概念名（校正 2026-09-19 で確定）。subject 以外の人一般 |
 | name (person) | 氏名 | MML4 人名表現形式・個人情報形式の「氏名」（校正 2026-09-19 で確定） |
-| structured name | 構造化された氏名 | CLUSTER.structured_name（概念名は #8 で確定） |
+| structured name | 構造化された人名 | CLUSTER.structured_name（概念名は #8 で確定） |
 | identifier | 識別子 | person at0003。MML4 の Id 形式は「ID」 |
 | role (person) | 役割 | person at0004。健康記録の対象者との関係または役割（校正 2026-09-19 で確定） |
 | electronic communication | 電子的な連絡先 | CLUSTER.electronic_communication（targets #10）。person 校正（2026-09-19）で「電子的連絡先」→「電子的な連絡先」 |
@@ -296,8 +296,8 @@
 | openEHR-EHR-EVALUATION.clinical_synopsis.v1 (1.0.5) | 臨床要約 | at0002 要約 |
 | openEHR-EHR-SECTION.adhoc.v1 (1.0.12) | 仮見出し | 校正済み（2026-09-13）。use の例：「仮見出し」→「診察所見」 |
 | openEHR-EHR-CLUSTER.symptom_sign.v2 (2.1.4) | 症状・徴候 | story.v1 のスロット。エピソード区分・発生区分・重症度・進行状況の値は problem_qualifier / problem_diagnosis と同じ |
-| openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 人の構造化された氏名 | at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
-| openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された氏名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0008 追加の詳細情報、at0011 ラベル（識別用の説明） |
+| openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 構造化された人名 | at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
+| openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された人名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0008 追加の詳細情報、at0011 ラベル（識別用の説明） |
 | openEHR-EHR-CLUSTER.address.v1 (1.1.3) | 住所 | 校正済み（2026-09-20）。at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所。日本の対応物は comment の例示 |
 | openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | 校正済み（2026-09-19）。at0001 種別、at0002 値、at0003 用途、at0006 固定電話、at0013 追加の詳細情報 |
 | openEHR-EHR-CLUSTER.organisation.v1 (1.0.4) | 組織 | 校正済み（2026-09-19）。医療機関に限らず企業・団体・部門・ケアチーム等を含む。at0001 名称、at0002 連絡担当者、at0021 親組織 |

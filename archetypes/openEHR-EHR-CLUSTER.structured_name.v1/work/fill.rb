@@ -5,7 +5,7 @@
 
 T = {
   # To record details about the structured name of an individual as they are known or understood in the course of clinical documentation.
-  ['description', '-', 'purpose'] => "臨床記録の作成に際して取得した、個人の構造化された氏名に関する詳細情報を記録するため。",
+  ['description', '-', 'purpose'] => "臨床記録の作成に際して取得した、個構造化された人名に関する詳細情報を記録するため。",
 
   # Use to record details about the structured name of an individual as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index.
   # 
@@ -21,7 +21,7 @@ T = {
   # - Family name first, given name/s last;
   # - Family names with prefixes eg El Haddad or van der Heyden; and
   # - Names containing both father's and mother's family names.
-  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、個人の構造化された氏名に関する詳細情報を記録するために用いる。正式な登録簿や公式の一覧によらずに知り得た情報をその場で記録する場合や、正式な登録簿や一覧の利用が適切でない、または利用できない場合を主に想定している。\n\n臨床記録に個人の氏名を記録するだけであれば、多くの場合、CLUSTER.person archetypeの非構造化の「氏名」要素で十分である。ただし、臨床記録の目的上、氏名を構造化して記録することが必要または望ましい場合は、CLUSTER.person archetypeの「構造化された氏名」SLOTに本archetypeを組み込む。\n\n各データエレメントには自由記述の文字列を入力できる。例：「Prof Dr」、「Sonja Jane」、「Smith-Brown」、「MP」。あるいは、各データエレメントはテンプレート内で繰り返せるため、次のように分けて記録することもできる。\n- 「敬称」を複製して「敬称 1」と「敬称 2」とし、それぞれに「Prof」と「Dr」を記録する。\n-  「名」を複製して「ファーストネーム」と「ミドルネーム」に名前を変更し、それぞれに「Sonja」と「Jane」を記録する。\n\n本archetypeは ISO 22220 に合わせているが、通称（preferred name）、氏名の用途、有効期間、および繰り返しの氏名構成要素／順序のグループ化は、本archetypeの範囲が限定されているため意図的に再現していない。\n\n本archetypeが設計されたほとんどのユースケースでは、複雑な姓は単に文字列として記録されると想定している。しかし、ISO 22220:2007（Annex F）の指針と例に従い、この構造化された氏名のパターンの中でより細かく記録することもできる。例えば、以下のように記録できる。\n- 姓を先に、名を後に記録する。\n- El Haddad や van der Heyden のように、接頭辞の付いた姓を記録する。\n- 父方と母方の両方の姓を含む氏名を記録する。",
+  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、個構造化された人名に関する詳細情報を記録するために用いる。正式な登録簿や公式の一覧によらずに知り得た情報をその場で記録する場合や、正式な登録簿や一覧の利用が適切でない、または利用できない場合を主に想定している。\n\n臨床記録に個人の氏名を記録するだけであれば、多くの場合、CLUSTER.person archetypeの非構造化の「氏名」要素で十分である。ただし、臨床記録の目的上、氏名を構造化して記録することが必要または望ましい場合は、CLUSTER.person archetypeの「構造化された人名」SLOTに本archetypeを組み込む。\n\n各データエレメントには自由記述の文字列を入力できる。例：「Prof Dr」、「Sonja Jane」、「Smith-Brown」、「MP」。あるいは、各データエレメントはテンプレート内で繰り返せるため、次のように分けて記録することもできる。\n- 「敬称」を複製して「敬称 1」と「敬称 2」とし、それぞれに「Prof」と「Dr」を記録する。\n-  「名」を複製して「ファーストネーム」と「ミドルネーム」に名前を変更し、それぞれに「Sonja」と「Jane」を記録する。\n\n本archetypeは ISO 22220 に合わせているが、通称（preferred name）、氏名の用途、有効期間、および繰り返しの氏名構成要素／順序のグループ化は、本archetypeの範囲が限定されているため意図的に再現していない。\n\n本archetypeが設計されたほとんどのユースケースでは、複雑な姓は単に文字列として記録されると想定している。しかし、ISO 22220:2007（Annex F）の指針と例に従い、この構造化された人名のパターンの中でより細かく記録することもできる。例えば、以下のように記録できる。\n- 姓を先に、名を後に記録する。\n- El Haddad や van der Heyden のように、接頭辞の付いた姓を記録する。\n- 父方と母方の両方の姓を含む氏名を記録する。",
 
   # Not to be used if an unstructured text string representing the individual's name is adequate for the purpose. Use the 'Name' data element within the CLUSTER.person for this purpose.
   # 
@@ -33,14 +33,14 @@ T = {
   ['description', '-', 'misuse'] => "個人の氏名を非構造化のテキスト文字列で表せば足りる場合には、本archetypeではなく CLUSTER.person の「氏名」データエレメントを用いる。\n\n通称や氏名の用途、使用の有効期間など、氏名を複雑に表現・管理するために用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\n正式な個人識別情報の管理やその代替、または公式の登録簿や一覧の維持・管理に用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\nケア対象者、ケアへの参加者、記録の作成者など、参照モデルの属性を用いて健康記録に正式に記録すべき情報を、本archetypeで記録してはならない。",
 
   # person, individual, name
-  ['description', '-', 'keywords'] => "人 | 個人 | 氏名 | 姓 | 名 | 構造化された氏名 | ふりがな",
+  ['description', '-', 'keywords'] => "人 | 個人 | 氏名 | 姓 | 名 | 構造化された人名 | ふりがな",
 
   # © openEHR Foundation
   ['description', '-', 'copyright'] => "© openEHR Foundation",
 
   # CLUSTER
   # Structured name of a person
-  ['term', 'at0000', 'text'] => "人の構造化された氏名",
+  ['term', 'at0000', 'text'] => "構造化された人名",
 
   # CLUSTER
   # Discrete components of an individual's name.
@@ -99,8 +99,8 @@ T = {
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
   ['description', '-', 'use'] => "要確認: preferred name＝通称、name usage＝氏名の用途、First name／Middle name＝ファーストネーム／ミドルネーム（MML4 middle＝ミドルネーム）",
-  ['description', '-', 'keywords'] => "要確認: 原文 3 語（person, individual, name）に「姓」「名」「構造化された氏名」「ふりがな」を追加（CKM 検索用）",
-  ['term', 'at0000', 'text'] => "要確認: 概念名「人の構造化された氏名」を採用（用語集 structured name＝構造化された氏名、person＝人。他候補: 構造化氏名（targets.tsv の案）、構造化された人名）",
+  ['description', '-', 'keywords'] => "要確認: 原文 3 語（person, individual, name）に「姓」「名」「構造化された人名」「ふりがな」を追加（CKM 検索用）",
+  ['term', 'at0000', 'text'] => "要確認: 概念名「構造化された人名」を採用（用語集 structured name＝構造化された人名、person＝人。他候補: 構造化氏名（targets.tsv の案）、構造化された人名）",
   ['term', 'at0001', 'text'] => "要確認: Title＝「敬称」を採用（MML4 人名表現形式 prefix＝肩書き。他候補: 肩書き、称号）。Ms / Mx を含むので「敬称」",
   ['term', 'at0002', 'text'] => "要確認: Given name＝「名」、Family name＝「姓」（MML4 人名表現形式に合わせた。他候補: 名前／姓名）。comment 末尾にふりがなの扱い（テンプレートで本 CLUSTER をもう1つ占有）を日本向けの例示として追加（localisation-ja.md の翻訳層方針）",
   ['term', 'at0006', 'text'] => "要確認: Suffix＝「接尾辞」（他候補: サフィックス、接尾語）。MML4 の degree（学位）は Suffix で表す",
