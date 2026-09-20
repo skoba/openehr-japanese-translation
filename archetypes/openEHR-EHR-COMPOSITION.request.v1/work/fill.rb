@@ -5,7 +5,7 @@
 
 T = {
   # To request advice, a specified service or transfer of care from a healthcare provider or organisation about the subject of care.
-  ['description', '-', 'purpose'] => "ケア対象者について、医療従事者または医療機関に対し、助言、特定のサービス、または診療の移管を依頼するため。",
+  ['description', '-', 'purpose'] => "ケア対象者について、医療従事者または医療機関に対し、助言、特定のサービス、または診療の引き継ぎを依頼するため。",
 
   # Use as basis for a request for advice, a service or transfer of care from a healthcare provider or organisation about the subject of care. This document will typically include details about the scope and duration of validity of the request, as well as relevant clinical information about the subject. Requests can vary from a simple request for a consultation, seeking recommendation about further action, requesting a specific procedure or diagnostic test, through to full handover of care and clinical responsibility to the receiving healthcare provider.
   # 
@@ -19,12 +19,12 @@ T = {
   # - for provision of physiotherapy or occupational therapy.
   # 
   # Requests may be targeted (identifying a specific healthcare provider or organisation to carry out the request) or untargeted (identifying only the type of care desired).
-  ['description', '-', 'use'] => "ケア対象者について、医療従事者または医療機関に対し、助言、サービス、または診療の移管を依頼する際の基盤として用いる。この文書には通常、依頼の範囲および有効期間に関する詳細情報と、ケア対象者に関する関連する臨床情報が含まれる。依頼の内容は、単純なコンサルテーションの依頼、今後の対応についての推奨を求めるもの、特定の処置や臨床検査の依頼から、受け手となる医療従事者への診療および臨床的責任の完全な引き継ぎまで多岐にわたる。\n\nユースケースには以下のような依頼が含まれるが、これらに限定されない：\n- 専門医によるコンサルテーション、セカンドオピニオン、または診療方針に関する助言を依頼する。\n- 臨床検査を依頼する。\n- 訪問看護師による在宅ケアを依頼する。\n- リハビリテーション施設への診療の移管を依頼する。\n- 高齢者ケアのアセスメントを依頼する。\n- 薬剤師による薬剤監査を依頼する。\n- 理学療法または作業療法の提供を依頼する。\n\n依頼は、依頼を実施する特定の医療従事者または医療機関を指定するもの（宛先指定あり）でも、希望するケアの種類のみを示すもの（宛先指定なし）でもよい。",
+  ['description', '-', 'use'] => "ケア対象者について、医療従事者または医療機関に対し、助言、サービス、または診療の引き継ぎを依頼する際の基盤として用いる。この文書には通常、依頼の範囲および有効期間に関する詳細情報と、ケア対象者に関する関連する臨床情報が含まれる。依頼の内容は、単純なコンサルテーションの依頼、今後の対応についての推奨を求めるもの、特定の処置や臨床検査の依頼から、受け手となる医療従事者への診療および臨床的責任の完全な引き継ぎまで多岐にわたる。\n\nユースケースには以下のような依頼が含まれるが、これらに限定されない：\n- 専門医によるコンサルテーション、セカンドオピニオン、または診療方針に関する助言を依頼する。\n- 臨床検査を依頼する。\n- 訪問看護師による在宅ケアを依頼する。\n- リハビリテーション施設への診療の引き継ぎを依頼する。\n- 高齢者ケアのアセスメントを依頼する。\n- 薬剤師による薬剤監査を依頼する。\n- 理学療法または作業療法の提供を依頼する。\n\n依頼は、依頼を実施する特定の医療従事者または医療機関を指定するもの（宛先指定あり）でも、希望するケアの種類のみを示すもの（宛先指定なし）でもよい。",
 
   # Not to be used to represent the document recorded as part of a single clinical encounter or visit. Use COMPOSITION.encounter for this purpose.
   # 
   # Not to be used to provide a transfer of care summary to another organisation or provider - use COMPOSITION.transfer_summary for this purpose.
-  ['description', '-', 'misuse'] => "単一の診察の一部として記録される文書の表現には、本archetypeではなく COMPOSITION.encounter を用いる。\n\n他の医療機関または医療従事者への診療移管サマリーの提供には、本archetypeではなく COMPOSITION.transfer_summary を用いる。",
+  ['description', '-', 'misuse'] => "単一の診察の一部として記録される文書の表現には、本archetypeではなく COMPOSITION.encounter を用いる。\n\n他の医療機関または医療従事者への引き継ぎサマリーの提供には、本archetypeではなく COMPOSITION.transfer_summary を用いる。",
 
   # referral | request | service
   ['description', '-', 'keywords'] => "紹介 | 依頼 | サービス | 紹介状 | 診療依頼",
@@ -38,7 +38,7 @@ T = {
 
   # COMPOSITION
   # Document sent from one treating healthcare provider or organisation to another, for the purpose of requesting advice, a service or transfer of care.
-  ['term', 'at0000', 'description'] => "助言、サービス、または診療の移管を依頼する目的で、診療を担当する医療従事者または医療機関から別の医療従事者・医療機関へ送付される文書。",
+  ['term', 'at0000', 'description'] => "助言、サービス、または診療の引き継ぎを依頼する目的で、診療を担当する医療従事者または医療機関から別の医療従事者・医療機関へ送付される文書。",
 
   # COMPOSITION > context/EVENT_CONTEXT > other_context/ITEM_TREE
   # Tree
@@ -64,8 +64,6 @@ T = {
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['description', '-', 'use'] => "要確認: \"aged care assessment\"→「高齢者ケアのアセスメント」（介護認定と読み替えず直訳）、\"subject of care\"→「ケア対象者」",
-  ['description', '-', 'keywords'] => "原文3語に「紹介状」「診療依頼」を追加（CKM検索性のため）",
   ['term', 'at0000', 'text'] => "「診療依頼書」を採用（他候補: 依頼書／サービス依頼）。国内の「診療情報提供書」とは区別",
   ['term', 'at0001', 'text'] => "内部ノード。他言語（de/sv/nb/nl）に倣い \"Tree\" のまま",
   ['term', 'at0042', 'text'] => "用語集の決定により \"Extension\" は訳さず英字のまま",

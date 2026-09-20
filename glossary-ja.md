@@ -39,7 +39,7 @@
 | encounter | 診察 | contact と区別する |
 | contact (healthcare contact) | 受診 | encounter と区別する |
 | encounter or contact | 診察または受診 | reason_for_encounter |
-| transfer of care | 診療の引き継ぎ | 2026-09-20 に「移管」から変更（臨床現場の慣用）。transfer summary＝診療引き継ぎサマリー。handover も引き継ぎ |
+| transfer of care | 診療の引き継ぎ | 2026-09-20 に「移管」から変更（臨床現場の慣用）。transfer summary＝引き継ぎサマリー（request.v1 校正 2026-09-20）。handover も引き継ぎ |
 | handover of care and clinical responsibility | 診療および臨床的責任の引き継ぎ | |
 | request | 依頼 | 「要求」は使わない |
 | service | サービス | |
@@ -286,7 +286,7 @@
 
 | Archetype | at0000 text | 備考 |
 |---|---|---|
-| openEHR-EHR-COMPOSITION.request.v1 | 診療依頼書 | 候補：依頼書／サービス依頼。国内の「診療情報提供書」とは区別 |
+| openEHR-EHR-COMPOSITION.request.v1 | 診療依頼書 | 校正済み（2026-09-20）。候補：依頼書／サービス依頼。国内の「診療情報提供書」とは区別 |
 | openEHR-EHR-EVALUATION.reason_for_encounter.v1 | 受診理由 | 校正済み（2026-09-20）。at0002 受診区分、at0004 受診時のプロブレム（主訴を同義語として明記） |
 | openEHR-EHR-SECTION.referral_details.v0 | 紹介状の詳細 | at0001 紹介依頼、at0002 詳細 |
 | openEHR-EHR-INSTRUCTION.service_request.v1 (1.1.2) | サービス依頼 | 校正済み（2026-09-20）。緊急度の値：緊急／至急／通常 |
