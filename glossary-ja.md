@@ -225,9 +225,9 @@
 | MML4 電話番号表現形式: area / city / number / extension / full / country / memo / telEquipType | 市外局番 / 局番 / 加入番号 / 内線番号 / 一連電話番号 / 国番号 / メモ（使用時間帯など） / 装置の種類 | doc/MML4/phone.adoc。electronic_communication.v1 で使う |
 | MML4 施設情報形式 / 診療科情報形式 | 施設（施設名称・施設 ID） / 診療科（診療科名称・診療科 ID） | doc/MML4/facility.adoc, department.adoc。organisation.v1 で使う |
 | MML4 Id 形式: type / checkDigit / checkDigitSchema | ID の種類 / チェックディジット / チェックディジット方式 | doc/MML4/id.adoc |
-| title (name) | 敬称 | structured_name at0001。MML4 prefix＝肩書き（要確認。他候補：肩書き、称号） |
+| title (name) | 敬称 | structured_name at0001。MML4 prefix＝肩書き（校正 2026-09-20 で確定。他候補：肩書き、称号） |
 | given name / family name | 名 / 姓 | structured_name at0002 / at0005（MML4 人名表現形式） |
-| suffix (name) | 接尾辞 | structured_name at0006（要確認。他候補：サフィックス）。MML4 degree＝学位 はここ |
+| suffix (name) | 接尾辞 | structured_name at0006（校正 2026-09-20 で確定。他候補：サフィックス）。MML4 degree＝学位 はここ |
 | first name / middle name / preferred name / nickname | ファーストネーム / ミドルネーム / 通称 / ニックネーム | structured_name at0002 comment |
 | name usage | 氏名の用途 | structured_name use / misuse |
 | ISO 22220 | ISO 22220 | 英字のまま |
