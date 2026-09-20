@@ -56,7 +56,7 @@
 | targeted / untargeted (request) | 宛先指定あり / 宛先指定なし | |
 | Extension | Extension | 訳さない |
 | local context | ローカルな文脈 | |
-| reference models/formalisms | 参照モデルや形式手法 | problem_diagnosis 校正版（at0071 Extension description）に合わせた（2026-09-11、要確認） |
+| reference models/formalisms | 参照モデルや形式手法 | problem_diagnosis 校正版（at0071 Extension description）に合わせた（2026-09-11。request / service_request の Extension も 2026-09-20 再レビューで同文に統一、校正済み） |
 | additional metadata | 追加メタデータ | |
 | Tree | Tree | 訳さない |
 | archetype | archetype | 英字のまま。「アーキタイプ」と書かない（problem_diagnosis 校正 2026-09-10 で統一。「本archetype」「CLUSTER archetype群」のように続ける） |
