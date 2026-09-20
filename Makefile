@@ -16,7 +16,7 @@ RUBY   := ruby
 TOOL   := $(RUBY) tools/adl_i18n.rb
 STATUS := $(RUBY) tools/status.rb
 
-.PHONY: new build import check status list set-status examples uploads uploads
+.PHONY: new build import check status list set-status examples uploads
 
 new:
 	@test -n "$(ADL)" || (echo "usage: make new ADL=file.adl"; exit 2)
@@ -55,14 +55,6 @@ status list:
 set-status:
 	@test -n "$(ID)" && test -n "$(STATE)" || (echo "usage: make set-status ID=openEHR-EHR-... STATE=uploaded|accepted [CKM_URL=https://...] [FORCE=1]"; exit 2)
 	@$(STATUS) set $(ID) $(STATE) $(CKM_URL)
-
-uploads:
-	@rm -rf uploads && mkdir -p uploads; \
-	 awk -F'\t' 'NR>1 && ($$2=="review" || "$(ALL)"!="") {print $$1, $$2}' status.tsv | while read -r id state; do \
-	   f=archetypes/$$id/upload/$$id.adl; \
-	   if [ -f "$$f" ]; then cp "$$f" uploads/ && echo "uploads/$$id.adl  ($$state)"; else echo "skip $$id: no $$f" >&2; fi; \
-	 done; \
-	 echo "$$(ls uploads | wc -l) file(s) in uploads/  (state review only; ALL=1 for every archetype)"
 
 uploads:
 	@rm -rf uploads && mkdir -p uploads; \
