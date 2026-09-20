@@ -50,7 +50,7 @@
 | diagnostic test | 臨床検査 | |
 | home care from visiting nurses | 訪問看護師による在宅ケア | |
 | rehabilitation facility | リハビリテーション施設 | |
-| aged care assessment | 高齢者ケアのアセスメント | 「要介護認定」とは読み替えない（要確認） |
+| aged care assessment | 高齢者ケアのアセスメント | 「要介護認定」とは読み替えない（校正済み 2026-09-20） |
 | medication review | 薬剤監査 | |
 | physiotherapy / occupational therapy | 理学療法 / 作業療法 | |
 | targeted / untargeted (request) | 宛先指定あり / 宛先指定なし | |
@@ -88,7 +88,7 @@
 | service period start / expiry | サービス期間の開始 / 終了 | |
 | reason for request / reason description | 依頼理由 / 理由の説明 | |
 | intent | 意図 | |
-| urgency: emergency / urgent / routine | 緊急度：緊急 / 至急 / 通常 | 要確認 |
+| urgency: emergency / urgent / routine | 緊急度：緊急 / 至急 / 通常 | 校正済み（2026-09-20、全 archetype 校正完了時に確定） |
 | supplementary information | 補足情報 | Boolean。後送する情報 |
 | supporting information | 参考資料 | 添付する電子文書・画像等 |
 | patient requirements | 患者側からの要件 | service_request at0116。言語・移動手段など、患者側が提示し提供側が満たすべきもの。校正 2026-09-20 で「患者の必要事項」から変更（「患者側の要件」は患者に課される条件に読めるため不採用） |
@@ -106,7 +106,7 @@
 | follow-up appointment | フォローアップ受診 | |
 | problem / diagnosis / condition | プロブレム / 診断 / 病態 | 訳し分ける。日本でのPOMRの文脈ではProblemは問題や課題と翻訳されることもあるが、主にプロブレムとされることが多い。ここでもそれを踏襲する。problem_diagnosis |
 | health problem | 健康上のプロブレム | problem＝プロブレムに合わせる（problem_diagnosis 校正 2026-09-10。「health issues」は引き続き「健康上の問題」） |
-| healthcare professional | 医療従事者 | healthcare provider と同じ訳（要確認） |
+| healthcare professional | 医療従事者 | healthcare provider と同じ訳（校正済み 2026-09-20） |
 | carer | 介護者 | |
 | wellbeing / well-being | ウェルビーイング | OK |
 | injury / disability | 外傷 / 障害 | |
@@ -115,18 +115,18 @@
 | clinical consultation | 診察 | 紹介の consultation（コンサルテーション）とは区別 |
 | clinical decision support | 臨床意思決定支援 | |
 | Problem Oriented Medical Record | プロブレム志向型診療記録 | Larry Weed は英字のまま |
-| problem/diagnosis name | プロブレム・診断の名称 | 概念名「プロブレム・診断」に合わせ区切りは「・」（problem_diagnosis 校正 2026-09-10）。要確認：校正前の用語集は「プロブレム/診断名」 |
+| problem/diagnosis name | プロブレム・診断の名称 | 概念名「プロブレム・診断」に合わせ区切りは「・」（problem_diagnosis 校正 2026-09-10）。校正済み 2026-09-20。校正前の用語集は「プロブレム/診断名」 |
 | date/time clinically recognised | 臨床的に認識された日時 | problem_diagnosis 校正（2026-09-10）で「臨床的認識日時」から変更 |
 | date/time of onset | 発症日時 | |
-| date/time of resolution | 治癒した日時 | resolution or remission＝解消または寛解（要確認） |
+| date/time of resolution | 治癒した日時 | resolution or remission＝解消または寛解（校正済み 2026-09-20） |
 | severity: mild / moderate / severe | 重症度：軽症 / 中等症 / 重症 | |
 | body site / anatomical location | 身体部位 / 解剖学的部位 | 訳し分ける |
 | structured body site | 構造化された身体部位表現 | CLUSTER スロット。problem_diagnosis 校正（2026-09-10）で採用 |
-| status (qualifier slot) | 状態 | request status＝依頼状態 に合わせる（要確認） |
+| status (qualifier slot) | 状態 | request status＝依頼状態 に合わせる（校正済み 2026-09-20） |
 | clinical description / course description | 臨床的説明 / 経過記載 | problem_diagnosis 校正（2026-09-10）で「経過の説明」→「経過記載」 |
 | diagnostic certainty: suspected / probable / confirmed | 診断確度：疑い / 推定 / 確定 | problem_diagnosis 校正（2026-09-10）で採用。校正前は「診断の確からしさ：疑い / ほぼ確実 / 確定」（指定難病の慣用訳） |
 | cause / aetiology | 原因 / 病因 | |
-| variant / subtype | 亜型 / サブタイプ | 要確認 |
+| variant / subtype | 亜型 / サブタイプ | 校正済み（2026-09-20、全 archetype 校正完了時に確定） |
 | impact | 影響 | |
 | comment (element) | コメント | |
 | last updated | 最終更新日 | |
@@ -168,16 +168,16 @@
 | story (narrative element) | 病歴の記述 | OBSERVATION.story at0004。対比文脈（story と history を並べるとき）の story は「語り」。keywords では検索語として「ストーリー」を併記可 |
 | clinical history | 病歴 | |
 | Event Series | Event Series | HISTORY の内部ノード名。Tree と同じく訳さない |
-| Any event | 任意のイベント | OBSERVATION の既定イベント名（要確認） |
+| Any event | 任意のイベント | OBSERVATION の既定イベント名（校正済み 2026-09-20） |
 | structured detail | 構造化された詳細記録 | CLUSTER スロット。story 校正（2026-09-11）で「詳細記録」に揃えた |
 | personal health record | 個人健康記録 | PHR |
 | clinical questionnaire / questionnaire | 臨床問診票 / 問診票 | 校正（2026-09-12）で「質問票」→「問診票」。screening questionnaire＝スクリーニング問診票 |
 | health event | 健康イベント | CLUSTER.health_event |
 | care-giver | 介護者 | carer と同じ |
 | narrative | 叙述 | narrative description＝叙述的な記述 |
-| clinical synopsis | 臨床要約 | EVALUATION.clinical_synopsis 概念名（要確認。他候補：臨床サマリー） |
+| clinical synopsis | 臨床要約 | EVALUATION.clinical_synopsis 概念名（校正済み 2026-09-20。他候補：臨床サマリー） |
 | synopsis (element) | 要約 | at0002 |
-| epicrisis | エピクリーゼ | keywords（要確認。他候補：退院時総括） |
+| epicrisis | エピクリーゼ | keywords（校正済み 2026-09-20。他候補：退院時総括） |
 | meta observation | メタ観察 | clinical_synopsis use |
 | report (document) | 報告書 | COMPOSITION.report |
 | List | List | 内部ノード名。訳さない |
@@ -216,9 +216,9 @@
 | label (person) | ラベル（識別用の説明） | person at0011（校正 2026-09-19） |
 | demographic register / index | 登録簿 / 一覧（address.v1 では 住所登記簿 / 公式の住所一覧） | 校正 2026-09-20 で確定。「インデックス」「デモグラフィック登録簿」は使わない（患者マスターインデックス（MPI）は固有名として残す） |
 | Master Patient Index / Health Provider Index | 患者マスターインデックス（MPI） / 医療従事者名簿（Health Provider Index） | person 校正（2026-09-19）で確定 |
-| Demographic Information Model | デモグラフィック情報モデル | openEHR RM（要確認） |
+| Demographic Information Model | デモグラフィック情報モデル | openEHR RM（校正済み 2026-09-20） |
 | next-of-kin | 近親者 | |
-| copyholder / contact person / family member details / specimen collector details / witness (slots) | 写し保有者 / 連絡担当者 / 家族構成員の詳細 / 検体採取者の詳細 / 目撃者 | 未訳 archetype のスロット名の仮訳（要確認。該当 archetype の翻訳時に確定） |
+| copyholder / contact person / family member details / specimen collector details / witness (slots) | 写し保有者 / 連絡担当者 / 家族構成員の詳細 / 検体採取者の詳細 / 目撃者 | 未訳 archetype のスロット名の仮訳（校正済み 2026-09-20。該当 archetype の翻訳時に確定） |
 | MML4 人名表現形式: family / given / middle / fullname / prefix / degree | 姓 / 名 / ミドルネーム / フルネーム / 肩書き（敬称） / 学位 | skoba/mml doc/MML4/name.adoc。structured_name.v1 で使う |
 | MML4 住所表現形式: full / prefecture / city / town / homeNumber / zip / countryCode | 一連住所 / 都道府県 / 市・区・郡 / 町・村 / 番地（丁目・建物名・部屋番号） / 郵便番号 / 国コード | doc/MML4/address.adoc。address.v1 で使う |
 | MML4 住所の種類: current / permanent / mailing / business / office / home / birth | 現住所 / 本籍 / 郵送先 / 勤務先 / 事務所 / 自宅 / 出生地 | MML0002（要確認。address.v1 の値セットと照合） |
@@ -270,7 +270,7 @@
 | Created (media file) | 作成日時 | media_file at0004。部分的な日付や期間も含む（校正 2026-09-19 で確定。他候補：作成時期） |
 | Source device | 作成機器 | media_file at0011。ファイルの生成・作成に用いた機器（校正 2026-09-20 で確定。他候補：取得元機器） |
 | Creator | 作成者 | media_file at0012。個人と組織の両方を含む（校正 2026-09-19 で確定。他候補：制作者） |
-| metadata | メタデータ | 既存の additional metadata＝追加メタデータに合わせる（要確認。他候補：付帯情報） |
+| metadata | メタデータ | 既存の additional metadata＝追加メタデータに合わせる（校正済み 2026-09-20。他候補：付帯情報） |
 | modality / view / aspect (radiographic image) | 撮影法 / 撮影方向 / 観察方向 | media_file use。画像の取得方法と方向を区別する（校正 2026-09-19 で確定。他候補：モダリティ / 撮影像 / 側面） |
 | scanned pathology slide | 病理標本スライドのスキャン画像 | media_file use。保存するデジタル画像を表す（校正 2026-09-19 で確定。他候補：スキャンした病理標本） |
 | clinical device / ECG machine | 医療機器 / 心電計 | media_file use。データを出力する機器（校正 2026-09-19 で確定。他候補：臨床機器 / 心電図装置） |
