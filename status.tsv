@@ -11,7 +11,7 @@ openEHR-EHR-SECTION.adhoc.v1	uploaded	1.0.12	https://ckm.openehr.org/ckm/archety
 openEHR-EHR-CLUSTER.symptom_sign.v2	uploaded	2.1.4	https://ckm.openehr.org/ckm/archetypes/1013.1.6769	2026-09-20
 openEHR-EHR-CLUSTER.person.v1	uploaded	1.0.5	https://ckm.openehr.org/ckm/archetypes/1013.1.5358	2026-09-20
 openEHR-EHR-CLUSTER.structured_name.v1	uploaded	1.0.3	https://ckm.openehr.org/ckm/archetypes/1013.1.5359	2026-09-20
-openEHR-EHR-CLUSTER.address.v1	review	1.1.3		2026-09-20
+openEHR-EHR-CLUSTER.address.v1	uploaded	1.1.3	https://ckm.openehr.org/ckm/archetypes/1013.1.273	2026-09-20
 openEHR-EHR-CLUSTER.electronic_communication.v1	review	1.0.4		2026-09-20
 openEHR-EHR-CLUSTER.organisation.v1	review	1.0.4		2026-09-20
 openEHR-EHR-CLUSTER.media_file.v1	review	1.0.6		2026-09-20
