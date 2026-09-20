@@ -282,7 +282,7 @@
 | radiological image / clinical finding | 放射線画像 / 臨床所見 | media_file use（校正 2026-09-19 で確定。他候補：放射線診断画像 / 診療所見） |
 | burn / wound / video consultation | 熱傷 / 創傷 / ビデオ診察 | media_file use, at0002 comment（校正 2026-09-19 で確定。他候補：やけど / 傷 / オンライン診察） |
 | temple / forehead (temperature site) | こめかみ / 額 | body_temperature.v2 at0060 / at0061（要確認。他候補：側頭部 / 前額部） |
-| confounding factors | 交絡因子 | body_temperature.v2 at0066（要確認。他候補：影響因子）。他の項目には収まらない影響要因 |
+| confounding factors | 交絡因子 | body_temperature.v2 at0066。CKM 既存の body_weight.v2 at0025 の ja 訳も「交絡因子」（前例あり） |
 | location of measurement / structured measurement location | 計測部位 / 構造化された計測部位 | body_temperature.v2 at0021（既存訳）/ at0064。既存 ja が「計測」なので合わせる（新規翻訳では「測定」を使うものもある。要確認） |
 | device (measurement) | 機器 | body_temperature.v2 at0059（既存訳）。media_file の Source device＝作成機器 とは別 |
 
@@ -307,3 +307,4 @@
 | openEHR-EHR-CLUSTER.organisation.v1 (1.0.4) | 組織 | 校正済み（2026-09-19、再レビュー分 2026-09-20 確認）。医療機関に限らず企業・団体・部門・ケアチーム等を含む。at0001 名称、at0002 連絡担当者、at0021 親組織 |
 | openEHR-EHR-CLUSTER.media_file.v1 (1.0.6) | メディアファイル | 校正済み（2026-09-19）。概念名は Issue #11 の訳語案。at0001 コンテンツ、at0002 コンテンツ名、at0004 作成日時、at0011 作成機器、at0012 作成者（全ノード確定 2026-09-20） |
 | openEHR-EHR-OBSERVATION.body_temperature.v2 (2.1.10) | 体温 | 差分翻訳（2026-09-20、Issue #46）。CKM 既存 ja の未訳 12 項目（at0021 / at0059 description、at0060 こめかみ、at0061 額、at0064 構造化された計測部位、at0066 交絡因子、at0062 Extension の description / comment）のみ追加。既存訳は変更なし |
+| openEHR-EHR-OBSERVATION.body_weight.v2 (2.1.12) | 体重 | 差分翻訳（2026-09-20、Issue #47）。未訳は内部構造ノード名 4 つ（at0001 Simple、at0002 history、at0008 state structure、at0015 protocol structure）のみで英字のまま。既存訳は変更なし（既存の at0027 Extension＝拡張領域 は規則と異なるが本 PR では触らない） |
