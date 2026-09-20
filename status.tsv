@@ -17,3 +17,4 @@ openEHR-EHR-CLUSTER.organisation.v1	uploaded	1.0.4	https://ckm.openehr.org/ckm/a
 openEHR-EHR-CLUSTER.media_file.v1	uploaded	1.0.6	https://ckm.openehr.org/ckm/archetypes/1013.1.1800	2026-09-20
 openEHR-EHR-OBSERVATION.body_temperature.v2	review	2.1.10		2026-09-20
 openEHR-EHR-OBSERVATION.body_weight.v2	review	2.1.12		2026-09-20
+openEHR-EHR-OBSERVATION.blood_pressure.v2	review	2.0.16		2026-09-20
