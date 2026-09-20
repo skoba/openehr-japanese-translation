@@ -4,7 +4,7 @@
 # make check                                          -> check every archetypes/*/upload/*.adl
 # make status                                         -> list status.tsv (alias: make list)
 # make examples                                       -> regenerate docs/style-examples.md (proofread before/after corpus) from git history
-# make set-status ID=... STATE=uploaded|accepted [CKM_URL=...]   -> humans only (see CLAUDE.md); FORCE=1 allows going backwards. CKM_URL defaults to the manifest cid
+# make set-status ID=... STATE=uploaded|accepted [CKM_URL=...]   -> humans only (see CLAUDE.md); FORCE=1 allows going backwards. CKM_URL defaults to the manifest cid; refreshes uploads/ if it exists
 # make uploads [ALL=1]                                -> copy upload/<id>.adl of every `review` archetype into uploads/ (gitignored) for back-to-back CKM uploads
 #
 # upload/<id>.adl keeps the original file name on purpose: CKM only recognises a
@@ -55,6 +55,7 @@ status list:
 set-status:
 	@test -n "$(ID)" && test -n "$(STATE)" || (echo "usage: make set-status ID=openEHR-EHR-... STATE=uploaded|accepted [CKM_URL=https://...] [FORCE=1]"; exit 2)
 	@$(STATUS) set $(ID) $(STATE) $(CKM_URL)
+	@test -d uploads && $(MAKE) -s uploads || true
 
 uploads:
 	@rm -rf uploads && mkdir -p uploads; \
