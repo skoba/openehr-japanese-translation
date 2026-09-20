@@ -14,7 +14,7 @@ T = {
   # In an effort to clarify the phrases and intent, this archetype contains two data elements:
   # - The first, 'Contact type', to document the administrative type of healthcare sought or required - for example the type of consultation, emergency care, pre-operative assessment, routine antenatal visit or elective admission. This data element reflects the administrative category of care provision. Use of the phrase 'Contact type', rather than 'Reason for encounter' or 'Reason for visit' reflects the increasing trend towards alternative methods of healthcare provision that may not result in face-to-face contact between the healthcare provider and patient within a consulting room.
   # - The second, 'Presenting problem', to document the clinical reasons for healthcare contact. Chief complaint is regarded as a synonym for 'Presenting problem'. These are intended mainly to capture the patient's perceived issues or symptoms which have triggered them to seek healthcare advice, such as desire to quit smoking, stress, shortness of breath, genetic counselling or abdominal pain. Signs such as impaired conscious state may also be captured here, for example by paramedical staff with an unconscious patient.
-  ['description', '-', 'use'] => "医療従事者とケア対象者との間で、あらゆる種類の診察または受診が開始された理由（複数の場合もある）を記録するために用いる。理由は臨床的、社会的、または管理的な目的のいずれでもよい。\n\n「受診理由（Reason for encounter）」は医療従事者学で広く使われる語句であるが、この語は一般に2つの意味で使われている。一つは医療提供の管理上の区分を指すもの、もう一つは個人が医療を求める動機となる臨床的または社会的なプロブレムを指すものである。\n\nこの語句と意図を明確にするため、本archetypeは2つのデータエレメントを含む：\n- 一つ目の「受診区分」は、求められている、または必要とされている医療の管理上の種別を記録するためのものである。例えば、コンサルテーションの種類、救急診療、術前評価、定期の妊婦健診、予定入院などである。このデータエレメントは医療提供の管理上の区分を反映する。「受診理由」や「来院理由」ではなく「受診区分（Contact type）」という語句を用いているのは、診察室で医療従事者と患者が対面しない形態の医療提供が増えている傾向を反映したものである。\n- 二つ目の「受診時のプロブレム」は、受診の臨床的な理由を記録するためのものである。「主訴」は「受診時のプロブレム」の同義語とみなされる。これらは主に、患者が医療の助言を求めるきっかけとなった、患者自身が認識しているプロブレムや症状を捉えることを意図している。例えば、禁煙の希望、ストレス、息切れ、遺伝カウンセリング、腹痛などである。意識障害などの徴候もここに記録してよい。例えば、意識のない患者に対応する救急救命士による記録などである。",
+  ['description', '-', 'use'] => "医療従事者とケア対象者との間で、あらゆる種類の診察または受診が開始された理由（複数の場合もある）を記録するために用いる。理由は臨床的、社会的、または管理的な目的のいずれでもよい。\n\n「受診理由（Reason for encounter）」は臨床医学で広く使われる語句であるが、この語は一般に2つの意味で使われている。一つは医療提供の管理上の区分を指すもの、もう一つは個人が医療を求める動機となる臨床的または社会的なプロブレムを指すものである。\n\nこの語句と意図を明確にするため、本archetypeは2つのデータエレメントを含む：\n- 一つ目の「受診区分」は、求められている、または必要とされている医療の管理上の種別を記録するためのものである。例えば、コンサルテーションの種類、救急診療、術前評価、定期の妊婦健診、予定入院などである。このデータエレメントは医療提供の管理上の区分を反映する。「受診理由」や「来院理由」ではなく「受診区分（Contact type）」という語句を用いているのは、診察室で医療従事者と患者が対面しない形態の医療提供が増えている傾向を反映したものである。\n- 二つ目の「受診時のプロブレム」は、受診の臨床的な理由を記録するためのものである。「主訴」は「受診時のプロブレム」の同義語とみなされる。これらは主に、患者が医療の助言を求めるきっかけとなった、患者自身が認識しているプロブレムや症状を捉えることを意図している。例えば、禁煙の希望、ストレス、息切れ、遺伝カウンセリング、腹痛などである。意識障害などの徴候もここに記録してよい。例えば、意識のない患者に対応する救急救命士による記録などである。",
 
   # Not to be used to record specific details of the patient's story or history of symptoms. Use OBSERVATION.story to capture the narrative and the related nested CLUSTER archetypes for structured content eg CLUSTER.symptom, CLUSTER.event and CLUSTER.issue.
   # 
@@ -72,12 +72,7 @@ T = {
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['description', '-', 'use'] => "\"paramedical staff\"→「救急救命士」、\"routine antenatal visit\"→「定期の妊婦健診」、\"elective admission\"→「予定入院」",
-  ['description', '-', 'keywords'] => "原文7語に対応。「受診区分」を追加",
-  ['term', 'at0000', 'text'] => "「受診理由」で確定（encounter＝診察の規則の例外として概念名のみ慣用を優先）",
-  ['term', 'at0002', 'text'] => "contact＝受診 の規則により「受診区分」",
-  ['term', 'at0002', 'comment'] => "\"pre-employment medical\"→「雇用時健康診断」（労安法の雇入時健診に相当）",
-  ['term', 'at0004', 'text'] => "要確認: 「受診時のプロブレム」を採用し、comment で「主訴」を同義語として明記（de 訳は Hauptbeschwerde=主訴を採用）。社会的問題や徴候も含む原義を優先",
+  # ['term', 'at0000', 'text'] => '要確認: ...',
 }.freeze
 
 src, dst = ARGV
