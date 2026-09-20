@@ -293,7 +293,7 @@
 | openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | プロブレム・診断 | 校正済み（2026-09-10、再レビュー分 2026-09-20 確認）。重症度 軽症／中等症／重症、診断確度 疑い／推定／確定、at0046 状態 |
 | openEHR-EHR-CLUSTER.problem_qualifier.v2 (2.1.1) | プロブレム・診断の修飾子 | 校正済み（2026-09-20）。EVALUATION.problem_diagnosis の「状態」スロット用。値セットは共通語表の各行を参照 |
 | openEHR-EHR-OBSERVATION.story.v1 (1.3.3) | 病歴 | 校正済み（2026-09-11、再レビュー分 2026-09-20 確認）。at0004 病歴の記述、at0006 構造化された詳細記録、at0002 任意のイベント |
-| openEHR-EHR-EVALUATION.clinical_synopsis.v1 (1.0.5) | 臨床要約 | at0002 要約 |
+| openEHR-EHR-EVALUATION.clinical_synopsis.v1 (1.0.5) | 臨床要約 | 校正済み（2026-09-13、再レビュー分 2026-09-20 確認）。at0002 要約 |
 | openEHR-EHR-SECTION.adhoc.v1 (1.0.12) | 仮見出し | 校正済み（2026-09-13）。use の例：「仮見出し」→「診察所見」 |
 | openEHR-EHR-CLUSTER.symptom_sign.v2 (2.1.4) | 症状・徴候 | story.v1 のスロット。エピソード区分・発症区分・重症度・進行状況の値は problem_qualifier / problem_diagnosis と同じ |
 | openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 構造化された人名 | 校正済み（2026-09-20）。at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
