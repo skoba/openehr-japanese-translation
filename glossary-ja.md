@@ -220,7 +220,7 @@
 | copyholder / contact person / family member details / specimen collector details / witness (slots) | 写し保有者 / 連絡担当者 / 家族構成員の詳細 / 検体採取者の詳細 / 目撃者 | 未訳 archetype のスロット名の仮訳（要確認。該当 archetype の翻訳時に確定） |
 | MML4 人名表現形式: family / given / middle / fullname / prefix / degree | 姓 / 名 / ミドルネーム / フルネーム / 肩書き（敬称） / 学位 | skoba/mml doc/MML4/name.adoc。structured_name.v1 で使う |
 | MML4 住所表現形式: full / prefecture / city / town / homeNumber / zip / countryCode | 一連住所 / 都道府県 / 市・区・郡 / 町・村 / 番地（丁目・建物名・部屋番号） / 郵便番号 / 国コード | doc/MML4/address.adoc。address.v1 で使う |
-| MML4 住所の種類: current / permanent / mailing / business / office / home / birth | 現住所 / 本籍 / 郵送先 / 勤務先 / 事務所 / 自宅 / 出生地 | MML0002（校正 2026-09-20 で確定。address.v1 の値セットと照合） |
+| MML4 住所の種類: current / permanent / mailing / business / office / home / birth | 現住所 / 本籍 / 郵送先 / 勤務先 / 事務所 / 自宅 / 出生地 | MML0002（要確認。address.v1 の値セットと照合） |
 | MML4 電話番号表現形式: area / city / number / extension / full / country / memo / telEquipType | 市外局番 / 局番 / 加入番号 / 内線番号 / 一連電話番号 / 国番号 / メモ（使用時間帯など） / 装置の種類 | doc/MML4/phone.adoc。electronic_communication.v1 で使う |
 | MML4 施設情報形式 / 診療科情報形式 | 施設（施設名称・施設 ID） / 診療科（診療科名称・診療科 ID） | doc/MML4/facility.adoc, department.adoc。organisation.v1 で使う |
 | MML4 Id 形式: type / checkDigit / checkDigitSchema | ID の種類 / チェックディジット / チェックディジット方式 | doc/MML4/id.adoc |
@@ -297,7 +297,7 @@
 | openEHR-EHR-CLUSTER.symptom_sign.v2 (2.1.4) | 症状・徴候 | story.v1 のスロット。エピソード区分・発生区分・重症度・進行状況の値は problem_qualifier / problem_diagnosis と同じ |
 | openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 人の構造化された氏名 | at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
 | openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された氏名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0008 追加の詳細情報、at0011 ラベル（識別用の説明） |
-校正済み（2026-09-20）。at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所。日本の対応物は comment の例示 |
+| openEHR-EHR-CLUSTER.address.v1 (1.1.3) | 住所 | 校正済み（2026-09-20）。at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所。日本の対応物は comment の例示 |
 | openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | 校正済み（2026-09-19）。at0001 種別、at0002 値、at0003 用途、at0006 固定電話、at0013 追加の詳細情報 |
 | openEHR-EHR-CLUSTER.organisation.v1 (1.0.4) | 組織 | 校正済み（2026-09-19）。医療機関に限らず企業・団体・部門・ケアチーム等を含む。at0001 名称、at0002 連絡担当者、at0021 親組織 |
 | openEHR-EHR-CLUSTER.media_file.v1 (1.0.6) | メディアファイル | 校正済み（2026-09-19）。概念名は Issue #11 の訳語案。at0001 コンテンツ、at0002 コンテンツ名、at0004 作成日時、at0011 作成機器、at0012 作成者（at0001 コンテンツ、at0002 コンテンツ名は要確認） |
