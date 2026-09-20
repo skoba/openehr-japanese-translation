@@ -288,7 +288,7 @@
 |---|---|---|
 | openEHR-EHR-COMPOSITION.request.v1 | 診療依頼書 | 校正済み（2026-09-20）。候補：依頼書／サービス依頼。国内の「診療情報提供書」とは区別 |
 | openEHR-EHR-EVALUATION.reason_for_encounter.v1 | 受診理由 | 校正済み（2026-09-20）。at0002 受診区分、at0004 受診時のプロブレム（主訴を同義語として明記） |
-| openEHR-EHR-SECTION.referral_details.v0 | 紹介状の詳細 | at0001 紹介依頼、at0002 詳細 |
+| openEHR-EHR-SECTION.referral_details.v0 | 紹介状の詳細 | 校正済み（2026-09-20）。at0001 紹介依頼、at0002 詳細 |
 | openEHR-EHR-INSTRUCTION.service_request.v1 (1.1.2) | サービス依頼 | 校正済み（2026-09-20）。緊急度の値：緊急／至急／通常 |
 | openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | プロブレム・診断 | 校正済み（2026-09-10、再レビュー分 2026-09-20 確認）。重症度 軽症／中等症／重症、診断確度 疑い／推定／確定、at0046 状態 |
 | openEHR-EHR-CLUSTER.problem_qualifier.v2 (2.1.1) | プロブレム・診断の修飾子 | 校正済み（2026-09-20）。EVALUATION.problem_diagnosis の「状態」スロット用。値セットは共通語表の各行を参照 |

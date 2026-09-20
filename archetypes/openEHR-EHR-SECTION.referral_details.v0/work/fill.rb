@@ -20,7 +20,7 @@ T = {
 
   # SECTION
   # Referral details
-  ['term', 'at0000', 'text'] => "紹介状の詳細",
+  ['term', 'at0000', 'text'] => "紹介状の詳細情報",
 
   # SECTION
   # Example framework for modelling a template for a referral.
@@ -36,7 +36,7 @@ T = {
 
   # SECTION > items/ENTRY
   # Details
-  ['term', 'at0002', 'text'] => "詳細",
+  ['term', 'at0002', 'text'] => "詳細情報",
 
   # SECTION > items/ENTRY
   # Additional clinical details supporting the referral.
@@ -46,10 +46,7 @@ T = {
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['description', '-', 'keywords'] => "原文2語に「紹介状」を追加",
-  ['term', 'at0000', 'text'] => "要確認: SECTION 名。「紹介状の詳細」（他候補: 紹介詳細／紹介情報）",
-  ['term', 'at0001', 'text'] => "要確認: INSTRUCTION.service_request のスロット。「紹介依頼」（service_request 本体の概念名とは別に、スロット名として簡潔に）",
-  ['term', 'at0002', 'text'] => "clinical_synopsis / story / exam / imaging_exam_result / laboratory_test_result のスロット。「詳細」のまま",
+  # ['term', 'at0000', 'text'] => '要確認: ...',
 }.freeze
 
 src, dst = ARGV
