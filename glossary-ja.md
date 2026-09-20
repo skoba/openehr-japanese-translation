@@ -247,12 +247,12 @@
 | landmark | 目印となる場所 | keywords では「目印」 |
 | street-level | 街区レベル | address.v1 |
 | type (electronic communication) | 種別 | electronic_communication.v1 at0001。address.v1 の Type に合わせる |
-| value (electronic communication) | 値 | electronic_communication.v1 at0002。番号・メールアドレス等を含む（要確認。他候補：連絡先の値） |
-| purpose (electronic communication) | 用途 | electronic_communication.v1 at0003。業務用・個人用を区別する（要確認。他候補：目的） |
+| value (electronic communication) | 値 | electronic_communication.v1 at0002。番号・メールアドレス等を含む（校正 2026-09-20 で確定。他候補：連絡先の値） |
+| purpose (electronic communication) | 用途 | electronic_communication.v1 at0003。業務用・個人用を区別する（校正 2026-09-20 で確定。他候補：目的） |
 | telephone / phone | 電話 | 一般語（keywords など）。値セットの「Telephone (excluding mobile telephone)」は固定電話 |
 | mobile (cellular) telephone / telephone (excluding mobile telephone) | 携帯電話 / 固定電話 | electronic_communication.v1 at0005 / at0006 |
 | email / email address / fax | 電子メール / 電子メールアドレス / ファクシミリ | electronic_communication.v1 at0007 / at0002 comment / at0009 |
-| pager | ポケットベル | electronic_communication.v1 at0008（要確認。他候補：ページャー、無線呼出受信機）。日本語での認知しやすさを優先 |
+| pager | ポケットベル | electronic_communication.v1 at0008（校正 2026-09-20 で確定。他候補：ページャー、無線呼出受信機）。日本語での認知しやすさを優先 |
 | business use / personal use / both business and personal use | 業務用 / 個人用 / 業務用・個人用の両方 | electronic_communication.v1 at0010 / at0011 / at0012。場所ではなく用途を表す |
 | area code / country code (telephone) / landline phone number | 市外局番 / 国番号 / 固定電話番号 | electronic_communication.v1 at0002 comment。MML4 電話番号表現形式に合わせる |
 | chat / social media / asynchronous / communication | チャット / ソーシャルメディア / 非同期 / 通信 | electronic_communication.v1 keywords。SoMe は英字のまま保持 |

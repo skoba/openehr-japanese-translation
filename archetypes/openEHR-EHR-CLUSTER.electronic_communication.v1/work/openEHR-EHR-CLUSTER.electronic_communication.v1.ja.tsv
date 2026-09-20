@@ -8,7 +8,7 @@ openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0000	description	CLUSTER	
 openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0001	text	CLUSTER > items/ELEMENT	Type	種別	
 openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0001	description	CLUSTER > items/ELEMENT	The type or form of electronic communication.	電子的な連絡先の種別または形式。	
 openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0001	comment	CLUSTER > items/ELEMENT	The DV_CODED_TEXT value set supports recording of the most common electronic communications used in health. If other alternatives are required the DV_TEXT data type can be used to record other types of electronic communication such as social media or video conferencing URLs within a template.	DV_CODED_TEXT の値セットを用いて、医療でよく使われる電子的な連絡先を記録できる。それ以外の種別が必要な場合は、テンプレート内で DV_TEXT データ型を用いる。ソーシャルメディアやビデオ会議の URL なども記録できる。	
-openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0002	text	CLUSTER > items/ELEMENT	Value	値	要確認: 値（他候補: 連絡先の値）原文の汎用的なラベルを保ち、電話番号や電子メールアドレスなどを含められる訳を採用。
+openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0002	text	CLUSTER > items/ELEMENT	Value	値	
 openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0002	description	CLUSTER > items/ELEMENT	The unique combination of alphanumeric characters, relevant for representation of 'Type'.	「種別」に応じて連絡先を一意に表す英数字の組み合わせ。	
 openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0002	comment	CLUSTER > items/ELEMENT	For example: area code + landline phone/pager number; country code + mobile phone number; or email address.	例：市外局番と固定電話番号またはポケットベル番号の組み合わせ、国番号と携帯電話番号の組み合わせ、電子メールアドレス。	
 openEHR-EHR-CLUSTER.electronic_communication.v1	term	at0003	text	CLUSTER > items/ELEMENT	Purpose	用途	
