@@ -14,7 +14,7 @@
 - 対象は `sprint/targets.tsv`（A〜E 群 34 本＋差分 3 本。#37 CLUSTER.symptom_sign.v2 は story.v1 の直後に着手）。対象外を訳すときは先に Issue と targets.tsv への追加 PR。
 - 大物（medication_order / symptom_sign / laboratory_test_result / problem_diagnosis / adverse_reaction_risk / family_history / specimen / problem_qualifier）は必ず 1 本ずつ。群をまたぐ前に用語集の更新をマージする。
 - EVALUATION.family_history.v2（2.0.5-alpha、審査中）は、alpha 版への翻訳の扱いについて CKM 側（Discourse）の回答が出るまで着手しない。
-- INSTRUCTION.service_request.v1 は 1.1.3 公開後に差分翻訳する（2026-09-20 時点で未公開、REASSESS_DRAFT 1.1.2）。
+- INSTRUCTION.service_request.v1 は 1.1.3 公開後に差分翻訳する（2026-09-20 時点で未公開、REASSESS_DRAFT 1.1.2）。 2026-09-20 に 1.1.2 ベースの訳を CKM にアップロードしようとしたところ、current branch が審査中の次版で at0144/45/47 削除・at0154〜58 追加・use 全面改訂の警告が出たため Commit せず中止。公開後に `make update`（Issue #51）で版上げして再訳する。
 - スプリント B（2026-09-20〜）の着手順は docs/sprint-B.md。差分翻訳 3 本 → social_summary → adverse_reaction_risk → adverse_reaction_event → infectious_disease_summary（v0）。family_history.v2 は保留のまま。
 
 ## status.tsv と CKM の審査状態
