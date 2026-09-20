@@ -179,11 +179,11 @@ T = {
 
   # INSTRUCTION > activities/ACTIVITY > description/ITEM_TREE > items/CLUSTER
   # Patient requirements
-  ['term', 'at0116', 'text'] => "患者の必要事項",
+  ['term', 'at0116', 'text'] => "患者側からの要件",
 
   # INSTRUCTION > activities/ACTIVITY > description/ITEM_TREE > items/CLUSTER
   # Language, transport or other personal requirements to support the patient's attendance or participation in provision of the service.
-  ['term', 'at0116', 'description'] => "患者がサービスの提供に出向く、または参加するのを支えるための、言語、移動手段、その他の個人的な必要事項。",
+  ['term', 'at0116', 'description'] => "患者がサービスの提供に出向く、または参加するのを支えるために患者側から求められる、言語、移動手段、その他の要件。",
 
   # INSTRUCTION > activities/ACTIVITY > description/ITEM_TREE > items/ELEMENT
   # Service name
@@ -379,10 +379,7 @@ T = {
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['term', 'at0000', 'text'] => "要確認: 「サービス依頼」（他候補: 診療サービス依頼／サービスリクエスト）。request＝依頼、service＝サービスの規則に従う",
   ['term', 'at0001', 'text'] => "RM の ACTIVITY を指す内部的な名称。「現在のアクティビティ」",
-  ['term', 'at0076', 'text'] => "Boolean 項目。\"Supplementary information\"→「補足情報」、at0149 \"Supporting information\"→「参考資料」と区別",
-  ['term', 'at0116', 'text'] => "要確認: \"Patient requirements\"→「患者の必要事項」（言語・移動手段など）",
   ['term', 'at0142', 'text'] => "Receiver＝受領者（request.v1 の本文では \"receiving healthcare provider\" を「受け手となる医療従事者」としている）",
   ['term', 'at0152', 'text'] => "Clinical indication＝臨床的適応（FHIR reasonCode に相当）",
 }.freeze

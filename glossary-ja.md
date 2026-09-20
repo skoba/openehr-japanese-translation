@@ -91,7 +91,7 @@
 | urgency: emergency / urgent / routine | 緊急度：緊急 / 至急 / 通常 | 要確認 |
 | supplementary information | 補足情報 | Boolean。後送する情報 |
 | supporting information | 参考資料 | 添付する電子文書・画像等 |
-| patient requirements | 患者の必要事項 | 言語・移動手段など |
+| patient requirements | 患者側からの要件 | service_request at0116。言語・移動手段など、患者側が提示し提供側が満たすべきもの。校正 2026-09-20 で「患者の必要事項」から変更（「患者側の要件」は患者に課される条件に読めるため不採用） |
 | service name / service type | サービス名 / サービス種別 | |
 | request status | 依頼状態 | |
 | distribution list | 配布先リスト | |

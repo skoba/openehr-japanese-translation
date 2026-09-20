@@ -1614,8 +1614,8 @@ Detta dataelement tillåter flera värden om så behövs och gör det möjligt f
 					comment = <"例：ローカルな情報要件や、FHIR または CIMI の相当するものに適合させるための追加メタデータ。">
 				>
 				["at0116"] = <
-					text = <"患者の必要事項">
-					description = <"患者がサービスの提供に出向く、または参加するのを支えるための、言語、移動手段、その他の個人的な必要事項。">
+					text = <"患者側からの要件">
+					description = <"患者がサービスの提供に出向く、または参加するのを支えるために患者側から求められる、言語、移動手段、その他の要件。">
 				>
 				["at0121"] = <
 					text = <"サービス名">
