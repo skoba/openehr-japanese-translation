@@ -299,6 +299,6 @@
 | openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 構造化された人名 | 校正済み（2026-09-20）。at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
 | openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された人名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0008 追加の詳細情報、at0011 ラベル（識別用の説明） |
 | openEHR-EHR-CLUSTER.address.v1 (1.1.3) | 住所 | 校正済み（2026-09-20）。at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所。日本の対応物は comment の例示 |
-| openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | 校正済み（2026-09-19）。at0001 種別、at0002 値、at0003 用途、at0006 固定電話、at0013 追加の詳細情報 |
+| openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | 校正済み（2026-09-19、再レビュー分 2026-09-20 確認）。at0001 種別、at0002 値、at0003 用途、at0006 固定電話、at0013 追加の詳細情報 |
 | openEHR-EHR-CLUSTER.organisation.v1 (1.0.4) | 組織 | 校正済み（2026-09-19）。医療機関に限らず企業・団体・部門・ケアチーム等を含む。at0001 名称、at0002 連絡担当者、at0021 親組織 |
 | openEHR-EHR-CLUSTER.media_file.v1 (1.0.6) | メディアファイル | 校正済み（2026-09-19）。概念名は Issue #11 の訳語案。at0001 コンテンツ、at0002 コンテンツ名、at0004 作成日時、at0011 作成機器、at0012 作成者（at0001 コンテンツ、at0002 コンテンツ名は要確認） |
