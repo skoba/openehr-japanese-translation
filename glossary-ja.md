@@ -39,7 +39,7 @@
 | encounter | 診察 | contact と区別する |
 | contact (healthcare contact) | 受診 | encounter と区別する |
 | encounter or contact | 診察または受診 | reason_for_encounter |
-| transfer of care | 診療の移管 | |
+| transfer of care | 診療の引き継ぎ | 2026-09-20 に「移管」から変更（臨床現場の慣用）。transfer summary＝診療引き継ぎサマリー。handover も引き継ぎ |
 | handover of care and clinical responsibility | 診療および臨床的責任の引き継ぎ | |
 | request | 依頼 | 「要求」は使わない |
 | service | サービス | |
