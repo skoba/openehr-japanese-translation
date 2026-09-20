@@ -1,7 +1,7 @@
 # スプリント対象と優先順位
 
 出典：Claude プロジェクト「NPO openEHR Japan」の優先リスト v1（2026-09-09、openEHR/CKM-mirror 2026-09-03 時点の集計）。
-済み：COMPOSITION.request.v1、EVALUATION.reason_for_encounter.v1、SECTION.referral_details.v0、INSTRUCTION.service_request.v1（1.1.2、1.1.3 公開時に差分）。
+済み：紹介状群 4 本（request / reason_for_encounter / referral_details / service_request 1.1.2。1.1.3 公開時に差分）と A 群 12 本（#1〜#11、#37）。2026-09-20 に 16 本すべて校正済み（PR #39）。B 群の計画は docs/sprint-B.md（Issue #41〜#48）。
 
 優先順位：A・B・C（jp_referral 骨格に今必要）→ D（11 月 JAMI チュートリアルのデモ帳票）→ E（12 月公開の基本セット）。スロット依存の CLUSTER は親と同じ段で扱う。
 
