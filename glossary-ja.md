@@ -153,7 +153,7 @@
 | diagnostic status: preliminary / working / established / refuted | 診断状況：予備的 / 暫定 / 最終 / 否定 | 診断確度（疑い / 推定 / 確定）とは別軸。校正（2026-09-11）で「診断の段階」→「診断状況」、「初期」→「予備的」 |
 | diagnostic category: principal diagnosis / secondary diagnosis / complication | 診断区分：主病名 / 副病名 / 合併症 | Category＝区分（校正 2026-09-11） |
 | comorbid condition | 併存疾患 | |
-| occurrence: first occurrence / recurrence | 発生区分：初発 / 再発 | recurrence＝再発（腫瘍学の慣用） |
+| occurrence: first occurrence / recurrence | 発症区分：初発 / 再発 | recurrence＝再発（腫瘍学の慣用）。2026-09-20 に「発生区分」から変更（値が初発／再発なので発症で揃える）。problem_qualifier at0071、symptom_sign at0186。因子の occurrence は「発生」のまま |
 | admission diagnosis | 入院時診断 | DRG 報告用 |
 | course label: acute / chronic / acute-on-chronic | 経過区分：急性 / 慢性 / 慢性疾患の急性増悪 | at0094 text に合わせた（校正 2026-09-11） |
 | resolution phase: resolved / resolving / not resolving / relapsed | 治癒段階：治癒 / 回復中 / 未回復 / 再燃 | at0083 text に合わせ「治癒段階」（校正 2026-09-11） |
@@ -291,11 +291,11 @@
 | openEHR-EHR-SECTION.referral_details.v0 | 紹介状の詳細 | at0001 紹介依頼、at0002 詳細 |
 | openEHR-EHR-INSTRUCTION.service_request.v1 (1.1.2) | サービス依頼 | 校正済み（2026-09-20）。緊急度の値：緊急／至急／通常 |
 | openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | プロブレム・診断 | 校正済み（2026-09-10、再レビュー分 2026-09-20 確認）。重症度 軽症／中等症／重症、診断確度 疑い／推定／確定、at0046 状態 |
-| openEHR-EHR-CLUSTER.problem_qualifier.v2 (2.1.1) | プロブレム・診断の修飾子 | EVALUATION.problem_diagnosis の「状態」スロット用。値セットは共通語表の各行を参照 |
+| openEHR-EHR-CLUSTER.problem_qualifier.v2 (2.1.1) | プロブレム・診断の修飾子 | 校正済み（2026-09-20）。EVALUATION.problem_diagnosis の「状態」スロット用。値セットは共通語表の各行を参照 |
 | openEHR-EHR-OBSERVATION.story.v1 (1.3.3) | 病歴 | 校正済み（2026-09-11）。at0004 病歴の記述、at0006 構造化された詳細記録、at0002 任意のイベント |
 | openEHR-EHR-EVALUATION.clinical_synopsis.v1 (1.0.5) | 臨床要約 | at0002 要約 |
 | openEHR-EHR-SECTION.adhoc.v1 (1.0.12) | 仮見出し | 校正済み（2026-09-13）。use の例：「仮見出し」→「診察所見」 |
-| openEHR-EHR-CLUSTER.symptom_sign.v2 (2.1.4) | 症状・徴候 | story.v1 のスロット。エピソード区分・発生区分・重症度・進行状況の値は problem_qualifier / problem_diagnosis と同じ |
+| openEHR-EHR-CLUSTER.symptom_sign.v2 (2.1.4) | 症状・徴候 | story.v1 のスロット。エピソード区分・発症区分・重症度・進行状況の値は problem_qualifier / problem_diagnosis と同じ |
 | openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 構造化された人名 | 校正済み（2026-09-20）。at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
 | openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された人名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0008 追加の詳細情報、at0011 ラベル（識別用の説明） |
 | openEHR-EHR-CLUSTER.address.v1 (1.1.3) | 住所 | 校正済み（2026-09-20）。at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所。日本の対応物は comment の例示 |

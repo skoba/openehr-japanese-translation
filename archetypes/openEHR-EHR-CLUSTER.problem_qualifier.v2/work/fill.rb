@@ -108,7 +108,7 @@ T = {
   ['term', 'at0034', 'text'] => "新規",
 
   # A new occurrence of either a new or existing problem or diagnosis. A flag for 'First occurrence' can be recorded separately to distinguish the first from other occurrences.
-  ['term', 'at0034', 'description'] => "新しい、または既存のプロブレムまたは診断の新たな発生。最初の発生を他の発生と区別するために、「初発」のフラグを別に記録できる。",
+  ['term', 'at0034', 'description'] => "新しい、または既存のプロブレムまたは診断の新たな発症。最初の発症を他の発症と区別するために、「初発」のフラグを別に記録できる。",
 
   # Ongoing
   ['term', 'at0035', 'text'] => "継続中",
@@ -169,15 +169,15 @@ T = {
   ['term', 'at0070', 'text'] => "判定不能",
 
   # It is not possible to determine if this occurrence of the problem or diagnosis is new or ongoing.
-  ['term', 'at0070', 'description'] => "このプロブレムまたは診断の今回の発生が新規か継続中かを判定できない。",
+  ['term', 'at0070', 'description'] => "このプロブレムまたは診断の今回の発症が新規か継続中かを判定できない。",
 
   # CLUSTER > items/ELEMENT
   # Occurrence
-  ['term', 'at0071', 'text'] => "発生区分",
+  ['term', 'at0071', 'text'] => "発症区分",
 
   # CLUSTER > items/ELEMENT
   # Category of the occurrence for this problem or diagnosis.
-  ['term', 'at0071', 'description'] => "このプロブレムまたは診断の発生の区分。",
+  ['term', 'at0071', 'description'] => "このプロブレムまたは診断の発症の区分。",
 
   # CLUSTER > items/ELEMENT
   # This data element can be an additional qualifier to the 'New' value in the 'Episodicity' value set, that is a condition such as asthma can have recurring new episodes that have periods of resolution in between. However it can be important to identify the first ever episode of asthma from all of the other episodes.
@@ -307,13 +307,13 @@ T = {
   ['term', 'at0095', 'text'] => "初発",
 
   # This is the first ever occurrence of this problem or diagnosis.
-  ['term', 'at0095', 'description'] => "このプロブレムまたは診断の、初めての発生である。",
+  ['term', 'at0095', 'description'] => "このプロブレムまたは診断の、初めての発症である。",
 
   # Recurrence
   ['term', 'at0096', 'text'] => "再発",
 
   # New occurrence of the same problem or diagnosis after a previous episode was resolved.
-  ['term', 'at0096', 'description'] => "以前のエピソードが治癒した後の、同じプロブレムまたは診断の新たな発生。",
+  ['term', 'at0096', 'description'] => "以前のエピソードが治癒した後の、同じプロブレムまたは診断の新たな発症。",
 
   # Relapsed
   ['term', 'at0097', 'text'] => "再燃",
@@ -429,7 +429,6 @@ T = {
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
   ['term', 'at0064', 'text'] => "日本では保険上の取り扱いもあり、主診断や主要病名というよりも主病名が一般的と考える。",
-  ['term', 'at0071', 'text'] => "要確認: 「発生区分」を採用（他候補: 発生、出現）",
   ['term', 'at0111', 'text'] => "校正（2026-09-11）で「疾患区分」に決定（Category は断りがなければ「区分」）。例示の Mental health and/or addiction は「精神保健および／または依存症」",
 }.freeze
 

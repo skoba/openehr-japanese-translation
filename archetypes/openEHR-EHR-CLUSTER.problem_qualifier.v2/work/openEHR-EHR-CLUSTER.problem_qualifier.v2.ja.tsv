@@ -26,7 +26,7 @@ openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0026	description		The problem or
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0027	text		Inactive	インアクティブ	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0027	description		The problem or diagnosis is not completely resolved but is inactive or felt less relevant to the current clinical context.	プロブレムまたは診断は完全には治癒していないが、無効であるか、現在の臨床的文脈では重要性が低いと考えられる。	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0034	text		New	新規	
-openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0034	description		A new occurrence of either a new or existing problem or diagnosis. A flag for 'First occurrence' can be recorded separately to distinguish the first from other occurrences.	新しい、または既存のプロブレムまたは診断の新たな発生。最初の発生を他の発生と区別するために、「初発」のフラグを別に記録できる。	
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0034	description		A new occurrence of either a new or existing problem or diagnosis. A flag for 'First occurrence' can be recorded separately to distinguish the first from other occurrences.	新しい、または既存のプロブレムまたは診断の新たな発症。最初の発症を他の発症と区別するために、「初発」のフラグを別に記録できる。	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0035	text		Ongoing	継続中	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0035	description		The issue, problem or diagnosis continues, without new, acute episodes occurring.	問題、プロブレム、または診断が、新たな急性エピソードを生じることなく続いている。	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0060	text	CLUSTER > items/ELEMENT	Current/Past?	現病/既往？	
@@ -44,9 +44,9 @@ openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0064	description		The diagnosis 
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0066	text		Secondary diagnosis	副病名	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0066	description		A problem or diagnosis that occurs at the same time as the primary problem or diagnosis. May also be known as a comorbid condition.	主たるプロブレムまたは病名と同時に存在するプロブレムまたは病名。併存疾患とも呼ばれる。	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0070	text		Indeterminate	判定不能	
-openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0070	description		It is not possible to determine if this occurrence of the problem or diagnosis is new or ongoing.	このプロブレムまたは診断の今回の発生が新規か継続中かを判定できない。	
-openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0071	text	CLUSTER > items/ELEMENT	Occurrence	発生区分	要確認: 「発生区分」を採用（他候補: 発生、出現）
-openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0071	description	CLUSTER > items/ELEMENT	Category of the occurrence for this problem or diagnosis.	このプロブレムまたは診断の発生の区分。	
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0070	description		It is not possible to determine if this occurrence of the problem or diagnosis is new or ongoing.	このプロブレムまたは診断の今回の発症が新規か継続中かを判定できない。	
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0071	text	CLUSTER > items/ELEMENT	Occurrence	発症区分	
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0071	description	CLUSTER > items/ELEMENT	Category of the occurrence for this problem or diagnosis.	このプロブレムまたは診断の発症の区分。	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0071	comment	CLUSTER > items/ELEMENT	This data element can be an additional qualifier to the 'New' value in the 'Episodicity' value set, that is a condition such as asthma can have recurring new episodes that have periods of resolution in between. However it can be important to identify the first ever episode of asthma from all of the other episodes.	このデータエレメントは、「エピソード区分」の値セットの「新規」に対する追加の修飾子として用いることができる。すなわち、喘息のような病態は、間に治癒している期間を挟んで新規のエピソードを繰り返すことがある。しかし、喘息の最初のエピソードを他のすべてのエピソードから識別することが重要な場合がある。	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0073	text	CLUSTER > items/ELEMENT	Admission diagnosis?	入院時診断？	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0073	description	CLUSTER > items/ELEMENT	Was the problem or diagnosis present at admission?	入院時にそのプロブレムまたは診断が存在したか。	
@@ -85,9 +85,9 @@ openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0093	description		It is not poss
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0094	text		Acute-on-chronic	慢性疾患の急性増悪	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0094	description		A problem or diagnosis with an acute exacerbation of a chronic condition.	慢性期の病態の急性増悪を伴うプロブレムまたは診断。	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0095	text		First occurrence	初発	
-openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0095	description		This is the first ever occurrence of this problem or diagnosis.	このプロブレムまたは診断の、初めての発生である。	
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0095	description		This is the first ever occurrence of this problem or diagnosis.	このプロブレムまたは診断の、初めての発症である。	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0096	text		Recurrence	再発	
-openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0096	description		New occurrence of the same problem or diagnosis after a previous episode was resolved.	以前のエピソードが治癒した後の、同じプロブレムまたは診断の新たな発生。	
+openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0096	description		New occurrence of the same problem or diagnosis after a previous episode was resolved.	以前のエピソードが治癒した後の、同じプロブレムまたは診断の新たな発症。	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0097	text		Relapsed	再燃	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0097	description		Problem or diagnosis has deteriorated after a period of temporary improvement.	一時的な改善の期間の後に、プロブレムまたは診断が悪化した。	
 openEHR-EHR-CLUSTER.problem_qualifier.v2	term	at0098	text	CLUSTER > items/ELEMENT	Level of control	コントロール状況	

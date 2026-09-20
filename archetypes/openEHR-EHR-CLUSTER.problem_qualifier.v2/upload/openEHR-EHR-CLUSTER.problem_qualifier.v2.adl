@@ -3555,7 +3555,7 @@ En outre, la possibilité de saisir du texte libre permet d’utiliser d’autre
 				>
 				["at0034"] = <
 					text = <"新規">
-					description = <"新しい、または既存のプロブレムまたは診断の新たな発生。最初の発生を他の発生と区別するために、「初発」のフラグを別に記録できる。">
+					description = <"新しい、または既存のプロブレムまたは診断の新たな発症。最初の発症を他の発症と区別するために、「初発」のフラグを別に記録できる。">
 				>
 				["at0035"] = <
 					text = <"継続中">
@@ -3590,11 +3590,11 @@ En outre, la possibilité de saisir du texte libre permet d’utiliser d’autre
 				>
 				["at0070"] = <
 					text = <"判定不能">
-					description = <"このプロブレムまたは診断の今回の発生が新規か継続中かを判定できない。">
+					description = <"このプロブレムまたは診断の今回の発症が新規か継続中かを判定できない。">
 				>
 				["at0071"] = <
-					text = <"発生区分">
-					description = <"このプロブレムまたは診断の発生の区分。">
+					text = <"発症区分">
+					description = <"このプロブレムまたは診断の発症の区分。">
 					comment = <"このデータエレメントは、「エピソード区分」の値セットの「新規」に対する追加の修飾子として用いることができる。すなわち、喘息のような病態は、間に治癒している期間を挟んで新規のエピソードを繰り返すことがある。しかし、喘息の最初のエピソードを他のすべてのエピソードから識別することが重要な場合がある。">
 				>
 				["at0073"] = <
@@ -3667,11 +3667,11 @@ En outre, la possibilité de saisir du texte libre permet d’utiliser d’autre
 				>
 				["at0095"] = <
 					text = <"初発">
-					description = <"このプロブレムまたは診断の、初めての発生である。">
+					description = <"このプロブレムまたは診断の、初めての発症である。">
 				>
 				["at0096"] = <
 					text = <"再発">
-					description = <"以前のエピソードが治癒した後の、同じプロブレムまたは診断の新たな発生。">
+					description = <"以前のエピソードが治癒した後の、同じプロブレムまたは診断の新たな発症。">
 				>
 				["at0097"] = <
 					text = <"再燃">
