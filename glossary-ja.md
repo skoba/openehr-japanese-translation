@@ -67,7 +67,7 @@
 | administrative category | 管理上の区分 | |
 | category | 区分 | 断りがなければ「区分」（校正 2026-09-11。「カテゴリ」は使わない） |
 | health issues / symptoms / physical signs | 健康上の問題 / 症状 / 身体的徴候 | |
-| paramedical staff | 救急救命士 | 文脈により「救急隊員」 |
+| paramedical staff | （文脈訳）救急救命士 | reason_for_encounter use の「意識のない患者に対応する」文脈での訳。一般語としての対応ではない。日本語の「パラメディカル」は医師以外の医療職全般を指すので、辞書的に「救急救命士」と置き換えない。別の文脈では「医師以外の医療スタッフ」「救急隊員」など文脈で決める（2026-09-20） |
 | routine antenatal visit | 定期の妊婦健診 | |
 | elective admission | 予定入院 | |
 | pre-employment medical | 雇用時健康診断 | |
