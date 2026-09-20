@@ -22,7 +22,7 @@ T = {
   # However, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.
   # 
   # This CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.
-  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、人、建物、または目印となる場所の所在に関する詳細情報を記録するために用いる。住所登記簿や公式の住所一覧によらずに知り得た住所をその場で記録する場合や、住所検索サービスの利用が適切でない、または利用できない場合を主に想定している。以下のような使用例がある。\n- 個人に在宅ケアを提供する組織の事業所住所を記録する。\n- EVALUATION.advance_care_directive archetype内で、事前ケア記録の写しを保有する人の郵送先住所を記録する。\n- 転倒や事故が起きた物理的な場所を記録する。\n\n本archetypeの範囲は、特定の建物や目印となる場所を識別するための最も一般的な構造化された構成要素に限定している。この文脈では、完全な住所は次の要素で記述できる。\n- 「街区レベル」の詳細を記録する必要のある非常に多様な方法を表すために、1つ以上の自由記述の「住所行」データエレメントを用いる。\n- 郊外、町、市、村、または地域社会を表すために「市区町村」を用いる。\n- 地方自治体の区域を表すために「地区／郡」を用いる。\n- 主要な行政区域を表すために「都道府県／州」を用いる。\n- 「郵便番号」を用いる。 \n- 「国」を用いる。\nただし、「構造化された住所」SLOT に CLUSTER.structured_address を入れ子にすることで、住所に関するより細かな詳細情報を含めるよう本archetypeを拡張できる。\n\n本 CLUSTER.address archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィック住所データにおける住所の代用として使用することもできる。例えば、評価票の冒頭に個人の完全な連絡先が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。",
+  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、人、建物、または目印となる場所の所在に関する詳細情報を記録するために用いる。住所登記簿や公式の住所一覧によらずに知り得た住所をその場で記録する場合や、住所検索サービスの利用が適切でない、または利用できない場合を主に想定している。以下のような使用例がある。\n- 個人に在宅ケアを提供する組織の事業所住所を記録する。\n- EVALUATION.advance_care_directive archetype内で、事前ケア記録の写しを保有する人の郵送先住所を記録する。\n- 転倒や事故が起きた物理的な場所を記録する。\n\n本archetypeの範囲は、特定の建物や目印となる場所を識別するための最も一般的な構造化された構成要素に限定している。この文脈では、完全な住所は次の要素で記述できる。\n- 「街区レベル」の詳細を記録する必要のある非常に多様な方法を表すために、1つ以上の自由記述の「住所行」データエレメントを用いる。\n- 郊外、町、市、村、または地域社会を表すために「市区町村」を用いる。\n- 地方自治体の区域を表すために「地区／郡」を用いる。\n- 主要な行政区域を表すために「都道府県／州」を用いる。\n- 「郵便番号」を用いる。 \n- 「国」を用いる。\nただし、「構造化された住所表記」SLOT に CLUSTER.structured_address を入れ子にすることで、住所に関するより細かな詳細情報を含めるよう本archetypeを拡張できる。\n\n本 CLUSTER.address archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィック住所データにおける住所の代用として使用することもできる。例えば、評価票の冒頭に個人の完全な連絡先が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。",
 
   # Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.
   # 
@@ -228,11 +228,11 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # Structured address
-  ['term', 'at0020', 'text'] => "構造化された住所",
+  ['term', 'at0020', 'text'] => "構造化された住所表記",
 
   # CLUSTER > items/CLUSTER
   # Structured details or extensions to the address.
-  ['term', 'at0020', 'description'] => "住所の構造化された詳細または拡張。",
+  ['term', 'at0020', 'description'] => "構造化された詳細な住所表記または拡張。",
 
   # CLUSTER > items/CLUSTER
   # For example: to represent a  structured, fine-grained address, or be used as standardised concepts that can be concatenated together to consistently construct a single 'Address line'.
@@ -254,9 +254,7 @@ T = {
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['term', 'at0019', 'text'] => "要確認: Map URL＝「地図 URL」",
-  ['term', 'at0020', 'text'] => "要確認: Structured address（スロット）＝「構造化された住所」。comment 末尾に日本の構造化住所 CLUSTER（structured_address_jp、localisation-ja.md）を入れる想定を追加",
-  ['term', 'at0021', 'text'] => "要確認: Geolocation code＝「位置情報コード」、geocode＝「ジオコード」（他候補: 地理位置コード、ジオロケーションコード）",
+  # ['term', 'at0000', 'text'] => '要確認: ...',
 }.freeze
 
 src, dst = ARGV
