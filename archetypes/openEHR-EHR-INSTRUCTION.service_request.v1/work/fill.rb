@@ -379,17 +379,11 @@ T = {
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['description', '-', 'purpose'] => "要確認: \"clinician, organisation or agency\"→「医療従事者、医療機関、または事業者」。clinician は用語集の healthcare provider と同じ「医療従事者」に寄せ、agency は「事業者」",
-  ['description', '-', 'keywords'] => "原文5語に「診療依頼」を追加",
   ['term', 'at0000', 'text'] => "要確認: 「サービス依頼」（他候補: 診療サービス依頼／サービスリクエスト）。request＝依頼、service＝サービスの規則に従う",
   ['term', 'at0001', 'text'] => "RM の ACTIVITY を指す内部的な名称。「現在のアクティビティ」",
-  ['term', 'at0010', 'text'] => "requester/receiver＝依頼者/受領者、order identifier＝オーダー識別子。HL7 Placer/Filler は英字のまま",
-  ['term', 'at0040', 'text'] => "要確認: \"Service due\"→「サービス実施予定」（日時だけでなく「次の空き枠」等のテキストも許すため「予定日時」としない）",
-  ['term', 'at0068', 'text'] => "要確認: Urgency＝緊急度、値は Emergency＝緊急／Urgent＝至急／Routine＝通常（国内のオーダリングの慣用に合わせた）",
   ['term', 'at0076', 'text'] => "Boolean 項目。\"Supplementary information\"→「補足情報」、at0149 \"Supporting information\"→「参考資料」と区別",
   ['term', 'at0116', 'text'] => "要確認: \"Patient requirements\"→「患者の必要事項」（言語・移動手段など）",
   ['term', 'at0142', 'text'] => "Receiver＝受領者（request.v1 の本文では \"receiving healthcare provider\" を「受け手となる医療従事者」としている）",
-  ['term', 'at0147', 'text'] => "原文の疑問符付き Boolean 名を踏襲して「無期限？」",
   ['term', 'at0152', 'text'] => "Clinical indication＝臨床的適応（FHIR reasonCode に相当）",
 }.freeze
 
