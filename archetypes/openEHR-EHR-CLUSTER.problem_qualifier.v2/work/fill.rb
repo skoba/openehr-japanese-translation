@@ -47,7 +47,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # For example: 'New' will enable clinicians to distinguish a new, acute episode of otitis media that may have arisen soon after a previous diagnosis, to distinguish it from an unresolved or 'Ongoing' diagnosis of chronic otitis media. Treatment of recurring, new and acute, episodes of a condition may differ significantly from the same condition that is not resolving or responding to treatment. In many situations the clinician will not be able to tell, and so indeterminate may be appropriate.
-  ['term', 'at0001', 'comment'] => "例：「新規」により、以前の診断の直後に生じたかもしれない新たな急性の中耳炎エピソードを、未治癒または「継続中」の慢性中耳炎の診断と区別できる。繰り返し生じる新規の急性エピソードの治療は、治癒に向かわない、または治療に反応しない同じ病態の治療とは大きく異なることがある。多くの状況では臨床医には判断できないため、「判定不能」が適切な場合もある。",
+  ['term', 'at0001', 'comment'] => "例：「新規」により、以前の診断の直後に生じたかもしれない新たな急性の中耳炎エピソードを、未治癒または「継続中」の慢性中耳炎の診断と区別できる。繰り返し生じる新規の急性エピソードの治療は、治癒に向かわない、または治療に反応しない同じ病態の治療とは大きく異なることがある。多くの状況では医療従事者には判断できないため、「判定不能」が適切な場合もある。",
 
   # CLUSTER > items/ELEMENT
   # Active/Inactive?

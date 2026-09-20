@@ -79,7 +79,8 @@
 | Details (slot) | 詳細 | 臨床情報スロット |
 | example framework for modelling ... within a template | テンプレート内で〜をモデル化するための枠組みの例 | SECTION 系の定型句 |
 | nested within | 〜の中に入れ子にして | |
-| clinician, organisation or agency | 医療従事者、医療機関、または事業者 | service_request（要確認） |
+| clinician | 医療従事者 | 医師に限らず看護師など臨床職全般を指すため「臨床医」「臨床家」は使わない（2026-09-20 決定。story / symptom_sign / problem_diagnosis / problem_qualifier / reason_for_encounter の 13 か所を置換）。healthcare provider と同じ語になるが、原文でもほぼ同義 |
+| clinician, organisation or agency | 医療従事者、医療機関、または事業者 | service_request（clinician＝医療従事者 に合わせる） |
 | service request | サービス依頼 | INSTRUCTION 概念名 |
 | order | オーダー | order identifier＝オーダー識別子、order detail＝オーダー詳細 |
 | requester / receiver | 依頼者 / 受領者 | Placer/Filler Order Identifier は英字のまま |
