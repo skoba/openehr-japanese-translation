@@ -8,7 +8,7 @@
 
 - `text`（ノード名）は名詞句。句点なし。画面ラベルに使われる前提で簡潔に。
 - `description` / `comment` / `purpose` / `use` / `misuse` は「〜。」で終える常体（である調）。
-- 原文の段落・箇条書き（`- `）・空行はそのまま保つ。箇条書き末尾の `;` は「；」、末尾の `and` は「および」として行内に残す。
+- 原文の段落・箇条書き（`- `）・空行はそのまま保つ。箇条書きの各項目は「。」で終え、原文末尾の `;` / `; or` / `; and` は「；」「；または」「；および」として残さない（organisation.v1 校正 2026-09-19 で改訂。旧規則は「；」「および」を行内に残していた）。
 - アーキタイプ名（`COMPOSITION.encounter` など）、RM クラス名、`FHIR`/`CIMI` 等の固有名は英字のまま。 「archetype」という語自体も英字のまま書き、「アーキタイプ」とは訳さない（2026-09-10 校正で統一）。
 - `@ internal @` は訳さない。内部ノード名 `Tree` / `List` / `History` 等も他言語版（de/sv/nb/nl）に倣い英字のまま残す。
 - CLUSTER スロット `Extension` も訳さず英字のまま（description / comment は訳す）。
@@ -18,7 +18,7 @@
 
 ### こなれた訳のための規則（2026-09-19、校正の傾向から）
 
-原文の構文をなぞらず、日本語の医療文書として自然に読めることを優先する。校正済み archetype（person.v1、problem_diagnosis.v1、symptom_sign.v2、story.v1）の `work/fill.rb` を訳の手本とし、同じ構文は同じ訳し方をする。
+原文の構文をなぞらず、日本語の医療文書として自然に読めることを優先する。校正済み archetype（person.v1、electronic_communication.v1、organisation.v1、problem_diagnosis.v1、problem_qualifier.v2、symptom_sign.v2、story.v1、clinical_synopsis.v1、adhoc.v1）の `work/fill.rb` と docs/style-examples.md を訳の手本とし、同じ構文は同じ訳し方をする。
 
 1. 関係節が二重三重になる文は二文に分ける（一文 60 字程度を目安）。英文の一文を一文に対応させる必要はない。
 2. 「〜についての詳細」→「〜に関する詳細情報」。「〜の特定」「〜の記述」のような名詞化は、可能なら動詞に戻す（例：identification of X →「X を示す」「X を特定する」）。
@@ -27,7 +27,7 @@
 5. 箇条書きの各項目は名詞句で止めず、「〜を用いて、〜を記録する。」のように動詞で終える。
 6. description / comment 内の the individual / a person は「個人」、健康記録の対象者本人は「本人」。「その人」は使わない。
 7. 「〜であって」「〜でありうる」「〜されうる」のような英文直訳の接続・助動詞は、「〜であり」「〜こともある」「〜できる」に言い換える。
-8. often ad hoc or when it is not appropriate or possible to … →「主に、必要に応じて記録する場合や、…の利用が適切でない、または利用できない場合を想定している」。
+8. often ad hoc or when it is not appropriate or possible to … →「正式な登録簿や公式の一覧によらずに知り得た情報をその場で記録する場合や、…の利用が適切でない、または利用できない場合を主に想定している」（校正 2026-09-20。ad hoc は「公式の出所によらず、診療のその場で知り得た情報を記録する」こと。「必要に応じて」「その都度」「臨時に」「一時的に」は使わない）。
 
 ## 共通語（RM・アーキタイプ横断）
 
@@ -39,7 +39,7 @@
 | encounter | 診察 | contact と区別する |
 | contact (healthcare contact) | 受診 | encounter と区別する |
 | encounter or contact | 診察または受診 | reason_for_encounter |
-| transfer of care | 診療の移管 | |
+| transfer of care | 診療の引き継ぎ | 2026-09-20 に「移管」から変更（臨床現場の慣用）。transfer summary＝引き継ぎサマリー（request.v1 校正 2026-09-20）。handover も引き継ぎ |
 | handover of care and clinical responsibility | 診療および臨床的責任の引き継ぎ | |
 | request | 依頼 | 「要求」は使わない |
 | service | サービス | |
@@ -50,13 +50,13 @@
 | diagnostic test | 臨床検査 | |
 | home care from visiting nurses | 訪問看護師による在宅ケア | |
 | rehabilitation facility | リハビリテーション施設 | |
-| aged care assessment | 高齢者ケアのアセスメント | 「要介護認定」とは読み替えない（要確認） |
+| aged care assessment | 高齢者ケアのアセスメント | 「要介護認定」とは読み替えない（校正済み 2026-09-20） |
 | medication review | 薬剤監査 | |
 | physiotherapy / occupational therapy | 理学療法 / 作業療法 | |
 | targeted / untargeted (request) | 宛先指定あり / 宛先指定なし | |
 | Extension | Extension | 訳さない |
 | local context | ローカルな文脈 | |
-| reference models/formalisms | 参照モデルや形式手法 | problem_diagnosis 校正版（at0071 Extension description）に合わせた（2026-09-11、要確認） |
+| reference models/formalisms | 参照モデルや形式手法 | problem_diagnosis 校正版（at0071 Extension description）に合わせた（2026-09-11。request / service_request の Extension も 2026-09-20 再レビューで同文に統一、校正済み） |
 | additional metadata | 追加メタデータ | |
 | Tree | Tree | 訳さない |
 | archetype | archetype | 英字のまま。「アーキタイプ」と書かない（problem_diagnosis 校正 2026-09-10 で統一。「本archetype」「CLUSTER archetype群」のように続ける） |
@@ -67,19 +67,20 @@
 | administrative category | 管理上の区分 | |
 | category | 区分 | 断りがなければ「区分」（校正 2026-09-11。「カテゴリ」は使わない） |
 | health issues / symptoms / physical signs | 健康上の問題 / 症状 / 身体的徴候 | |
-| paramedical staff | 救急救命士 | 文脈により「救急隊員」 |
+| paramedical staff | （文脈訳）救急救命士 | reason_for_encounter use の「意識のない患者に対応する」文脈での訳。一般語としての対応ではない。日本語の「パラメディカル」は医師以外の医療職全般を指すので、辞書的に「救急救命士」と置き換えない。別の文脈では「医師以外の医療スタッフ」「救急隊員」など文脈で決める（2026-09-20） |
 | routine antenatal visit | 定期の妊婦健診 | |
 | elective admission | 予定入院 | |
 | pre-employment medical | 雇用時健康診断 | |
 | annual medical check-up | 年1回の健康診断 | |
 | coding with a terminology is desirable | 用語集によりコード化することが望ましい | comment の定型句 |
 | in templates | テンプレートでは | |
-| referral details | 紹介状の詳細 | SECTION 名 |
+| referral details | 紹介状の詳細情報 | SECTION 名。校正 2026-09-20 で「紹介状の詳細」→「紹介状の詳細情報」 |
 | referral request (slot) | 紹介依頼 | INSTRUCTION.service_request スロット名 |
-| Details (slot) | 詳細 | 臨床情報スロット |
+| Details (slot) | 詳細情報 | 臨床情報スロット（referral_details at0002）。校正 2026-09-20 で「詳細」→「詳細情報」。story.v1 の Detail スロットは別 |
 | example framework for modelling ... within a template | テンプレート内で〜をモデル化するための枠組みの例 | SECTION 系の定型句 |
 | nested within | 〜の中に入れ子にして | |
-| clinician, organisation or agency | 医療従事者、医療機関、または事業者 | service_request（要確認） |
+| clinician | 医療従事者 | 医師に限らず看護師など臨床職全般を指すため「臨床医」「臨床家」は使わない（2026-09-20 決定。story / symptom_sign / problem_diagnosis / problem_qualifier / reason_for_encounter の 13 か所を置換）。healthcare provider と同じ語になるが、原文でもほぼ同義 |
+| clinician, organisation or agency | 医療従事者、医療機関、または事業者 | service_request（clinician＝医療従事者 に合わせる） |
 | service request | サービス依頼 | INSTRUCTION 概念名 |
 | order | オーダー | order identifier＝オーダー識別子、order detail＝オーダー詳細 |
 | requester / receiver | 依頼者 / 受領者 | Placer/Filler Order Identifier は英字のまま |
@@ -87,10 +88,10 @@
 | service period start / expiry | サービス期間の開始 / 終了 | |
 | reason for request / reason description | 依頼理由 / 理由の説明 | |
 | intent | 意図 | |
-| urgency: emergency / urgent / routine | 緊急度：緊急 / 至急 / 通常 | 要確認 |
+| urgency: emergency / urgent / routine | 緊急度：緊急 / 至急 / 通常 | 校正済み（2026-09-20、全 archetype 校正完了時に確定） |
 | supplementary information | 補足情報 | Boolean。後送する情報 |
 | supporting information | 参考資料 | 添付する電子文書・画像等 |
-| patient requirements | 患者の必要事項 | 言語・移動手段など |
+| patient requirements | 患者側からの要件 | service_request at0116。言語・移動手段など、患者側が提示し提供側が満たすべきもの。校正 2026-09-20 で「患者の必要事項」から変更（「患者側の要件」は患者に課される条件に読めるため不採用） |
 | service name / service type | サービス名 / サービス種別 | |
 | request status | 依頼状態 | |
 | distribution list | 配布先リスト | |
@@ -105,7 +106,7 @@
 | follow-up appointment | フォローアップ受診 | |
 | problem / diagnosis / condition | プロブレム / 診断 / 病態 | 訳し分ける。日本でのPOMRの文脈ではProblemは問題や課題と翻訳されることもあるが、主にプロブレムとされることが多い。ここでもそれを踏襲する。problem_diagnosis |
 | health problem | 健康上のプロブレム | problem＝プロブレムに合わせる（problem_diagnosis 校正 2026-09-10。「health issues」は引き続き「健康上の問題」） |
-| healthcare professional | 医療従事者 | healthcare provider と同じ訳（要確認） |
+| healthcare professional | 医療従事者 | healthcare provider と同じ訳（校正済み 2026-09-20） |
 | carer | 介護者 | |
 | wellbeing / well-being | ウェルビーイング | OK |
 | injury / disability | 外傷 / 障害 | |
@@ -114,18 +115,18 @@
 | clinical consultation | 診察 | 紹介の consultation（コンサルテーション）とは区別 |
 | clinical decision support | 臨床意思決定支援 | |
 | Problem Oriented Medical Record | プロブレム志向型診療記録 | Larry Weed は英字のまま |
-| problem/diagnosis name | プロブレム・診断の名称 | 概念名「プロブレム・診断」に合わせ区切りは「・」（problem_diagnosis 校正 2026-09-10）。要確認：校正前の用語集は「プロブレム/診断名」 |
+| problem/diagnosis name | プロブレム・診断の名称 | 概念名「プロブレム・診断」に合わせ区切りは「・」（problem_diagnosis 校正 2026-09-10）。校正済み 2026-09-20。校正前の用語集は「プロブレム/診断名」 |
 | date/time clinically recognised | 臨床的に認識された日時 | problem_diagnosis 校正（2026-09-10）で「臨床的認識日時」から変更 |
 | date/time of onset | 発症日時 | |
-| date/time of resolution | 治癒した日時 | resolution or remission＝解消または寛解（要確認） |
+| date/time of resolution | 治癒した日時 | resolution or remission＝解消または寛解（校正済み 2026-09-20） |
 | severity: mild / moderate / severe | 重症度：軽症 / 中等症 / 重症 | |
 | body site / anatomical location | 身体部位 / 解剖学的部位 | 訳し分ける |
 | structured body site | 構造化された身体部位表現 | CLUSTER スロット。problem_diagnosis 校正（2026-09-10）で採用 |
-| status (qualifier slot) | 状態 | request status＝依頼状態 に合わせる（要確認） |
+| status (qualifier slot) | 状態 | request status＝依頼状態 に合わせる（校正済み 2026-09-20） |
 | clinical description / course description | 臨床的説明 / 経過記載 | problem_diagnosis 校正（2026-09-10）で「経過の説明」→「経過記載」 |
 | diagnostic certainty: suspected / probable / confirmed | 診断確度：疑い / 推定 / 確定 | problem_diagnosis 校正（2026-09-10）で採用。校正前は「診断の確からしさ：疑い / ほぼ確実 / 確定」（指定難病の慣用訳） |
 | cause / aetiology | 原因 / 病因 | |
-| variant / subtype | 亜型 / サブタイプ | 要確認 |
+| variant / subtype | 亜型 / サブタイプ | 校正済み（2026-09-20、全 archetype 校正完了時に確定） |
 | impact | 影響 | |
 | comment (element) | コメント | |
 | last updated | 最終更新日 | |
@@ -152,7 +153,7 @@
 | diagnostic status: preliminary / working / established / refuted | 診断状況：予備的 / 暫定 / 最終 / 否定 | 診断確度（疑い / 推定 / 確定）とは別軸。校正（2026-09-11）で「診断の段階」→「診断状況」、「初期」→「予備的」 |
 | diagnostic category: principal diagnosis / secondary diagnosis / complication | 診断区分：主病名 / 副病名 / 合併症 | Category＝区分（校正 2026-09-11） |
 | comorbid condition | 併存疾患 | |
-| occurrence: first occurrence / recurrence | 発生区分：初発 / 再発 | recurrence＝再発（腫瘍学の慣用） |
+| occurrence: first occurrence / recurrence | 発症区分：初発 / 再発 | recurrence＝再発（腫瘍学の慣用）。2026-09-20 に「発生区分」から変更（値が初発／再発なので発症で揃える）。problem_qualifier at0071、symptom_sign at0186。因子の occurrence は「発生」のまま |
 | admission diagnosis | 入院時診断 | DRG 報告用 |
 | course label: acute / chronic / acute-on-chronic | 経過区分：急性 / 慢性 / 慢性疾患の急性増悪 | at0094 text に合わせた（校正 2026-09-11） |
 | resolution phase: resolved / resolving / not resolving / relapsed | 治癒段階：治癒 / 回復中 / 未回復 / 再燃 | at0083 text に合わせ「治癒段階」（校正 2026-09-11） |
@@ -167,16 +168,16 @@
 | story (narrative element) | 病歴の記述 | OBSERVATION.story at0004。対比文脈（story と history を並べるとき）の story は「語り」。keywords では検索語として「ストーリー」を併記可 |
 | clinical history | 病歴 | |
 | Event Series | Event Series | HISTORY の内部ノード名。Tree と同じく訳さない |
-| Any event | 任意のイベント | OBSERVATION の既定イベント名（要確認） |
+| Any event | 任意のイベント | OBSERVATION の既定イベント名（校正済み 2026-09-20） |
 | structured detail | 構造化された詳細記録 | CLUSTER スロット。story 校正（2026-09-11）で「詳細記録」に揃えた |
 | personal health record | 個人健康記録 | PHR |
 | clinical questionnaire / questionnaire | 臨床問診票 / 問診票 | 校正（2026-09-12）で「質問票」→「問診票」。screening questionnaire＝スクリーニング問診票 |
 | health event | 健康イベント | CLUSTER.health_event |
 | care-giver | 介護者 | carer と同じ |
 | narrative | 叙述 | narrative description＝叙述的な記述 |
-| clinical synopsis | 臨床要約 | EVALUATION.clinical_synopsis 概念名（要確認。他候補：臨床サマリー） |
+| clinical synopsis | 臨床要約 | EVALUATION.clinical_synopsis 概念名（校正済み 2026-09-20。他候補：臨床サマリー） |
 | synopsis (element) | 要約 | at0002 |
-| epicrisis | エピクリーゼ | keywords（要確認。他候補：退院時総括） |
+| epicrisis | エピクリーゼ | keywords（校正済み 2026-09-20。他候補：退院時総括） |
 | meta observation | メタ観察 | clinical_synopsis use |
 | report (document) | 報告書 | COMPOSITION.report |
 | List | List | 内部ノード名。訳さない |
@@ -194,7 +195,7 @@
 | previous episodes / number of previous episodes | 過去のエピソード / 過去のエピソードの回数 | symptom_sign at0146 / at0031 |
 | associated symptom/sign | 随伴症状・徴候 | symptom_sign at0063 |
 | factor / factor detail | 因子 / 因子の詳細 | symptom_sign |
-| modifying / precipitating / resolving factor | 修飾因子 / 誘発因子 / 寛解因子 | symptom_sign at0018 / at0165 / at0190（寛解因子は OPQRST の慣用。description の resolution は「消失」） |
+| modifying / precipitating / resolving factor | 修飾因子 / 誘発因子 / 消失因子 | symptom_sign at0018 / at0165 / at0190（消失因子に統一 2026-09-20。resolve は症状・徴候では「消失」、プロブレム・診断では「治癒」、remission は「寛解」。旧「寛解因子」は OPQRST の慣用。description の resolution は「消失」） |
 | effect: relieves / no effect / worsens | 影響：軽減 / 影響なし / 増悪 | symptom_sign at0017。at0155 Impact も「影響」 |
 | progression (symptom): improving / unchanged / worsening / resolved | 進行状況：改善 / 不変 / 悪化 / 消失 | symptom_sign at0180。Unchanged＝不変（qualifier の Stable＝安定 とは別語） |
 | severity category / severity rating | 重症度 / 重症度評価 | symptom_sign at0021 / at0198 |
@@ -205,7 +206,7 @@
 | heartburn / claudication | 胸やけ / 跛行 | 例示 |
 | person (CLUSTER.person) | 人 | 概念名（校正 2026-09-19 で確定）。subject 以外の人一般 |
 | name (person) | 氏名 | MML4 人名表現形式・個人情報形式の「氏名」（校正 2026-09-19 で確定） |
-| structured name | 構造化された氏名 | CLUSTER.structured_name（概念名は #8 で確定） |
+| structured name | 構造化された人名 | CLUSTER.structured_name（概念名は #8 で確定） |
 | identifier | 識別子 | person at0003。MML4 の Id 形式は「ID」 |
 | role (person) | 役割 | person at0004。健康記録の対象者との関係または役割（校正 2026-09-19 で確定） |
 | electronic communication | 電子的な連絡先 | CLUSTER.electronic_communication（targets #10）。person 校正（2026-09-19）で「電子的連絡先」→「電子的な連絡先」 |
@@ -213,45 +214,45 @@
 | additional details (slot) | 追加の詳細情報 | electronic_communication 校正（2026-09-19）で「追加の詳細」→「追加の詳細情報」。person.v1 at0008 にも波及 |
 | photo | 写真 | |
 | label (person) | ラベル（識別用の説明） | person at0011（校正 2026-09-19） |
-| demographic register / index | デモグラフィック登録簿 / インデックス | 要確認 |
+| demographic register / index | 登録簿 / 一覧（address.v1 では 住所登記簿 / 公式の住所一覧） | 校正 2026-09-20 で確定。「インデックス」「デモグラフィック登録簿」は使わない（患者マスターインデックス（MPI）は固有名として残す） |
 | Master Patient Index / Health Provider Index | 患者マスターインデックス（MPI） / 医療従事者名簿（Health Provider Index） | person 校正（2026-09-19）で確定 |
-| Demographic Information Model | デモグラフィック情報モデル | openEHR RM（要確認） |
+| Demographic Information Model | デモグラフィック情報モデル | openEHR RM（校正済み 2026-09-20） |
 | next-of-kin | 近親者 | |
-| copyholder / contact person / family member details / specimen collector details / witness (slots) | 写し保有者 / 連絡担当者 / 家族構成員の詳細 / 検体採取者の詳細 / 目撃者 | 未訳 archetype のスロット名の仮訳（要確認。該当 archetype の翻訳時に確定） |
+| copyholder / contact person / family member details / specimen collector details / witness (slots) | 写し保有者 / 連絡担当者 / 家族構成員の詳細 / 検体採取者の詳細 / 目撃者 | 未訳 archetype のスロット名の仮訳（校正済み 2026-09-20。該当 archetype の翻訳時に確定） |
 | MML4 人名表現形式: family / given / middle / fullname / prefix / degree | 姓 / 名 / ミドルネーム / フルネーム / 肩書き（敬称） / 学位 | skoba/mml doc/MML4/name.adoc。structured_name.v1 で使う |
 | MML4 住所表現形式: full / prefecture / city / town / homeNumber / zip / countryCode | 一連住所 / 都道府県 / 市・区・郡 / 町・村 / 番地（丁目・建物名・部屋番号） / 郵便番号 / 国コード | doc/MML4/address.adoc。address.v1 で使う |
 | MML4 住所の種類: current / permanent / mailing / business / office / home / birth | 現住所 / 本籍 / 郵送先 / 勤務先 / 事務所 / 自宅 / 出生地 | MML0002（要確認。address.v1 の値セットと照合） |
 | MML4 電話番号表現形式: area / city / number / extension / full / country / memo / telEquipType | 市外局番 / 局番 / 加入番号 / 内線番号 / 一連電話番号 / 国番号 / メモ（使用時間帯など） / 装置の種類 | doc/MML4/phone.adoc。electronic_communication.v1 で使う |
 | MML4 施設情報形式 / 診療科情報形式 | 施設（施設名称・施設 ID） / 診療科（診療科名称・診療科 ID） | doc/MML4/facility.adoc, department.adoc。organisation.v1 で使う |
 | MML4 Id 形式: type / checkDigit / checkDigitSchema | ID の種類 / チェックディジット / チェックディジット方式 | doc/MML4/id.adoc |
-| title (name) | 敬称 | structured_name at0001。MML4 prefix＝肩書き（要確認。他候補：肩書き、称号） |
+| title (name) | 敬称 | structured_name at0001。MML4 prefix＝肩書き（校正 2026-09-20 で確定。他候補：肩書き、称号） |
 | given name / family name | 名 / 姓 | structured_name at0002 / at0005（MML4 人名表現形式） |
-| suffix (name) | 接尾辞 | structured_name at0006（要確認。他候補：サフィックス）。MML4 degree＝学位 はここ |
+| suffix (name) | 接尾辞 | structured_name at0006（校正 2026-09-20 で確定。他候補：サフィックス）。MML4 degree＝学位 はここ |
 | first name / middle name / preferred name / nickname | ファーストネーム / ミドルネーム / 通称 / ニックネーム | structured_name at0002 comment |
 | name usage | 氏名の用途 | structured_name use / misuse |
 | ISO 22220 | ISO 22220 | 英字のまま |
-| address line | 住所行 | address.v1 at0001。日本では町域〜部屋番号を 1 行（要確認） |
+| address line | 住所行 | address.v1 at0001。日本では町域〜部屋番号を 1 行（校正 2026-09-20 で確定） |
 | city/town | 市区町村 | address.v1 at0002。政令指定都市は市＋区。JIS X 0402（localisation-ja.md） |
-| district/county | 地区／郡 | address.v1 at0003。日本では町村の郡（要確認） |
-| state/territory/province | 都道府県／州 | address.v1 at0004。JIS X 0401（要確認） |
+| district/county | 地区／郡 | address.v1 at0003。日本では町村の郡（校正 2026-09-20 で確定） |
+| state/territory/province | 都道府県／州 | address.v1 at0004。JIS X 0401（校正 2026-09-20 で確定） |
 | postal code / postcode / ZIP code | 郵便番号 / ポストコード / ZIP コード | address.v1 at0005。日本は 7 桁 |
 | country | 国 | ISO 3166-1 alpha-2（日本は JP） |
 | latitude / longitude / altitude | 緯度 / 経度 / 高度 | address.v1 |
-| address type: physical / postal / both | 種別：物理的所在地 / 郵送先 / 両方 | address.v1 at0010（要確認） |
-| address use: business / residential / temporary accommodation | 用途：事業所 / 自宅 / 一時滞在先 | address.v1 at0014。MML4 business＝勤務先、home＝自宅（要確認） |
+| address type: physical / postal / both | 種別：物理的所在地 / 郵送先 / 両方 | address.v1 at0010（校正 2026-09-20 で確定） |
+| address use: business / residential / temporary accommodation | 用途：事業所 / 自宅 / 一時滞在先 | address.v1 at0014。MML4 business＝勤務先、home＝自宅（校正 2026-09-20 で確定） |
 | map URL | 地図 URL | |
-| structured address (slot) | 構造化された住所 | address.v1 at0020。structured_address_jp を入れる想定 |
-| geolocation code / geocode | 位置情報コード / ジオコード | address.v1 at0021（要確認） |
+| structured address (slot) | 構造化された住所表記 | address.v1 at0020。structured_address_jp を入れる想定 |
+| geolocation code / geocode | 位置情報コード / ジオコード | address.v1 at0021（校正 2026-09-20 で確定） |
 | address lookup service | 住所検索サービス | |
 | landmark | 目印となる場所 | keywords では「目印」 |
 | street-level | 街区レベル | address.v1 |
 | type (electronic communication) | 種別 | electronic_communication.v1 at0001。address.v1 の Type に合わせる |
-| value (electronic communication) | 値 | electronic_communication.v1 at0002。番号・メールアドレス等を含む（要確認。他候補：連絡先の値） |
-| purpose (electronic communication) | 用途 | electronic_communication.v1 at0003。業務用・個人用を区別する（要確認。他候補：目的） |
+| value (electronic communication) | 値 | electronic_communication.v1 at0002。番号・メールアドレス等を含む（校正 2026-09-20 で確定。他候補：連絡先の値） |
+| purpose (electronic communication) | 用途 | electronic_communication.v1 at0003。業務用・個人用を区別する（校正 2026-09-20 で確定。他候補：目的） |
 | telephone / phone | 電話 | 一般語（keywords など）。値セットの「Telephone (excluding mobile telephone)」は固定電話 |
 | mobile (cellular) telephone / telephone (excluding mobile telephone) | 携帯電話 / 固定電話 | electronic_communication.v1 at0005 / at0006 |
 | email / email address / fax | 電子メール / 電子メールアドレス / ファクシミリ | electronic_communication.v1 at0007 / at0002 comment / at0009 |
-| pager | ポケットベル | electronic_communication.v1 at0008（要確認。他候補：ページャー、無線呼出受信機）。日本語での認知しやすさを優先 |
+| pager | ポケットベル | electronic_communication.v1 at0008（校正 2026-09-20 で確定。他候補：ページャー、無線呼出受信機）。日本語での認知しやすさを優先 |
 | business use / personal use / both business and personal use | 業務用 / 個人用 / 業務用・個人用の両方 | electronic_communication.v1 at0010 / at0011 / at0012。場所ではなく用途を表す |
 | area code / country code (telephone) / landline phone number | 市外局番 / 国番号 / 固定電話番号 | electronic_communication.v1 at0002 comment。MML4 電話番号表現形式に合わせる |
 | chat / social media / asynchronous / communication | チャット / ソーシャルメディア / 非同期 / 通信 | electronic_communication.v1 keywords。SoMe は英字のまま保持 |
@@ -265,11 +266,11 @@
 | informal support network | 非公式な支援ネットワーク | organisation.v1 at0004 comment。正式な組織に限らない支援のつながり（校正 2026-09-19 で確定） |
 | location of care | ケアの実施場所 | organisation.v1 misuse。参照モデルの属性で記録する場所（校正 2026-09-19 で確定） |
 | network / group (organisation) | ネットワーク / 集団 | organisation.v1 keywords。法人格を持つ組織に限らない（校正 2026-09-19 で確定） |
-| Content / Content name (media file) | コンテンツ / コンテンツ名 | media_file at0001 / at0002。ファイル本体とその名称を区別する（要確認。他候補：内容 / 内容名） |
+| Content / Content name (media file) | コンテンツ / コンテンツ名 | media_file at0001 / at0002。ファイル本体とその名称を区別する（校正 2026-09-20 で確定。他候補：内容 / 内容名） |
 | Created (media file) | 作成日時 | media_file at0004。部分的な日付や期間も含む（校正 2026-09-19 で確定。他候補：作成時期） |
-| Source device | 作成機器 | media_file at0011。ファイルの生成・作成に用いた機器（要確認。他候補：取得元機器） |
+| Source device | 作成機器 | media_file at0011。ファイルの生成・作成に用いた機器（校正 2026-09-20 で確定。他候補：取得元機器） |
 | Creator | 作成者 | media_file at0012。個人と組織の両方を含む（校正 2026-09-19 で確定。他候補：制作者） |
-| metadata | メタデータ | 既存の additional metadata＝追加メタデータに合わせる（要確認。他候補：付帯情報） |
+| metadata | メタデータ | 既存の additional metadata＝追加メタデータに合わせる（校正済み 2026-09-20。他候補：付帯情報） |
 | modality / view / aspect (radiographic image) | 撮影法 / 撮影方向 / 観察方向 | media_file use。画像の取得方法と方向を区別する（校正 2026-09-19 で確定。他候補：モダリティ / 撮影像 / 側面） |
 | scanned pathology slide | 病理標本スライドのスキャン画像 | media_file use。保存するデジタル画像を表す（校正 2026-09-19 で確定。他候補：スキャンした病理標本） |
 | clinical device / ECG machine | 医療機器 / 心電計 | media_file use。データを出力する機器（校正 2026-09-19 で確定。他候補：臨床機器 / 心電図装置） |
@@ -285,19 +286,19 @@
 
 | Archetype | at0000 text | 備考 |
 |---|---|---|
-| openEHR-EHR-COMPOSITION.request.v1 | 診療依頼書 | 候補：依頼書／サービス依頼。国内の「診療情報提供書」とは区別 |
-| openEHR-EHR-EVALUATION.reason_for_encounter.v1 | 受診理由 | at0002 受診区分、at0004 受診時のプロブレム（主訴を同義語として明記） |
-| openEHR-EHR-SECTION.referral_details.v0 | 紹介状の詳細 | at0001 紹介依頼、at0002 詳細 |
-| openEHR-EHR-INSTRUCTION.service_request.v1 (1.1.2) | サービス依頼 | 緊急度の値：緊急／至急／通常 |
-| openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | プロブレム・診断 | 校正済み（2026-09-10）。重症度 軽症／中等症／重症、診断確度 疑い／推定／確定、at0046 状態 |
-| openEHR-EHR-CLUSTER.problem_qualifier.v2 (2.1.1) | プロブレム・診断の修飾子 | EVALUATION.problem_diagnosis の「状態」スロット用。値セットは共通語表の各行を参照 |
-| openEHR-EHR-OBSERVATION.story.v1 (1.3.3) | 病歴 | 校正済み（2026-09-11）。at0004 病歴の記述、at0006 構造化された詳細記録、at0002 任意のイベント |
-| openEHR-EHR-EVALUATION.clinical_synopsis.v1 (1.0.5) | 臨床要約 | at0002 要約 |
+| openEHR-EHR-COMPOSITION.request.v1 | 診療依頼書 | 校正済み（2026-09-20）。候補：依頼書／サービス依頼。国内の「診療情報提供書」とは区別 |
+| openEHR-EHR-EVALUATION.reason_for_encounter.v1 | 受診理由 | 校正済み（2026-09-20）。at0002 受診区分、at0004 受診時のプロブレム（主訴を同義語として明記） |
+| openEHR-EHR-SECTION.referral_details.v0 | 紹介状の詳細情報 | 校正済み（2026-09-20）。at0001 紹介依頼、at0002 詳細情報 |
+| openEHR-EHR-INSTRUCTION.service_request.v1 (1.1.2) | サービス依頼 | 校正済み（2026-09-20）。緊急度の値：緊急／至急／通常 |
+| openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | プロブレム・診断 | 校正済み（2026-09-10、再レビュー分 2026-09-20 確認）。重症度 軽症／中等症／重症、診断確度 疑い／推定／確定、at0046 状態 |
+| openEHR-EHR-CLUSTER.problem_qualifier.v2 (2.1.1) | プロブレム・診断の修飾子 | 校正済み（2026-09-20）。EVALUATION.problem_diagnosis の「状態」スロット用。値セットは共通語表の各行を参照 |
+| openEHR-EHR-OBSERVATION.story.v1 (1.3.3) | 病歴 | 校正済み（2026-09-11、再レビュー分 2026-09-20 確認）。at0004 病歴の記述、at0006 構造化された詳細記録、at0002 任意のイベント |
+| openEHR-EHR-EVALUATION.clinical_synopsis.v1 (1.0.5) | 臨床要約 | 校正済み（2026-09-13、再レビュー分 2026-09-20 確認）。at0002 要約 |
 | openEHR-EHR-SECTION.adhoc.v1 (1.0.12) | 仮見出し | 校正済み（2026-09-13）。use の例：「仮見出し」→「診察所見」 |
-| openEHR-EHR-CLUSTER.symptom_sign.v2 (2.1.4) | 症状・徴候 | story.v1 のスロット。エピソード区分・発生区分・重症度・進行状況の値は problem_qualifier / problem_diagnosis と同じ |
-| openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 人の構造化された氏名 | at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
-| openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された氏名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0008 追加の詳細情報、at0011 ラベル（識別用の説明） |
-| openEHR-EHR-CLUSTER.address.v1 (1.1.3) | 住所 | at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所。日本の対応物は comment の例示 |
-| openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | 校正済み（2026-09-19）。at0001 種別、at0002 値、at0003 用途、at0006 固定電話、at0013 追加の詳細情報 |
-| openEHR-EHR-CLUSTER.organisation.v1 (1.0.4) | 組織 | 校正済み（2026-09-19）。医療機関に限らず企業・団体・部門・ケアチーム等を含む。at0001 名称、at0002 連絡担当者、at0021 親組織 |
-| openEHR-EHR-CLUSTER.media_file.v1 (1.0.6) | メディアファイル | 校正済み（2026-09-19）。概念名は Issue #11 の訳語案。at0001 コンテンツ、at0002 コンテンツ名、at0004 作成日時、at0011 作成機器、at0012 作成者（at0001 コンテンツ、at0002 コンテンツ名、at0011 作成機器は要確認） |
+| openEHR-EHR-CLUSTER.symptom_sign.v2 (2.1.4) | 症状・徴候 | 校正済み（2026-09-20）。story.v1 のスロット。エピソード区分・発症区分・重症度・進行状況の値は problem_qualifier / problem_diagnosis と同じ |
+| openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 構造化された人名 | 校正済み（2026-09-20）。at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
+| openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された人名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0008 追加の詳細情報、at0011 ラベル（識別用の説明） |
+| openEHR-EHR-CLUSTER.address.v1 (1.1.3) | 住所 | 校正済み（2026-09-20）。at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所表記（校正 2026-09-20）。日本の対応物は comment の例示 |
+| openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | 校正済み（2026-09-19、再レビュー分 2026-09-20 確認）。at0001 種別、at0002 値、at0003 用途、at0006 固定電話、at0013 追加の詳細情報 |
+| openEHR-EHR-CLUSTER.organisation.v1 (1.0.4) | 組織 | 校正済み（2026-09-19、再レビュー分 2026-09-20 確認）。医療機関に限らず企業・団体・部門・ケアチーム等を含む。at0001 名称、at0002 連絡担当者、at0021 親組織 |
+| openEHR-EHR-CLUSTER.media_file.v1 (1.0.6) | メディアファイル | 校正済み（2026-09-19）。概念名は Issue #11 の訳語案。at0001 コンテンツ、at0002 コンテンツ名、at0004 作成日時、at0011 作成機器、at0012 作成者（全ノード確定 2026-09-20） |

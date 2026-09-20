@@ -22,7 +22,7 @@ T = {
   # This archetype will be used as a component within the Problem Oriented Medical Record as described by Larry Weed. Additional archetypes, representing clinical concepts such as condition as an overarching organiser for diagnoses etc, will need to be developed to support this approach.
   # 
   # In some situations, it may be assumed that identification of a diagnosis fits only within the expertise of physicians, but this is not the intent for this archetype. Diagnoses can be recorded using this archetype by any healthcare professional.
-  ['description', '-', 'use'] => "特定された単一の健康上のプロブレムや診断に関する詳細を記録するために使用される。\n\n「プロブレム（problem）」と「診断（diagnosis）」を区別する明確な定義を実務上で定めることはほぼ不可能である。ある「プロブレム」をいつ「診断」とみなすべきかを確実に判断することはできない。診断基準や分類基準を完全に満たせば、その状態を正式な「診断」と呼ぶことができるが、基準を満たす前であっても、それを裏付ける証拠があれば「診断」という用語を使用することが妥当な場合もある。「診断」と呼ぶために必要な証拠の量は定義が難しく、実際には疾患や状態によって異なるだろう。多くの標準化委員会が長年にわたり、この定義上の難問に取り組んできたが、明確な解決には至っていない。\n\nこのarchetypeを用いた臨床記録においては、「プロブレム」と「診断」は連続したもの（スペクトラム）として扱われる。詳細情報や裏付けとなる証拠が増えるにつれて、通常は「診断」というラベルが適用される方向へと重み付けがなされる。このarchetypeでは、対象となる状態を「プロブレム」か「診断」のいずれかに分類する必要はない。どちらを記録する場合でも必要なデータ要件は同じであり、証拠が利用可能になった際にそれを追加するためのデータ構造が用意されている。「プロブレム」の例としては、肥満の正式な診断はなされていないものの、本人が減量を希望している場合や、家族との人間関係の問題などが挙げられる。一方、正式な「診断」の例としては、病歴、診察所見、組織病理学的所見、画像診断所見によって裏付けられ、既知の診断基準の要件をすべて満たす癌などが挙げられる。実際には、多くの「プロブレム」や「診断」は、「プロブレム」と「診断」というスペクトラムの両端のどちらかにあるわけではなく、その中間のどこかに位置している。\n\nこのarchetypeは、さまざまな状況で使用できる。例えば、診療中の「プロブレム」や臨床的な「診断」の記録、継続的な「プロブレムリスト（Problem List）」への記載、あるいは退院時サマリーにおける概要の記述などが挙げられる。\n\n臨床現場では、過去／現在、主／副（プライマリ／セカンダリ）、active/inactive、入院時／退院時など、状況に応じた多くの修飾語（qualifier）が使用される。これらの状況は、場所、専門分野、診療エピソード、あるいはワークフローによって異なる。こうした修飾語が「プロブレムリスト」にそのまま残されたり、元の文脈とは異なる文書で共有されたりすると、混乱や安全上の問題を引き起こす可能性がある。これらの修飾語の使用法は設定によって異なるため、個別のarchetypeとして定義し、「ステータス（Status）」スロットに組み込むことが可能である。これらは主に適切な文脈で使用されることが想定されており、潜在的な影響を明確に理解することなく、その文脈から切り離して共有されるべきではない。例えば、ある臨床医にとっては「主病名（primary diagnosis）」であっても、別の専門医にとっては「副病名（secondary diagnosis）」となる場合がある。また、activeな問題がinactiveに変わる（あるいはその逆）こともあり、こうした変化は臨床意思決定支援システムの安全な利用に影響を及ぼし得る。一般に、これらの修飾語は臨床システムの文脈内でローカルに適用されるべきであり、実際には、現病／既往、アクティブ／インアクティブ、あるいは主／副といったプロブレムのリストが臨床的に正確であることを保証するために、臨床医が手動で状態を管理・調整する必要がある。\n\nこのarchetypeは、Larry Weedが提唱した「プロブレム志向型診療録（Problem Oriented Medical Record）」の構成要素として使用される。このアプローチを支援するためには、診断などを包括的にまとめる概念である「病態（condition）」といった臨床概念を表す、追加のarchetypeを開発する必要がある。\n\n診断の特定は医師の専門領域にのみ属すると見なされる場合もあるが、本archetypeはそのような意図で設計されたものではない。本archetypeを使用すれば、あらゆる医療従事者が診断を記録することが可能である。\n\nProblemの日本語訳出には「問題」「課題」なども考えたが、既に広く「プロブレムリスト」として用語が普及していることから、「プロブレム」を訳語として採用することとした。",
+  ['description', '-', 'use'] => "特定された単一の健康上のプロブレムや診断に関する詳細を記録するために使用される。\n\n「プロブレム（problem）」と「診断（diagnosis）」を区別する明確な定義を実務上で定めることはほぼ不可能である。ある「プロブレム」をいつ「診断」とみなすべきかを確実に判断することはできない。診断基準や分類基準を完全に満たせば、その状態を正式な「診断」と呼ぶことができるが、基準を満たす前であっても、それを裏付ける証拠があれば「診断」という用語を使用することが妥当な場合もある。「診断」と呼ぶために必要な証拠の量は定義が難しく、実際には疾患や状態によって異なるだろう。多くの標準化委員会が長年にわたり、この定義上の難問に取り組んできたが、明確な解決には至っていない。\n\nこのarchetypeを用いた臨床記録においては、「プロブレム」と「診断」は連続したもの（スペクトラム）として扱われる。詳細情報や裏付けとなる証拠が増えるにつれて、通常は「診断」というラベルが適用される方向へと重み付けがなされる。このarchetypeでは、対象となる状態を「プロブレム」か「診断」のいずれかに分類する必要はない。どちらを記録する場合でも必要なデータ要件は同じであり、証拠が利用可能になった際にそれを追加するためのデータ構造が用意されている。「プロブレム」の例としては、肥満の正式な診断はなされていないものの、本人が減量を希望している場合や、家族との人間関係の問題などが挙げられる。一方、正式な「診断」の例としては、病歴、診察所見、組織病理学的所見、画像診断所見によって裏付けられ、既知の診断基準の要件をすべて満たす癌などが挙げられる。実際には、多くの「プロブレム」や「診断」は、「プロブレム」と「診断」というスペクトラムの両端のどちらかにあるわけではなく、その中間のどこかに位置している。\n\nこのarchetypeは、さまざまな状況で使用できる。例えば、診療中の「プロブレム」や臨床的な「診断」の記録、継続的な「プロブレムリスト（Problem List）」への記載、あるいは退院時サマリーにおける概要の記述などが挙げられる。\n\n臨床現場では、過去／現在、主／副（プライマリ／セカンダリ）、active/inactive、入院時／退院時など、状況に応じた多くの修飾語（qualifier）が使用される。これらの状況は、場所、専門分野、診療エピソード、あるいはワークフローによって異なる。こうした修飾語が「プロブレムリスト」にそのまま残されたり、元の文脈とは異なる文書で共有されたりすると、混乱や安全上の問題を引き起こす可能性がある。これらの修飾語の使用法は設定によって異なるため、個別のarchetypeとして定義し、「ステータス（Status）」スロットに組み込むことが可能である。これらは主に適切な文脈で使用されることが想定されており、潜在的な影響を明確に理解することなく、その文脈から切り離して共有されるべきではない。例えば、ある医療従事者にとっては「主病名（primary diagnosis）」であっても、別の専門医にとっては「副病名（secondary diagnosis）」となる場合がある。また、activeな問題がinactiveに変わる（あるいはその逆）こともあり、こうした変化は臨床意思決定支援システムの安全な利用に影響を及ぼし得る。一般に、これらの修飾語は臨床システムの文脈内でローカルに適用されるべきであり、実際には、現病／既往、アクティブ／インアクティブ、あるいは主／副といったプロブレムのリストが臨床的に正確であることを保証するために、医療従事者が手動で状態を管理・調整する必要がある。\n\nこのarchetypeは、Larry Weedが提唱した「プロブレム志向型診療録（Problem Oriented Medical Record）」の構成要素として使用される。このアプローチを支援するためには、診断などを包括的にまとめる概念である「病態（condition）」といった臨床概念を表す、追加のarchetypeを開発する必要がある。\n\n診断の特定は医師の専門領域にのみ属すると見なされる場合もあるが、本archetypeはそのような意図で設計されたものではない。本archetypeを使用すれば、あらゆる医療従事者が診断を記録することが可能である。\n\nProblemの日本語訳出には「問題」「課題」なども考えたが、既に広く「プロブレムリスト」として用語が普及していることから、「プロブレム」を訳語として採用することとした。",
 
   # Not to be used to record symptoms as described by the individual - use the CLUSTER.symptom archetype, usually within the OBSERVATION.story archetype.
   # 
@@ -107,7 +107,7 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # If severity is included in the Problem/diagnosis name via precoordinated codes, this data element becomes redundant. Note: more specific grading of severity can be recorded using the Specific details SLOT.
-  ['term', 'at0005', 'comment'] => "事前調整コード（precoordinated codes）によってプロブレムや診断の名称に重症度が含まれている場合、このデータエレメントは冗長となる。注：「Specific details（詳細情報）」slotを使用することで、より詳細な重症度分類を記録することが可能である。",
+  ['term', 'at0005', 'comment'] => "事前調整コード（precoordinated codes）によってプロブレムや診断の名称に重症度が含まれている場合、このデータエレメントは冗長となる。注：「Specific details（詳細記録）」slotを使用することで、より詳細な重症度分類を記録することが可能である。",
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Clinical description
@@ -115,7 +115,7 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Narrative description about the problem or diagnosis.
-  ['term', 'at0009', 'description'] => "問題または診断についての叙述的な説明。",
+  ['term', 'at0009', 'description'] => "プロブレムまたは診断についての叙述的な説明。",
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Use to provide background and context, including evolution, episodes or exacerbations, progress and any other relevant details, about the problem or diagnosis.
@@ -244,7 +244,7 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Narrative description about the course of the problem or diagnosis since onset.
-  ['term', 'at0072', 'description'] => "発症以降の問題または診断の経過についての叙述的な説明。",
+  ['term', 'at0072', 'description'] => "発症以降のプロブレムまたは診断の経過についての叙述的な説明。",
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Diagnostic certainty
@@ -268,7 +268,7 @@ T = {
   ['term', 'at0075', 'text'] => "推定",
 
   # The diagnosis has been identified with a high level of certainty.
-  ['term', 'at0075', 'description'] => "確度が高いが確定にまでは至らない診断",
+  ['term', 'at0075', 'description'] => "確度が高いが確定にまでは至らない診断。",
 
   # Confirmed
   ['term', 'at0076', 'text'] => "確定",

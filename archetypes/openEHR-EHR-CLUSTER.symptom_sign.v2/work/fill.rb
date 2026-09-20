@@ -16,7 +16,7 @@ T = {
   # This archetype has been intended to be used as a generic pattern for all symptoms and reported signs. The 'Specific details' SLOT can be used to extend the archetype to include additional, specific data elements for more complex symptoms or signs. 
   # 
   # This archetype has been specifically designed to be used in the 'Structured detail' SLOT within the OBSERVATION.story archetype, but can also be used within other OBSERVATION or CLUSTER archetypes and in the 'Associated symptom/sign' or 'Previous episode' SLOT within other instances of this CLUSTER.symptom_sign archetype.
-  ['description', '-', 'use'] => "本人、親、介護者、その他の関係者から報告された症状や徴候について、単一のエピソードを詳細に記録するために用いる。臨床医が聴取した内容や自ら観察した内容を病歴として記録する場合にも、本人が問診票や個人健康記録に記入する場合にも使用できる。病歴全体や患者の語りには、複数の異なる症状・徴候だけでなく、同じ症状・徴候に関する複数のエピソードが含まれることがあり、それぞれの記述の詳しさも異なる。\n\n本archetypeは、症状や徴候がある場合に、その内容を詳しく記録するために設計されている。OBSERVATION.storyを用いた病歴聴取の一部として、またはOBSERVATION.symptom_sign_screeningでの「症状・徴候あり」という回答と組み合わせて使用する。\n\n厳密には、症状は心身の変調に関する主観的な観察に基づくものであり、徴候は客観的な観察に基づくものである。いずれも本人が経験したこととして、本人または他者から病歴の聴取者に伝えられる。この区別に従えば、病歴の記録には、報告された症状を記録するarchetypeと、報告された徴候を記録するarchetypeの二つが必要になる。しかし、実際には、臨床データをどちらのモデルに入力するかを判断して使い分けなければならず、モデルの設計者とデータの入力者の双方に大きな負担が生じるため、現実的ではない。また、症状と徴候には、明確に区別しにくい臨床概念もある。例えば、過去に起きた嘔吐や出血は、症状と報告された徴候のどちらに分類すべきだろうか。そこで本archetypeは、明らかな症状から報告された徴候まで、両者の境界に位置するものも含めて、一つの情報モデルで記録できるように設計されている。\n\n本archetypeは、あらゆる症状や報告された徴候を記録するための汎用的なモデルとして用いることを想定している。より複雑な症状や徴候を扱う場合には、「詳細記録」SLOTを用いて、それぞれに特有のデータエレメントを追加し、archetypeを拡張できる。 \n\n本archetypeは、OBSERVATION.story archetypeの「構造化された詳細記録」SLOTで使用することを想定して設計されている。他のOBSERVATIONやCLUSTER archetype内でも使用でき、同じCLUSTER.symptom_sign archetypeの別のインスタンスにある「随伴症状・徴候」SLOTや「過去のエピソード」SLOTにも組み込むことができる。",
+  ['description', '-', 'use'] => "本人、親、介護者、その他の関係者から報告された症状や徴候について、単一のエピソードを詳細に記録するために用いる。医療従事者が聴取した内容や自ら観察した内容を病歴として記録する場合にも、本人が問診票や個人健康記録に記入する場合にも使用できる。病歴全体や患者の語りには、複数の異なる症状・徴候だけでなく、同じ症状・徴候に関する複数のエピソードが含まれることがあり、それぞれの記述の詳しさも異なる。\n\n本archetypeは、症状や徴候がある場合に、その内容を詳しく記録するために設計されている。OBSERVATION.storyを用いた病歴聴取の一部として、またはOBSERVATION.symptom_sign_screeningでの「症状・徴候あり」という回答と組み合わせて使用する。\n\n厳密には、症状は心身の変調に関する主観的な観察に基づくものであり、徴候は客観的な観察に基づくものである。いずれも本人が経験したこととして、本人または他者から病歴の聴取者に伝えられる。この区別に従えば、病歴の記録には、報告された症状を記録するarchetypeと、報告された徴候を記録するarchetypeの二つが必要になる。しかし、実際には、臨床データをどちらのモデルに入力するかを判断して使い分けなければならず、モデルの設計者とデータの入力者の双方に大きな負担が生じるため、現実的ではない。また、症状と徴候には、明確に区別しにくい臨床概念もある。例えば、過去に起きた嘔吐や出血は、症状と報告された徴候のどちらに分類すべきだろうか。そこで本archetypeは、明らかな症状から報告された徴候まで、両者の境界に位置するものも含めて、一つの情報モデルで記録できるように設計されている。\n\n本archetypeは、あらゆる症状や報告された徴候を記録するための汎用的なモデルとして用いることを想定している。より複雑な症状や徴候を扱う場合には、「詳細記録」SLOTを用いて、それぞれに特有のデータエレメントを追加し、archetypeを拡張できる。 \n\n本archetypeは、OBSERVATION.story archetypeの「構造化された詳細記録」SLOTで使用することを想定して設計されている。他のOBSERVATIONやCLUSTER archetype内でも使用でき、同じCLUSTER.symptom_sign archetypeの別のインスタンスにある「随伴症状・徴候」SLOTや「過去のエピソード」SLOTにも組み込むことができる。",
 
   # Not to be used to record screening questionnaire responses about the presence or absence of specific symptoms - use the OBSERVATION.symptom_sign_screening archetype for this purpose. However, this CLUSTER.symptom_sign archetype may be nested within the 'Screening details' SLOT in the OBSERVATION.symptom_sign_screening archetype if it is necessary to extend the questionnaire by recording details about symptom or sign.
   # 
@@ -73,7 +73,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # For example: pain could be described as constant or intermittent.
-  ['term', 'at0003', 'comment'] => "例：疼痛は持続性または間欠性と記述されうる。",
+  ['term', 'at0003', 'comment'] => "例：疼痛は持続性または間欠性と記述できる。",
 
   # CLUSTER > items/CLUSTER > items/ELEMENT
   # Effect
@@ -89,7 +89,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # Detail about how a specific factor effects the identified symptom or sign during this episode.
-  ['term', 'at0018', 'description'] => "このエピソードにおいて、特定の因子が特定された症状または徴候にどのように影響するかについての詳細。",
+  ['term', 'at0018', 'description'] => "このエピソードにおいて、特定の因子が特定された症状または徴候にどのように影響するかに関する詳細情報。",
 
   # CLUSTER > items/CLUSTER > items/ELEMENT
   # Factor
@@ -183,7 +183,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # For example: frequency/periodicity - per hour, day, week, month, year; and regularity. May include a comparison to this episode.
-  ['term', 'at0057', 'comment'] => "例：頻度／周期性 - 1時間、1日、1週、1か月、1年あたり；および規則性。このエピソードとの比較を含めてもよい。",
+  ['term', 'at0057', 'comment'] => "例：頻度／周期性 - 1時間、1日、1週、1か月、1年あたりといった頻度、周期性および規則性。このエピソードとの比較を含めてもよい。",
 
   # CLUSTER > items/CLUSTER
   # Associated symptom/sign
@@ -195,7 +195,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # In linked clinical systems, it is possible that associated symptoms or signs are already recorded within the EHR. Systems can allow the clinician to LINK to relevant associated symptoms/signs. However in a system or message without LINKs to existing data or with a new patient, additional instances of the symptom archetype could be included here to represent associated symptoms/signs.
-  ['term', 'at0063', 'comment'] => "連携された臨床システムでは、随伴する症状や徴候がすでに EHR 内に記録されていることがある。システムは、臨床医が関連する随伴症状・徴候に LINK できるようにしてよい。しかし、既存データへの LINK を持たないシステムやメッセージ、あるいは新規の患者の場合には、随伴症状・徴候を表すために symptom archetypeの追加のインスタンスをここに含めることができる。",
+  ['term', 'at0063', 'comment'] => "連携している臨床システムでは、随伴する症状や徴候がすでに EHR 内に記録されていることがある。その場合、システムは、医療従事者が関連する随伴症状・徴候への LINK を設定する機能を提供できる。一方、既存データへの LINK がないシステムやメッセージ、あるいは新規患者の場合には、この SLOT に Symptom archetypeのインスタンスを追加して、随伴症状・徴候を記録できる。",
 
   # CLUSTER > items/CLUSTER
   # Previous episodes
@@ -207,7 +207,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # In linked clinical systems, it is possible that previous episodes are already recorded within the EHR. Systems can allow the clinician to LINK to relevant previous episodes. However in a system or message without LINKs to existing data or with a new patient, additional instances of the symptom archetype could be included here to represent previous episodes. It is recommended that new instances of the Symptom archetype inserted in this SLOT represent one or many previous episodes to this Symptom instance only.
-  ['term', 'at0146', 'comment'] => "連携している臨床システムでは、過去のエピソードがすでに EHR 内に記録されていることがある。その場合、システムは、臨床医が関連する過去のエピソードへの LINK を設定する機能を提供できる。一方、既存データへの LINK がないシステムやメッセージ、あるいは新規患者の場合には、この SLOT に Symptom archetypeのインスタンスを追加して、過去のエピソードを記録できる。追加するインスタンスには、この SLOT を含む Symptom インスタンスに関連する過去のエピソードのみを、1つまたは複数記録することを推奨する。",
+  ['term', 'at0146', 'comment'] => "連携している臨床システムでは、過去のエピソードがすでに EHR 内に記録されていることがある。その場合、システムは、医療従事者が関連する過去のエピソードへの LINK を設定する機能を提供できる。一方、既存データへの LINK がないシステムやメッセージ、あるいは新規患者の場合には、この SLOT に Symptom archetypeのインスタンスを追加して、過去のエピソードを記録できる。追加するインスタンスには、この SLOT を含む Symptom インスタンスに関連する過去のエピソードのみを、1つまたは複数記録することを推奨する。",
 
   # CLUSTER > items/CLUSTER
   # Structured body site
@@ -314,7 +314,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Additional narrative about the symptom or sign not captured in other fields.
-  ['term', 'at0163', 'description'] => "他の項目では捉えられない、症状または徴候についての追加の記述。",
+  ['term', 'at0163', 'description'] => "他の項目には収まらない症状または徴候についての追加の記述。",
 
   # CLUSTER > items/ELEMENT
   # Onset timing
@@ -334,7 +334,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # Details about specified factors that are associated with the precipitation of the symptom or sign.
-  ['term', 'at0165', 'description'] => "症状または徴候の誘発に関連する特定の因子についての詳細。",
+  ['term', 'at0165', 'description'] => "症状または徴候の誘発に関連する特定の因子に関する詳細情報。",
 
   # CLUSTER > items/CLUSTER
   # For example: lying down leads to heartburn; or walking up a hill leads to claudication.
@@ -378,7 +378,7 @@ T = {
   ['term', 'at0177', 'text'] => "判定不能",
 
   # It is not possible to determine if this occurrence of the symptom or sign is new or ongoing.
-  ['term', 'at0177', 'description'] => "この症状または徴候の今回の発生が新規か継続中かを判定できない。",
+  ['term', 'at0177', 'description'] => "この症状または徴候の今回の発症が新規か継続中かを判定できない。",
 
   # Ongoing
   ['term', 'at0178', 'text'] => "継続中",
@@ -432,23 +432,23 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Occurrence
-  ['term', 'at0186', 'text'] => "発生区分",
+  ['term', 'at0186', 'text'] => "発症区分",
 
   # CLUSTER > items/ELEMENT
   # Type of occurrence for this symptom or sign?
-  ['term', 'at0186', 'description'] => "この症状または徴候の発生の種類。",
+  ['term', 'at0186', 'description'] => "この症状または徴候の発症の種類。",
 
   # First occurrence
   ['term', 'at0187', 'text'] => "初発",
 
   # This is the first ever occurrence of this symptom or sign.
-  ['term', 'at0187', 'description'] => "この症状または徴候の、初めての発生である。",
+  ['term', 'at0187', 'description'] => "この症状または徴候の、初めての発症である。",
 
   # Recurrence
   ['term', 'at0188', 'text'] => "再発",
 
   # New occurrence of the same symptom or sign after a previous episode was resolved.
-  ['term', 'at0188', 'description'] => "以前のエピソードが消失した後の、同じ症状または徴候の新たな発生。",
+  ['term', 'at0188', 'description'] => "以前のエピソードが消失した後の、同じ症状または徴候の新たな発症。",
 
   # CLUSTER > items/ELEMENT
   # Character
@@ -460,15 +460,15 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # For example: pain could be described as 'gnawing', 'burning', or 'like an electric shock'; a headache could be 'throbbing' or 'constant'. Coding with an external terminology is preferred, where possible.
-  ['term', 'at0189', 'comment'] => "例：疼痛は「うずくような」「灼けるような」「電気が走るような」と記述されうる；頭痛は「拍動性」または「持続性」でありうる。可能であれば、外部用語集によりコード化することが望ましい。",
+  ['term', 'at0189', 'comment'] => "例：疼痛は「うずくような」「灼けるような」「電気が走るような」、頭痛は「拍動性」または「持続性」と記述できる。可能であれば、外部用語集によりコード化することが望ましい。",
 
   # CLUSTER > items/CLUSTER
   # Resolving factor
-  ['term', 'at0190', 'text'] => "寛解因子",
+  ['term', 'at0190', 'text'] => "消失因子",
 
   # CLUSTER > items/CLUSTER
   # Details about specified factors that are associated with the resolution of the symptom or sign.
-  ['term', 'at0190', 'description'] => "症状または徴候の消失に関連する特定の因子についての詳細。",
+  ['term', 'at0190', 'description'] => "症状または徴候の消失に関連する特定の因子に関する詳細情報。",
 
   # CLUSTER > items/CLUSTER
   # For example: upright posture stops heartburn; or resting stops claudication.
@@ -546,12 +546,7 @@ T = {
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['term', 'at0164', 'text'] => "校正（2026-09-12）で確定: 「発症時期」（指示の候補。他候補: 発症のタイミング）",
   ['term', 'at0165', 'text'] => "校正（2026-09-12）で確定: Precipitating factor＝「誘発因子」",
-  ['term', 'at0182', 'text'] => "校正（2026-09-12）で確定: Unchanged＝「不変」（qualifier の Stable＝安定 とは別語）",
-  ['term', 'at0189', 'text'] => "校正（2026-09-12）で確定: 「性状」（指示の候補）",
-  ['term', 'at0190', 'text'] => "校正（2026-09-12）で確定: Resolving factor＝「寛解因子」を採用（OPQRST の増悪・寛解因子の慣用。他候補: 解消因子、治癒因子）。description では resolution＝消失",
-  ['term', 'at0198', 'text'] => "校正（2026-09-12）で確定: 「重症度評価」を採用（他候補: 重症度スコア、重症度スケール）",
 }.freeze
 
 src, dst = ARGV

@@ -5,7 +5,7 @@
 
 T = {
   # To record details about a person as they are known or understood in the course of clinical documentation.
-  ['description', '-', 'purpose'] => "臨床記録の作成に際して取得した、その人に関する詳細情報を記録するため。",
+  ['description', '-', 'purpose'] => "臨床記録の作成に際して取得した、個人に関する詳細情報を記録するため。",
 
   # Use to record details of a person as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index. Examples include:
   # - the copyholder of an advanced care record, using the 'Copyholder' SLOT within the EVALUATION.advance_care_directive archetype;
@@ -17,7 +17,7 @@ T = {
   # In most simple clinical recording use cases, the unstructured 'Name' element within the CLUSTER.person archetype will be sufficient to record the name of a person as part of a health record. However, in circumstances where a structured name is necessary or desirable for clinical recording purposes, nest this archetype within the 'Structured name' SLOT in CLUSTER.person archetype. If the CLUSTER.structured_name archetype is nested within the 'Structured name' SLOT, any or all of the data elements can be combined together as a text string and represented in the 'Name' element, as long as they are consistent.
   # 
   # This archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see a person's details at the top of the assessment form.
-  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、その人に関する詳細情報を記録するために用いる。必要に応じて情報を記録する場合や、正式なデモグラフィック登録簿やインデックスの利用が適切でない、または利用できない場合を主に想定している。以下のような使用例がある。\n- EVALUATION.advance_care_directive archetypeの「写し保有者」SLOTを用いて、事前ケア記録の写しを保有する人の情報を記録する。\n- CLUSTER.organisation archetypeの「連絡担当者」SLOTを用いて、組織内の特定の連絡担当者の役割と連絡先を記録する。\n- openEHR-EHR-EVALUATION.family_history archetypeの「家族構成員の詳細」SLOTを用いて、家族歴に登場する親族の詳細情報を記録する。 \n- CLUSTER.specimen archetypeの「検体採取者の詳細」を用いて、患者から検査用の検体を採取した人の氏名を記録する。\n- CLUSTER.health_event archetypeの「目撃者」SLOTを用いて、転倒や事故の目撃者の情報を記録する。\n\n臨床記録に人の氏名を記録するだけであれば、多くの場合、CLUSTER.person archetypeの非構造化の「氏名」要素で十分である。ただし、臨床記録の目的上、氏名を構造化して記録することが必要または望ましい場合は、CLUSTER.person archetypeの「構造化された氏名」SLOTにCLUSTER.structured_name archetypeを組み込む。この場合、各データエレメントの一部またはすべてを一つの文字列にまとめ、「氏名」要素に表示することもできる。ただし、構造化された氏名と「氏名」要素の内容が整合している必要がある。\n\n本archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィックデータの代用として使用することもできる。例えば、評価票の冒頭にその人の詳細情報が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。",
+  ['description', '-', 'use'] => "臨床記録の作成に際して取得した、個人に関する詳細情報を記録するために用いる。正式な登録簿や公式の一覧によらずに知り得た情報をその場で記録する場合や、正式な登録簿や一覧の利用が適切でない、または利用できない場合を主に想定している。以下のような使用例がある。\n- EVALUATION.advance_care_directive archetypeの「写し保有者」SLOTを用いて、事前ケア記録の写しを保有する人の情報を記録する。\n- CLUSTER.organisation archetypeの「連絡担当者」SLOTを用いて、組織内の特定の連絡担当者の役割と連絡先を記録する。\n- openEHR-EHR-EVALUATION.family_history archetypeの「家族構成員の詳細」SLOTを用いて、家族歴に登場する親族の詳細情報を記録する。 \n- CLUSTER.specimen archetypeの「検体採取者の詳細」を用いて、患者から検査用の検体を採取した人の氏名を記録する。\n- CLUSTER.health_event archetypeの「目撃者」SLOTを用いて、転倒や事故の目撃者の情報を記録する。\n\n臨床記録に人の氏名を記録するだけであれば、多くの場合、CLUSTER.person archetypeの非構造化の「氏名」要素で十分である。ただし、臨床記録の目的上、氏名を構造化して記録することが必要または望ましい場合は、CLUSTER.person archetypeの「構造化された人名」SLOTにCLUSTER.structured_name archetypeを組み込む。この場合、各データエレメントの一部またはすべてを一つの文字列にまとめ、「氏名」要素に表示することもできる。ただし、構造化された人名と「氏名」要素の内容が整合している必要がある。\n\n本archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィックデータの代用として使用することもできる。例えば、評価票の冒頭に個人の詳細情報が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。",
 
   # Not to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.
   # 
@@ -26,7 +26,7 @@ T = {
   # Not to be used to record the date of birth of an individual - use the 'Date of birth' data element within the EVALUATION.birth_summary for this purpose
   # 
   # Not to be used to record biometric detail or biomarkers about an individual - use a specific ENTRY archetype for this purpose.
-  ['description', '-', 'misuse'] => "正式な個人識別情報の管理やその代替、または公式のデモグラフィック登録簿やインデックスの維持・管理に用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\nケア対象者、ケアへの参加者、記録の作成者など、参照モデルの属性を用いて健康記録に正式に記録すべき情報を、本archetypeで記録してはならない。\n\n個人の生年月日の記録に用いてはならない。生年月日の記録には、EVALUATION.birth_summaryの「生年月日」データエレメントを用いること。\n\n個人の生体情報やバイオマーカーの記録に用いてはならない。これらの記録には、それぞれの情報に対応したENTRY archetypeを用いること。",
+  ['description', '-', 'misuse'] => "正式な個人識別情報の管理やその代替、または公式の登録簿や一覧の維持・管理に用いてはならない。これらの目的には、正式な患者マスターインデックス（MPI）や「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。\n\nケア対象者、ケアへの参加者、記録の作成者など、参照モデルの属性を用いて健康記録に正式に記録すべき情報を、本archetypeで記録してはならない。\n\n個人の生年月日の記録に用いてはならない。生年月日の記録には、EVALUATION.birth_summaryの「生年月日」データエレメントを用いること。\n\n個人の生体情報やバイオマーカーの記録に用いてはならない。これらの記録には、それぞれの情報に対応したENTRY archetypeを用いること。",
 
   # provider, carer, staff, healthcare professional, relative, next-of-kin, practitioner, witness, friend, neighbour, child, family, sibling, parent, individual
   ['description', '-', 'keywords'] => "医療提供者 | 介護者 | 職員 | 医療従事者 | 親族 | 近親者 | 医師 | 目撃者 | 友人 | 隣人 | 子 | 家族 | きょうだい | 同胞 | 親 | 個人 | 人 | 氏名 | 連絡先",
@@ -56,7 +56,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # Structured name
-  ['term', 'at0002', 'text'] => "構造化された氏名",
+  ['term', 'at0002', 'text'] => "構造化された人名",
 
   # CLUSTER > items/CLUSTER
   # Alternative representation of an individual's complete name by separation into discrete, structured components.
@@ -64,7 +64,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # Any or all of the structured name elements can be combined together as a text string and represented in the 'Name' data element in this archetype.
-  ['term', 'at0002', 'comment'] => "構造化された氏名の要素の一部またはすべてを一つの文字列にまとめ、本archetypeの「氏名」データエレメントに記録することができる。",
+  ['term', 'at0002', 'comment'] => "構造化された人名の要素の一部またはすべてを一つの文字列にまとめ、本archetypeの「氏名」データエレメントに記録することができる。",
 
   # CLUSTER > items/ELEMENT
   # Identifier
@@ -72,7 +72,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Identifier associated with the individual.
-  ['term', 'at0003', 'description'] => "その人に関連付けられた識別子。",
+  ['term', 'at0003', 'description'] => "個人に関連付けられた識別子。",
 
   # CLUSTER > items/ELEMENT
   # Occurrences for this data element is set to 0..* to allow for more than one Identifier to be recorded. Note that the DV_IDENTIFIER data type contains multiple subcomponents for recording the ID value, type, issuer and assigned. For example - social security number; driver's license; or passport number.
@@ -84,7 +84,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # The relationship or role of the individual to the subject of the health record.
-  ['term', 'at0004', 'description'] => "健康記録の対象者に対するその人の関係または役割。",
+  ['term', 'at0004', 'description'] => "健康記録の対象者に対する個人の関係または役割。",
 
   # CLUSTER > items/ELEMENT
   # For example - the copyholder of an advance care record; contact person in an organisation; relative in a family history entry; specimen collector; or witness to a fall or accident. If the individual being described using this archetype is the subject of the health record, then this data element is redundant.
@@ -148,7 +148,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # A label for the individual.
-  ['term', 'at0011', 'description'] => "その人を識別するための説明。",
+  ['term', 'at0011', 'description'] => "個人を識別するための説明。",
 
   # CLUSTER > items/ELEMENT
   # For example: 'Neighbour in the house with the red door'.
