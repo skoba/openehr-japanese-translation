@@ -74,9 +74,9 @@
 | annual medical check-up | 年1回の健康診断 | |
 | coding with a terminology is desirable | 用語集によりコード化することが望ましい | comment の定型句 |
 | in templates | テンプレートでは | |
-| referral details | 紹介状の詳細 | SECTION 名 |
+| referral details | 紹介状の詳細情報 | SECTION 名。校正 2026-09-20 で「紹介状の詳細」→「紹介状の詳細情報」 |
 | referral request (slot) | 紹介依頼 | INSTRUCTION.service_request スロット名 |
-| Details (slot) | 詳細 | 臨床情報スロット |
+| Details (slot) | 詳細情報 | 臨床情報スロット（referral_details at0002）。校正 2026-09-20 で「詳細」→「詳細情報」。story.v1 の Detail スロットは別 |
 | example framework for modelling ... within a template | テンプレート内で〜をモデル化するための枠組みの例 | SECTION 系の定型句 |
 | nested within | 〜の中に入れ子にして | |
 | clinician | 医療従事者 | 医師に限らず看護師など臨床職全般を指すため「臨床医」「臨床家」は使わない（2026-09-20 決定。story / symptom_sign / problem_diagnosis / problem_qualifier / reason_for_encounter の 13 か所を置換）。healthcare provider と同じ語になるが、原文でもほぼ同義 |
@@ -288,7 +288,7 @@
 |---|---|---|
 | openEHR-EHR-COMPOSITION.request.v1 | 診療依頼書 | 校正済み（2026-09-20）。候補：依頼書／サービス依頼。国内の「診療情報提供書」とは区別 |
 | openEHR-EHR-EVALUATION.reason_for_encounter.v1 | 受診理由 | 校正済み（2026-09-20）。at0002 受診区分、at0004 受診時のプロブレム（主訴を同義語として明記） |
-| openEHR-EHR-SECTION.referral_details.v0 | 紹介状の詳細 | 校正済み（2026-09-20）。at0001 紹介依頼、at0002 詳細 |
+| openEHR-EHR-SECTION.referral_details.v0 | 紹介状の詳細情報 | 校正済み（2026-09-20）。at0001 紹介依頼、at0002 詳細情報 |
 | openEHR-EHR-INSTRUCTION.service_request.v1 (1.1.2) | サービス依頼 | 校正済み（2026-09-20）。緊急度の値：緊急／至急／通常 |
 | openEHR-EHR-EVALUATION.problem_diagnosis.v1 (1.7.4) | プロブレム・診断 | 校正済み（2026-09-10、再レビュー分 2026-09-20 確認）。重症度 軽症／中等症／重症、診断確度 疑い／推定／確定、at0046 状態 |
 | openEHR-EHR-CLUSTER.problem_qualifier.v2 (2.1.1) | プロブレム・診断の修飾子 | 校正済み（2026-09-20）。EVALUATION.problem_diagnosis の「状態」スロット用。値セットは共通語表の各行を参照 |
