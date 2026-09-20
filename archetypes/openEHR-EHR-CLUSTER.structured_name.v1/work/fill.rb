@@ -98,12 +98,7 @@ T = {
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['description', '-', 'use'] => "要確認: preferred name＝通称、name usage＝氏名の用途、First name／Middle name＝ファーストネーム／ミドルネーム（MML4 middle＝ミドルネーム）",
-  ['description', '-', 'keywords'] => "要確認: 原文 3 語（person, individual, name）に「姓」「名」「構造化された人名」「ふりがな」を追加（CKM 検索用）",
-  ['term', 'at0000', 'text'] => "要確認: 概念名「構造化された人名」を採用（用語集 structured name＝構造化された人名、person＝人。他候補: 構造化氏名（targets.tsv の案）、構造化された人名）",
-  ['term', 'at0001', 'text'] => "要確認: Title＝「敬称」を採用（MML4 人名表現形式 prefix＝肩書き。他候補: 肩書き、称号）。Ms / Mx を含むので「敬称」",
-  ['term', 'at0002', 'text'] => "要確認: Given name＝「名」、Family name＝「姓」（MML4 人名表現形式に合わせた。他候補: 名前／姓名）。comment 末尾にふりがなの扱い（テンプレートで本 CLUSTER をもう1つ占有）を日本向けの例示として追加（localisation-ja.md の翻訳層方針）",
-  ['term', 'at0006', 'text'] => "要確認: Suffix＝「接尾辞」（他候補: サフィックス、接尾語）。MML4 の degree（学位）は Suffix で表す",
+  # ['term', 'at0000', 'text'] => '要確認: ...',
 }.freeze
 
 src, dst = ARGV
