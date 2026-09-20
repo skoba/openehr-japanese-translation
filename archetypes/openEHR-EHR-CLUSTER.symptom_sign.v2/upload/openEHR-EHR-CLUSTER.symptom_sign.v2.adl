@@ -2934,7 +2934,7 @@ Si la ubicació anatòmica està inclosa en el Nom del símptoma mitjançant cod
 				["at0057"] = <
 					text = <"過去のエピソードの説明">
 					description = <"過去のエピソードのいずれかまたはすべてについての叙述的な記述。">
-					comment = <"例：頻度／周期性 - 1時間、1日、1週、1か月、1年あたり；および規則性。このエピソードとの比較を含めてもよい。">
+					comment = <"例：頻度／周期性 - 1時間、1日、1週、1か月、1年あたりといった頻度、周期性および規則性。このエピソードとの比較を含めてもよい。">
 				>
 				["at0063"] = <
 					text = <"随伴症状・徴候">
@@ -3026,7 +3026,7 @@ Si la ubicació anatòmica està inclosa en el Nom del símptoma mitjançant cod
 				>
 				["at0177"] = <
 					text = <"判定不能">
-					description = <"この症状または徴候の今回の発生が新規か継続中かを判定できない。">
+					description = <"この症状または徴候の今回の発症が新規か継続中かを判定できない。">
 				>
 				["at0178"] = <
 					text = <"継続中">
@@ -3058,16 +3058,16 @@ Si la ubicació anatòmica està inclosa en el Nom del símptoma mitjançant cod
 					description = <"因子が特定された症状または徴候に及ぼす影響についての叙述的な記述。">
 				>
 				["at0186"] = <
-					text = <"発生区分">
-					description = <"この症状または徴候の発生の種類。">
+					text = <"発症区分">
+					description = <"この症状または徴候の発症の種類。">
 				>
 				["at0187"] = <
 					text = <"初発">
-					description = <"この症状または徴候の、初めての発生である。">
+					description = <"この症状または徴候の、初めての発症である。">
 				>
 				["at0188"] = <
 					text = <"再発">
-					description = <"以前のエピソードが消失した後の、同じ症状または徴候の新たな発生。">
+					description = <"以前のエピソードが消失した後の、同じ症状または徴候の新たな発症。">
 				>
 				["at0189"] = <
 					text = <"性状">
@@ -3075,7 +3075,7 @@ Si la ubicació anatòmica està inclosa en el Nom del símptoma mitjançant cod
 					comment = <"例：疼痛は「うずくような」「灼けるような」「電気が走るような」、頭痛は「拍動性」または「持続性」と記述できる。可能であれば、外部用語集によりコード化することが望ましい。">
 				>
 				["at0190"] = <
-					text = <"寛解因子">
+					text = <"消失因子">
 					description = <"症状または徴候の消失に関連する特定の因子に関する詳細情報。">
 					comment = <"例：直立姿勢で胸やけが止まる；または休息で跛行が止まる。">
 				>

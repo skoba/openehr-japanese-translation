@@ -183,7 +183,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # For example: frequency/periodicity - per hour, day, week, month, year; and regularity. May include a comparison to this episode.
-  ['term', 'at0057', 'comment'] => "例：頻度／周期性 - 1時間、1日、1週、1か月、1年あたり；および規則性。このエピソードとの比較を含めてもよい。",
+  ['term', 'at0057', 'comment'] => "例：頻度／周期性 - 1時間、1日、1週、1か月、1年あたりといった頻度、周期性および規則性。このエピソードとの比較を含めてもよい。",
 
   # CLUSTER > items/CLUSTER
   # Associated symptom/sign
@@ -378,7 +378,7 @@ T = {
   ['term', 'at0177', 'text'] => "判定不能",
 
   # It is not possible to determine if this occurrence of the symptom or sign is new or ongoing.
-  ['term', 'at0177', 'description'] => "この症状または徴候の今回の発生が新規か継続中かを判定できない。",
+  ['term', 'at0177', 'description'] => "この症状または徴候の今回の発症が新規か継続中かを判定できない。",
 
   # Ongoing
   ['term', 'at0178', 'text'] => "継続中",
@@ -432,23 +432,23 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Occurrence
-  ['term', 'at0186', 'text'] => "発生区分",
+  ['term', 'at0186', 'text'] => "発症区分",
 
   # CLUSTER > items/ELEMENT
   # Type of occurrence for this symptom or sign?
-  ['term', 'at0186', 'description'] => "この症状または徴候の発生の種類。",
+  ['term', 'at0186', 'description'] => "この症状または徴候の発症の種類。",
 
   # First occurrence
   ['term', 'at0187', 'text'] => "初発",
 
   # This is the first ever occurrence of this symptom or sign.
-  ['term', 'at0187', 'description'] => "この症状または徴候の、初めての発生である。",
+  ['term', 'at0187', 'description'] => "この症状または徴候の、初めての発症である。",
 
   # Recurrence
   ['term', 'at0188', 'text'] => "再発",
 
   # New occurrence of the same symptom or sign after a previous episode was resolved.
-  ['term', 'at0188', 'description'] => "以前のエピソードが消失した後の、同じ症状または徴候の新たな発生。",
+  ['term', 'at0188', 'description'] => "以前のエピソードが消失した後の、同じ症状または徴候の新たな発症。",
 
   # CLUSTER > items/ELEMENT
   # Character
@@ -464,7 +464,7 @@ T = {
 
   # CLUSTER > items/CLUSTER
   # Resolving factor
-  ['term', 'at0190', 'text'] => "寛解因子",
+  ['term', 'at0190', 'text'] => "消失因子",
 
   # CLUSTER > items/CLUSTER
   # Details about specified factors that are associated with the resolution of the symptom or sign.
@@ -546,12 +546,7 @@ T = {
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['term', 'at0164', 'text'] => "校正（2026-09-12）で確定: 「発症時期」（指示の候補。他候補: 発症のタイミング）",
   ['term', 'at0165', 'text'] => "校正（2026-09-12）で確定: Precipitating factor＝「誘発因子」",
-  ['term', 'at0182', 'text'] => "校正（2026-09-12）で確定: Unchanged＝「不変」（qualifier の Stable＝安定 とは別語）",
-  ['term', 'at0189', 'text'] => "校正（2026-09-12）で確定: 「性状」（指示の候補）",
-  ['term', 'at0190', 'text'] => "校正（2026-09-12）で確定: Resolving factor＝「寛解因子」を採用（OPQRST の増悪・寛解因子の慣用。他候補: 解消因子、治癒因子）。description では resolution＝消失",
-  ['term', 'at0198', 'text'] => "校正（2026-09-12）で確定: 「重症度評価」を採用（他候補: 重症度スコア、重症度スケール）",
 }.freeze
 
 src, dst = ARGV
