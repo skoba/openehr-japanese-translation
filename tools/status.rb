@@ -4,7 +4,7 @@
 # status.rb - maintain status.tsv, the per-archetype workflow state.
 #
 #   ruby tools/status.rb list
-#   ruby tools/status.rb set ARCHETYPE_ID STATE [CKM_URL]
+#   ruby tools/status.rb set ARCHETYPE_ID STATE [CKM_URL]   (CKM_URL defaults to the manifest cid when STATE=uploaded)
 #
 # status.tsv (repository root) columns: archetype_id, state, revision, ckm_url, updated
 # states, in order:  todo -> in_progress -> review -> uploaded -> accepted
@@ -42,6 +42,16 @@ def revision_of(id)
   File.read(path, encoding: 'bom|utf-8')[/\["revision"\]\s*=\s*<"([^"]*)">/, 1].to_s
 end
 
+MANIFEST = File.expand_path('../sprint/adl/manifest.tsv', __dir__)
+
+# CKM permalink from the citeable identifier recorded by scripts/fetch_ckm.sh
+def manifest_url(id)
+  return nil unless File.exist?(MANIFEST)
+
+  row = File.readlines(MANIFEST, chomp: true).map { |l| l.split("\t") }.reverse.find { |c| c[0] == id }
+  row && !row[1].to_s.empty? ? "https://ckm.openehr.org/ckm/archetypes/#{row[1]}" : nil
+end
+
 def list(rows)
   w = [rows.map { |r| r['archetype_id'].size }.max.to_i, 12].max
   rows.each do |r|
@@ -75,6 +85,7 @@ def set(rows, id, state, url)
     row['state'] = state
     changed = true
   end
+  url = manifest_url(id) if (url.nil? || url.empty?) && state == 'uploaded' && row['ckm_url'].to_s.empty?
   if url && !url.empty? && row['ckm_url'] != url
     row['ckm_url'] = url
     changed = true

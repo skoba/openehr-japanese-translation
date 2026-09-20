@@ -6,7 +6,7 @@
 2. エージェント（Claude Code / Codex）または人が Issue を取り、`translate/<id>` ブランチで `make new` → `work/fill.rb` を埋める → `make build`（`status.tsv` は `in_progress` → `review` に自動で進む）。
 3. PR を出す。本文には「要確認」行と用語集差分を転記する。CI（`.github/workflows/check.yml`）が全 `archetypes/*/upload/*.adl` を検証する。
 4. 小林先生がレビューする。訳語を一つ二つ指すだけならレビューコメントで指示し、エージェントが `work/fill.rb` を直して再 build。まとめて手直しするときは `work/<id>.ja.tsv` の `target` 列を直接編集して `make import ID=<id>`（fill.rb 再生成 → build）し、そのままコミットする（`CLAUDE.md`「校正の手順」）。
-5. マージ後、`archetypes/<id>/upload/<id>.adl` をそのファイル名のまま CKM の翻訳アップロードから登録し（CKM は元と同じファイル名でないと認識しない）、`make set-status ID=<id> STATE=uploaded CKM_URL=<CKM の URL>` で `status.tsv` に記録して Issue をクローズ。審査が完了したら `STATE=accepted`。`uploaded` / `accepted` を付けるのは人間だけ。
+5. マージ後、`make uploads` で未アップロード（`review`）の `upload/<id>.adl` を `uploads/` に集め（git 管理外）、そのファイル名のまま CKM の翻訳アップロードから連続して登録し（CKM は元と同じファイル名でないと認識しない。翻訳アップロードは Web UI のみで REST API には無い）、`make set-status ID=<id> STATE=uploaded` で `status.tsv` に記録して Issue をクローズ（CKM_URL は manifest の cid から自動で補われる。別 URL なら `CKM_URL=` で指定）。審査が完了したら `STATE=accepted`。`uploaded` / `accepted` を付けるのは人間だけ。
 6. CKM 上で微修正した場合は、CKM からダウンロードした ADL（審査完了後）または翻訳画面のテキストを使って `archetypes/<id>/work/ckm-reviewed.adl` に置き、`tools/adl_i18n.rb diff archetypes/<id>/work/<id>.ja.tsv archetypes/<id>/work/ckm-reviewed.adl` を取って、差分を `work/fill.rb` と用語集に反映する（手順は `CLAUDE.md`「レビュー反映の手順」）。
 
 ## CKM 審査後の手順（セッション開始時の確認）
