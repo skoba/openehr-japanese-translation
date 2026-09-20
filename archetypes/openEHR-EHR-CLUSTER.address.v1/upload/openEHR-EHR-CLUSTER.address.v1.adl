@@ -1534,7 +1534,7 @@ Bijvoorbeeld: 'Katendrecht', 'Rotterdam', 'Sliedrecht'.">
 				["at0021"] = <
 					text = <"位置情報コード">
 					description = <"正確な地理的位置を表す一意の識別子。">
-					comment = <"ジオコードとも呼ばれる。例：経度、緯度、±高度を連結した GPS 座標；Open Location Code または Plus Code；ユニバーサル横メルカトル（UTM）；および geohash。">
+					comment = <"ジオコードとも呼ばれる。例：経度、緯度、±高度を連結した GPS 座標。Open Location Code または Plus Code。ユニバーサル横メルカトル（UTM）および geohash。">
 				>
 			>
 		>

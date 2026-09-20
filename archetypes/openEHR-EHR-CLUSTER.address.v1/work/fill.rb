@@ -248,21 +248,12 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Also known as a geocode. For example: GPS coordinates concatenating longitude, latitude +/-altitude; Open Location Code or Plus Code; Universal Transverse Mercator (UTM); and geohash.
-  ['term', 'at0021', 'comment'] => "ジオコードとも呼ばれる。例：経度、緯度、±高度を連結した GPS 座標；Open Location Code または Plus Code；ユニバーサル横メルカトル（UTM）；および geohash。",
+  ['term', 'at0021', 'comment'] => "ジオコードとも呼ばれる。例：経度、緯度、±高度を連結した GPS 座標。Open Location Code または Plus Code。ユニバーサル横メルカトル（UTM）および geohash。",
 
 }.freeze
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['description', '-', 'use'] => "要確認: address lookup service＝住所検索サービス、street-level＝街区レベル、landmark＝目印となる場所。misuse の housing or homelessness＝住居やホームレス状態",
-  ['description', '-', 'keywords'] => "要確認: 原文 7 語（住所、郵便、郵送先、自宅、勤務先、所在地、目印）に「事業所」「都道府県」「市区町村」「郵便番号」を追加",
-  ['term', 'at0001', 'text'] => "要確認: Address line＝「住所行」を採用（他候補: 住所（行）、番地以下）。comment 末尾に日本の住所での対応（町域〜部屋番号を 1 行）を例示として追加（localisation-ja.md）",
-  ['term', 'at0002', 'text'] => "要確認: City/Town＝「市区町村」（localisation-ja.md の対応表。MML4 city＝市・区・郡、town＝町・村 とは区切りが違う）。comment に政令指定都市の扱いと JIS X 0402 を追加",
-  ['term', 'at0003', 'text'] => "要確認: District/County＝「地区／郡」（他候補: 郡／地区、郡）。日本では町村の郡のみ該当",
-  ['term', 'at0004', 'text'] => "要確認: State/Territory/Province＝「都道府県／州」を採用（日本の対応物を先に置いた。他候補: 州／準州／県、州・県）。comment に JIS X 0401 を追加",
-  ['term', 'at0005', 'text'] => "「郵便番号」（MML4 zip）。comment に 7 桁の例を追加",
-  ['term', 'at0010', 'text'] => "要確認: Type＝「種別」、値 Physical／Postal／Both＝「物理的所在地／郵送先／両方」（他候補: 所在地／郵送用／両用）",
-  ['term', 'at0014', 'text'] => "要確認: Use＝「用途」、値 Business／Residential／Temporary accommodation＝「事業所／自宅／一時滞在先」（MML4 住所の種類 business＝勤務先、home＝自宅 を参考。他候補: 勤務先／居住地／一時的な宿泊先）",
   ['term', 'at0019', 'text'] => "要確認: Map URL＝「地図 URL」",
   ['term', 'at0020', 'text'] => "要確認: Structured address（スロット）＝「構造化された住所」。comment 末尾に日本の構造化住所 CLUSTER（structured_address_jp、localisation-ja.md）を入れる想定を追加",
   ['term', 'at0021', 'text'] => "要確認: Geolocation code＝「位置情報コード」、geocode＝「ジオコード」（他候補: 地理位置コード、ジオロケーションコード）",

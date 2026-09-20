@@ -220,7 +220,7 @@
 | copyholder / contact person / family member details / specimen collector details / witness (slots) | 写し保有者 / 連絡担当者 / 家族構成員の詳細 / 検体採取者の詳細 / 目撃者 | 未訳 archetype のスロット名の仮訳（要確認。該当 archetype の翻訳時に確定） |
 | MML4 人名表現形式: family / given / middle / fullname / prefix / degree | 姓 / 名 / ミドルネーム / フルネーム / 肩書き（敬称） / 学位 | skoba/mml doc/MML4/name.adoc。structured_name.v1 で使う |
 | MML4 住所表現形式: full / prefecture / city / town / homeNumber / zip / countryCode | 一連住所 / 都道府県 / 市・区・郡 / 町・村 / 番地（丁目・建物名・部屋番号） / 郵便番号 / 国コード | doc/MML4/address.adoc。address.v1 で使う |
-| MML4 住所の種類: current / permanent / mailing / business / office / home / birth | 現住所 / 本籍 / 郵送先 / 勤務先 / 事務所 / 自宅 / 出生地 | MML0002（要確認。address.v1 の値セットと照合） |
+| MML4 住所の種類: current / permanent / mailing / business / office / home / birth | 現住所 / 本籍 / 郵送先 / 勤務先 / 事務所 / 自宅 / 出生地 | MML0002（校正 2026-09-20 で確定。address.v1 の値セットと照合） |
 | MML4 電話番号表現形式: area / city / number / extension / full / country / memo / telEquipType | 市外局番 / 局番 / 加入番号 / 内線番号 / 一連電話番号 / 国番号 / メモ（使用時間帯など） / 装置の種類 | doc/MML4/phone.adoc。electronic_communication.v1 で使う |
 | MML4 施設情報形式 / 診療科情報形式 | 施設（施設名称・施設 ID） / 診療科（診療科名称・診療科 ID） | doc/MML4/facility.adoc, department.adoc。organisation.v1 で使う |
 | MML4 Id 形式: type / checkDigit / checkDigitSchema | ID の種類 / チェックディジット / チェックディジット方式 | doc/MML4/id.adoc |
@@ -230,18 +230,18 @@
 | first name / middle name / preferred name / nickname | ファーストネーム / ミドルネーム / 通称 / ニックネーム | structured_name at0002 comment |
 | name usage | 氏名の用途 | structured_name use / misuse |
 | ISO 22220 | ISO 22220 | 英字のまま |
-| address line | 住所行 | address.v1 at0001。日本では町域〜部屋番号を 1 行（要確認） |
+| address line | 住所行 | address.v1 at0001。日本では町域〜部屋番号を 1 行（校正 2026-09-20 で確定） |
 | city/town | 市区町村 | address.v1 at0002。政令指定都市は市＋区。JIS X 0402（localisation-ja.md） |
-| district/county | 地区／郡 | address.v1 at0003。日本では町村の郡（要確認） |
-| state/territory/province | 都道府県／州 | address.v1 at0004。JIS X 0401（要確認） |
+| district/county | 地区／郡 | address.v1 at0003。日本では町村の郡（校正 2026-09-20 で確定） |
+| state/territory/province | 都道府県／州 | address.v1 at0004。JIS X 0401（校正 2026-09-20 で確定） |
 | postal code / postcode / ZIP code | 郵便番号 / ポストコード / ZIP コード | address.v1 at0005。日本は 7 桁 |
 | country | 国 | ISO 3166-1 alpha-2（日本は JP） |
 | latitude / longitude / altitude | 緯度 / 経度 / 高度 | address.v1 |
-| address type: physical / postal / both | 種別：物理的所在地 / 郵送先 / 両方 | address.v1 at0010（要確認） |
-| address use: business / residential / temporary accommodation | 用途：事業所 / 自宅 / 一時滞在先 | address.v1 at0014。MML4 business＝勤務先、home＝自宅（要確認） |
+| address type: physical / postal / both | 種別：物理的所在地 / 郵送先 / 両方 | address.v1 at0010（校正 2026-09-20 で確定） |
+| address use: business / residential / temporary accommodation | 用途：事業所 / 自宅 / 一時滞在先 | address.v1 at0014。MML4 business＝勤務先、home＝自宅（校正 2026-09-20 で確定） |
 | map URL | 地図 URL | |
 | structured address (slot) | 構造化された住所 | address.v1 at0020。structured_address_jp を入れる想定 |
-| geolocation code / geocode | 位置情報コード / ジオコード | address.v1 at0021（要確認） |
+| geolocation code / geocode | 位置情報コード / ジオコード | address.v1 at0021（校正 2026-09-20 で確定） |
 | address lookup service | 住所検索サービス | |
 | landmark | 目印となる場所 | keywords では「目印」 |
 | street-level | 街区レベル | address.v1 |
@@ -297,7 +297,7 @@
 | openEHR-EHR-CLUSTER.symptom_sign.v2 (2.1.4) | 症状・徴候 | story.v1 のスロット。エピソード区分・発生区分・重症度・進行状況の値は problem_qualifier / problem_diagnosis と同じ |
 | openEHR-EHR-CLUSTER.structured_name.v1 (1.0.3) | 人の構造化された氏名 | at0001 敬称、at0002 名、at0005 姓、at0006 接尾辞。ふりがなは comment の例示（テンプレートで CLUSTER を 2 回占有） |
 | openEHR-EHR-CLUSTER.person.v1 (1.0.5) | 人 | 校正済み（2026-09-19）。at0001 氏名、at0002 構造化された氏名、at0003 識別子、at0004 役割、at0006 電子的な連絡先、at0007 組織、at0008 追加の詳細情報、at0011 ラベル（識別用の説明） |
-| openEHR-EHR-CLUSTER.address.v1 (1.1.3) | 住所 | at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所。日本の対応物は comment の例示 |
+校正済み（2026-09-20）。at0001 住所行、at0002 市区町村、at0003 地区／郡、at0004 都道府県／州、at0005 郵便番号、at0020 構造化された住所。日本の対応物は comment の例示 |
 | openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | 校正済み（2026-09-19）。at0001 種別、at0002 値、at0003 用途、at0006 固定電話、at0013 追加の詳細情報 |
 | openEHR-EHR-CLUSTER.organisation.v1 (1.0.4) | 組織 | 校正済み（2026-09-19）。医療機関に限らず企業・団体・部門・ケアチーム等を含む。at0001 名称、at0002 連絡担当者、at0021 親組織 |
 | openEHR-EHR-CLUSTER.media_file.v1 (1.0.6) | メディアファイル | 校正済み（2026-09-19）。概念名は Issue #11 の訳語案。at0001 コンテンツ、at0002 コンテンツ名、at0004 作成日時、at0011 作成機器、at0012 作成者（at0001 コンテンツ、at0002 コンテンツ名は要確認） |
