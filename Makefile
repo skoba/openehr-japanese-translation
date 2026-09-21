@@ -6,6 +6,7 @@
 # make examples                                       -> regenerate docs/style-examples.md (proofread before/after corpus) from git history
 # make set-status ID=... STATE=uploaded|accepted [CKM_URL=...]   -> humans only (see CLAUDE.md); FORCE=1 allows going backwards. CKM_URL defaults to the manifest cid; refreshes uploads/ if it exists
 # make uploads [ALL=1]                                -> copy upload/<id>.adl of every `review` archetype into uploads/ (gitignored) for back-to-back CKM uploads
+# make bundle                                        -> dist/adl/<id>.adl for every translated archetype + dist/openehr-ja-<date>.zip (gitignored), for Archetype Designer import
 #
 # upload/<id>.adl keeps the original file name on purpose: CKM only recognises a
 # translation upload when its file name matches the archetype it belongs to.
@@ -16,7 +17,7 @@ RUBY   := ruby
 TOOL   := $(RUBY) tools/adl_i18n.rb
 STATUS := $(RUBY) tools/status.rb
 
-.PHONY: new build import check status list set-status examples uploads
+.PHONY: new build import check status list set-status examples uploads bundle
 
 new:
 	@test -n "$(ADL)" || (echo "usage: make new ADL=file.adl"; exit 2)
@@ -64,6 +65,12 @@ uploads:
 	   if [ -f "$$f" ]; then cp "$$f" uploads/ && echo "uploads/$$id.adl  ($$state)"; else echo "skip $$id: no $$f" >&2; fi; \
 	 done; \
 	 echo "$$(ls uploads | wc -l) file(s) in uploads/  (state review only; ALL=1 for every archetype)"
+
+bundle:
+	@rm -rf dist/adl && mkdir -p dist/adl; \
+	 n=0; for f in archetypes/*/upload/*.adl; do cp "$$f" dist/adl/ && n=$$((n+1)); done; \
+	 z=dist/openehr-ja-$$(date +%Y%m%d).zip; rm -f "$$z"; \
+	 (cd dist && zip -q -r "$$(basename $$z)" adl) && echo "$$n archetype(s) -> dist/adl/ and $$z"
 
 examples:
 	@$(RUBY) tools/style_examples.rb > docs/style-examples.md && echo "wrote docs/style-examples.md"

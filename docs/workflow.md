@@ -50,3 +50,7 @@ make new → work/fill.rb → make build を通し、PR を出してください
 
 `inject` の `--author` 等は Makefile の `AUTHOR` / `ORG` / `EMAIL` で指定する（既定：Shinji KOBAYASHI / NPO openEHR Japan / skoba@moss.gr.jp。2026-09-11 に統一。CKM 上の既存 ja 訳 3 本と同じ名義）。
 NPO 名義にする場合は `ORG="NPO openEHR Japan"` を渡す。
+
+## Archetype Designer への取り込み
+
+`make bundle` で翻訳済みの `archetypes/*/upload/*.adl` を `dist/adl/` に集め、`dist/openehr-ja-<日付>.zip` を作る（git 管理外）。Archetype Designer の Import に ZIP をそのまま渡すか、`dist/adl/` の ADL を複数選択して取り込む。status に関係なく、翻訳済みのものをすべて含む。
