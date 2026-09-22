@@ -55,7 +55,7 @@ T = {
 
   # OBSERVATION > data/HISTORY > events/EVENT
   # Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.
-  ['term', 'at0003', 'description'] => "デフォルトではテンプレートや実行時に明示的に定義される特定されない時点あるいは一定の間隔のイベント",
+  ['term', 'at0003', 'description'] => "デフォルトではテンプレートや実行時に明示的に定義されるまで、特定されない時点あるいは一定の間隔のイベント",
 
   # OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT
   # Temperature

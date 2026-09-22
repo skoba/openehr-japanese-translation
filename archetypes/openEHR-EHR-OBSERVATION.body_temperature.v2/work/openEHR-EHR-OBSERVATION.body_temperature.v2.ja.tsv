@@ -11,7 +11,7 @@ openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0001	description	OBSERVATION 
 openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0002	text	OBSERVATION > data/HISTORY	History	History	
 openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0002	description	OBSERVATION > data/HISTORY	@ internal @	@ internal @	
 openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0003	text	OBSERVATION > data/HISTORY > events/EVENT	Any event	任意のイベント	
-openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0003	description	OBSERVATION > data/HISTORY > events/EVENT	Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.	デフォルトではテンプレートや実行時に明示的に定義される特定されない時点あるいは一定の間隔のイベント	
+openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0003	description	OBSERVATION > data/HISTORY > events/EVENT	Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.	デフォルトではテンプレートや実行時に明示的に定義されるまで、特定されない時点あるいは一定の間隔のイベント	
 openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0004	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Temperature	体温	
 openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0004	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	The measured temperature.	測定された体温	
 openEHR-EHR-OBSERVATION.body_temperature.v2	term	at0020	text	OBSERVATION > protocol/ITEM_TREE	Protocol	Protocol	
