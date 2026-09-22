@@ -21,6 +21,7 @@
 | 9 | openEHR-EHR-CLUSTER.address.v1 | 住所 | published | 22 | 郵便番号・都道府県の対応付けを use に注記 |
 | 10 | openEHR-EHR-CLUSTER.electronic_communication.v1 | 電子的な連絡先 | published | 14 | 電話・FAX・メール |
 | 11 | openEHR-EHR-CLUSTER.media_file.v1 | メディアファイル | published | 10 | 添付資料。service_request / person / lab / family_history のスロットにも入る |
+| 38 | openEHR-EHR-CLUSTER.anatomical_location.v1 | 解剖学的部位 | published 1.5.1 | 35 | problem_diagnosis / symptom_sign / adverse_reaction_event / specimen / medication_order などの「構造化された身体部位表現」スロットに入る本体。スプリント B の adverse_reaction_event（#42）の直前に着手（Issue #59、2026-09-21 追加） |
 
 ## B. 「既往歴及び家族歴」欄
 

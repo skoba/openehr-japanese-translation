@@ -36,3 +36,4 @@ diff	34	openEHR-EHR-OBSERVATION.body_temperature.v2	体温（差分翻訳）	pub
 diff	35	openEHR-EHR-OBSERVATION.body_weight.v2	体重（差分翻訳）	published（ja あり）	—	at0001 / at0002 / at0008 / at0015（構造ノード。`*` を外す）
 diff	36	openEHR-EHR-OBSERVATION.blood_pressure.v2	血圧（差分翻訳）	published（ja あり）	—	at0007（構造ノード）
 A	37	openEHR-EHR-CLUSTER.symptom_sign.v2	症状・徴候	published 2.1.4	55	story.v1 のスロット。story の直後に着手。大物（約 14.5k 字）
+A	38	openEHR-EHR-CLUSTER.anatomical_location.v1	解剖学的部位	published 1.5.1	35	problem_diagnosis / symptom_sign / adverse_reaction_event / specimen / medication_order などの「構造化された身体部位表現」スロットに入る本体。スプリント B の adverse_reaction_event（#42）の直前に着手
