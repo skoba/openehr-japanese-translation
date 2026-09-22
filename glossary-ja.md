@@ -281,6 +281,10 @@
 | image / audio / text / video / application / file / multimedia / digital / document / voice | 画像 / 音声 / テキスト / 動画 / アプリケーション / ファイル / マルチメディア / デジタル / 文書 / 録音 | media_file keywords（校正 2026-09-19 で確定。他候補：video＝映像、voice＝声） |
 | radiological image / clinical finding | 放射線画像 / 臨床所見 | media_file use（校正 2026-09-19 で確定。他候補：放射線診断画像 / 診療所見） |
 | burn / wound / video consultation | 熱傷 / 創傷 / ビデオ診察 | media_file use, at0002 comment（校正 2026-09-19 で確定。他候補：やけど / 傷 / オンライン診察） |
+| temple / forehead (temperature site) | こめかみ / 額 | body_temperature.v2 at0060 / at0061（要確認。他候補：側頭部 / 前額部） |
+| confounding factors | 交絡因子 | body_temperature.v2 at0066（要確認。他候補：影響因子）。他の項目には収まらない影響要因 |
+| location of measurement / structured measurement location | 計測部位 / 構造化された計測部位 | body_temperature.v2 at0021（既存訳）/ at0064。既存 ja が「計測」なので合わせる（新規翻訳では「測定」を使うものもある。要確認） |
+| device (measurement) | 機器 | body_temperature.v2 at0059（既存訳）。media_file の Source device＝作成機器 とは別 |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -302,3 +306,4 @@
 | openEHR-EHR-CLUSTER.electronic_communication.v1 (1.0.4) | 電子的な連絡先 | 校正済み（2026-09-19、再レビュー分 2026-09-20 確認）。at0001 種別、at0002 値、at0003 用途、at0006 固定電話、at0013 追加の詳細情報 |
 | openEHR-EHR-CLUSTER.organisation.v1 (1.0.4) | 組織 | 校正済み（2026-09-19、再レビュー分 2026-09-20 確認）。医療機関に限らず企業・団体・部門・ケアチーム等を含む。at0001 名称、at0002 連絡担当者、at0021 親組織 |
 | openEHR-EHR-CLUSTER.media_file.v1 (1.0.6) | メディアファイル | 校正済み（2026-09-19）。概念名は Issue #11 の訳語案。at0001 コンテンツ、at0002 コンテンツ名、at0004 作成日時、at0011 作成機器、at0012 作成者（全ノード確定 2026-09-20） |
+| openEHR-EHR-OBSERVATION.body_temperature.v2 (2.1.10) | 体温 | 差分翻訳（2026-09-20、Issue #46）。CKM 既存 ja の未訳 12 項目（at0021 / at0059 description、at0060 こめかみ、at0061 額、at0064 構造化された計測部位、at0066 交絡因子、at0062 Extension の description / comment）のみ追加。既存訳は変更なし |
