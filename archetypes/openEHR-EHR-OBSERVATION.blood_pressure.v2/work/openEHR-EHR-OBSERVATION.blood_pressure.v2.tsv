@@ -1,0 +1,129 @@
+archetype	section	code	field	context	source	target	note
+openEHR-EHR-OBSERVATION.blood_pressure.v2	description	-	purpose		To record the systemic arterial blood pressure of an individual.	個々人の全身における動脈血圧を記録するためのもの。	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	description	-	use		Use to record all representations of systemic arterial blood pressure measurement, no matter which method or body location is used to record it. \n\nThe archetype is intended to capture blood pressure measurements in all clinical scenarios - for example:\n- self-measurement with a home blood pressure machine; \n- an emergency assessment of systolic using palpation and a sphygmomanometer; \n- measurements taken in clinical consultations or during exercise stress testing; and \n- a series of measurements made by a machine in Intensive Care.   \n\nThere is a rich state model that supports interpretation of measurements through identifying patient position, exercise, confounding factors and angle of a tilt table in research. \n\nNamed events have been limited to average over a 24 hour period, however templates can further constrain the default 'any event' to cater for specific requirements for blood pressure measurements such as recording Blood Pressure against specific points in time, or over a range of intervals (+/- mathematical functions).	測定方法や身体部位を問わず、すべての血圧についての表現を記録するために使用される。このアーキタイプはすべての臨床シナリオを網羅することを目指している。以下に例を挙げる。\n- 家庭用血圧計で自己測定した血圧\n- 緊急時の評価として触診法で血圧計で測定された収縮期圧\n- 臨床上のコンサルテーションや運動負荷テストの間に測定されたもの\n- 集中治療において機械的に計測された一連の血圧などである。\n患者の体位や運動負荷、交絡因子やティルト台の角度など識別することにより、研究にて計測状態の解釈を手助けする豊富なステートモデルもある。\n24時間平均血圧だけが特定のイベントとして名前がつけられているが、テンプレートではデフォルトの「任意のイベント」にさらなる制約を加えることで、特定の時間や間隔を指定したり（数学的機能を追加したり、削除して）、血圧を記録するように、血圧測定に対する特定の要求を行ったイベントを指定することができる。	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	description	-	misuse		Not to be used to record the measurement of arterial blood pressure which is NOT a surrogate for arterial pressure in the systemic circulation eg specific measurement of right pulmonary artery pressure. Use OBSERVATION.intravascular_pressure in this situation.  \n\nNot to be used to record measurements of intravenous pressure. Use the appropriate specialisations of OBSERVATION.intravascular_pressure in this situation.	たとえば、右肺動脈の血圧を特定の計測を行うように全身循環を表す指標としての代わりとならないような動脈血圧の測定には用いない。このような場合には、OBSERVATION.intravascular_pressureを利用すること。\n血管内圧の測定には用いられない。このような場合には、適切に特殊化されたOBSERVATION.intravascular_pressureを利用すること	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	description	-	keywords		observations | measurement | bp | vital signs | mean arterial pressure | pulse pressure | systolic | diastolic | RR | NIBP	観察 | 測定 | 血圧 | バイタルサイン | 平均動脈圧 | 脈圧 | 収縮期 | 拡張期 | RR間隔 | 非観血血圧	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	description	-	copyright		© openEHR Foundation	© openEHR Foundation	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0000	text	OBSERVATION	Blood pressure	血圧	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0000	description	OBSERVATION	The local measurement of arterial blood pressure which is a surrogate for arterial pressure in the systemic circulation.	全身を循環する動脈圧の指標として，局所で測定される血圧。一般的には「血圧」とは上腕で上腕動脈圧を測定したものをさすことが多い。	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0000	comment	OBSERVATION	Most commonly, use of the term 'blood pressure' refers to measurement of brachial artery pressure in the upper arm.	ごく一般的には「血圧」という用語は上腕で計測される上腕動脈の圧を示している。	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0001	text	OBSERVATION > data/HISTORY	History	履歴	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0001	description	OBSERVATION > data/HISTORY	History Structural node.	履歴構造ノード	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0003	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE	blood pressure	血圧	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0003	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE	@ internal @	*@ internal @(en)	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0004	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Systolic	収縮期	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0004	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Peak systemic arterial blood pressure  - measured in systolic or contraction phase of the heart cycle.	全身の動脈血圧での最高値 - 心機図の収縮期で測定される	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0005	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Diastolic	拡張期	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0005	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Minimum systemic arterial blood pressure - measured in the diastolic or relaxation phase of the heart cycle.	全身の動脈血圧での最低値 - 心機図の拡張期で測定される	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0006	text	OBSERVATION > data/HISTORY > events/EVENT	Any event	任意のイベント	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0006	description	OBSERVATION > data/HISTORY > events/EVENT	Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.	デフォルトで、テンプレートや実行時に明示的に定義されていない任意の時点や間隔を示す。	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0007	text	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE	state structure	*state structure(en)	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0007	description	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE	@ internal @	*@ internal @(en)	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0008	text	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	Position	体位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0008	description	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	The position of the individual at the time of measurement.	計測のときの対象者の体位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0011	text	OBSERVATION > protocol/ITEM_TREE	Tree	ツリー	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0011	description	OBSERVATION > protocol/ITEM_TREE	List structure.	リスト構造	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0013	text	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Cuff size	カフサイズ	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0013	description	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	The size of the cuff used for blood pressure measurement.	血圧測定のために使われるカフの大きさ.	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0013	comment	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Perloff D, Grim C, Flack J, Frohlich ED, Hill M, McDonald M, Morgenstern BZ. Human blood pressure determination by sphygmomanometry. Circulation 1993;88;2460-2470. 	Perloff D, Grim C, Flack J, Frohlich ED, Hill M, McDonald M, Morgenstern BZ. Human blood pressure determination by sphygmomanometry. Circulation 1993;88;2460-2470.	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0014	text	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Location of measurement	測定部位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0014	description	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Simple body site where blood pressure was measured.	血圧が測定された一つの身体部位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0015	text		Adult Thigh	成人大腿	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0015	description		A cuff used for an adult thigh.	成人の大腿で血圧を測定するためのカフ。	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0016	text		Large Adult	大柄な成人	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0016	description		A cuff for adults with larger arms.	大柄な成人の腕で測定するためのカフ。	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0017	text		Adult	成人	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0017	description		A cuff that is standard for an adult.	一般成人のためのカフ	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0025	text		Right arm	右腕	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0025	description		The right arm of the person.	測定対象者の右腕	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0026	text		Left arm	左腕	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0026	description		The left arm of the person.	測定対象者の左腕	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0027	text		Right thigh	右大腿	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0027	description		The right thigh of the person.	測定対象者の右大腿	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0028	text		Left thigh	左大腿	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0028	description		The left thigh of the person.	測定対象者の左大腿	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0033	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Comment	コメント	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at0033	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Additional narrative about the measurement, not captured in other fields.	この計測について他に項目に該当しない追加記録	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1000	text		Standing	立位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1000	description		Standing at the time of blood pressure measurement.	血圧測定時に立位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1001	text		Sitting	座位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1001	description		Sitting (for example on bed or chair) at the time of blood pressure measurement.	血圧測定時に（たとえば、ベッドやイスの上で）坐位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1002	text		Reclining	斜位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1002	description		Reclining at the time of blood pressure measurement.	血圧測定時に斜位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1003	text		Lying	臥位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1003	description		Lying flat at the time of blood pressure measurement.	血圧測定時に臥位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1005	text	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	Tilt	ティルト	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1005	description	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	The craniocaudal tilt of the surface on which the person is lying at the time of measurement.	測定時に対象者が臥床している台の頭尾方向の傾き	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1006	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Mean arterial pressure	平均動脈圧	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1006	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	The average arterial pressure that occurs over the entire course of the heart contraction and relaxation cycle.	心臓の収縮拡張サイクルのすべての過程を通した動脈血圧の平均値.	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1007	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Pulse pressure	脈圧	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1007	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	The difference between the systolic and diastolic pressure.	1回の収縮サイクルでの血圧の変動	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1008	text		Small Adult	小柄な成人	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1008	description		A cuff used for a small adult.	小柄な成人のためのカフ	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1009	text		Paediatric/Child	幼児/小児	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1009	description		A cuff that is appropriate for a child or adult with a thin arm.	小児あるいは痩せた成人のためのカフ	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1010	text	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Diastolic endpoint	拡張期終末	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1010	description	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Record which Korotkoff sound is used for determining diastolic pressure using auscultative method.	拡張期圧を決めるためにどのコロトコフ音が使用されたかについて記録.	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1011	text		Phase IV	4期	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1011	description		The fourth Korotkoff sound is identified as an abrupt muffling of sounds.	コロトコフの4音。急速に減弱する時期.	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1012	text		Phase V	5期	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1012	description		The fifth Korotkoff sound is identified by absence of sounds as the cuff pressure drops below the diastolic blood pressure.	コロトコフの5音が聴取される時期。カフ圧が拡張期圧を下回り音が聴取されなくなる時期	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1014	text		Lying with tilt to left	左側臥位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1014	description		Lying flat with some lateral tilt, usually angled towards the left side.   Commonly required in the last trimester of pregnancy to relieve aortocaval compression.	通常は頭から足までを水平にしてから左側に傾けられた状態。一般的には妊娠の第3トリメスターで大動脈・静脈を圧排から解放するために求められる体位である。	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1018	text		Infant	幼児	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1018	description		A cuff used for infants.	幼児のために使われるカフ	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1019	text		Neonatal	新生児	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1019	description		A cuff used for a neonate, assuming cuff is the appropriate size for maturity and birthweight of the neonate.	新生児用のカフ 想定されるカフは新生児の生下時体重と成熟度に応じて適切なものであること.	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1020	text		Right wrist	右手首	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1020	description		The right wrist of the individual.	測定対象者の右手首	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1021	text		Left wrist	左手首	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1021	description		The left wrist of the individual.	測定対象者の左手首	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1025	text	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	Device	測定機器	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1025	description	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	Details about sphygmomanometer or other device used to measure the blood pressure.	水銀血圧計あるいはそのほかの血圧を測定するために使われる機器.	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1026	text		Right ankle	右足首	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1026	description		The right ankle of the individual.	測定対象者の右足首	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1030	text	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/CLUSTER	Exertion	労作	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1030	description	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/CLUSTER	Details about physical activity undertaken at the time of blood pressure measurement.	血圧測定時に行われた肉体的運動についての詳細。	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1031	text		Left ankle	左足首	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1031	description		The left ankle of the individual.	測定対象者の左足首	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1032	text		Finger	手指	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1032	description		A finger of the individual.	測定対象者の手指	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1035	text	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Method	方法	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1035	description	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Method of measurement of blood pressure.	血圧の測方法。	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1036	text		Auscultation	聴診	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1036	description		Method of measuring blood pressure externally, using a stethoscope and Korotkoff sounds.	聴診器を使いコロトコフ音で外部から血圧を測定する方法.	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1037	text		Palpation	触診	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1037	description		Method of measuring blood pressure externally, using palpation (usually of the brachial or radial arteries).	脈拍(通常は上腕動脈あるいは橈骨動脈）を触診することにより外部から血圧を測定する方法	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1038	text	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Mean arterial pressure formula	平均動脈圧の計算式	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1038	description	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Formula used to calculate the Mean Arterial Pressure (if recorded in data).	平均動脈圧を計算するために使われた式（もしデータに記録されていれば）	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1039	text		Machine	機械	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1039	description		Method of measuring blood pressure externally, using a blood pressure machine.	血圧測定器を使って外部から血圧を測定する方法.	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1040	text		Invasive	侵襲的	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1040	description		Method of measuring blood pressure internally ie involving penetration of the skin and measuring inside blood vessels.	経皮的に動脈を穿刺し，血管内部から血圧を測定する方法.	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1042	text	OBSERVATION > data/HISTORY > events/INTERVAL_EVENT	24 hour average	24時間平均	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1042	description	OBSERVATION > data/HISTORY > events/INTERVAL_EVENT	Estimate of the average blood pressure over a 24 hour period.	24時間での推定平均血圧	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1043	text	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	Sleep status	睡眠状況	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1043	description	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	Sleep status - supports interpretation of 24 hour ambulatory blood pressure records.	睡眠状況 24時間外来血圧記録の解釈を助けるため	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1044	text		Awake	覚醒	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1044	description		The individual is fully conscious.	対象の意識は清明である。	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1045	text		Sleeping	睡眠中	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1045	description		The individual is in the natural state of bodily rest.	対象は自然な入眠状態にある	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1051	text		Toe	足尖	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1051	description		A toe of the individual.	対象者の足尖部	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1052	text	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	Confounding factors	交絡因子	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1052	description	OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT	Comment on and record other incidental factors that may be contributing to the blood pressure measurement.  For example, level of anxiety or 'white coat syndrome'; pain or fever; changes in atmospheric pressure etc.	血圧測定に寄与しうるその他の偶発的な要素についてのコメント。たとえば、不安の程度や「白衣性高血圧」、痛みや発熱、大気圧の変化など。	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1053	text		Intra-arterial	動脈内	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1053	description		Invasive measurement via transducer access line within an artery.	動脈内に観血的方法で留置したトランスデューサからAラインを経由して測定	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1054	text	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Systolic pressure formula	収縮期圧計算式	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1054	description	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Formula used to calculate the systolic pressure from from mean arterial pressure (if recorded in data).	（もしデータが記録されていれば）平均動脈圧から収縮期血圧を計算した式	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1055	text	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Diastolic pressure formula	拡張期圧計算式	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1055	description	OBSERVATION > protocol/ITEM_TREE > items/ELEMENT	Formula used to calculate the diastolic pressure from mean arterial pressure (if recorded in data).	平均動脈圧から拡張期血圧を計算するために使われた式（もしデータに記録されていれば）	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1056	text		Dorsum of foot	足背	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1056	description		The individual's dorsum of the foot.	対象者の足背	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1057	text	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	Structured measurement location	構造化された測定部位	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1057	description	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	Structured anatomical location of where the measurement was taken.	測定が行われた部位の解剖学的位置について構造化された表現	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1058	text	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	Extension	拡張領域	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1058	description	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	Additional information required to capture local context or to align with other reference models/formalisms.	測定時の背景を収集したり、その他の参照モデルや形式と連携するために必要となる追加情報	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1058	comment	OBSERVATION > protocol/ITEM_TREE > items/CLUSTER	For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.	例：FHIRやCIMIなどと連携するために病院内で独自に追加して利用されるメターデータ。	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1059	text	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Clinical interpretation	臨床的解釈	
+openEHR-EHR-OBSERVATION.blood_pressure.v2	term	at1059	description	OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT	Single word, phrase or brief description that represents the clinical meaning and significance of the blood pressure measurement.	血圧測定の臨床的意義や重要性についての一言あるいは一文の簡潔な表現。	
