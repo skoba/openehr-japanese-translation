@@ -1,6 +1,7 @@
 archetype_id	cid	status	revision	asset_version	fetched_at
 openEHR-EHR-CLUSTER.address.v1	1013.1.273	PUBLISHED	1.1.3	31	2026-09-09T12:07Z
 openEHR-EHR-CLUSTER.adverse_reaction_event.v1	1013.1.5795	PUBLISHED	1.0.2	12	2026-09-20T06:14Z
+openEHR-EHR-CLUSTER.anatomical_location.v1	1013.1.587	PUBLISHED	1.5.1	37	2026-09-22T02:54Z
 openEHR-EHR-CLUSTER.dosage.v2	1013.1.5948	PUBLISHED	2.0.3	4	2026-09-09T12:08Z
 openEHR-EHR-CLUSTER.electronic_communication.v1	1013.1.5356	PUBLISHED	1.0.4	12	2026-09-09T12:07Z
 openEHR-EHR-CLUSTER.laboratory_test_analyte.v1	1013.1.2881	PUBLISHED	1.2.3	29	2026-09-09T12:08Z

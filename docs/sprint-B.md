@@ -11,8 +11,9 @@
 | 3 | #48 | openEHR-EHR-OBSERVATION.blood_pressure.v2 | published 2.0.16（ja あり） | 差分 | at0007（構造ノード） |
 | 4 | #44 | openEHR-EHR-EVALUATION.social_summary.v1 | published 1.1.1 | 7 | 小さい。B 群の用語の肩慣らし |
 | 5 | #41 | openEHR-EHR-EVALUATION.adverse_reaction_risk.v2 | published 2.0.2 | 30 | 大物（約 160 KB）。必ず 1 本で PR。JP-CLINS AllergyIntolerance 対応 |
-| 6 | #42 | openEHR-EHR-CLUSTER.adverse_reaction_event.v1 | published 1.0.2 | 26 | #41 のスロット。#41 の用語を引き継ぐ |
-| 7 | #45 | openEHR-EHR-EVALUATION.infectious_disease_summary.v0 | DRAFT 0.0.1-alpha（en のみ） | 14 | v0 で改版リスク。翻訳は行うが CKM へ上げるかは別途判断 |
+| 6 | #59 | openEHR-EHR-CLUSTER.anatomical_location.v1 | published 1.5.1 | 35 | problem_diagnosis / symptom_sign の「構造化された身体部位表現」スロットの本体。#42 のスロットでもあるので #42 の前に |
+| 7 | #42 | openEHR-EHR-CLUSTER.adverse_reaction_event.v1 | published 1.0.2 | 26 | #41 のスロット。#41 の用語を引き継ぐ |
+| 8 | #45 | openEHR-EHR-EVALUATION.infectious_disease_summary.v0 | DRAFT 0.0.1-alpha（en のみ） | 14 | v0 で改版リスク。翻訳は行うが CKM へ上げるかは別途判断 |
 | 保留 | #43 | openEHR-EHR-EVALUATION.family_history.v2 | REASSESS_DRAFT 2.0.5-alpha（審査中） | 41 | alpha 版への翻訳の扱いについて CKM（Discourse）の回答が出るまで着手しない（decisions-ja.md） |
 
 差分翻訳 3 本を先頭に置く理由: 小さく、`inject --merge`（既存 `["ja"]` を保持して未訳だけ足す）の実運用を最初に確認できるため。
@@ -49,6 +50,7 @@ targets.md の「用語の事前決定が要るもの」のうち B 群に関わ
 | family history / family member / relative | family member details＝家族構成員の詳細（person.v1 で確定） | 家族歴 / 家族構成員 / 親族（person.v1 use で「親族」を使用） |
 | social summary / social history / lifestyle | 未登録 | 社会歴要約（targets 案「社会歴要約（生活歴）」） / 社会歴 / 生活習慣 |
 | infectious disease summary（概念名） | 未登録 | 感染症要約 |
+| Laterality / Aspect / Anatomical Line（anatomical_location.v1） | 未登録 | 側性 / 方向 / 解剖学的基準線（要確認。他候補：左右 / 面 / 基準線）。方向用語（近位・遠位・上方・下方…）と体表の基準線は日本解剖学会『解剖学用語』の訳に合わせる。media_file の aspect＝観察方向とは別語 |
 
 ## 状態
 

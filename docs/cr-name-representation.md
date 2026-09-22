@@ -1,8 +1,8 @@
-<!-- 状態：草案（未投稿）。投稿先・Phonetic の扱いは投稿前に判断。日本語の背景は docs/localisation-ja.md -->
+<!-- 状態：提出済み（CR 1013.36.1512：https://ckm.openehr.org/ckm/archetypes/1013.1.5359/changerequests/1013.36.1512 。editor の回答待ち、2026-09-21）。日本語の背景は docs/localisation-ja.md -->
 
 # Change request (draft): Add a "Representation" data element to CLUSTER.structured_name.v1 (and an equivalent for organisation names)
 
-*Draft for openEHR Discourse / CKM change request — Shinji KOBAYASHI, NPO openEHR Japan (skoba@moss.gr.jp), 2026-09-11. Status: draft for review before posting.*
+*Draft for openEHR Discourse / CKM change request — Shinji KOBAYASHI, NPO openEHR Japan (skoba@moss.gr.jp), 2026-09-11. Status: submitted to CKM as change request 1013.36.1512 (2026-09-21), awaiting editor response.*
 
 ## Summary
 
