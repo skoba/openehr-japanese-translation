@@ -1,0 +1,83 @@
+archetype	section	code	field	context	source	target	note
+openEHR-EHR-CLUSTER.anatomical_location.v1	description	-	purpose		To identify and record structured details about a single physical site on, or within, the human body using macroscopic anatomical terms.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	description	-	use		Use to record structured details about a single identified physical site on or within the human body.\n\nIn many situations, a simple data element such as ‘Location of measurement’ or ‘Body site’ will be sufficient and practical when the value set is straightforward. This archetype is intended for cases where a more detailed or structured representation of an anatomical site is required, including precise or compound descriptions. It can be nested within relevant ENTRY or CLUSTER archetypes such as those for symptoms, findings, or interventions to support multiaxial or postcoordinated anatomical expressions. Examples include documenting pain in the lower limb, tenderness at McBurney’s point, or a laceration on the palmar aspect of the proximal right thumb.\n\nThe ‘Laterality' data element may be used to qualify whether a paired structure or region is affected on the left, right, or both sides. When involvement is symmetrical and equivalent on both sides, for example the same cancer in both lungs or similar pain in both legs, record 'Left and right’. However, when the clinical characteristics differ between sides, two separate instances should be used:\n\n- Two parallel instances of this archetype within the same SLOT, each with its own laterality and specific details. For example, documenting equal tumours in the lower left lung lobe and the upper right lung lobe.\n- Two parallel instances of the parent archetype, each containing an instance of this archetype, when there are clinically significant differences such as tumour type, size, or severity in each lung.\n\nThe 'Alternative structure' SLOT allows inclusion of additional archetypes that provide an alternative structure for describing the same body site, such as CLUSTER.anatomical_location_relative or CLUSTER.anatomical_location_clock, should this be required. In situations where this archetype is used to name a large or non-specific body part, the additional use of the CLUSTER.anatomical_location_relative archetype will support recording of a more precise location, for example, 2 cm anterior to the cubital fossa of the left forearm or 4 cm below the right costal margin on the chest wall in the mid-clavicular line.\n\nIf this archetype is used within other archetypes where the specified subject of care is not the individual for whom the record is being created, for example a fetus in utero, then the anatomical location will be identifying a body site on or within the fetus.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	description	-	misuse		Not to be used to describe involvement of both sides of a paired structure when the clinical findings differ significantly between sides. In such cases, each side should be documented using a separate instance of this archetype with side-specific detail.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	description	-	keywords		location | site | anatomical | anatomic region | topographic anatomy | macroscopic | anatomic | anatomy		
+openEHR-EHR-CLUSTER.anatomical_location.v1	description	-	copyright		© openEHR Foundation		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0000	text	CLUSTER	Anatomical location		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0000	description	CLUSTER	A physical site on or within the human body.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0001	text	CLUSTER > items/ELEMENT	Body site name		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0001	description	CLUSTER > items/ELEMENT	Identification of a single physical site either on, or within, the human body.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0001	comment	CLUSTER > items/ELEMENT	This data element is the only mandated data point in this archetype and should be used as the primary data point to record an anatomical location with a commonly used name. It is strongly recommended that 'Body site name' be recorded as specifically as is anatomically possible. For example: record 'upper eyelid' rather than recording 'eyelid' with 'upper' as a qualifier; 'fifth rib' rather than 'rib' with a numeric qualifier. Use the other data elements for laterality, aspect, region and anatomical line to provide more detail.\n\nThis data element should be coded with a terminology capable of triggering decision support, where possible - an appropriate termset for use here could comprise individual concepts or a list of precoordinated terms. Free text should be used only if there is no appropriate terminology available.\n\nIf 'Body site name' is already identified in an archetype in which this Anatomical location archetype has been nested, then this data element may be redundant. However, it might be reasonable to duplicate 'Body site name' in this archetype to support semantic querying using this archetype, instead of the archetype in which it has been nested.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0002	text	CLUSTER > items/ELEMENT	Laterality		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0002	description	CLUSTER > items/ELEMENT	The side of the body on which the identified body site is located.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0002	comment	CLUSTER > items/ELEMENT	If the 'Body site name' includes a pre-coordinated term that already specifies laterality, this data element may be redundant. If the findings require documentation of a body site on both the left and right sides of the body, or involving both sides of a paired structure or region, use 'Left and right' only when the same anatomical site is affected on both sides and side-specific detail is not required. If the findings differ significantly between sides, each should be recorded as a separate instance of this archetype with the appropriate laterality.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0003	text		Left		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0003	description		Left side of the body.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0004	text		Right		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0004	description		Right side of the body.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0023	text	CLUSTER > items/ELEMENT	Description		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0023	description	CLUSTER > items/ELEMENT	Narrative description that can be used to further refine and support the 'Body site name'.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0023	comment	CLUSTER > items/ELEMENT	For example: adjacent to the vermilion border; a tattoo covers the bottom half of this area.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0053	text	CLUSTER > items/CLUSTER	Alternative structure		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0053	description	CLUSTER > items/CLUSTER	Additional detail about the anatomical site using alternative approaches to describe the same body site.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0053	comment	CLUSTER > items/CLUSTER	For example, relative location or precise locations using coordinates.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0054	text	CLUSTER > items/CLUSTER	Multimedia representation		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0054	description	CLUSTER > items/CLUSTER	Image or other media used to support identification of the body site.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0055	text	CLUSTER > items/ELEMENT	Anatomical Line		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0055	description	CLUSTER > items/ELEMENT	Additional detail using theoretical lines drawn through anatomical structures used to provide a consistent reference point on the human body.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0055	comment	CLUSTER > items/ELEMENT	Common anatomical lines have been included as a value set, which can be extended over time, plus a free text option. The additional use of this data element allows for recording of the typical position of the heart's apex beat at 5th intercostal space, left side, and mid-clavicular line. If the 'Body site name' data element uses pre-coordinated terms that include anatomical line, then this data element is redundant.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0056	text		Midaxillary line		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0056	description		Line running vertically down the surface of the body, passing through the apex of the axilla.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0057	text		Anterior axillary line		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0057	description		Line running vertically down the surface of the body, passing through the anterior axillary skinfold.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0058	text		Posterior axillary line		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0058	description		Line running vertically down the surface of the body, passing through the posterior axillary skinfold.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0059	text		Mid-clavicular line		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0059	description		Line running vertically down the surface of the body, parallel to the midline and passing through the midpoint of the clavicle.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0060	text		Mid-pupillary line		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0060	description		Line running vertically down the face through the midpoint of the pupil when looking directly forward.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0062	text		Midline		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0062	description		Line running vertically which divides the body into left and right portions, passing through the head, spinal cord, and umbilicus. Alternatively it can refer to a line dividing a body part into two equal portions, for example a digit.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0063	text		Mid-scapular line		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0063	description		Line running vertically down the posterior surface of the body, parallel to the midline and passing through the inferior point of the scapula.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0064	text	CLUSTER > items/ELEMENT	Aspect		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0064	description	CLUSTER > items/ELEMENT	Qualifying detail about the specific aspect of the identified body site.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0064	comment	CLUSTER > items/ELEMENT	Use to increase precision of identification of the body site, if required. Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. For example: proximal urethra; plantar aspect of the left thumb. Multiple aspects can also be described, if required, by allowing for 0..2 occurrences. For example: a lesion may be on the left anterior/lateral (ie anterolateral) chest wall. If the 'Body site name' data element uses pre-coordinated terms that include the aspect, then this data element is redundant.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0065	text	CLUSTER > items/ELEMENT	Specific site		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0065	description	CLUSTER > items/ELEMENT	Additional detail using a specific region or a point on, or within, the identified body site.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0065	comment	CLUSTER > items/ELEMENT	Use to increase precision of identification of the body site, if required. For example, the upper right quadrant or McBurney's point on the abdominal wall or interphalangeal joint of the great toe. If the 'Body site name' data element uses pre-coordinated terms that include the specific site, then this data element is redundant.\nIn most situations this will be a single specific site. This data element has multiple occurrences to support less common use cases which need to identify a single anatomical location involving two or more adjacent and continuous specific sites. For example, to describe the specific site of a single tumour extending across the 2nd, 3rd and 4th ribs.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0067	text		Medial		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0067	description		Towards the midline of the body site.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0068	text		Lateral		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0068	description		Towards the side, or edge, of the body site.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0069	text		Superior		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0069	description		Above the body site, often meaning towards the head.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0070	text		Inferior		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0070	description		Below the body site, often meaning towards the feet.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0071	text		Anterior		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0071	description		Towards the front, or ventral surface, of the body site.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0072	text		Posterior		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0072	description		Towards the back, or dorsal surface, of the body site.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0073	text		Proximal		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0073	description		More central or closer to the point of attachment, and usually describing part of a limb, digit or appendage.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0074	text		Distal		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0074	description		More peripheral, or further from the point of attachment, and usually describing part of a limb, digit or appendage.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0075	text		Palmar		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0075	description		Towards the palm of the hand.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0076	text		Plantar		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0076	description		Towards the sole of the foot.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0077	text		Mid		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0077	description		In the middle of the body site.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0078	text		Oral		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0078	description		Towards the mouth. Usually used to describe locations within the digestive system.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0079	text		Anal		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0079	description		Towards the anus. Usually used to describe locations within the digestive system.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0080	text		Deep		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0080	description		Away from the surface of the body site.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0081	text		Superficial		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0081	description		Towards the surface of the body site.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0082	text		Dorsal		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0082	description		Towards the back of the hand or top of the foot. To be used as opposites of palmar or plantar, not as a synonym of posterior.		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0083	text		Right and left		
+openEHR-EHR-CLUSTER.anatomical_location.v1	term	at0083	description		Both the right and left sides of the body, or involving both sides of a paired organ, body structure, or anatomical region.		

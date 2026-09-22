@@ -288,6 +288,67 @@
 | inguinal skin crease | 鼠径溝 | body_temperature.v2 at0055。校正 2026-09-22 で既存訳「鼠径ひだ状皮膚」から変更 |
 | measure / measurement | 測定 | 「計測」は使わない（body_temperature 校正 2026-09-22） |
 
+| Body site name | 身体部位名 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Laterality | 側性 | 要確認: 側性（他候補: 左右）院内がん登録・画像レポートの用語に合わせる。 |
+| Left | 左 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Right | 右 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Alternative structure (slot) | 代替の構造化表現 | 要確認: 代替の構造化表現（他候補: 代替構造）構造化された身体部位表現と語感を揃える。 |
+| Multimedia representation (slot) | マルチメディア表現 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Anatomical Line | 解剖学的基準線 | 要確認: 解剖学的基準線（他候補: 基準線、体表基準線）解剖学的構造を基準とする線であることを明確にする。 |
+| Midaxillary line | 中腋窩線 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Anterior axillary line | 前腋窩線 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Posterior axillary line | 後腋窩線 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Mid-clavicular line | 鎖骨中線 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Mid-pupillary line | 瞳孔中心線 | 要確認: 瞳孔中心線（他候補: 瞳孔中線、瞳孔線）正面視で瞳孔の中心を通るという定義に合わせる。 |
+| Midline | 正中線 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Mid-scapular line | 肩甲線 | 要確認: 肩甲線（他候補: 肩甲骨中線）肩甲骨下角を通る垂線という定義に合わせ、指定された scapular line の訳を採用する。 |
+| aspect (anatomical direction) | 方向 | media_file の aspect（観察方向）とは別。要確認: 方向（他候補: 面）値セットが近位・遠位・上方などの方向用語であるため。media_file の観察方向とは区別する。 |
+| Specific site | 特定部位 | 要確認: 特定部位（他候補: 詳細部位）身体部位内の特定の領域や点を示すため。 |
+| Medial | 内側 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Lateral | 外側 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Superior | 上方 | 要確認: 上方（他候補: 上）方向を示す値であることを明確にする。 |
+| Inferior | 下方 | 要確認: 下方（他候補: 下）方向を示す値であることを明確にする。 |
+| Anterior | 前方 | 要確認: 前方（他候補: 前）方向を示す値であることを明確にする。 |
+| Posterior | 後方 | 要確認: 後方（他候補: 後）方向を示す値であることを明確にする。 |
+| Proximal | 近位 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Distal | 遠位 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Palmar | 掌側 | 要確認: 掌側（他候補: 手掌側）指定案を採用し、足底側・背側と対になる方向を表す。 |
+| Plantar | 足底側 | 要確認: 足底側（他候補: 底側）足底を指すことを明確にする。 |
+| Mid | 中央 | 要確認: 中央（他候補: 中間）身体部位の中央を示すため。 |
+| Oral | 口側 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Anal | 肛門側 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| Deep | 深部 | 要確認: 深部（他候補: 深層）層ではなく表面から離れる方向を示すため。 |
+| Superficial | 浅部 | 要確認: 浅部（他候補: 浅層）層ではなく表面に向かう方向を示すため。 |
+| Dorsal | 背側 | 手背・足背の側。掌側・足底側の対語であり、後方の同義語ではない |
+| Right and left | 両側 | 要確認: 両側（他候補: 左右）両側に及ぶことを明確にする。本文の Left and right も同じ値として訳す。 |
+| anatomical position | 解剖学的正位 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| paired structure / paired organ | 対をなす構造 / 対をなす臓器 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| apex beat | 心尖拍動 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| 5th intercostal space | 第 5 肋間 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| cubital fossa | 肘窩 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| costal margin | 肋骨弓 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| McBurney's point | マックバーニー点 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| upper right quadrant | 右上腹部 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| interphalangeal joint of the great toe | 母趾の趾節間関節 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| vermilion border | 赤唇縁 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| digit | 指（手指・足趾） | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| laceration | 裂傷 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| tenderness | 圧痛 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| lower limb | 下肢 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| umbilicus | 臍 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| axilla | 腋窩 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| axillary skinfold | 腋窩ひだ | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| clavicle | 鎖骨 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| pupil | 瞳孔 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| scapula | 肩甲骨 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| macroscopic anatomical terms | 肉眼解剖学の用語 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| fetus in utero | 子宮内の胎児 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| topographic anatomy | 局所解剖学 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| pre-coordinated term | 事前調整された用語 | anatomical_location.v1（1.5.1）。指定訳を採用 |
+| appendage | 付属肢 | 要確認: 付属肢（他候補: 付属器）指定案を採用する。limb、digit と並列される appendage の範囲は確認が必要。 |
+| multiaxial / postcoordinated | 多軸 / 事後調整された | 要確認: 多軸／事後調整された（他候補: 複数の軸による／後から組み合わせた）multiaxial／postcoordinated の訳。事前調整されたとの対応を優先する。 |
+| termset / semantic querying | 用語セット / 意味に基づく検索 | 要確認: 用語セット／意味に基づく検索（他候補: 用語集合／意味的照会）termset／semantic querying の訳。用語セットは値セットと区別し、検索は日本語としての読みやすさを優先する。 |
+
 ## アーキタイプ別の確定訳（概念名）
 
 | Archetype | at0000 text | 備考 |
@@ -311,3 +372,4 @@
 | openEHR-EHR-OBSERVATION.body_temperature.v2 (2.1.10) | 体温 | 差分翻訳（2026-09-20、Issue #46）、校正済み（2026-09-22。既存訳も計測→測定に統一、側頭部、前額部、鼠径溝）。CKM 既存 ja の未訳 12 項目（at0021 / at0059 description、at0060 こめかみ、at0061 額、at0064 構造化された計測部位、at0066 交絡因子、at0062 Extension の description / comment）のみ追加。既存訳は変更なし |
 | openEHR-EHR-OBSERVATION.body_weight.v2 (2.1.12) | 体重 | 差分翻訳（2026-09-20、Issue #47）。未訳は内部構造ノード名 4 つ（at0001 Simple、at0002 history、at0008 state structure、at0015 protocol structure）のみで英字のまま。既存訳は変更なし（既存の at0027 Extension＝拡張領域 は規則と異なるが本 PR では触らない） |
 | openEHR-EHR-OBSERVATION.blood_pressure.v2 (2.0.16) | 血圧 | 差分翻訳（2026-09-20、Issue #48）。未訳は内部構造ノード名 at0007 state structure のみで英字のまま。既存訳は変更なし（既存の at0001 History＝履歴 は規則と異なるが本 PR では触らない） |
+| openEHR-EHR-CLUSTER.anatomical_location.v1 (1.5.1) | 解剖学的部位 | Issue #59。概念名は指定訳。方向・基準線などの要確認事項は共通語表と work/fill.rb の NOTES を参照 |
