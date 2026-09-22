@@ -342,9 +342,7 @@
 | macroscopic anatomical terms | 肉眼解剖学の用語 | anatomical_location.v1（1.5.1）。指定訳を採用 |
 | fetus in utero | 子宮内の胎児 | anatomical_location.v1（1.5.1）。指定訳を採用 |
 | topographic anatomy | 局所解剖学 | anatomical_location.v1（1.5.1）。指定訳を採用 |
-| precoordinated / pre-coordinated | 事前調整された | anatomical_location.v1（1.5.1）。指定訳を採用 |
 | pre-coordinated term | 事前調整された用語 | anatomical_location.v1（1.5.1）。指定訳を採用 |
-| value set | 値セット | anatomical_location.v1（1.5.1）。指定訳を採用 |
 | appendage | 付属肢 | 要確認: 付属肢（他候補: 付属器）指定案を採用する。limb、digit と並列される appendage の範囲は確認が必要。 |
 | multiaxial / postcoordinated | 多軸 / 事後調整された | 要確認: 多軸／事後調整された（他候補: 複数の軸による／後から組み合わせた）multiaxial／postcoordinated の訳。事前調整されたとの対応を優先する。 |
 | termset / semantic querying | 用語セット / 意味に基づく検索 | 要確認: 用語セット／意味に基づく検索（他候補: 用語集合／意味的照会）termset／semantic querying の訳。用語セットは値セットと区別し、検索は日本語としての読みやすさを優先する。 |
