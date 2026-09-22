@@ -5,19 +5,19 @@
 
 T = {
   # To record the measured temperature of a person - as a surrogate for the core body temperature.
-  ['description', '-', 'purpose'] => "深部体温の代用として計測された人の体温を記録するため。",
+  ['description', '-', 'purpose'] => "深部体温の代用として測定された人の体温を記録するため。",
 
   # Used for recording the measurement of an individual's body temperature, which is a surrogate for the core body temperature of the individual.
   # 
   # Additional clusters can be included to provide additional state data - including environmental conditions and exertion details, where appropriate.
   # 
   # Please Note: The site and method of recording may need to be displayed to the end user to facilitate accurate interpretation of the temperature recorded.
-  ['description', '-', 'use'] => "測定対象の個人の深部体温の代用として計測された体温を記録するために用いられる。\nさらに状態データを表すために、追加のクラスタを内包することもできる。たとえば、環境条件や、月経周期の詳細、労作についての詳細を必要に応じて内包する。\n注意：計測された温度を正確に解釈するためにエンドユーザーに記録方法や部位を示す必要があるかもしれない。",
+  ['description', '-', 'use'] => "測定対象の個人の深部体温の代用として測定された体温を記録するために用いられる。\nさらに状態データを表すために、追加のクラスタを内包することもできる。たとえば、環境条件や、月経周期の詳細、労作についての詳細を必要に応じて内包する。\n注意：計測された温度を正確に解釈するためにエンドユーザーに記録方法や部位を示す必要があるかもしれない。",
 
   # This archetype is not to be used to record the temperature of any other object.
   # 
   # This archetype is not to be used to record the temperature of a part of the body in isolation e.g. temperature of the sole of the foot as a part of chronic diabetes management.
-  ['description', '-', 'misuse'] => "このアーキタイプは、体温以外を計測するためには用いられない。\nこのアーキタイプは、身体において独立した一部の温度を記録するためには用いられない。たとえば、糖尿病の慢性期管理の一環として、足底温を計測すること。",
+  ['description', '-', 'misuse'] => "このアーキタイプは、体温以外を測定するためには用いられない。\nこのアーキタイプは、身体において独立した一部の温度を記録するためには用いられない。たとえば、糖尿病の慢性期管理の一環として、足底温を測定すること。",
 
   # temperature | body | core | fever | hypothermia | hyperthermia
   ['description', '-', 'keywords'] => "体温 | 人体 | 深部体温 | 発熱 | 低体温 | 高体温",
@@ -55,7 +55,7 @@ T = {
 
   # OBSERVATION > data/HISTORY > events/EVENT
   # Default, unspecified point in time or interval event which may be explicitly defined in a template or at run-time.
-  ['term', 'at0003', 'description'] => "デフォルトではテンプレートや実行時に明示的に定義される特定されない時点あるいは一定の間隔のイベント",
+  ['term', 'at0003', 'description'] => "デフォルトではテンプレートや実行時に明示的に定義されるまで、特定されない時点あるいは一定の間隔のイベント",
 
   # OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT
   # Temperature
@@ -63,7 +63,7 @@ T = {
 
   # OBSERVATION > data/HISTORY > events/EVENT > data/ITEM_TREE > items/ELEMENT
   # The measured temperature.
-  ['term', 'at0004', 'description'] => "計測された体温",
+  ['term', 'at0004', 'description'] => "測定された体温",
 
   # OBSERVATION > protocol/ITEM_TREE
   # Protocol
@@ -75,53 +75,53 @@ T = {
 
   # OBSERVATION > protocol/ITEM_TREE > items/ELEMENT
   # Location of measurement
-  ['term', 'at0021', 'text'] => "計測部位",
+  ['term', 'at0021', 'text'] => "測定部位",
 
   # OBSERVATION > protocol/ITEM_TREE > items/ELEMENT
   # Simple description about the site of measurement.
-  ['term', 'at0021', 'description'] => "計測部位についての簡単な記述。",
+  ['term', 'at0021', 'description'] => "測定部位についての簡単な記述。",
 
   # Mouth
   ['term', 'at0022', 'text'] => "口腔",
 
   # Temperature is measured within the mouth.
-  ['term', 'at0022', 'description'] => "口腔内で計測された温度",
+  ['term', 'at0022', 'description'] => "口腔内で測定された温度",
 
   # Ear canal
   ['term', 'at0023', 'text'] => "外耳道",
 
   # Temperature is measured from within the external auditory canal.
-  ['term', 'at0023', 'description'] => "外耳道内で計測された温度。",
+  ['term', 'at0023', 'description'] => "外耳道内で測定された温度。",
 
   # Axilla
   ['term', 'at0024', 'text'] => "腋窩",
 
   # Temperature is measured from the skin of the axilla with the arm positioned down by the side.
-  ['term', 'at0024', 'description'] => "腕を脇につけた状態で測定された腋窩の皮膚から計測された温度。",
+  ['term', 'at0024', 'description'] => "腕を脇につけた状態で測定された腋窩の皮膚から測定された温度。",
 
   # Rectum
   ['term', 'at0025', 'text'] => "直腸",
 
   # Temperature measured within the rectum.
-  ['term', 'at0025', 'description'] => "直腸内で計測された温度。",
+  ['term', 'at0025', 'description'] => "直腸内で測定された温度。",
 
   # Nasopharynx
   ['term', 'at0026', 'text'] => "鼻咽頭",
 
   # Temperature is measured within the nasopharynx.
-  ['term', 'at0026', 'description'] => "鼻咽頭内で計測された温度。",
+  ['term', 'at0026', 'description'] => "鼻咽頭内で測定された温度。",
 
   # Urinary bladder
   ['term', 'at0027', 'text'] => "膀胱",
 
   # Temperature is measured in the urinary bladder.
-  ['term', 'at0027', 'description'] => "膀胱内で計測された温度",
+  ['term', 'at0027', 'description'] => "膀胱内で測定された温度",
 
   # Intravascular
   ['term', 'at0028', 'text'] => "血管内",
 
   # Temperature is measured within the vascular system.
-  ['term', 'at0028', 'description'] => "血管系の内部で計測された温度。",
+  ['term', 'at0028', 'description'] => "血管系の内部で測定された温度。",
 
   # OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE
   # State
@@ -169,31 +169,31 @@ T = {
 
   # OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT
   # Narrative description of the conditions applied to the subject that might influence their measured body temperature.
-  ['term', 'at0041', 'description'] => "計測された体温に影響を与えうる対象個人の状況についての叙述的記録",
+  ['term', 'at0041', 'description'] => "測定された体温に影響を与えうる対象個人の状況についての叙述的記録",
 
   # Skin
   ['term', 'at0043', 'text'] => "皮膚",
 
   # Temperature is measured from exposed skin.
-  ['term', 'at0043', 'description'] => "露出された皮膚で計測された温度。",
+  ['term', 'at0043', 'description'] => "露出された皮膚で測定された温度。",
 
   # Vagina
   ['term', 'at0051', 'text'] => "膣",
 
   # Temperature is measured within the vagina.
-  ['term', 'at0051', 'description'] => "膣内で計測された温度。",
+  ['term', 'at0051', 'description'] => "膣内で測定された温度。",
 
   # Oesophagus
   ['term', 'at0054', 'text'] => "食道",
 
   # Temperatue is measured within the oesophagus.
-  ['term', 'at0054', 'description'] => "食道内で計測された温度。",
+  ['term', 'at0054', 'description'] => "食道内で測定された温度。",
 
   # Inguinal skin crease
-  ['term', 'at0055', 'text'] => "鼠径ひだ状皮膚",
+  ['term', 'at0055', 'text'] => "鼠径溝",
 
   # Temperature is measured in the inguinal skin crease between the leg and abdominal wall.
-  ['term', 'at0055', 'description'] => "歌詞と腹壁の間にある鼠径ひだ状皮膚で計測された温度。",
+  ['term', 'at0055', 'description'] => "下肢と腹壁の間にある鼠径溝で測定された温度。",
 
   # OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/CLUSTER
   # Environmental conditions
@@ -201,7 +201,7 @@ T = {
 
   # OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/CLUSTER
   # Details about the environmental conditions at the time of temperature measurement.
-  ['term', 'at0056', 'description'] => "体温を計測した時点での環境条件についての詳細。",
+  ['term', 'at0056', 'description'] => "体温を測定した時点での環境条件についての詳細。",
 
   # OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/CLUSTER
   # Exertion
@@ -209,7 +209,7 @@ T = {
 
   # OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/CLUSTER
   # Details about the exertion of the person at the time of temperature measurement.
-  ['term', 'at0057', 'description'] => "体温を計測した時点での労作状態についての詳細",
+  ['term', 'at0057', 'description'] => "体温を測定した時点での労作状態についての詳細",
 
   # OBSERVATION > protocol/ITEM_TREE > items/CLUSTER
   # Device
@@ -217,19 +217,19 @@ T = {
 
   # OBSERVATION > protocol/ITEM_TREE > items/CLUSTER
   # Details about the device used to measure body temperature.
-  ['term', 'at0059', 'description'] => "体温の計測に用いた機器に関する詳細情報。",
+  ['term', 'at0059', 'description'] => "体温の測定に用いた機器に関する詳細情報。",
 
   # Temple
-  ['term', 'at0060', 'text'] => "こめかみ",
+  ['term', 'at0060', 'text'] => "側頭部",
 
   # Temperature is measured at the temple, over the superficial temporal artery.
-  ['term', 'at0060', 'description'] => "こめかみ（浅側頭動脈の上）で計測された温度。",
+  ['term', 'at0060', 'description'] => "側頭部（浅側頭動脈の上）で測定された温度。",
 
   # Forehead
-  ['term', 'at0061', 'text'] => "額",
+  ['term', 'at0061', 'text'] => "前額部",
 
   # Temperature is measured on the forehead.
-  ['term', 'at0061', 'description'] => "額で計測された温度。",
+  ['term', 'at0061', 'description'] => "前額部で測定された温度。",
 
   # OBSERVATION > protocol/ITEM_TREE > items/CLUSTER
   # Extension
@@ -253,11 +253,11 @@ T = {
 
   # OBSERVATION > protocol/ITEM_TREE > items/CLUSTER
   # Structured measurement location
-  ['term', 'at0064', 'text'] => "構造化された計測部位",
+  ['term', 'at0064', 'text'] => "構造化された測定部位",
 
   # OBSERVATION > protocol/ITEM_TREE > items/CLUSTER
   # Structured details about the location of measurement.
-  ['term', 'at0064', 'description'] => "計測部位に関する構造化された詳細情報。",
+  ['term', 'at0064', 'description'] => "測定部位に関する構造化された詳細情報。",
 
   # OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT
   # Day of menstrual cycle
@@ -277,15 +277,12 @@ T = {
 
   # OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT
   # Additional issues or factors that may impact on the measurement of body temperature, not captured in other fields.
-  ['term', 'at0066', 'description'] => "他の項目には収まらない、体温の計測に影響する可能性のある問題や因子。",
+  ['term', 'at0066', 'description'] => "他の項目には収まらない、体温の測定に影響する可能性のある問題や因子。",
 
 }.freeze
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['term', 'at0060', 'text'] => "要確認: こめかみ（他候補: 側頭部）。原文 temple は浅側頭動脈上の測定部位。",
-  ['term', 'at0066', 'text'] => "要確認: 交絡因子（他候補: 影響因子、修飾因子）。疫学用語の confounding に合わせた。",
-  ['term', 'at0064', 'text'] => "要確認: 構造化された計測部位。既存訳 at0021「計測部位」に合わせて「計測」を使用（他 archetype の「測定」とは不統一）。",
   # ['term', 'at0000', 'text'] => '要確認: ...',
 }.freeze
 
