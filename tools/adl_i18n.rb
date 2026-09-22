@@ -273,6 +273,15 @@ module AdlI18n
   end
 
   # CKM writes untranslated values as `"*<source text>(en)"`.
+  # --merge: a value already present in the language block is rewritten only when
+  # the translation actually changed (proofread of an existing CKM translation);
+  # placeholders (*...(en)) always differ, so they are still filled.  Compare
+  # after stripping indentation and normalising escaped vs. literal newlines.
+  def same_value?(cur, new_line)
+    norm = ->(t) { t.strip.gsub("\x5cn", "\n") }
+    norm.call(cur) == norm.call(new_line)
+  end
+
   def placeholder_value?(text)
     text.match?(/"\*[^"]*\)"/)
   end
@@ -296,7 +305,7 @@ module AdlI18n
       k = ((o + 1)...c).find { |x| lines[x] =~ /\A\t\t\t#{f} = </ }
       if k
         j = value_end(lines, k)
-        next unless placeholder_value?(lines[k..j].join("\n"))
+        next if same_value?(lines[k..j].join("\n"), new_line)
         lines = lines[0...k] + [new_line] + lines[(j + 1)..]
       else
         lines = lines[0...c] + [new_line] + lines[c..]
@@ -323,7 +332,7 @@ module AdlI18n
           fk = ((k + 1)...ic).find { |x| lines[x] =~ /\A\t\t\t\t\t#{f} = </ }
           if fk
             j = value_end(lines, fk)
-            next unless placeholder_value?(lines[fk..j].join("\n"))
+            next if same_value?(lines[fk..j].join("\n"), new_line)
             lines = lines[0...fk] + [new_line] + lines[(j + 1)..]
           else
             lines = lines[0...ic] + [new_line] + lines[ic..]
