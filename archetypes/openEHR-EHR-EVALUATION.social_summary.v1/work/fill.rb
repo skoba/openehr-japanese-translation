@@ -59,7 +59,7 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/CLUSTER
   # Structured detail about the social circumstances and experiences.
-  ['term', 'at0003', 'description'] => "社会的状況や社会的経験についての構造化された詳細記録。",
+  ['term', 'at0003', 'description'] => "社会的状況や社会的経験に関する構造化された詳細情報。",
 
   # EVALUATION > protocol/ITEM_TREE
   # Tree
