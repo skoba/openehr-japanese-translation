@@ -19,3 +19,4 @@ openEHR-EHR-OBSERVATION.body_temperature.v2	review	2.1.10		2026-09-20
 openEHR-EHR-OBSERVATION.body_weight.v2	review	2.1.12		2026-09-20
 openEHR-EHR-OBSERVATION.blood_pressure.v2	review	2.0.16		2026-09-20
 openEHR-EHR-CLUSTER.anatomical_location.v1	review	1.5.1		2026-09-22
+openEHR-EHR-EVALUATION.social_summary.v1	review	1.1.1		2026-09-23
