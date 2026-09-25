@@ -362,27 +362,27 @@
 | summary (element) | 要約 | social_summary.v1 at0002。既存の synopsis（要約）と揃える。 |
 
 | hypersensitivity | 過敏症 | adverse_reaction_risk.v2（2.0.2）。指定訳。allergy＝アレルギー、intolerance＝不耐症と区別する。 |
-| causative agent / causative substance | 原因物質 | adverse_reaction_risk.v2（2.0.2）。要確認: 指定案。未確定の Substance は「物質」。 |
-| substance / specific substance / class of substance | 物質 / 特定の物質 / 物質の分類 | adverse_reaction_risk.v2（2.0.2）。要確認: 指定案。物質群も候補。 |
-| agent | 作用物質 | adverse_reaction_risk.v2（2.0.2）。要確認: 他候補は因子、薬剤。physical agents／infectious agents は物理的因子／感染性因子と文脈訳する。 |
-| exposure / reaction / manifestation | 曝露 / 反応 / 症状 | adverse_reaction_risk.v2（2.0.2）。要確認: 指定案。manifestation は発現した症状を指す。 |
-| reaction event / reaction event summary | 反応イベント / 反応イベントの要約 | adverse_reaction_risk.v2（2.0.2）。要確認: CLUSTER.adverse_reaction_event の概念名候補「有害反応イベント」に合わせる。 |
-| criticality: low / high | 重大性：低 / 高 | adverse_reaction_risk.v2（2.0.2）。要確認: 指定案。重症度と区別する。他候補は臨床的危険性、致命度、低リスク／高リスク。 |
-| certainty / verification status | 確度 / 検証状態 | adverse_reaction_risk.v2（2.0.2）。要確認: 指定案。診断確度に揃える。検証状況、確認状況も候補。 |
-| verification status: unconfirmed / confirmed / refuted | 検証状態：未確認 / 確認済み / 否定 | adverse_reaction_risk.v2（2.0.2）。要確認: [JP-CLINS](https://jpfhir.jp/fhir/clins/ig/StructureDefinition-JP-AllergyIntolerance-eCS.html) の未確認／確認済み／否定されたを参照し、否定は既存訳に揃える。診断確度の confirmed＝確定とは文脈を区別する。 |
-| propensity | 素因 | adverse_reaction_risk.v2（2.0.2）。要確認: 他候補は傾向。遺伝的素因に限定しない。 |
-| reaction type / reaction mechanism / intolerance mechanism | 反応の種類 / 反応の機序 / 不耐症の機序 | adverse_reaction_risk.v2（2.0.2）。要確認: 指定案に合わせる。種類と機序を区別する。 |
-| last reaction date / onset of last reaction / onset of first reaction | 最終反応日 / 最終反応の発症 / 初回反応の発症 | adverse_reaction_risk.v2（2.0.2）。要確認: last reaction date は指定案。今回の Onset は年齢や経過時間も許容するため発症を残す。 |
-| immune-mediated / non-immune-mediated | 免疫介在性 / 非免疫介在性 | adverse_reaction_risk.v2（2.0.2）。要確認: 指定案。原文のハイフンなし表記も同じ。 |
-| drug / medication / food / environmental / biologic | 薬剤 / 薬剤 / 食物 / 環境 / 生物学的製剤 | adverse_reaction_risk.v2（2.0.2）。要確認: 指定案。biological products も生物学的製剤。環境中の物質の値は Other＝その他に含まれる。 |
-| supporting clinical record information | 裏付けとなる臨床記録情報 | adverse_reaction_risk.v2（2.0.2）。要確認: 他候補は関連する臨床記録情報。 |
-| active/inactive status | アクティブ・インアクティブの状態 | adverse_reaction_risk.v2（2.0.2）。要確認: 既存の active／inactive と status の訳を優先する。 |
-| incipients / excipients | 成分（原文：incipients） / 賦形剤 | adverse_reaction_risk.v2（2.0.2）。要確認: incipients の意味が不明確なため原語併記。他候補は有効成分／添加剤。 |
-| pseudo-allergic reaction / side effect / drug toxicity | 偽アレルギー反応 / 副作用 / 薬剤毒性 | adverse_reaction_risk.v2（2.0.2）。要確認: 他候補は非アレルギー性過敏反応／薬物毒性。 |
-| sensitivity / toxicity / anaphylaxis / allergen | 感受性 / 毒性 / アナフィラキシー / アレルゲン | adverse_reaction_risk.v2（2.0.2）。要確認: sensitivity は過敏性も候補。hypersensitivity と区別する。 |
-| re-challenge / under corticosteroid cover | 再負荷 / 副腎皮質ステロイドの予防的投与下 | adverse_reaction_risk.v2（2.0.2）。要確認: 他候補は再投与／副腎皮質ステロイド併用下。 |
-| relative contra-indication / absolute contra-indication | 相対的禁忌 / 絶対的禁忌 | adverse_reaction_risk.v2（2.0.2）。要確認: 有害反応リスクの Low／High の説明。他候補は相対禁忌／絶対禁忌。 |
-| adverse / effect / chemical / supplement / medicine / natural remedies / immunological / non-immunological | 有害 / 作用 / 化学物質 / サプリメント / 医薬品 / 自然療法 / 免疫学的 / 非免疫学的 | adverse_reaction_risk.v2（2.0.2）。要確認: keywords の対応語。effect は修飾因子の影響とは文脈を区別する。 |
+| causative agent / causative substance | 原因物質 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 指定案。未確定の Substance は「物質」。 |
+| substance / specific substance / class of substance | 物質 / 特定の物質 / 特定の分類に属する物質 | adverse_reaction_risk.v2。校正 2026-09-25 で確定。class of substance は「ペニシリン系」などの区分。文中では「物質の分類」も可 |
+| agent | 作用物質 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 他候補は因子、薬剤。physical agents／infectious agents は物理的因子／感染性因子と文脈訳する。 |
+| exposure / reaction / manifestation | 曝露 / 反応 / 症状 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 指定案。manifestation は発現した症状を指す。 |
+| reaction event / reaction event summary | 反応イベント / 反応イベントの要約 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: CLUSTER.adverse_reaction_event の概念名候補「有害反応イベント」に合わせる。 |
+| criticality: low / high | 重症度：低 / 高 | adverse_reaction_risk.v2 at0101。校正 2026-09-25 で「重大性」→「重症度」（JP-CLINS eCS の表記「重症度（criticality）」に合わせる。JP Core は重要度）。openEHR では将来曝露のリスク予測で、反応の重症度（adverse_reaction_event の Severity）とは別。event 側は「反応の重症度」で区別する |
+| certainty / verification status | 確度 / 検証状態 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 指定案。診断確度に揃える。検証状況、確認状況も候補。 |
+| verification status: unconfirmed / confirmed / refuted | 検証状態：未確認 / 確認済み / 否定 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: [JP-CLINS](https://jpfhir.jp/fhir/clins/ig/StructureDefinition-JP-AllergyIntolerance-eCS.html) の未確認／確認済み／否定されたを参照し、否定は既存訳に揃える。診断確度の confirmed＝確定とは文脈を区別する。 |
+| propensity | 素因 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 他候補は傾向。遺伝的素因に限定しない。 |
+| reaction type / reaction mechanism / intolerance mechanism | 反応の種類 / 反応の機序 / 不耐症の機序 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 指定案に合わせる。種類と機序を区別する。 |
+| onset of last reaction / onset of first reaction | 反応が起きた直近の日時 / 反応が最初に起きた日時 | adverse_reaction_risk.v2 at0117 / at0133。校正 2026-09-25 で確定（「最終反応の発症」「初回反応の発症」は不採用） |
+| immune-mediated / non-immune-mediated | 免疫介在性 / 非免疫介在性 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 指定案。原文のハイフンなし表記も同じ。 |
+| drug / medication / food / environmental / biologic | 薬剤 / 薬剤 / 食物 / 環境 / 生物学的製剤 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 指定案。biological products も生物学的製剤。環境中の物質の値は Other＝その他に含まれる。 |
+| supporting clinical record information | 裏付けとなる臨床記録情報 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 他候補は関連する臨床記録情報。 |
+| active/inactive status | アクティブ・インアクティブの状態 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 既存の active／inactive と status の訳を優先する。 |
+| incipients / excipients | 成分 / 賦形剤 | adverse_reaction_risk.v2 use。incipients は excipients と対で用いられており成分（有効成分）の意で訳す（原文の語としては非標準。校正 2026-09-25 で確定） |
+| pseudo-allergic reaction / side effect / drug toxicity | 偽アレルギー反応 / 副作用 / 薬剤毒性 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 他候補は非アレルギー性過敏反応／薬物毒性。 |
+| sensitivity / toxicity / anaphylaxis / allergen | 感受性 / 毒性 / アナフィラキシー / アレルゲン | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: sensitivity は過敏性も候補。hypersensitivity と区別する。 |
+| re-challenge / under corticosteroid cover | 再負荷 / 副腎皮質ステロイドの予防的投与下 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 他候補は再投与／副腎皮質ステロイド併用下。 |
+| relative contra-indication / absolute contra-indication | 相対的禁忌 / 絶対的禁忌 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 有害反応リスクの Low／High の説明。他候補は相対禁忌／絶対禁忌。 |
+| adverse / effect / chemical / supplement / medicine / natural remedies / immunological / non-immunological | 有害 / 作用 / 化学物質 / サプリメント / 医薬品 / 自然療法 / 免疫学的 / 非免疫学的 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: keywords の対応語。effect は修飾因子の影響とは文脈を区別する。 |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -409,4 +409,4 @@
 | openEHR-EHR-OBSERVATION.blood_pressure.v2 (2.0.16) | 血圧 | 差分翻訳（2026-09-20、Issue #48）。校正済み（2026-09-23。既存訳の use / misuse / at0008 を修正）。未訳は内部構造ノード名 at0007 state structure のみで英字のまま。既存訳は変更なし（既存の at0001 History＝履歴 は規則と異なるが本 PR では触らない） |
 | openEHR-EHR-CLUSTER.anatomical_location.v1 (1.5.1) | 解剖学的部位 | Issue #59。校正済み（2026-09-23。面、付属器、左右両側）。概念名は指定訳。方向・基準線などの要確認事項は共通語表と work/fill.rb の NOTES を参照 |
 | openEHR-EHR-EVALUATION.social_summary.v1 (1.1.1) | 生活歴要約 | Issue #44。校正済み（2026-09-25。社会歴要約→生活歴要約、社会的状況→生活状況、喫煙）。at0002 要約、at0003 詳細情報、at0006 最終更新日 |
-| openEHR-EHR-EVALUATION.adverse_reaction_risk.v2 (2.0.2) | 有害反応リスク | Issue #41。要確認: 「（アレルギー・不耐症）」を添えるかは校正で判断。共通語の候補は work/fill.rb の NOTES を参照 |
+| openEHR-EHR-EVALUATION.adverse_reaction_risk.v2 (2.0.2) | 有害反応リスク | Issue #41。校正済み（2026-09-25。括弧書きなしで確定。at0101 重症度、at0063 検証状態、at0117 反応が起きた直近の日時、at0133 反応が最初に起きた日時） |

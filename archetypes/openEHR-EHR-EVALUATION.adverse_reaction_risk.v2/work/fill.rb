@@ -4,10 +4,8 @@
 # Human proofreading: edit work/openEHR-EHR-EVALUATION.adverse_reaction_risk.v2.ja.tsv and run `make import ID=openEHR-EHR-EVALUATION.adverse_reaction_risk.v2` (regenerates this file).
 
 T = {
-  # Attribution metadata is preserved verbatim.
-  ['term', 'at0000', 'source'] => "openEHR,FHIR",
   # To record the clinical assessment of the propensity for an individual to experience an adverse reaction if exposed, or re-exposed, to a specified substance or class of substances.
-  ['description', '-', 'purpose'] => "特定の物質または物質の分類に属するものへの曝露や再曝露によって、個人が有害反応を起こす素因について、臨床的評価を記録するため。",
+  ['description', '-', 'purpose'] => "特定の物質または特定の分類に属する物質への曝露や再曝露によって、個人が有害反応を起こす素因について、臨床的評価を記録するため。",
 
   # Use to record a clinical assessment of a propensity for an adverse reaction upon future exposure to a specified substance or class of substances including, but not limited to, incipients and excipients in medicinal preparations, biological products, metal salts, and organic chemical compounds. 
   # 
@@ -30,7 +28,7 @@ T = {
   # - to assist with computerised knowledge-based activities such as clinical decision support and alerts.
   # 
   # The risk of an adverse reaction event or manifestation must always propose a causative substance or class of substance. If there is a degree of uncertainty that a specific substance is the cause, the level of uncertainty can be recorded using the ‘Verification status’ data element. If more than one possible substance may have caused a reaction/manifestation, each substance should be recorded using a separate instance of this adverse reaction risk archetype with the ‘Verification status’ set to an initial state of ‘Unconfirmed’ so that adverse reaction checking can be activated in clinical systems. If the substance is later proven not to be causal then the ‘Verification status’ can be modified to ‘Refuted’ - for example, after allergy testing.
-  ['description', '-', 'use'] => "特定の物質または物質の分類に属するものへの今後の曝露によって、有害反応を起こす素因について、臨床的評価を記録するために用いる。対象となる物質には、医薬品製剤の成分や賦形剤、生物学的製剤、金属塩、有機化合物などがあるが、これらに限らない。 \n\n本archetypeは、ごく軽微なものから生命を脅かすものまで、以下のあらゆる反応を起こす素因を健康記録の一か所に記録できるように設計されている。\n- 免疫介在性：I〜IV型の反応（アレルギー反応や過敏症を含む）を記録する。 \n- 非免疫介在性：偽アレルギー反応、副作用、不耐症、薬剤毒性などを記録する。\n臨床現場では、免疫介在性と非免疫介在性の反応を区別することが難しい場合がある。反応の種類を特定しても、患者への影響の深刻さや危害のリスクを判断する代わりにはならない。\n\n素因が特定された場合は、「反応イベントの要約」SLOTの CLUSTER.adverse_reaction_event archetypeを用いて、1つ以上の反応イベントに関する情報や根拠を記録できる。\n\nCLUSTER.adverse_reaction_event archetypeに記録された症状の重症度は、有害反応リスクの「重大性」を判断する参考になる。例：ある物質への初回曝露でアナフィラキシーが起きた場合は、2回目以降の曝露でも再び起きるリスクが高いため、「重大性」を「高」とする根拠になる。\n\n本archetypeは、特定の物質（アモキシシリン、カキ、ハチ刺傷による毒など）、または物質の分類（例：ペニシリン系）に関する情報を記録できるように設計されている。物質の分類を記録した場合は、CLUSTER.adverse_reaction_event archetypeを用いて、反応ごとに具体的な物質を特定して記録できる。\n\n以下の目的で、有害反応のリスクがあることを記録するために用いる。\n- 個人への直接的な診療・ケアを支援する。 \n- 継続的に管理する有害反応リストやアレルギー・不耐症リストの一部として記録する。 \n- 有害反応に関する素因やイベントの情報交換を支援する。 \n- 有害反応の報告に役立てる。 \n- 臨床意思決定支援やアラートなど、コンピュータ上で知識に基づいて行う活動を支援する。\n\n有害反応イベントや症状が生じるリスクを記録する際は、原因と考えられる物質または物質の分類を必ず示す必要がある。特定の物質が原因かどうかに不確実性がある場合は、「検証状態」データエレメントでその程度を記録できる。反応や症状の原因として複数の物質が考えられる場合は、本archetypeの別々のインスタンスを用いて、物質ごとに記録する。その際、「検証状態」の初期値を「未確認」にすることで、臨床システムによる有害反応のチェックを有効にできる。その物質が原因ではないと後に判明した場合（例：アレルギー検査後）は、「検証状態」を「否定」に変更できる。",
+  ['description', '-', 'use'] => "特定の物質または特定の分類に属する物質への今後の曝露によって、有害反応を起こす素因について、臨床的評価を記録するために用いる。対象となる物質には、医薬品製剤の成分や賦形剤、生物学的製剤、金属塩、有機化合物などがあるが、これらに限らない。 \n\n本archetypeは、ごく軽微なものから生命を脅かすものまで、以下のあらゆる反応を起こす素因を健康記録の一か所に記録できるように設計されている。\n- 免疫介在性：I〜IV型の反応（アレルギー反応や過敏症を含む）を記録する。 \n- 非免疫介在性：偽アレルギー反応、副作用、不耐症、薬剤毒性などを記録する。\n臨床現場では、免疫介在性と非免疫介在性の反応を区別することが難しい場合がある。反応の種類を特定しても、患者への影響の深刻さや危害のリスクを判断する代わりにはならない。\n\n素因が特定された場合は、「反応イベントの要約」SLOTの CLUSTER.adverse_reaction_event archetypeを用いて、1つ以上の反応イベントに関する情報や根拠を記録できる。\n\nCLUSTER.adverse_reaction_event archetypeに記録された症状の重症度は、有害反応リスクの「重症度」を判断する参考になる。例：ある物質への初回曝露でアナフィラキシーが起きた場合は、2回目以降の曝露でも再び起きるリスクが高いため、「重症度」を「高」とする根拠になる。\n\n本archetypeは、特定の物質（アモキシシリン、カキ、ハチ刺傷による毒など）、または物質の分類（例：ペニシリン系）に関する情報を記録できるように設計されている。物質の分類を記録した場合は、CLUSTER.adverse_reaction_event archetypeを用いて、反応ごとに具体的な物質を特定して記録できる。\n\n以下の目的で、有害反応のリスクがあることを記録するために用いる。\n- 個人への直接的な診療・ケアを支援する。 \n- 継続的に管理する有害反応リストやアレルギー・不耐症リストの一部として記録する。 \n- 有害反応に関する素因やイベントの情報交換を支援する。 \n- 有害反応の報告に役立てる。 \n- 臨床意思決定支援やアラートなど、コンピュータ上で知識に基づいて行う活動を支援する。\n\n有害反応イベントや症状が生じるリスクを記録する際は、原因と考えられる物質または物質の分類を必ず示す必要がある。特定の物質が原因かどうかに不確実性がある場合は、「検証状態」データエレメントでその程度を記録できる。反応や症状の原因として複数の物質が考えられる場合は、本archetypeの別々のインスタンスを用いて、物質ごとに記録する。その際、「検証状態」の初期値を「未確認」にすることで、臨床システムによる有害反応のチェックを有効にできる。その物質が原因ではないと後に判明した場合（例：アレルギー検査後）は、「検証状態」を「否定」に変更できる。",
 
   # Not to be used for recording physiological reactions to physical agents, such as heat, cold, sunlight, vibration, exercise activity, by infectious agents or food contaminants. Use a specific archetype for EVALUATION.problem/diagnosis or CLUSTER.symptom/sign for this purpose.
   # 
@@ -67,6 +65,10 @@ T = {
   # Substances include, but are not limited to: a therapeutic substance administered correctly at an appropriate dosage for the individual; food; material derived from plants or animals; or venom from insect stings.
   ['term', 'at0000', 'comment'] => "対象となる物質には、個人に適した用量で正しく投与された治療用物質、食物、動植物由来の物質、昆虫の刺傷による毒などがあるが、これらに限らない。",
 
+  # EVALUATION
+  # openEHR,FHIR
+  ['term', 'at0000', 'source'] => "openEHR,FHIR",
+
   # EVALUATION > data/ITEM_TREE
   # Tree
   ['term', 'at0001', 'text'] => "Tree",
@@ -97,7 +99,7 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # For example: including reason for flagging a 'Criticality' of 'High risk'; and instructions related to future exposure or administration of the Substance, such as administration within an Intensive Care Unit or under corticosteroid cover.
-  ['term', 'at0006', 'comment'] => "例：「重大性」を「高リスク」とした理由や、今後の物質への曝露や投与に関する指示。集中治療室での投与や、副腎皮質ステロイドの予防的投与下での投与など。",
+  ['term', 'at0006', 'comment'] => "例：「重症度」を「高リスク」とした理由や、今後の物質への曝露や投与に関する指示。集中治療室での投与や、副腎皮質ステロイドの予防的投与下での投与など。",
 
   # EVALUATION > protocol/ITEM_TREE
   # Tree
@@ -187,7 +189,7 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Criticality
-  ['term', 'at0101', 'text'] => "重大性",
+  ['term', 'at0101', 'text'] => "重症度",
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # An indication of the potential for critical system organ damage or life threatening consequence.
@@ -211,11 +213,11 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Onset of last reaction
-  ['term', 'at0117', 'text'] => "最終反応の発症",
+  ['term', 'at0117', 'text'] => "反応が起きた直近の日時",
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # The date and/or time of the onset of the last known occurrence of a reaction event.
-  ['term', 'at0117', 'description'] => "把握されている中で最後の反応イベントが発症した日付や時刻。",
+  ['term', 'at0117', 'description'] => "把握されている中で反応イベントが最後に発症した日付や時刻。",
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # For example: the actual date and/or time of onset; the interval of time during which the onset occurred; the age of the individual at the time of the onset; or the duration of time since the onset occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year.
@@ -305,11 +307,11 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Onset of first reaction
-  ['term', 'at0133', 'text'] => "初回反応の発症",
+  ['term', 'at0133', 'text'] => "反応が最初に起きた日時",
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # The onset of the first known occurrence of a reaction event.
-  ['term', 'at0133', 'description'] => "把握されている中で最初の反応イベントの発症。",
+  ['term', 'at0133', 'description'] => "把握されている中で反応イベントが最初に起きた日時。",
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # For example: the actual date and/or time of onset; the interval of time during which the onset occurred; the age of the individual at the time of the onset; or the duration of time since the onset occurred. A partial date is valid, using the DV_DATE_TIME data type, to record only a year.
@@ -319,33 +321,7 @@ T = {
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['term', 'at0000', 'text'] => "要確認: 有害反応リスク（他候補: 有害反応リスク（アレルギー・不耐症））指定の概念名を採用し、括弧書きの要否は校正で判断する。",
-  ['term', 'at0000', 'description'] => "要確認: 素因（他候補: 傾向）propensity の指定案。遺伝的素因に限定しない意味で用いる。",
-  ['description', '-', 'purpose'] => "要確認: 特定の物質／物質の分類（他候補: 個別の物質／物質群）specific substance／class of substance の指定案を採用する。",
-  ['description', '-', 'use'] => "要確認: 成分（原文：incipients）および賦形剤（他候補: 有効成分および添加剤）incipients は意味が不明確であり、有効成分と断定せず原語を併記した。症状（manifestation、他候補: 発現した症状）、反応の種類（reaction type、他候補: 反応型）、曝露（他候補: ばく露）、生物学的製剤（他候補: 生物製剤）は指定案。偽アレルギー反応（他候補: 非アレルギー性過敏反応）、薬剤毒性（他候補: 薬物毒性）も校正対象。",
-  ['description', '-', 'misuse'] => "要確認: 作用物質（他候補: 因子、薬剤）agent の指定案を採用する。physical agents／infectious agents は文脈上「物理的因子／感染性因子」とした。failed therapy は代替archetypeの指定が原文にないため、用途外である旨のみ記す。",
-  ['description', '-', 'keywords'] => "要確認: 感受性（他候補: 過敏性）sensitivity を hypersensitivity＝過敏症と区別する。過敏症、反応、薬剤、食物は指定訳。作用／有害／化学物質／サプリメント／自然療法／免疫学的／非免疫学的は原文の検索語に対応させた。",
-  ['term', 'at0002', 'text'] => "要確認: 物質（他候補: 原因物質）Substance の指定案。原因と確定していない物質も含む。",
-  ['term', 'at0006', 'comment'] => "要確認: 副腎皮質ステロイドの予防的投与下（他候補: 副腎皮質ステロイド併用下）under corticosteroid cover の意味を明示した。「高リスク」は原文 High risk に対応し、値セットの High＝高とは表記が異なる。",
-  ['term', 'at0047', 'text'] => "要確認: 裏付けとなる臨床記録情報（他候補: 関連する臨床記録情報）Supporting の根拠を示す意味を優先する。",
-  ['term', 'at0058', 'text'] => "要確認: 反応の機序（他候補: 反応機序）反応の種類とは区別する。intolerance mechanism＝不耐症の機序の指定案に合わせる。",
-  ['term', 'at0058', 'comment'] => "要確認: 原因物質（他候補: 原因となる作用物質）causative substance を causative agent の指定案に揃える。感受性（他候補: 過敏性）は sensitivity の訳。",
-  ['term', 'at0059', 'text'] => "要確認: 免疫介在性（他候補: 免疫介在性反応）指定案を採用する。",
-  ['term', 'at0060', 'text'] => "要確認: 非免疫介在性（他候補: 非免疫介在性反応）指定案を採用する。",
-  ['term', 'at0063', 'text'] => "要確認: 検証状態（他候補: 検証状況、確認状況）指定案を採用する。JP-CLINS の verificationStatus と対応する。",
-  ['term', 'at0063', 'description'] => "要確認: 確度（他候補: 確実性）診断確度に揃えた指定案を採用する。",
-  ['term', 'at0064', 'text'] => "要確認: 未確認（他候補: 未確定）JP-CLINS の unconfirmed 表記に合わせる。",
-  ['term', 'at0065', 'text'] => "要確認: 確認済み（他候補: 確定）JP-CLINS の confirmed 表記に合わせる。既存の診断確度の「確定」とは文脈を区別する。",
-  ['term', 'at0065', 'description'] => "要確認: 再負荷（他候補: 再投与）re-challenge は薬剤以外の物質も対象とするため。",
-  ['term', 'at0066', 'text'] => "要確認: 否定（他候補: 否定された、再評価後に否定）既存の診断状況の訳と簡潔なラベルに揃える。JP-CLINS の refuted は「否定された」。",
-  ['term', 'at0101', 'text'] => "要確認: 重大性（他候補: 臨床的危険性、致命度）指定案を採用し、症状の重症度と区別する。",
-  ['term', 'at0102', 'text'] => "要確認: 低（他候補: 低リスク）原文 Low と JP-CLINS の「低」に合わせる。相対的禁忌（他候補: 相対禁忌）も校正対象。",
-  ['term', 'at0103', 'text'] => "要確認: 高（他候補: 高リスク）原文 High と JP-CLINS の「高」に合わせる。絶対的禁忌（他候補: 絶対禁忌）も校正対象。",
-  ['term', 'at0117', 'text'] => "要確認: 最終反応の発症（他候補: 最終反応日、最終反応の発症日時）原文 Onset を残し、日時以外に年齢や経過時間も記録できる範囲を保つ。",
-  ['term', 'at0123', 'description'] => "要確認: 環境中の物質（他候補: 環境物質）environmental の指定案「環境」を文中で自然に表す。",
-  ['term', 'at0129', 'text'] => "要確認: 反応イベントの要約（他候補: 反応イベントの概要）reaction event＝反応イベントの指定案と CLUSTER.adverse_reaction_event の概念名候補「有害反応イベント」に合わせる。",
-  ['term', 'at0130', 'text'] => "要確認: アクティブ・インアクティブの状態（他候補: 活動状態）既存の active／inactive＝アクティブ／インアクティブと status＝状態を優先する。",
-  ['term', 'at0133', 'text'] => "要確認: 初回反応の発症（他候補: 初回反応の発症日時）最終反応の発症と対にし、症状・徴候の onset＝発症に揃える。",
+  # ['term', 'at0000', 'text'] => '要確認: ...',
 }.freeze
 
 src, dst = ARGV
