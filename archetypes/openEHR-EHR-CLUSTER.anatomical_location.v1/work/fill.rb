@@ -19,7 +19,7 @@ T = {
   # The 'Alternative structure' SLOT allows inclusion of additional archetypes that provide an alternative structure for describing the same body site, such as CLUSTER.anatomical_location_relative or CLUSTER.anatomical_location_clock, should this be required. In situations where this archetype is used to name a large or non-specific body part, the additional use of the CLUSTER.anatomical_location_relative archetype will support recording of a more precise location, for example, 2 cm anterior to the cubital fossa of the left forearm or 4 cm below the right costal margin on the chest wall in the mid-clavicular line.
   # 
   # If this archetype is used within other archetypes where the specified subject of care is not the individual for whom the record is being created, for example a fetus in utero, then the anatomical location will be identifying a body site on or within the fetus.
-  ['description', '-', 'use'] => "人体の体表または体内の、特定された単一の部位について、構造化された詳細情報を記録するために用いる。\n\n多くの場合、値セットが単純であれば、「測定部位」や「身体部位」のような単一のデータエレメントで十分であり、実用的である。本archetypeは、正確な記述や複数の情報を組み合わせた記述など、解剖学的部位をより詳細に、または構造化して表現する必要がある場合を想定している。症状、所見、介入などを扱う関連する ENTRY または CLUSTER archetypeの中に入れ子にして、多軸または事後調整された解剖学的表現を記録できる。例：下肢の疼痛、マックバーニー点の圧痛、右母指近位の掌側にある裂傷を記録する。\n\n「側性」データエレメントは、対をなす構造や領域の左側、右側、両側のどこが影響を受けているかを示すために用いる。両肺の同じがんや両下肢の同様の疼痛など、左右対称で同等の所見がある場合は「両側」と記録する。一方、臨床的な特徴が左右で異なる場合は、次のように2つの別々のインスタンスを用いる。\n\n- 同じ SLOT 内に本archetypeのインスタンスを2つ並べ、それぞれに側性と詳細情報を記録する。例：左肺下葉と右肺上葉にある同等の腫瘍を記録する。\n- 左右の肺で腫瘍の種類、大きさ、重症度などに臨床的に重要な違いがある場合は、親archetypeのインスタンスを2つ並べ、それぞれに本archetypeのインスタンスを含めて記録する。\n\n「代替の構造化表現」SLOT には、必要に応じて CLUSTER.anatomical_location_relative や CLUSTER.anatomical_location_clock などのarchetypeを追加できる。これにより、同じ身体部位を別の構造で表現できる。本archetypeで広い範囲の身体部位や具体的に特定されていない身体部位の名称を記録する場合、CLUSTER.anatomical_location_relative archetypeを併用することで、より正確な位置を記録できる。例：左前腕の肘窩より 2 cm 前方、鎖骨中線上の胸壁で右肋骨弓より 4 cm 下方。\n\n本archetypeを他のarchetype内で用い、指定されたケア対象者が記録の対象者本人ではなく、例えば子宮内の胎児である場合、解剖学的部位は胎児の体表または体内の身体部位を示す。",
+  ['description', '-', 'use'] => "人体の体表または体内の、特定された単一の部位について、構造化された詳細情報を記録するために用いる。\n\n多くの場合、値セットが単純であれば、「測定部位」や「身体部位」のような単一のデータエレメントで十分であり、実用的である。本archetypeは、正確な記述や複数の情報を組み合わせた記述など、解剖学的部位をより詳細に、または構造化して表現する必要がある場合を想定している。症状、所見、介入などを扱う関連する ENTRY または CLUSTER archetypeの中に入れ子にして、多軸または事後調整された解剖学的表現を記録できる。例：下肢の疼痛、マックバーニー点の圧痛、右母指近位の掌側にある裂傷を記録する。\n\n「側性」データエレメントは、対をなす構造や領域の左側、右側、両側のどこが影響を受けているかを示すために用いる。両肺の同じがんや両下肢の同様の疼痛など、左右対称で同等の所見がある場合は「左右両側」と記録する。一方、臨床的な特徴が左右で異なる場合は、次のように2つの別々のインスタンスを用いる。\n\n- 同じ SLOT 内に本archetypeのインスタンスを2つ並べ、それぞれに側性と詳細情報を記録する。例：左肺下葉と右肺上葉にある同等の腫瘍を記録する。\n- 左右の肺で腫瘍の種類、大きさ、重症度などに臨床的に重要な違いがある場合は、親archetypeのインスタンスを2つ並べ、それぞれに本archetypeのインスタンスを含めて記録する。\n\n「代替の構造化表現」SLOT には、必要に応じて CLUSTER.anatomical_location_relative や CLUSTER.anatomical_location_clock などのarchetypeを追加できる。これにより、同じ身体部位を別の構造で表現できる。本archetypeで広い範囲の身体部位や具体的に特定されていない身体部位の名称を記録する場合、CLUSTER.anatomical_location_relative archetypeを併用することで、より正確な位置を記録できる。例：左前腕の肘窩より 2 cm 前方、鎖骨中線上の胸壁で右肋骨弓より 4 cm 下方。\n\n本archetypeを他のarchetype内で用い、指定されたケア対象者が記録の対象者本人ではなく、例えば子宮内の胎児である場合、解剖学的部位は胎児の体表または体内の身体部位を示す。",
 
   # Not to be used to describe involvement of both sides of a paired structure when the clinical findings differ significantly between sides. In such cases, each side should be documented using a separate instance of this archetype with side-specific detail.
   ['description', '-', 'misuse'] => "対をなす構造の両側で臨床所見が大きく異なる場合の記録には、本archetypeの単一のインスタンスではなく、左右別々のインスタンスを用いる。それぞれに左右固有の詳細情報を記録する。",
@@ -52,7 +52,7 @@ T = {
   # This data element should be coded with a terminology capable of triggering decision support, where possible - an appropriate termset for use here could comprise individual concepts or a list of precoordinated terms. Free text should be used only if there is no appropriate terminology available.
   # 
   # If 'Body site name' is already identified in an archetype in which this Anatomical location archetype has been nested, then this data element may be redundant. However, it might be reasonable to duplicate 'Body site name' in this archetype to support semantic querying using this archetype, instead of the archetype in which it has been nested.
-  ['term', 'at0001', 'comment'] => "このデータエレメントは、本archetypeで唯一の必須データ項目である。一般に用いられる名称で解剖学的部位を記録するための主要なデータ項目として用いる。「身体部位名」は、解剖学的に可能な限り具体的に記録することを強く推奨する。例：「眼瞼」に「上」という修飾語を付けるのではなく「上眼瞼」と記録する。「肋骨」に数字の修飾語を付けるのではなく「第 5 肋骨」と記録する。さらに詳しく記録するには、側性、方向、領域、解剖学的基準線を表す他のデータエレメントを用いる。\n\n可能であれば、このデータエレメントは臨床意思決定支援を起動できる用語集によりコード化する。ここで用いる用語セットは、個々の概念、または事前調整された用語の一覧で構成できる。適切な用語集が利用できない場合に限り、自由記述を用いる。\n\n本archetypeを他のarchetypeの中に入れ子にして使用し、そのarchetypeですでに「身体部位名」が示されている場合、このデータエレメントは冗長になることがある。ただし、入れ子先のarchetypeではなく本archetypeを用いて意味に基づく検索を行うために、本archetypeにも「身体部位名」を重複して記録することが妥当な場合もある。",
+  ['term', 'at0001', 'comment'] => "このデータエレメントは、本archetypeで唯一の必須データ項目である。一般に用いられる名称で解剖学的部位を記録するための主要なデータ項目として用いる。「身体部位名」は、解剖学的に可能な限り具体的に記録することを強く推奨する。例：「眼瞼」に「上」という修飾語を付けるのではなく「上眼瞼」と記録する。「肋骨」に数字の修飾語を付けるのではなく「第 5 肋骨」と記録する。さらに詳しく記録するには、側性、面、領域、解剖学的基準線を表す他のデータエレメントを用いる。\n\n可能であれば、このデータエレメントは臨床意思決定支援を起動できる用語集によりコード化する。ここで用いる用語セットは、個々の概念、または事前調整された用語の一覧で構成できる。適切な用語集が利用できない場合に限り、自由記述を用いる。\n\n本archetypeを他のarchetypeの中に入れ子にして使用し、そのarchetypeですでに「身体部位名」が示されている場合、このデータエレメントは冗長になることがある。ただし、入れ子先のarchetypeではなく本archetypeを用いて意味に基づく検索（semantic query）を行うために、本archetypeにも「身体部位名」を重複して記録することが妥当な場合もある。",
 
   # CLUSTER > items/ELEMENT
   # Laterality
@@ -64,7 +64,7 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # If the 'Body site name' includes a pre-coordinated term that already specifies laterality, this data element may be redundant. If the findings require documentation of a body site on both the left and right sides of the body, or involving both sides of a paired structure or region, use 'Left and right' only when the same anatomical site is affected on both sides and side-specific detail is not required. If the findings differ significantly between sides, each should be recorded as a separate instance of this archetype with the appropriate laterality.
-  ['term', 'at0002', 'comment'] => "「身体部位名」に側性を含む事前調整された用語を用いる場合、このデータエレメントは冗長になることがある。身体の左右両側にある部位や、対をなす構造または領域の両側について所見を記録する際には、両側の同じ解剖学的部位が影響を受け、左右それぞれの詳細情報が不要な場合に限り「両側」を用いる。左右で所見が大きく異なる場合は、本archetypeの別々のインスタンスを用い、それぞれに適切な側性を記録する。",
+  ['term', 'at0002', 'comment'] => "「身体部位名」に側性を含む事前調整された用語を用いる場合、このデータエレメントは冗長になることがある。身体の左右両側にある部位や、対をなす構造または領域の両側について所見を記録する際には、両側の同じ解剖学的部位が影響を受け、左右それぞれの詳細情報が不要な場合に限り「左右両側」を用いる。左右で所見が大きく異なる場合は、本archetypeの別々のインスタンスを用い、それぞれに適切な側性を記録する。",
 
   # Left
   ['term', 'at0003', 'text'] => "左",
@@ -166,15 +166,15 @@ T = {
 
   # CLUSTER > items/ELEMENT
   # Aspect
-  ['term', 'at0064', 'text'] => "方向",
+  ['term', 'at0064', 'text'] => "面",
 
   # CLUSTER > items/ELEMENT
   # Qualifying detail about the specific aspect of the identified body site.
-  ['term', 'at0064', 'description'] => "特定された身体部位の方向を詳しく示す情報。",
+  ['term', 'at0064', 'description'] => "特定された身体部位の面を詳しく示す情報。",
 
   # CLUSTER > items/ELEMENT
   # Use to increase precision of identification of the body site, if required. Common aspects have been included as a value set, which can be extended over time, plus a free text option. Assumes that the body is being described while in the anatomical position. For example: proximal urethra; plantar aspect of the left thumb. Multiple aspects can also be described, if required, by allowing for 0..2 occurrences. For example: a lesion may be on the left anterior/lateral (ie anterolateral) chest wall. If the 'Body site name' data element uses pre-coordinated terms that include the aspect, then this data element is redundant.
-  ['term', 'at0064', 'comment'] => "必要に応じて、身体部位をより正確に示すために用いる。一般的な方向を値セットとして含み、自由記述も選択できる。値セットは今後拡張できる。身体が解剖学的正位にあることを前提として記述する。例：尿道の近位、左母指の足底側。必要に応じて出現回数を 0..2 とすることで、複数の方向も記述できる。例：左胸壁の前方と外側（すなわち前外側）にある病変。「身体部位名」データエレメントに方向を含む事前調整された用語を用いる場合、このデータエレメントを使用する必要はない。",
+  ['term', 'at0064', 'comment'] => "必要に応じて、身体部位をより正確に示すために用いる。一般的な面を値セットとして含み、自由記述も選択できる。値セットは今後拡張できる。身体が解剖学的正位にあることを前提として記述する。例：尿道の近位、左母指の足底側面。必要に応じて出現回数を 0..2 とすることで、複数の面も記述できる。例：左胸壁の前方と外側（すなわち前外側）にある病変。「身体部位名」データエレメントに面を含む事前調整された用語を用いる場合、このデータエレメントを使用する必要はない。",
 
   # CLUSTER > items/ELEMENT
   # Specific site
@@ -229,13 +229,13 @@ T = {
   ['term', 'at0073', 'text'] => "近位",
 
   # More central or closer to the point of attachment, and usually describing part of a limb, digit or appendage.
-  ['term', 'at0073', 'description'] => "より中心に近い、または付着部に近い側。通常は四肢、指（手指・足趾）、付属肢の一部を表す際に用いる。",
+  ['term', 'at0073', 'description'] => "より中心に近い、または付着部に近い側。通常は四肢、指（手指・足趾）、付属器の一部を表す際に用いる。",
 
   # Distal
   ['term', 'at0074', 'text'] => "遠位",
 
   # More peripheral, or further from the point of attachment, and usually describing part of a limb, digit or appendage.
-  ['term', 'at0074', 'description'] => "より末梢にある、または付着部から遠い側。通常は四肢、指（手指・足趾）、付属肢の一部を表す際に用いる。",
+  ['term', 'at0074', 'description'] => "より末梢にある、または付着部から遠い側。通常は四肢、指（手指・足趾）、付属器の一部を表す際に用いる。",
 
   # Palmar
   ['term', 'at0075', 'text'] => "掌側",
@@ -286,7 +286,7 @@ T = {
   ['term', 'at0082', 'description'] => "手背または足背に向かう方向。掌側または足底側の対語として用い、後方の同義語としては用いない。",
 
   # Right and left
-  ['term', 'at0083', 'text'] => "両側",
+  ['term', 'at0083', 'text'] => "左右両側",
 
   # Both the right and left sides of the body, or involving both sides of a paired organ, body structure, or anatomical region.
   ['term', 'at0083', 'description'] => "身体の左右両側、または対をなす臓器、身体構造、解剖学的領域の両側。",
@@ -295,28 +295,7 @@ T = {
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['term', 'at0002', 'text'] => "要確認: 側性（他候補: 左右）院内がん登録・画像レポートの用語に合わせる。",
-  ['term', 'at0083', 'text'] => "要確認: 両側（他候補: 左右）両側に及ぶことを明確にする。本文の Left and right も同じ値として訳す。",
-  ['term', 'at0064', 'text'] => "要確認: 方向（他候補: 面）値セットが近位・遠位・上方などの方向用語であるため。media_file の観察方向とは区別する。",
-  ['term', 'at0065', 'text'] => "要確認: 特定部位（他候補: 詳細部位）身体部位内の特定の領域や点を示すため。",
-  ['term', 'at0069', 'text'] => "要確認: 上方（他候補: 上）方向を示す値であることを明確にする。",
-  ['term', 'at0070', 'text'] => "要確認: 下方（他候補: 下）方向を示す値であることを明確にする。",
-  ['term', 'at0071', 'text'] => "要確認: 前方（他候補: 前）方向を示す値であることを明確にする。",
-  ['term', 'at0072', 'text'] => "要確認: 後方（他候補: 後）方向を示す値であることを明確にする。",
-  ['term', 'at0075', 'text'] => "要確認: 掌側（他候補: 手掌側）指定案を採用し、足底側・背側と対になる方向を表す。",
-  ['term', 'at0076', 'text'] => "要確認: 足底側（他候補: 底側）足底を指すことを明確にする。",
-  ['term', 'at0080', 'text'] => "要確認: 深部（他候補: 深層）層ではなく表面から離れる方向を示すため。",
-  ['term', 'at0081', 'text'] => "要確認: 浅部（他候補: 浅層）層ではなく表面に向かう方向を示すため。",
-  ['term', 'at0077', 'text'] => "要確認: 中央（他候補: 中間）身体部位の中央を示すため。",
-  ['term', 'at0055', 'text'] => "要確認: 解剖学的基準線（他候補: 基準線、体表基準線）解剖学的構造を基準とする線であることを明確にする。",
-  ['term', 'at0060', 'text'] => "要確認: 瞳孔中心線（他候補: 瞳孔中線、瞳孔線）正面視で瞳孔の中心を通るという定義に合わせる。",
-  ['term', 'at0063', 'text'] => "要確認: 肩甲線（他候補: 肩甲骨中線）肩甲骨下角を通る垂線という定義に合わせ、指定された scapular line の訳を採用する。",
-  ['term', 'at0053', 'text'] => "要確認: 代替の構造化表現（他候補: 代替構造）構造化された身体部位表現と語感を揃える。",
-  ['term', 'at0073', 'description'] => "要確認: 付属肢（他候補: 付属器）指定案を採用する。limb、digit と並列される appendage の範囲は確認が必要。",
-  ['term', 'at0074', 'description'] => "要確認: 付属肢（他候補: 付属器）指定案を採用する。limb、digit と並列される appendage の範囲は確認が必要。",
-  ['term', 'at0064', 'comment'] => "要確認: 左母指の足底側（他候補: 左母指の掌側）原文 plantar aspect of the left thumb を保持した。母指と足底側の不整合は原文の確認が必要。",
-  ['description', '-', 'use'] => "要確認: 多軸／事後調整された（他候補: 複数の軸による／後から組み合わせた）multiaxial／postcoordinated の訳。事前調整されたとの対応を優先する。",
-  ['term', 'at0001', 'comment'] => "要確認: 用語セット／意味に基づく検索（他候補: 用語集合／意味的照会）termset／semantic querying の訳。用語セットは値セットと区別し、検索は日本語としての読みやすさを優先する。",
+  # ['term', 'at0000', 'text'] => '要確認: ...',
 }.freeze
 
 src, dst = ARGV
