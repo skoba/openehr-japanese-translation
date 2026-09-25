@@ -18,12 +18,12 @@ T = {
   # There is a rich state model that supports interpretation of measurements through identifying patient position, exercise, confounding factors and angle of a tilt table in research. 
   # 
   # Named events have been limited to average over a 24 hour period, however templates can further constrain the default 'any event' to cater for specific requirements for blood pressure measurements such as recording Blood Pressure against specific points in time, or over a range of intervals (+/- mathematical functions).
-  ['description', '-', 'use'] => "測定方法や身体部位を問わず、すべての血圧についての表現を記録するために使用される。このアーキタイプはすべての臨床シナリオを網羅することを目指している。以下に例を挙げる。\n- 家庭用血圧計で自己測定した血圧\n- 緊急時の評価として触診法で血圧計で測定された収縮期圧\n- 臨床上のコンサルテーションや運動負荷テストの間に測定されたもの\n- 集中治療において機械的に計測された一連の血圧などである。\n患者の体位や運動負荷、交絡因子やティルト台の角度など識別することにより、研究にて計測状態の解釈を手助けする豊富なステートモデルもある。\n24時間平均血圧だけが特定のイベントとして名前がつけられているが、テンプレートではデフォルトの「任意のイベント」にさらなる制約を加えることで、特定の時間や間隔を指定したり（数学的機能を追加したり、削除して）、血圧を記録するように、血圧測定に対する特定の要求を行ったイベントを指定することができる。",
+  ['description', '-', 'use'] => "測定方法や身体部位を問わず、すべての血圧についての表現を記録するために使用される。このアーキタイプはすべての臨床シナリオを網羅することを目指している。以下に例を挙げる。\n- 家庭用血圧計で自己測定した血圧\n- 緊急時の評価として触診法により血圧計で測定された収縮期圧\n- 臨床上のコンサルテーションや運動負荷テストの間に測定されたもの\n- 集中治療において機械的に計測された一連の血圧などである。\n患者の体位や運動負荷、交絡因子やティルト台の角度など識別することにより、研究にて計測状態の解釈を手助けする豊富なステートモデルもある。\n24時間平均血圧だけが特定のイベントとして名前がつけられているが、テンプレートではデフォルトの「任意のイベント」にさらなる制約を加えることで、特定の時間や間隔を指定したり（数学的機能を追加したり、削除して）、血圧を記録するように、血圧測定に対する特定の要求を行ったイベントを指定することができる。",
 
   # Not to be used to record the measurement of arterial blood pressure which is NOT a surrogate for arterial pressure in the systemic circulation eg specific measurement of right pulmonary artery pressure. Use OBSERVATION.intravascular_pressure in this situation.  
   # 
   # Not to be used to record measurements of intravenous pressure. Use the appropriate specialisations of OBSERVATION.intravascular_pressure in this situation.
-  ['description', '-', 'misuse'] => "たとえば、右肺動脈の血圧を特定の計測を行うように全身循環を表す指標としての代わりとならないような動脈血圧の測定には用いない。このような場合には、OBSERVATION.intravascular_pressureを利用すること。\n血管内圧の測定には用いられない。このような場合には、適切に特殊化されたOBSERVATION.intravascular_pressureを利用すること",
+  ['description', '-', 'misuse'] => "全身循環を表す指標としての代わりとならない特定の動脈血圧、たとえば右肺動脈の血圧測定には用いない。このような場合には、OBSERVATION.intravascular_pressureを利用すること。\n血管内圧の測定には用いられない。このような場合には、適切に特殊化されたOBSERVATION.intravascular_pressureを利用すること",
 
   # observations | measurement | bp | vital signs | mean arterial pressure | pulse pressure | systolic | diastolic | RR | NIBP
   ['description', '-', 'keywords'] => "観察 | 測定 | 血圧 | バイタルサイン | 平均動脈圧 | 脈圧 | 収縮期 | 拡張期 | RR間隔 | 非観血血圧",
@@ -97,7 +97,7 @@ T = {
 
   # OBSERVATION > data/HISTORY > events/EVENT > state/ITEM_TREE > items/ELEMENT
   # The position of the individual at the time of measurement.
-  ['term', 'at0008', 'description'] => "計測のときの対象者の体位",
+  ['term', 'at0008', 'description'] => "測定時の対象者の体位",
 
   # OBSERVATION > protocol/ITEM_TREE
   # Tree
@@ -464,7 +464,6 @@ T = {
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
   ['term', 'at0007', 'text'] => "内部の構造ノード名は文体規則により英字のまま。placeholder の *…(en) を外しただけ。",
-  # ['term', 'at0000', 'text'] => '要確認: ...',
 }.freeze
 
 src, dst = ARGV
