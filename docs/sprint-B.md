@@ -13,7 +13,8 @@
 | 5 | #41 | openEHR-EHR-EVALUATION.adverse_reaction_risk.v2 | published 2.0.2 | 30 | 大物（約 160 KB）。必ず 1 本で PR。JP-CLINS AllergyIntolerance 対応 |
 | 6 | #59 | openEHR-EHR-CLUSTER.anatomical_location.v1 | published 1.5.1 | 35 | problem_diagnosis / symptom_sign の「構造化された身体部位表現」スロットの本体。#42 のスロットでもあるので #42 の前に |
 | 7 | #42 | openEHR-EHR-CLUSTER.adverse_reaction_event.v1 | published 1.0.2 | 26 | #41 のスロット。#41 の用語を引き継ぐ |
-| 8 | #45 | openEHR-EHR-EVALUATION.infectious_disease_summary.v0 | DRAFT 0.0.1-alpha（en のみ） | 14 | v0 で改版リスク。翻訳は行うが CKM へ上げるかは別途判断 |
+| 8 | #66 | openEHR-EHR-INSTRUCTION.medication_order.v3 | published 3.2.1 | 57 | jp_referral「現在の処方」で使用（C 群から前倒し）。最大物なので必ず単独 PR。#18〜#21（#67〜#70）は構造化用法をテンプレートに足す段階で |
+| 9 | #45 | openEHR-EHR-EVALUATION.infectious_disease_summary.v0 | DRAFT 0.0.1-alpha（en のみ） | 14 | v0 で改版リスク。翻訳は行うが CKM へ上げるかは別途判断 |
 | 保留 | #43 | openEHR-EHR-EVALUATION.family_history.v2 | REASSESS_DRAFT 2.0.5-alpha（審査中） | 41 | alpha 版への翻訳の扱いについて CKM（Discourse）の回答が出るまで着手しない（decisions-ja.md） |
 
 差分翻訳 3 本を先頭に置く理由: 小さく、`inject --merge`（既存 `["ja"]` を保持して未訳だけ足す）の実運用を最初に確認できるため。
@@ -51,6 +52,11 @@ targets.md の「用語の事前決定が要るもの」のうち B 群に関わ
 | social summary / social history / lifestyle | 未登録 | 社会歴要約（targets 案「社会歴要約（生活歴）」） / 社会歴 / 生活習慣 |
 | infectious disease summary（概念名） | 未登録 | 感染症要約 |
 | Laterality / Aspect / Anatomical Line（anatomical_location.v1） | 未登録 | 側性 / 方向 / 解剖学的基準線（要確認。他候補：左右 / 面 / 基準線）。方向用語（近位・遠位・上方・下方…）と体表の基準線は日本解剖学会『解剖学用語』の訳に合わせる。media_file の aspect＝観察方向とは別語 |
+| Medication order（概念名、medication_order.v3） | 未登録 | 薬剤オーダー（要確認。他候補：処方オーダー）。ワクチン・栄養製品・治療用品も含むので「処方」より広い語 |
+| Medication item（at0070、画面ラベル） | 未登録 | 薬剤名（要確認。他候補：薬剤、医薬品） |
+| Overall / Specific directions description、Parsable directions | 未登録 | 用法・用量の記述 / 用法・用量の個別記述 / 構文化された用法（要確認。他候補：用法の全体記述 / 機械可読な用法） |
+| Medication safety / Exceptional safety override? / Safety override 系 | 未登録 | 薬剤安全性 / 例外的な安全性オーバーライド / 安全性オーバーライド・オーバーライドした安全性警告・オーバーライドの理由（要確認。override はオーバーライドで統一） |
+| Substitution direction / Permitted / Not permitted / Non-substitution reason | 未登録 | 代替の指示 / 許可 / 不許可 / 代替不可の理由（要確認。処方箋の「後発医薬品への変更不可」に寄せるなら「変更可／変更不可」。bioequivalent＝生物学的同等） |
 
 ## 状態
 

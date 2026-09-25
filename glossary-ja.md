@@ -349,6 +349,83 @@
 | multiaxial / postcoordinated | 多軸 / 事後調整された | 校正 2026-09-23 で確定: 多軸／事後調整された（他候補: 複数の軸による／後から組み合わせた）multiaxial／postcoordinated の訳。事前調整されたとの対応を優先する。 |
 | termset / semantic querying | 用語セット / 意味に基づく検索 | 校正 2026-09-23 で確定: 用語セット／意味に基づく検索（他候補: 用語集合／意味的照会）termset／semantic querying の訳。用語セットは値セットと区別し、検索は日本語としての読みやすさを優先する。 |
 
+| Medication order | 薬剤オーダー | medication_order.v3 at0000。要確認: 薬剤オーダー（他候補: 処方オーダー）ワクチン・栄養製品・治療用品も含むため、処方より広い語を採用する。 |
+| Overall directions description | 用法・用量の記述 | medication_order.v3 at0009。要確認: 用法・用量の記述（他候補: 用法の全体記述）用量とタイミングを含む全体の指示を示す画面ラベルとする。 |
+| Order start criterion | オーダー開始基準 | medication_order.v3 at0011。指定訳を採用。 |
+| Order start date/time | オーダー開始日時 | medication_order.v3 at0012。指定訳を採用。 |
+| Order stop date/time | オーダー終了日時 | medication_order.v3 at0013。指定訳を採用。 |
+| Order stop criterion | オーダー終了基準 | medication_order.v3 at0016。指定訳を採用。 |
+| Additional instruction | 追加の指示 | medication_order.v3 at0044。指定訳を採用。 |
+| Parsable directions | 構文化された用法 | medication_order.v3 at0047。要確認: 構文化された用法（他候補: 機械可読な用法）構文解析できるテキストを表し、構造化された指示のSLOTと区別する。 |
+| Duration of order completed | 完了したオーダー期間 | medication_order.v3 at0050。要確認: 完了したオーダー期間（他候補: 実施済みのオーダー期間）全体の治療期間のうち、このオーダーの発行前に完了した期間を表す。 |
+| Maximum dose | 最大用量 | medication_order.v3 at0051。指定訳を採用。 |
+| Allowed period | 許容期間 | medication_order.v3 at0053。指定訳を採用。 |
+| Administrations completed | 完了した投与回数 | medication_order.v3 at0060。要確認: 完了した投与回数（他候補: 投与済み回数）このオーダーの発行前に完了した回数を含む指定案を採用する。 |
+| Medication safety | 薬剤安全性 | medication_order.v3 at0062。要確認: 薬剤安全性（他候補: 投薬の安全性）薬剤オーダーの安全性に関する情報をまとめる指定案を採用する。 |
+| Exceptional safety override? | 例外的な安全性オーバーライド | medication_order.v3 at0064。要確認: 例外的な安全性オーバーライド（他候補: 安全性警告の例外的解除）overrideはオーバーライドに統一し、指定のラベルを採用する。 |
+| Dispense amount | 調剤量 | medication_order.v3 at0065。指定訳を採用。 |
+| Authorisation directions | 承認の指示 | medication_order.v3 at0069。要確認: 承認の指示（他候補: 承認に関する指示）自己投与、発行、承認、再承認の地域差を扱うSLOTの指定案を採用する。 |
+| Medication item | 薬剤名 | medication_order.v3 at0070。要確認: 薬剤名（他候補: 薬剤、医薬品）画面ラベルとして簡潔にし、名称を記録する項目であることを示す。 |
+| Route | 投与経路 | medication_order.v3 at0091。指定訳を採用。 |
+| Administration method | 投与方法 | medication_order.v3 at0094。指定訳を採用。 |
+| Administration device | 投与器具 | medication_order.v3 at0095。要確認: 投与器具（他候補: 投与デバイス）投与を補助する器具を示す指定案を採用する。 |
+| Patient information | 患者への情報 | medication_order.v3 at0105。指定訳を採用。 |
+| Dispense instruction | 調剤者への指示 | medication_order.v3 at0106。指定訳を採用。 |
+| Monitoring instruction | モニタリングの指示 | medication_order.v3 at0107。指定訳を採用。 |
+| Order summary | オーダー要約 | medication_order.v3 at0112。指定訳を採用。 |
+| Dispense directions | 調剤の指示 | medication_order.v3 at0129。指定訳を採用。 |
+| Maximum amount | 最大量 | medication_order.v3 at0130。指定訳を採用。 |
+| Substitution direction | 代替の指示 | medication_order.v3 at0132。要確認: 代替の指示（他候補: 変更の指示）生物学的同等な製品への代替を指し、後発医薬品への変更だけに限定しない。 |
+| Priority | 優先度 | medication_order.v3 at0139。指定訳を採用。 |
+| Medication details | 薬剤詳細 | medication_order.v3 at0143。指定訳を採用。 |
+| Therapeutic intent | 治療意図 | medication_order.v3 at0148。要確認: 治療意図（他候補: 治療目的）用量記録の「目的」と区別し、治療全体の意図を示す。 |
+| Total daily effective dose | 1 日実効総用量 | medication_order.v3 at0150。要確認: 1 日実効総用量（他候補: 1 日総用量）目標用量そのものではなく、目標に対する実効用量を表す。 |
+| Total daily amount | 1 日総量 | medication_order.v3 at0151。要確認: 1 日総量（他候補: 1 日総用量）at0150の内部で日ごとの量を記録する項目として、指定案を採用する。 |
+| Non-substitution reason | 代替不可の理由 | medication_order.v3 at0154。要確認: 代替不可の理由（他候補: 変更不可の理由）「代替の指示」と用語を揃える。 |
+| Dispensing start date | 調剤開始日 | medication_order.v3 at0155。指定訳を採用。 |
+| Dispensing expiry date | 調剤有効期限 | medication_order.v3 at0161。指定訳を採用。 |
+| Override reason | オーバーライドの理由 | medication_order.v3 at0162。指定訳を採用。 |
+| Purpose | 目的 | medication_order.v3 at0165。要確認: 目的（他候補: 記録目的）1 日実効総用量を記録する理由であることは説明文で示し、ラベルは指定の「目的」とする。 |
+| Permitted | 許可 | medication_order.v3 at0168。要確認: 許可（他候補: 変更可）代替の許可を示す指定案を採用し、国内の処方箋の表現との対応はレビューで確認する。 |
+| Not permitted | 不許可 | medication_order.v3 at0169。要確認: 不許可（他候補: 変更不可）代替の不許可を示す指定案を採用し、国内の処方箋の表現との対応はレビューで確認する。 |
+| Dispense details | 調剤の詳細 | medication_order.v3 at0170。指定訳を採用。 |
+| Overriden safety advice | オーバーライドした安全性警告 | medication_order.v3 at0171。指定訳を採用。 |
+| Specific directions description | 用法・用量の個別記述 | medication_order.v3 at0173。要確認: 用法・用量の個別記述（他候補: 用法の個別記述）テンプレートで「用量」「用法」に分けて2回出現させる想定に合わせる。 |
+| Dosage justification | 用量の根拠 | medication_order.v3 at0174。指定訳を採用。 |
+| Structured dose and timing directions | 構造化された用量・タイミングの指示 | medication_order.v3 at0177。要確認: 構造化された用量・タイミングの指示（他候補: 構造化された用量・投与時期の指示）timing_dailyの服用タイミングとの整合を保つため、タイミングを採用する。 |
+| Safety override | 安全性オーバーライド | medication_order.v3 at0178。指定訳を採用。 |
+| Clinician guidance | 医療従事者向けの指針 | medication_order.v3 at0179。要確認: 医療従事者向けの指針（他候補: 処方者への申し送り）将来の処方者と調剤者の双方への助言を含むため。 |
+| medication | 薬剤 | medication_order.v3。指定訳を採用。 |
+| vaccine | ワクチン | medication_order.v3。指定訳を採用。 |
+| nutritional product | 栄養製品 | medication_order.v3。指定訳を採用。 |
+| therapeutic item / therapeutic goods | 治療用品 | medication_order.v3。指定訳を採用。 |
+| over the counter / OTC | 一般用医薬品（OTC） | medication_order.v3。指定訳を採用。 |
+| prescription | 処方箋 | medication_order.v3。指定訳を採用。 |
+| prescriber / dispenser | 処方者 / 調剤者 | medication_order.v3。指定訳を採用。 |
+| prescribing | 処方 | medication_order.v3。指定訳を採用。 |
+| administration / dispensing | 投与 / 調剤 | medication_order.v3。指定訳を採用。 |
+| drug chart | 投薬指示簿 | medication_order.v3。要確認: 投薬指示簿（他候補: 薬剤投与記録表）drug chartはオーダーを記載する文脈のため、指示簿を採用する。 |
+| medication list | 薬剤リスト | medication_order.v3。指定訳を採用。 |
+| regimen | レジメン | medication_order.v3。指定訳を採用。 |
+| reducing dose | 漸減 | medication_order.v3。指定訳を採用。 |
+| titration | 用量調節（漸増） | medication_order.v3。指定訳を採用。 |
+| parenteral fluids / parenteral nutrition | 非経口輸液 / 経静脈栄養 | medication_order.v3。指定訳を採用。 |
+| intravenous | 静脈内 | medication_order.v3。指定訳を採用。 |
+| self-administration | 自己投与 | medication_order.v3。指定訳を採用。 |
+| issue (of an order) / endorsement | 発行 / 承認 | medication_order.v3。指定訳を採用。 |
+| bioequivalent | 生物学的同等 | medication_order.v3。指定訳を採用。 |
+| triple therapy for peptic ulcer | 消化性潰瘍の三剤併用療法 | medication_order.v3。指定訳を採用。 |
+| override | オーバーライド | medication_order.v3。指定訳を採用。 |
+| dose amount / dose timing / dose direction | 用量 / 投与タイミング / 用量の指示 | medication_order.v3。薬剤オーダーの文脈で採用。 |
+| timing | タイミング | medication_order.v3。指定訳を採用。 |
+| preparation strength / strength / form (medication) | 製剤の含量 / 含量 / 剤形 | medication_order.v3。薬剤オーダーの文脈で採用。 |
+| preparation details | 製剤の詳細 | medication_order.v3。薬剤オーダーの文脈で採用。 |
+| nurse practitioner | ナースプラクティショナー | medication_order.v3。薬剤オーダーの文脈で採用。 |
+| posology | 用量学 | medication_order.v3。薬剤オーダーの文脈で採用。 |
+| generic-based / product-based prescribing | 一般名による処方 / 製品名による処方 | medication_order.v3。薬剤オーダーの文脈で採用。 |
+| repeat/refill supply | 反復・リフィル供給 | medication_order.v3。要確認: 反復・リフィル供給（他候補: 繰り返しの供給）各国の再供給制度を含むため、国内のリフィル処方箋に限定しない。 |
+| phased dispensing | 段階的な調剤 | medication_order.v3。要確認: 段階的な調剤（他候補: 分割調剤）国内制度の分割調剤に限定しない。 |
+
 ## アーキタイプ別の確定訳（概念名）
 
 | Archetype | at0000 text | 備考 |
@@ -373,3 +450,4 @@
 | openEHR-EHR-OBSERVATION.body_weight.v2 (2.1.12) | 体重 | 差分翻訳（2026-09-20、Issue #47）。校正済み（2026-09-23、変更なし）。未訳は内部構造ノード名 4 つ（at0001 Simple、at0002 history、at0008 state structure、at0015 protocol structure）のみで英字のまま。既存訳は変更なし（既存の at0027 Extension＝拡張領域 は規則と異なるが本 PR では触らない） |
 | openEHR-EHR-OBSERVATION.blood_pressure.v2 (2.0.16) | 血圧 | 差分翻訳（2026-09-20、Issue #48）。校正済み（2026-09-23。既存訳の use / misuse / at0008 を修正）。未訳は内部構造ノード名 at0007 state structure のみで英字のまま。既存訳は変更なし（既存の at0001 History＝履歴 は規則と異なるが本 PR では触らない） |
 | openEHR-EHR-CLUSTER.anatomical_location.v1 (1.5.1) | 解剖学的部位 | Issue #59。校正済み（2026-09-23。面、付属器、左右両側）。概念名は指定訳。方向・基準線などの要確認事項は共通語表と work/fill.rb の NOTES を参照 |
+| openEHR-EHR-INSTRUCTION.medication_order.v3 (3.2.1) | 薬剤オーダー | Issue #66。要確認（他候補：処方オーダー）。画面ラベル：at0070 薬剤名、at0009 用法・用量の記述、at0173 用法・用量の個別記述、at0012 オーダー開始日時、at0018 臨床的適応、at0167 コメント。 |
