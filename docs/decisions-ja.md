@@ -15,7 +15,8 @@
 - 大物（medication_order / symptom_sign / laboratory_test_result / problem_diagnosis / adverse_reaction_risk / family_history / specimen / problem_qualifier）は必ず 1 本ずつ。群をまたぐ前に用語集の更新をマージする。
 - EVALUATION.family_history.v2（2.0.5-alpha、審査中）は、alpha 版への翻訳の扱いについて CKM 側（Discourse）の回答が出るまで着手しない。
 - INSTRUCTION.service_request.v1 は 1.1.3 公開後に差分翻訳する（2026-09-20 時点で未公開、REASSESS_DRAFT 1.1.2）。 2026-09-20 に 1.1.2 ベースの訳を CKM にアップロードしようとしたところ、current branch が審査中の次版で at0144/45/47 削除・at0154〜58 追加・use 全面改訂の警告が出たため Commit せず中止。公開後に `make update`（Issue #51）で版上げして再訳する。
-- スプリント B（2026-09-20〜）の着手順は docs/sprint-B.md。差分翻訳 3 本 → social_summary → adverse_reaction_risk → anatomical_location（#38、Issue #59）→ adverse_reaction_event → infectious_disease_summary（v0）。family_history.v2 は保留のまま。
+- スプリント B（2026-09-20〜）の着手順は docs/sprint-B.md。差分翻訳 3 本 → social_summary → adverse_reaction_risk → anatomical_location（#38、Issue #59）→ adverse_reaction_event → medication_order（#17、Issue #66。C 群から前倒し）→ infectious_disease_summary（v0）。family_history.v2 は保留のまま。
+- jp_referral の「現在の処方」は INSTRUCTION.medication_order.v3 を最小構成（Medication item、Overall directions description、Specific directions description、Order start date/time、Clinical indication、Comment の 6 ノード）で使う。構造化用法（#18〜#21）は後から任意ノードとして足す（2026-09-25）。
 
 ## status.tsv と CKM の審査状態
 
@@ -41,3 +42,4 @@
 - 2026-09-11：problem_qualifier.v2 を CKM へアップロード。story.v1（病歴）校正。symptom_sign.v2 を A 群に追加。`inject --merge` 追加。翻訳者情報を NPO 名義に統一。ローカライズ方針決定。
 - 2026-09-19〜20：A 群の残り（person / structured_name / address / electronic_communication / organisation / media_file）を Codex 翻訳＋校正。翻訳済み 16 本を現行規則で再レビューし全本校正（PR #39）。校正で clinician＝医療従事者、transfer of care＝診療の引き継ぎ、Structured name＝構造化された人名、Occurrence＝発症区分、Resolving factor＝消失因子、ad hoc の定型を決定。スプリント B の Issue #41〜#48 を作成。
 - 2026-09-21：CLUSTER.anatomical_location.v1（1.5.1）を対象 #38 として追加（Issue #59。adverse_reaction_risk の後、adverse_reaction_event の前に着手）。structured_name.v1 の Representation CR を CKM に提出（1013.36.1512、editor の回答待ち）。
+- 2026-09-25：INSTRUCTION.medication_order.v3（3.2.1、57 コード）を C 群から前倒し（Issue #66。adverse_reaction_event の後）。C 群の Issue #66〜#70 を作成。jp_referral「現在の処方」は medication_order の最小構成 6 ノードで表す（JP-CLINS 430 JP_MedicationRequest_eCS 対応）。intolerance＝不耐症に決定（adverse_reaction_risk #65）。
