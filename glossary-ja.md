@@ -142,7 +142,7 @@
 | differential diagnosis | 鑑別診断 | |
 | presenting complaint | 主訴 | chief complaint と同じ |
 | health risk | 健康リスク | |
-| adverse reaction / allergy / intolerance | 有害反応 / アレルギー / 不耐性 | |
+| adverse reaction / allergy / intolerance | 有害反応 / アレルギー / 不耐症 | 2026-09-25 決定: intolerance はとりあえず「不耐症」（problem_diagnosis 校正版と同じ）。「不耐性」との使い分けはあるので、adverse_reaction_risk の校正で見直す |
 | exclusion | 除外 | |
 | Common Terminology Criteria for Adverse Events | 有害事象共通用語規準（CTCAE） | JCOG 訳 |
 | Guillain-Barre Syndrome / acute motor axonal neuropathy | ギラン・バレー症候群 / 急性運動性軸索型ニューロパチー | |
