@@ -5,7 +5,7 @@
 
 T = {
   # To record a narrative summary about social circumstances or experiences that may have a potential impact on an individual's health, and to provide a framework in which to nest detailed CLUSTER archetypes, each of which will describe the various aspects of social circumstances or experiences in detail.
-  ['description', '-', 'purpose'] => "個人の健康に影響を及ぼす可能性のある社会的状況や社会的経験を、文章で要約して記録するため。それらのさまざまな側面を詳しく記述する CLUSTER archetype群を入れ子にするための枠組みを提供する。",
+  ['description', '-', 'purpose'] => "個人の健康に影響を及ぼす可能性のある生活状況や社会的経験を、文章で要約して記録するため。それらのさまざまな側面を詳しく記述する CLUSTER archetype群を入れ子にするための枠組みを提供する。",
 
   # Use to record a narrative summary about social circumstances or experiences that may have a potential impact on an individual's health.
   # 
@@ -14,24 +14,24 @@ T = {
   # Use as a container archetype - to provide a common, queryable ENTRY archetype in which specific, detailed CLUSTER archetypes can be nested. Examples of appropriate CLUSTER archetypes may include, and are not limited to, relationships with others, social supports, living arrangements, employment, education and religion.
   # 
   # The use of the term 'social summary' varies enormously in practice. This archetype has been designed to allow the concepts that express social history in varying clincial contexts to be represented with the appropriate mix of re-useable archetypes.
-  ['description', '-', 'use'] => "個人の健康に影響を及ぼす可能性のある社会的状況や社会的経験を、文章で要約して記録するために用いる。\n\n既存の臨床システムに記録されている社会的状況や社会的経験の叙述的な記述を、archetype化された形式に組み込むために用いる。\n\nコンテナarchetypeとして用い、個別の詳細情報を記録する CLUSTER archetype群を入れ子にできる、検索可能な共通の ENTRY archetypeを提供する。組み込む CLUSTER archetypeの例には、他者との関係、社会的支援、居住状況、就労、教育、宗教などがあるが、これらに限らない。\n\n「社会歴要約」という語の使われ方は、実際には大きく異なる。本archetypeは、再利用可能なarchetypeを適切に組み合わせることで、さまざまな臨床の文脈における社会歴の概念を表現できるよう設計されている。",
+  ['description', '-', 'use'] => "個人の健康に影響を及ぼす可能性のある生活状況や社会的経験を、文章で要約して記録するために用いる。\n\n既存の臨床システムに記録されている生活状況や社会的経験の叙述的な記述を、archetype化された形式に組み込むために用いる。\n\nコンテナarchetypeとして用い、個別の詳細情報を記録する CLUSTER archetype群を入れ子にできる、検索可能な共通の ENTRY archetypeを提供する。組み込む CLUSTER archetypeの例には、他者との関係、社会的支援、居住状況、就労、教育、宗教などがあるが、これらに限らない。\n\n「生活歴要約」という語の使われ方は、実際には大きく異なる。本archetypeは、再利用可能なarchetypeを適切に組み合わせることで、さまざまな臨床の文脈における生活歴の概念を表現できるよう設計されている。",
 
   # Not to be used to record Lifestyle-related information - for example, use specific archetypes for alcohol, tobacco and other substance use; diet and nutrition; and physical activity.
-  ['description', '-', 'misuse'] => "生活習慣に関する情報の記録には、本archetypeではなく、それぞれの情報に対応するarchetypeを用いる。例：飲酒、タバコの使用やその他の物質使用、食事と栄養、身体活動に対応するarchetypeを用いる。",
+  ['description', '-', 'misuse'] => "生活習慣に関する情報の記録には、本archetypeではなく、それぞれの情報に対応するarchetypeを用いる。例：飲酒、喫煙やその他の物質使用、食事と栄養、身体活動に対応するarchetypeを用いる。",
 
   # social | family | education | occupation | environment | housing | finances | social history
-  ['description', '-', 'keywords'] => "社会 | 家族 | 教育 | 職業 | 環境 | 住居 | 経済状況 | 社会歴 | 社会歴要約",
+  ['description', '-', 'keywords'] => "社会 | 家族 | 教育 | 職業 | 就労 | 環境 | 住居 | 経済状況 | 生活歴 | 生活歴要約 | 生活",
 
   # © National E-Health Transition Authority, openEHR Foundation, Nasjonal IKT HF
   ['description', '-', 'copyright'] => "© National E-Health Transition Authority, openEHR Foundation, Nasjonal IKT HF",
 
   # EVALUATION
   # Social summary
-  ['term', 'at0000', 'text'] => "社会歴要約",
+  ['term', 'at0000', 'text'] => "生活歴要約",
 
   # EVALUATION
   # Summary information about social circumstances or experiences that may have a potential impact on an individual's health.
-  ['term', 'at0000', 'description'] => "個人の健康に影響を及ぼす可能性のある社会的状況や社会的経験に関する要約情報。",
+  ['term', 'at0000', 'description'] => "個人の健康に影響を及ぼす可能性のある生活状況や社会的経験に関する要約情報。",
 
   # EVALUATION > data/ITEM_TREE
   # Tree
@@ -47,11 +47,11 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Narrative description about social circumstances or experiences that may have a potential impact on an individual's health.
-  ['term', 'at0002', 'description'] => "個人の健康に影響を及ぼす可能性のある社会的状況や社会的経験の叙述的な記述。",
+  ['term', 'at0002', 'description'] => "個人の健康に影響を及ぼす可能性のある生活状況や社会的経験の叙述的な記述。",
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # May be used to record a narrative summary of the complete social circumstances or experiences or key aspects of the social summary, which will be supported by additional structured data, or to import textual data from existing/legacy clinical systems. Details of specific structured findings can be included using CLUSTER archetypes in the 'Details' slot.
-  ['term', 'at0002', 'comment'] => "社会的状況や社会的経験の全体像、または社会歴要約の主要な側面を文章で要約して記録し、構造化データを追加して補うために用いることができる。また、既存または旧来の臨床システムからテキストデータを取り込むためにも使用できる。「詳細情報」スロットに CLUSTER archetypeを組み込むことで、個々の所見に関する詳細情報を構造化して記録できる。",
+  ['term', 'at0002', 'comment'] => "生活状況や社会的経験の全体像、または生活歴要約の主要な側面を文章で要約して記録し、構造化データを追加して補うために用いることができる。また、既存または旧来の臨床システムからテキストデータを取り込むためにも使用できる。「詳細情報」スロットに CLUSTER archetypeを組み込むことで、個々の所見に関する詳細情報を構造化して記録できる。",
 
   # EVALUATION > data/ITEM_TREE > items/CLUSTER
   # Details
@@ -59,7 +59,7 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/CLUSTER
   # Structured detail about the social circumstances and experiences.
-  ['term', 'at0003', 'description'] => "社会的状況や社会的経験に関する構造化された詳細情報。",
+  ['term', 'at0003', 'description'] => "生活状況や社会的経験に関する構造化された詳細情報。",
 
   # EVALUATION > protocol/ITEM_TREE
   # Tree
@@ -87,17 +87,13 @@ T = {
 
   # EVALUATION > protocol/ITEM_TREE > items/ELEMENT
   # The date this social summary was last updated.
-  ['term', 'at0006', 'description'] => "この社会歴要約が最後に更新された日付。",
+  ['term', 'at0006', 'description'] => "この生活歴要約が最後に更新された日付。",
 
 }.freeze
 
 # note 列に残すメモ。迷った訳語には '要確認: ...' を付ける。
 NOTES = {
-  ['term', 'at0000', 'text'] => '要確認: 社会歴要約（他候補: 社会的状況の要約）指定候補を採用し、臨床要約と名称を揃える。',
-  ['description', '-', 'purpose'] => '要確認: 社会的状況／社会的経験（他候補: 社会生活の状況／経験）人間関係や居住、就労などを広く含む表現とする。',
-  ['description', '-', 'use'] => '要確認: 社会歴（他候補: 生活歴）指定候補を採用する。要確認: 居住状況（他候補: 生活環境、同居状況）住まいと同居者の状況を含む。要確認: 就労（他候補: 雇用）働くことを広く表す。要確認: 社会的支援（他候補: ソーシャルサポート）制度や周囲の人による支援を含む。要確認: 他者との関係（他候補: 対人関係）関係の種類を限定しない。',
-  ['description', '-', 'misuse'] => '要確認: 生活習慣（他候補: ライフスタイル）指定候補を採用する。要確認: 飲酒、タバコの使用、その他の物質使用（他候補: アルコール、タバコ、その他の物質の使用）飲酒は自然な表現とし、タバコは喫煙以外の使用も含める。要確認: 食事と栄養／身体活動（他候補: 食生活と栄養／運動）diet を減量食、physical activity を運動に限定しない。',
-  ['description', '-', 'keywords'] => '要確認: 職業（他候補: 職種）指定候補を採用する。要確認: 経済状況（他候補: 家計）収入・資産などを含む広い表現とする。社会／家族／教育／環境／住居／宗教は一般語として用語集に追加した。',
+  # ['term', 'at0000', 'text'] => '要確認: ...',
 }.freeze
 
 src, dst = ARGV

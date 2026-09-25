@@ -48,7 +48,7 @@ targets.md の「用語の事前決定が要るもの」のうち B 群に関わ
 | reaction / manifestation | 未登録 | 反応 / 症状（manifestation は「発現した症状」の意） |
 | criticality / certainty / verification status | 未登録 | 重大性 / 確度（problem_diagnosis の「診断確度」に合わせる） / 検証状態 |
 | family history / family member / relative | family member details＝家族構成員の詳細（person.v1 で確定） | 家族歴 / 家族構成員 / 親族（person.v1 use で「親族」を使用） |
-| social summary / social history / lifestyle | 未登録 | 社会歴要約（targets 案「社会歴要約（生活歴）」） / 社会歴 / 生活習慣 |
+| social summary / social history / lifestyle | 生活歴要約 / 生活歴 / 生活習慣 | 校正 2026-09-25 で確定（social circumstances＝生活状況） |
 | infectious disease summary（概念名） | 未登録 | 感染症要約 |
 | Laterality / Aspect / Anatomical Line（anatomical_location.v1） | 未登録 | 側性 / 方向 / 解剖学的基準線（要確認。他候補：左右 / 面 / 基準線）。方向用語（近位・遠位・上方・下方…）と体表の基準線は日本解剖学会『解剖学用語』の訳に合わせる。media_file の aspect＝観察方向とは別語 |
 
