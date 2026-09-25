@@ -480,7 +480,7 @@ No usar para registrar explícitamente que no se pudo obtener información sobre
 		["ja"] = <
 			language = <[ISO_639-1::ja]>
 			purpose = <"特定の物質または物質の分類に属するものへの曝露や再曝露によって、個人が有害反応を起こす素因について、臨床的評価を記録するため。">
-			use = <"特定の物質または物質の分類に属するものへの今後の曝露によって、有害反応を起こす素因について、臨床的評価を記録するために用いる。対象となる物質には、医薬品製剤の成分（原文：incipients）および賦形剤、生物学的製剤、金属塩、有機化合物などがあるが、これらに限らない。 
+			use = <"特定の物質または物質の分類に属するものへの今後の曝露によって、有害反応を起こす素因について、臨床的評価を記録するために用いる。対象となる物質には、医薬品製剤の成分や賦形剤、生物学的製剤、金属塩、有機化合物などがあるが、これらに限らない。 
 
 本archetypeは、ごく軽微なものから生命を脅かすものまで、以下のあらゆる反応を起こす素因を健康記録の一か所に記録できるように設計されている。
 - 免疫介在性：I〜IV型の反応（アレルギー反応や過敏症を含む）を記録する。 
@@ -1986,7 +1986,7 @@ Il est admis que la plupart des cliniciens ne seront PAS en mesure de distinguer
 				["at0002"] = <
 					text = <"物質">
 					description = <"個人に有害反応イベントが生じるリスクをもたらすと考えられる物質、または物質の分類を示す。">
-					comment = <"「物質」には、個別の物質と物質の分類のどちらも記録できる。医薬品のように、複数の単純な物質からなるものもある。可能であれば、意思決定支援を作動させることができる用語集により「物質」をコード化することを強く推奨する。例：Snomed CT、DM+D、RxNorm、NDFRT、ATC、New Zealand Universal List of Medicines、Australian Medicines Terminology。自由記述は、適切な用語集を利用できない場合にのみ用いる。">
+					comment = <"「物質」には、個別の物質と物質の分類のどちらも記録できる。医薬品のように、複数の単純な物質からなるものもある。可能であれば、意思決定支援を起動できる用語集により「物質」をコード化することを強く推奨する。例：Snomed CT、DM+D、RxNorm、NDFRT、ATC、New Zealand Universal List of Medicines、Australian Medicines Terminology。自由記述は、適切な用語集を利用できない場合にのみ用いる。">
 				>
 				["at0006"] = <
 					text = <"コメント">
