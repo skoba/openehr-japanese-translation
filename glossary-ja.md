@@ -348,6 +348,18 @@
 | appendage | 付属器 | 校正 2026-09-23 で「付属肢」→「付属器」に確定（指定案を採用する。limb、digit と並列される appendage の範囲は確認が必要。 |
 | multiaxial / postcoordinated | 多軸 / 事後調整された | 校正 2026-09-23 で確定: 多軸／事後調整された（他候補: 複数の軸による／後から組み合わせた）multiaxial／postcoordinated の訳。事前調整されたとの対応を優先する。 |
 | termset / semantic querying | 用語セット / 意味に基づく検索 | 校正 2026-09-23 で確定: 用語セット／意味に基づく検索（他候補: 用語集合／意味的照会）termset／semantic querying の訳。用語セットは値セットと区別し、検索は日本語としての読みやすさを優先する。 |
+| social summary | 生活歴要約 | EVALUATION.social_summary.v1 概念名。校正 2026-09-25 で「社会歴要約」→「生活歴要約」（social history＝生活歴に合わせる） |
+| social history | 生活歴 | 校正 2026-09-25 で「社会歴」→「生活歴」に確定 |
+| social circumstances / social experiences | 生活状況 / 社会的経験 | 校正 2026-09-25 で「社会的状況」→「生活状況」に確定 |
+| lifestyle | 生活習慣 | 校正 2026-09-25 で確定: 生活習慣（他候補: ライフスタイル）飲酒・喫煙・食事・身体活動を指す文脈で指定候補を採用する。 |
+| living arrangements | 居住状況 | 校正 2026-09-25 で確定: 居住状況（他候補: 生活環境、同居状況）住まいと同居者の状況を含む表現として指定候補を採用する。 |
+| occupation / employment | 職業 / 就労 | 校正 2026-09-25 で確定: 職業／就労（他候補: 職種／雇用）職業の種類と働くことを区別する。social_summary.v1 keywords / use。 |
+| social supports | 社会的支援 | 校正 2026-09-25 で確定: 社会的支援（他候補: ソーシャルサポート）制度による支援だけでなく周囲の人による支援も含む。 |
+| relationships with others | 他者との関係 | 校正 2026-09-25 で確定: 他者との関係（他候補: 対人関係）関係の種類を限定しない表現とする。 |
+| social / family / education / environment / housing / finances / religion | 社会 / 家族 / 教育 / 環境 / 住居 / 経済状況 / 宗教 | 校正 2026-09-25 で確定: 経済状況（他候補: 家計）finances は収入・資産などを含む広い表現とする。他は social_summary.v1 の一般語。 |
+| alcohol, tobacco and other substance use | 飲酒、喫煙やその他の物質使用 | 校正 2026-09-25 で「タバコの使用」→「喫煙」に確定 |
+| diet and nutrition / physical activity | 食事と栄養 / 身体活動 | 校正 2026-09-25 で確定: 食事と栄養／身体活動（他候補: 食生活と栄養／運動）diet を減量食、physical activity を運動に限定しない。 |
+| summary (element) | 要約 | social_summary.v1 at0002。既存の synopsis（要約）と揃える。 |
 
 | hypersensitivity | 過敏症 | adverse_reaction_risk.v2（2.0.2）。指定訳。allergy＝アレルギー、intolerance＝不耐症と区別する。 |
 | causative agent / causative substance | 原因物質 | adverse_reaction_risk.v2（2.0.2）。要確認: 指定案。未確定の Substance は「物質」。 |
@@ -393,7 +405,8 @@
 | openEHR-EHR-CLUSTER.organisation.v1 (1.0.4) | 組織 | 校正済み（2026-09-19、再レビュー分 2026-09-20 確認）。医療機関に限らず企業・団体・部門・ケアチーム等を含む。at0001 名称、at0002 連絡担当者、at0021 親組織 |
 | openEHR-EHR-CLUSTER.media_file.v1 (1.0.6) | メディアファイル | 校正済み（2026-09-19）。概念名は Issue #11 の訳語案。at0001 コンテンツ、at0002 コンテンツ名、at0004 作成日時、at0011 作成機器、at0012 作成者（全ノード確定 2026-09-20） |
 | openEHR-EHR-OBSERVATION.body_temperature.v2 (2.1.10) | 体温 | 差分翻訳（2026-09-20、Issue #46）、校正済み（2026-09-22。既存訳も計測→測定に統一、側頭部、前額部、鼠径溝）。CKM 既存 ja の未訳 12 項目（at0021 / at0059 description、at0060 こめかみ、at0061 額、at0064 構造化された計測部位、at0066 交絡因子、at0062 Extension の description / comment）のみ追加。既存訳は変更なし |
-| openEHR-EHR-OBSERVATION.body_weight.v2 (2.1.12) | 体重 | 差分翻訳（2026-09-20、Issue #47）。未訳は内部構造ノード名 4 つ（at0001 Simple、at0002 history、at0008 state structure、at0015 protocol structure）のみで英字のまま。既存訳は変更なし（既存の at0027 Extension＝拡張領域 は規則と異なるが本 PR では触らない） |
-| openEHR-EHR-OBSERVATION.blood_pressure.v2 (2.0.16) | 血圧 | 差分翻訳（2026-09-20、Issue #48）。未訳は内部構造ノード名 at0007 state structure のみで英字のまま。既存訳は変更なし（既存の at0001 History＝履歴 は規則と異なるが本 PR では触らない） |
+| openEHR-EHR-OBSERVATION.body_weight.v2 (2.1.12) | 体重 | 差分翻訳（2026-09-20、Issue #47）。校正済み（2026-09-23、変更なし）。未訳は内部構造ノード名 4 つ（at0001 Simple、at0002 history、at0008 state structure、at0015 protocol structure）のみで英字のまま。既存訳は変更なし（既存の at0027 Extension＝拡張領域 は規則と異なるが本 PR では触らない） |
+| openEHR-EHR-OBSERVATION.blood_pressure.v2 (2.0.16) | 血圧 | 差分翻訳（2026-09-20、Issue #48）。校正済み（2026-09-23。既存訳の use / misuse / at0008 を修正）。未訳は内部構造ノード名 at0007 state structure のみで英字のまま。既存訳は変更なし（既存の at0001 History＝履歴 は規則と異なるが本 PR では触らない） |
 | openEHR-EHR-CLUSTER.anatomical_location.v1 (1.5.1) | 解剖学的部位 | Issue #59。校正済み（2026-09-23。面、付属器、左右両側）。概念名は指定訳。方向・基準線などの要確認事項は共通語表と work/fill.rb の NOTES を参照 |
+| openEHR-EHR-EVALUATION.social_summary.v1 (1.1.1) | 生活歴要約 | Issue #44。校正済み（2026-09-25。社会歴要約→生活歴要約、社会的状況→生活状況、喫煙）。at0002 要約、at0003 詳細情報、at0006 最終更新日 |
 | openEHR-EHR-EVALUATION.adverse_reaction_risk.v2 (2.0.2) | 有害反応リスク | Issue #41。要確認: 「（アレルギー・不耐症）」を添えるかは校正で判断。共通語の候補は work/fill.rb の NOTES を参照 |
