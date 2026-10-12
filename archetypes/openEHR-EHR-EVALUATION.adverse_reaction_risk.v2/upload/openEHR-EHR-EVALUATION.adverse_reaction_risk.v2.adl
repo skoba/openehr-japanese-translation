@@ -1986,7 +1986,7 @@ Il est admis que la plupart des cliniciens ne seront PAS en mesure de distinguer
 				["at0002"] = <
 					text = <"物質">
 					description = <"個人に有害反応イベントが生じるリスクをもたらすと考えられる物質、または物質の分類を示す。">
-					comment = <"「物質」には、個別の物質と物質の分類のどちらも記録できる。医薬品のように、複数の単純な物質からなるものもある。可能であれば、意思決定支援を起動できる用語集により「物質」をコード化することを強く推奨する。例：Snomed CT、DM+D、RxNorm、NDFRT、ATC、New Zealand Universal List of Medicines、Australian Medicines Terminology。自由記述は、適切な用語集を利用できない場合にのみ用いる。">
+					comment = <"「物質」には、個別の物質と物質の分類のどちらも記録できる。医薬品のように、複数の単純な物質からなるものもある。可能であれば、意思決定支援を起動できる用語集により「物質」をコード化することを強く推奨する。例：SNOMED CT、DM+D、RxNorm、NDFRT、ATC、New Zealand Universal List of Medicines、Australian Medicines Terminology。自由記述は、適切な用語集を利用できない場合にのみ用いる。">
 				>
 				["at0006"] = <
 					text = <"コメント">

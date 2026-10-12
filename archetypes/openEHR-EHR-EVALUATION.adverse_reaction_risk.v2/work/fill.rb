@@ -87,7 +87,7 @@ T = {
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Both an individual substance and a substance class are valid entries in 'Substance'. A substance may be a compound of simpler substances, for example a medicinal product. It is strongly recommended that the 'Substance' is coded with a terminology capable of triggering decision support, where possible. For example: Snomed CT, DM+D, RxNorm, NDFRT, ATC, New Zealand Universal List of Medicines and Australian Medicines Terminology. Free text entry should only be used if there is no appropriate terminology available.
-  ['term', 'at0002', 'comment'] => "「物質」には、個別の物質と物質の分類のどちらも記録できる。医薬品のように、複数の単純な物質からなるものもある。可能であれば、意思決定支援を起動できる用語集により「物質」をコード化することを強く推奨する。例：Snomed CT、DM+D、RxNorm、NDFRT、ATC、New Zealand Universal List of Medicines、Australian Medicines Terminology。自由記述は、適切な用語集を利用できない場合にのみ用いる。",
+  ['term', 'at0002', 'comment'] => "「物質」には、個別の物質と物質の分類のどちらも記録できる。医薬品のように、複数の単純な物質からなるものもある。可能であれば、意思決定支援を起動できる用語集により「物質」をコード化することを強く推奨する。例：SNOMED CT、DM+D、RxNorm、NDFRT、ATC、New Zealand Universal List of Medicines、Australian Medicines Terminology。自由記述は、適切な用語集を利用できない場合にのみ用いる。",
 
   # EVALUATION > data/ITEM_TREE > items/ELEMENT
   # Comment
