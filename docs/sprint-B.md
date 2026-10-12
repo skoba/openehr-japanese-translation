@@ -42,7 +42,7 @@ targets.md の「用語の事前決定が要るもの」のうち B 群に関わ
 |---|---|---|
 | adverse reaction / allergy / intolerance | 有害反応 / アレルギー / 不耐性 | problem_diagnosis の校正版に「不耐症」の箇所があるので、不耐性／不耐症のどちらに統一するかを決める |
 | hypersensitivity | 未登録 | 過敏症 |
-| adverse reaction risk（概念名） | 未登録 | 有害反応リスク（targets の訳語案）。「アレルギー・不耐性」を括弧で添えるかは要検討 |
+| adverse reaction risk（概念名） | 有害反応リスク | 校正 2026-09-25 で確定（括弧書きなし）。Criticality＝重症度（JP-CLINS eCS に合わせる） |
 | adverse reaction event（概念名） | 未登録 | 有害反応イベント |
 | causative agent / substance / exposure | 未登録 | 原因物質 / 物質 / 曝露 |
 | reaction / manifestation | 未登録 | 反応 / 症状（manifestation は「発現した症状」の意） |
