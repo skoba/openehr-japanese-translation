@@ -22,3 +22,4 @@ openEHR-EHR-CLUSTER.anatomical_location.v1	uploaded	1.5.1	https://ckm.openehr.or
 openEHR-EHR-EVALUATION.social_summary.v1	uploaded	1.1.1	https://ckm.openehr.org/ckm/archetypes/1013.1.8509	2026-10-13
 openEHR-EHR-EVALUATION.adverse_reaction_risk.v2	uploaded	2.0.2	https://ckm.openehr.org/ckm/archetypes/1013.1.7022	2026-10-12
 openEHR-EHR-CLUSTER.adverse_reaction_event.v1	uploaded	1.0.2	https://ckm.openehr.org/ckm/archetypes/1013.1.5795	2026-10-13
+openEHR-EHR-INSTRUCTION.medication_order.v3	review	3.2.1		2026-09-25
