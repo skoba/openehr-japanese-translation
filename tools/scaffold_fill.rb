@@ -30,6 +30,7 @@ id = rows.first[0]
 PREFILL = lambda do |field, src|
   return src if src == 'Tree' || src == '@ internal @' || src == 'Extension'
   return src if field == 'copyright'
+  return src if field == 'source' # provenance key (openEHR/FHIR/DAM), copied verbatim like other CKM languages
   nil
 end
 unescape = ->(s) { s.to_s.gsub('\n', "\n") }

@@ -15,8 +15,11 @@ openEHR-EHR-CLUSTER.address.v1	uploaded	1.1.3	https://ckm.openehr.org/ckm/archet
 openEHR-EHR-CLUSTER.electronic_communication.v1	uploaded	1.0.4	https://ckm.openehr.org/ckm/archetypes/1013.1.5356	2026-09-20
 openEHR-EHR-CLUSTER.organisation.v1	uploaded	1.0.4	https://ckm.openehr.org/ckm/archetypes/1013.1.371	2026-09-20
 openEHR-EHR-CLUSTER.media_file.v1	uploaded	1.0.6	https://ckm.openehr.org/ckm/archetypes/1013.1.1800	2026-09-20
-openEHR-EHR-OBSERVATION.body_temperature.v2	review	2.1.10		2026-09-20
-openEHR-EHR-OBSERVATION.body_weight.v2	review	2.1.12		2026-09-20
-openEHR-EHR-OBSERVATION.blood_pressure.v2	review	2.0.16		2026-09-20
-openEHR-EHR-CLUSTER.anatomical_location.v1	review	1.5.1		2026-09-22
+openEHR-EHR-OBSERVATION.body_temperature.v2	uploaded	2.1.10	https://ckm.openehr.org/ckm/archetypes/1013.1.2796	2026-10-13
+openEHR-EHR-OBSERVATION.body_weight.v2	uploaded	2.1.12	https://ckm.openehr.org/ckm/archetypes/1013.1.8507	2026-10-13
+openEHR-EHR-OBSERVATION.blood_pressure.v2	uploaded	2.0.16	https://ckm.openehr.org/ckm/archetypes/1013.1.8508	2026-10-13
+openEHR-EHR-CLUSTER.anatomical_location.v1	uploaded	1.5.1	https://ckm.openehr.org/ckm/archetypes/1013.1.587	2026-10-13
+openEHR-EHR-EVALUATION.social_summary.v1	uploaded	1.1.1	https://ckm.openehr.org/ckm/archetypes/1013.1.8509	2026-10-13
+openEHR-EHR-EVALUATION.adverse_reaction_risk.v2	uploaded	2.0.2	https://ckm.openehr.org/ckm/archetypes/1013.1.7022	2026-10-12
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	uploaded	1.0.2	https://ckm.openehr.org/ckm/archetypes/1013.1.5795	2026-10-13
 openEHR-EHR-INSTRUCTION.medication_order.v3	review	3.2.1		2026-09-25

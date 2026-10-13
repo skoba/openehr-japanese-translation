@@ -43,13 +43,13 @@ targets.md の「用語の事前決定が要るもの」のうち B 群に関わ
 |---|---|---|
 | adverse reaction / allergy / intolerance | 有害反応 / アレルギー / 不耐性 | problem_diagnosis の校正版に「不耐症」の箇所があるので、不耐性／不耐症のどちらに統一するかを決める |
 | hypersensitivity | 未登録 | 過敏症 |
-| adverse reaction risk（概念名） | 未登録 | 有害反応リスク（targets の訳語案）。「アレルギー・不耐性」を括弧で添えるかは要検討 |
+| adverse reaction risk（概念名） | 有害反応リスク | 校正 2026-09-25 で確定（括弧書きなし）。Criticality＝重症度（JP-CLINS eCS に合わせる） |
 | adverse reaction event（概念名） | 未登録 | 有害反応イベント |
 | causative agent / substance / exposure | 未登録 | 原因物質 / 物質 / 曝露 |
 | reaction / manifestation | 未登録 | 反応 / 症状（manifestation は「発現した症状」の意） |
 | criticality / certainty / verification status | 未登録 | 重大性 / 確度（problem_diagnosis の「診断確度」に合わせる） / 検証状態 |
 | family history / family member / relative | family member details＝家族構成員の詳細（person.v1 で確定） | 家族歴 / 家族構成員 / 親族（person.v1 use で「親族」を使用） |
-| social summary / social history / lifestyle | 未登録 | 社会歴要約（targets 案「社会歴要約（生活歴）」） / 社会歴 / 生活習慣 |
+| social summary / social history / lifestyle | 生活歴要約 / 生活歴 / 生活習慣 | 校正 2026-09-25 で確定（social circumstances＝生活状況） |
 | infectious disease summary（概念名） | 未登録 | 感染症要約 |
 | Laterality / Aspect / Anatomical Line（anatomical_location.v1） | 未登録 | 側性 / 方向 / 解剖学的基準線（要確認。他候補：左右 / 面 / 基準線）。方向用語（近位・遠位・上方・下方…）と体表の基準線は日本解剖学会『解剖学用語』の訳に合わせる。media_file の aspect＝観察方向とは別語 |
 | Medication order（概念名、medication_order.v3） | 未登録 | 薬剤オーダー（要確認。他候補：処方オーダー）。ワクチン・栄養製品・治療用品も含むので「処方」より広い語 |

@@ -142,7 +142,7 @@
 | differential diagnosis | 鑑別診断 | |
 | presenting complaint | 主訴 | chief complaint と同じ |
 | health risk | 健康リスク | |
-| adverse reaction / allergy / intolerance | 有害反応 / アレルギー / 不耐性 | |
+| adverse reaction / allergy / intolerance | 有害反応 / アレルギー / 不耐症 | 2026-09-25 決定: intolerance はとりあえず「不耐症」（problem_diagnosis 校正版と同じ）。「不耐性」との使い分けはあるので、adverse_reaction_risk の校正で見直す |
 | exclusion | 除外 | |
 | Common Terminology Criteria for Adverse Events | 有害事象共通用語規準（CTCAE） | JCOG 訳 |
 | Guillain-Barre Syndrome / acute motor axonal neuropathy | ギラン・バレー症候群 / 急性運動性軸索型ニューロパチー | |
@@ -348,6 +348,54 @@
 | appendage | 付属器 | 校正 2026-09-23 で「付属肢」→「付属器」に確定（指定案を採用する。limb、digit と並列される appendage の範囲は確認が必要。 |
 | multiaxial / postcoordinated | 多軸 / 事後調整された | 校正 2026-09-23 で確定: 多軸／事後調整された（他候補: 複数の軸による／後から組み合わせた）multiaxial／postcoordinated の訳。事前調整されたとの対応を優先する。 |
 | termset / semantic querying | 用語セット / 意味に基づく検索 | 校正 2026-09-23 で確定: 用語セット／意味に基づく検索（他候補: 用語集合／意味的照会）termset／semantic querying の訳。用語セットは値セットと区別し、検索は日本語としての読みやすさを優先する。 |
+| social summary | 生活歴要約 | EVALUATION.social_summary.v1 概念名。校正 2026-09-25 で「社会歴要約」→「生活歴要約」（social history＝生活歴に合わせる） |
+| social history | 生活歴 | 校正 2026-09-25 で「社会歴」→「生活歴」に確定 |
+| social circumstances / social experiences | 生活状況 / 社会的経験 | 校正 2026-09-25 で「社会的状況」→「生活状況」に確定 |
+| lifestyle | 生活習慣 | 校正 2026-09-25 で確定: 生活習慣（他候補: ライフスタイル）飲酒・喫煙・食事・身体活動を指す文脈で指定候補を採用する。 |
+| living arrangements | 居住状況 | 校正 2026-09-25 で確定: 居住状況（他候補: 生活環境、同居状況）住まいと同居者の状況を含む表現として指定候補を採用する。 |
+| occupation / employment | 職業 / 就労 | 校正 2026-09-25 で確定: 職業／就労（他候補: 職種／雇用）職業の種類と働くことを区別する。social_summary.v1 keywords / use。 |
+| social supports | 社会的支援 | 校正 2026-09-25 で確定: 社会的支援（他候補: ソーシャルサポート）制度による支援だけでなく周囲の人による支援も含む。 |
+| relationships with others | 他者との関係 | 校正 2026-09-25 で確定: 他者との関係（他候補: 対人関係）関係の種類を限定しない表現とする。 |
+| social / family / education / environment / housing / finances / religion | 社会 / 家族 / 教育 / 環境 / 住居 / 経済状況 / 宗教 | 校正 2026-09-25 で確定: 経済状況（他候補: 家計）finances は収入・資産などを含む広い表現とする。他は social_summary.v1 の一般語。 |
+| alcohol, tobacco and other substance use | 飲酒、喫煙やその他の物質使用 | 校正 2026-09-25 で「タバコの使用」→「喫煙」に確定 |
+| diet and nutrition / physical activity | 食事と栄養 / 身体活動 | 校正 2026-09-25 で確定: 食事と栄養／身体活動（他候補: 食生活と栄養／運動）diet を減量食、physical activity を運動に限定しない。 |
+| summary (element) | 要約 | social_summary.v1 at0002。既存の synopsis（要約）と揃える。 |
+
+| hypersensitivity | 過敏症 | adverse_reaction_risk.v2（2.0.2）。指定訳。allergy＝アレルギー、intolerance＝不耐症と区別する。 |
+| causative agent / causative substance | 原因物質 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 指定案。未確定の Substance は「物質」。 |
+| substance / specific substance / class of substance | 物質 / 特定の物質 / 特定の分類に属する物質 | adverse_reaction_risk.v2。校正 2026-09-25 で確定。class of substance は「ペニシリン系」などの区分。文中では「物質の分類」も可 |
+| agent | 作用物質 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 他候補は因子、薬剤。physical agents／infectious agents は物理的因子／感染性因子と文脈訳する。 |
+| exposure / reaction / manifestation | 曝露 / 反応 / 症状 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 指定案。manifestation は発現した症状を指す。 |
+| reaction event / reaction event summary | 反応イベント / 反応イベントの要約 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: CLUSTER.adverse_reaction_event の概念名候補「有害反応イベント」に合わせる。 |
+| criticality: low / high | 重症度：低 / 高 | adverse_reaction_risk.v2 at0101。校正 2026-09-25 で「重大性」→「重症度」（JP-CLINS eCS の表記「重症度（criticality）」に合わせる。JP Core は重要度）。openEHR では将来曝露のリスク予測で、反応の重症度（adverse_reaction_event の Severity）とは別。event 側は「反応の重症度」で区別する |
+| certainty / verification status | 確度 / 検証状態 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 指定案。診断確度に揃える。検証状況、確認状況も候補。 |
+| verification status: unconfirmed / confirmed / refuted | 検証状態：未確認 / 確認済み / 否定 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: [JP-CLINS](https://jpfhir.jp/fhir/clins/ig/StructureDefinition-JP-AllergyIntolerance-eCS.html) の未確認／確認済み／否定されたを参照し、否定は既存訳に揃える。診断確度の confirmed＝確定とは文脈を区別する。 |
+| propensity | 素因 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 他候補は傾向。遺伝的素因に限定しない。 |
+| reaction type / reaction mechanism / intolerance mechanism | 反応の種類 / 反応の機序 / 不耐症の機序 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 指定案に合わせる。種類と機序を区別する。 |
+| onset of last reaction / onset of first reaction | 反応が起きた直近の日時 / 反応が最初に起きた日時 | adverse_reaction_risk.v2 at0117 / at0133。校正 2026-09-25 で確定（「最終反応の発症」「初回反応の発症」は不採用） |
+| immune-mediated / non-immune-mediated | 免疫介在性 / 非免疫介在性 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 指定案。原文のハイフンなし表記も同じ。 |
+| drug / medication / food / environmental / biologic | 薬剤 / 薬剤 / 食物 / 環境 / 生物学的製剤 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 指定案。biological products も生物学的製剤。環境中の物質の値は Other＝その他に含まれる。 |
+| supporting clinical record information | 裏付けとなる臨床記録情報 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 他候補は関連する臨床記録情報。 |
+| active/inactive status | アクティブ・インアクティブの状態 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 既存の active／inactive と status の訳を優先する。 |
+| incipients / excipients | 成分 / 賦形剤 | adverse_reaction_risk.v2 use。incipients は excipients と対で用いられており成分（有効成分）の意で訳す（原文の語としては非標準。校正 2026-09-25 で確定） |
+| pseudo-allergic reaction / side effect / drug toxicity | 偽アレルギー反応 / 副作用 / 薬剤毒性 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 他候補は非アレルギー性過敏反応／薬物毒性。 |
+| sensitivity / toxicity / anaphylaxis / allergen | 感受性 / 毒性 / アナフィラキシー / アレルゲン | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: sensitivity は過敏性も候補。hypersensitivity と区別する。 |
+| re-challenge / under corticosteroid cover | 再負荷 / 副腎皮質ステロイドの予防的投与下 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 他候補は再投与／副腎皮質ステロイド併用下。 |
+| relative contra-indication / absolute contra-indication | 相対的禁忌 / 絶対的禁忌 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 有害反応リスクの Low／High の説明。他候補は相対禁忌／絶対禁忌。 |
+| adverse / effect / chemical / supplement / medicine / natural remedies / immunological / non-immunological | 有害 / 作用 / 化学物質 / サプリメント / 医薬品 / 自然療法 / 免疫学的 / 非免疫学的 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: keywords の対応語。effect は修飾因子の影響とは文脈を区別する。 |
+| Adverse reaction event (concept) | 有害反応イベント | adverse_reaction_event.v1（1.0.2）。adverse_reaction_risk.v2 の「反応イベントの要約」に合わせる。校正 2026-10-13 で確定（他候補: 有害反応事象） |
+| Manifestation (element) | 症状 | adverse_reaction_event.v1 at0006。manifestation＝症状（既存行）に従う。description の symptoms and/or signs は「症状や徴候」。校正 2026-10-13 で確定（他候補: 発現症状、症状・徴候） |
+| certainty (reaction event): confirmed / unconfirmed / refuted | 確度：確認済み / 未確認 / 否定 | adverse_reaction_event.v1 at0002 / at0005 / at0026 / at0027。adverse_reaction_risk.v2 の検証状態の値と同じ語 |
+| Reaction description / Exposure description / Clinical management description | 反応の説明 / 曝露の説明 / 臨床的対応の説明 | adverse_reaction_event.v1 at0007 / at0018 / at0020。description (element)＝説明 に従う |
+| Onset of reaction / Duration of reaction / Severity of reaction | 反応の発症日時 / 反応の持続期間 / 反応の重症度 | adverse_reaction_event.v1 at0008 / at0009 / at0010。値が日時なので「日時」を付けた。校正 2026-10-13 で確定（他候補: 反応の発症） |
+| severity of reaction: mild / moderate / severe | 軽症 / 中等症 / 重症 | adverse_reaction_event.v1 at0011〜at0013。symptom_sign.v2 の重症度の値と同じ。description の mild / moderate / severe physiological effects は軽度 / 中等度 / 重度の生理的な影響 |
+| Initial exposure / Duration of exposure / Route of exposure | 初回曝露日時 / 曝露の持続期間 / 曝露経路 | adverse_reaction_event.v1 at0015 / at0016 / at0017。校正 2026-10-13 で確定（他候補: 初回曝露 / 曝露の経路） |
+| clinical management | 臨床的対応 | adverse_reaction_event.v1 at0020 / at0021。反応に対して行った処置・治療全般。校正 2026-10-13 で確定（他候補: 臨床管理、治療） |
+| Reaction details / Exposure details / Clinical management details / Reporting details (slots) | 反応の詳細情報 / 曝露の詳細情報 / 臨床的対応の詳細情報 / 報告の詳細情報 | adverse_reaction_event.v1 at0014 / at0019 / at0021 / at0022。Details (slot)＝詳細情報 に従う |
+| Information source (slot) / provenance | 情報源 / 情報の出所 | adverse_reaction_event.v1 at0023。校正 2026-10-13 で確定（他候補: 情報の出所） |
+| regulatory bodies / clinical trial / specialist allergist or immunologist | 規制当局 / 臨床試験 / アレルギーや免疫学の専門医 | adverse_reaction_event.v1 use |
+| grading / media representation | 重症度分類 / 媒体による表現 | adverse_reaction_event.v1 at0014 comment。校正 2026-10-13 で「グレード分類」→「重症度分類」、「メディアによる表現」→「媒体による表現」に確定。anatomical_location.v1 の Multimedia representation＝マルチメディア表現とは別語 |
+| parent archetype / nested within (archetype) | 親archetype / 〜の中に入れ子にした | adverse_reaction_event.v1 use, at0001 comment |
 
 | Medication order | 薬剤オーダー | medication_order.v3 at0000。要確認: 薬剤オーダー（他候補: 処方オーダー）ワクチン・栄養製品・治療用品も含むため、処方より広い語を採用する。 |
 | Overall directions description | 用法・用量の記述 | medication_order.v3 at0009。要確認: 用法・用量の記述（他候補: 用法の全体記述）用量とタイミングを含む全体の指示を示す画面ラベルとする。 |
@@ -450,4 +498,7 @@
 | openEHR-EHR-OBSERVATION.body_weight.v2 (2.1.12) | 体重 | 差分翻訳（2026-09-20、Issue #47）。校正済み（2026-09-23、変更なし）。未訳は内部構造ノード名 4 つ（at0001 Simple、at0002 history、at0008 state structure、at0015 protocol structure）のみで英字のまま。既存訳は変更なし（既存の at0027 Extension＝拡張領域 は規則と異なるが本 PR では触らない） |
 | openEHR-EHR-OBSERVATION.blood_pressure.v2 (2.0.16) | 血圧 | 差分翻訳（2026-09-20、Issue #48）。校正済み（2026-09-23。既存訳の use / misuse / at0008 を修正）。未訳は内部構造ノード名 at0007 state structure のみで英字のまま。既存訳は変更なし（既存の at0001 History＝履歴 は規則と異なるが本 PR では触らない） |
 | openEHR-EHR-CLUSTER.anatomical_location.v1 (1.5.1) | 解剖学的部位 | Issue #59。校正済み（2026-09-23。面、付属器、左右両側）。概念名は指定訳。方向・基準線などの要確認事項は共通語表と work/fill.rb の NOTES を参照 |
+| openEHR-EHR-EVALUATION.social_summary.v1 (1.1.1) | 生活歴要約 | Issue #44。校正済み（2026-09-25。社会歴要約→生活歴要約、社会的状況→生活状況、喫煙）。at0002 要約、at0003 詳細情報、at0006 最終更新日 |
+| openEHR-EHR-EVALUATION.adverse_reaction_risk.v2 (2.0.2) | 有害反応リスク | Issue #41。校正済み（2026-09-25。括弧書きなしで確定。at0101 重症度、at0063 検証状態、at0117 反応が起きた直近の日時、at0133 反応が最初に起きた日時） |
+| openEHR-EHR-CLUSTER.adverse_reaction_event.v1 (1.0.2) | 有害反応イベント | Issue #42。校正済み（2026-10-13。at0014 comment 重症度分類、媒体による表現）。adverse_reaction_risk.v2 の「反応イベントの要約」SLOT に入る。at0001 特定の物質、at0002 確度、at0006 症状、at0010 反応の重症度、at0015 初回曝露日時、at0020 臨床的対応の説明、at0023 情報源 |
 | openEHR-EHR-INSTRUCTION.medication_order.v3 (3.2.1) | 薬剤オーダー | Issue #66。要確認（他候補：処方オーダー）。画面ラベル：at0070 薬剤名、at0009 用法・用量の記述、at0173 用法・用量の個別記述、at0012 オーダー開始日時、at0018 臨床的適応、at0167 コメント。 |

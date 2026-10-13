@@ -46,7 +46,10 @@ require 'openehr'
 module AdlI18n
   TSV_HEADER = %w[archetype section code field context source target note].freeze
   DETAIL_FIELDS = %w[purpose use misuse keywords copyright].freeze
-  TERM_FIELDS = %w[text description comment].freeze
+  # `source` (provenance such as "openEHR, FHIR, DAM") is copied into every language
+  # block on CKM (de/sv/ca/es/fr do), so it is carried through extract/inject/check
+  # like a term field; scaffold_fill.rb pre-fills it verbatim (not translated).
+  TERM_FIELDS = %w[text description comment source].freeze
 
   module_function
 
