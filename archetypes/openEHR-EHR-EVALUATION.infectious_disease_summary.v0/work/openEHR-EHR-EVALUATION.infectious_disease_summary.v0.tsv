@@ -1,0 +1,34 @@
+archetype	section	code	field	context	source	target	note
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	description	-	purpose		To record summary details about an infectious disease and factors related to assessment of immunity.		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	description	-	use		Use to record summary details about an infectious disease and factors related to assessment of immunity.		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	description	-	copyright		© openEHR Foundation		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0000	text	EVALUATION	Infectious disease summary		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0000	description	EVALUATION	Summary details about an infectious disease and factors related to assessment of immunity.		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0001	text	EVALUATION > data/ITEM_TREE	Tree		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0001	description	EVALUATION > data/ITEM_TREE	@ internal @		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0002	text	EVALUATION > data/ITEM_TREE > items/ELEMENT	Infectious disease		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0002	description	EVALUATION > data/ITEM_TREE > items/ELEMENT	Name of the infectious disease.		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0003	text	EVALUATION > data/ITEM_TREE > items/ELEMENT	Immune status		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0003	description	EVALUATION > data/ITEM_TREE > items/ELEMENT	Assertion about the immune status of the subject.		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0003	comment	EVALUATION > data/ITEM_TREE > items/ELEMENT	For example: confirmed immune; assumed immune; acute infection; chronic infection; carrier; not immune; and non-responder. This assessment will need to take into account any evidence re previous infection, diagnostic evidence (CLUSTER.diagnostic_evidence_summary) and immunisation history (EVALUATION.immunisation_summary).		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0014	text	EVALUATION > data/ITEM_TREE > items/ELEMENT	Comment		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0014	description	EVALUATION > data/ITEM_TREE > items/ELEMENT	Narrative information about the infectious disease not captured in other fields.		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0020	text	EVALUATION > protocol/ITEM_TREE	Tree		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0020	description	EVALUATION > protocol/ITEM_TREE	@ internal @		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0021	text	EVALUATION > protocol/ITEM_TREE > items/ELEMENT	Last Updated		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0021	description	EVALUATION > protocol/ITEM_TREE > items/ELEMENT	The date at which the infectious disease summary was last clinically asserted, affirmed or confirmed.		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0042	text	EVALUATION > data/ITEM_TREE > items/ELEMENT	Description of immune status		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0042	description	EVALUATION > data/ITEM_TREE > items/ELEMENT	Narrative description about the assessment of immune status for the  infectious disease.		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0046	text	EVALUATION > data/ITEM_TREE > items/CLUSTER	Evidence		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0046	description	EVALUATION > data/ITEM_TREE > items/CLUSTER	Details about evidence that supports the assertion of an immune status.		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0047	text	EVALUATION > data/ITEM_TREE > items/ELEMENT	Previous infection?		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0047	description	EVALUATION > data/ITEM_TREE > items/ELEMENT	Has the subject been exposed through a previous infection to the same infectious disease?		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0048	text		Confirmed		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0048	description		Previous infection has been confirmed by history or findings.		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0049	text		Suspected		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0049	description		Previous infection is suspected from history or findings, but has not been confirmed.		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0050	text		No Evidence		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0050	description		There is no history or findings to suggest that the subject has had a previous infection.		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0051	text	EVALUATION > protocol/ITEM_TREE > items/CLUSTER	Extension		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0051	description	EVALUATION > protocol/ITEM_TREE > items/CLUSTER	Additional information required to capture local context or to align with other reference models/formalisms.		
+openEHR-EHR-EVALUATION.infectious_disease_summary.v0	term	at0051	comment	EVALUATION > protocol/ITEM_TREE > items/CLUSTER	For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.		

@@ -1,0 +1,242 @@
+﻿archetype (adl_version=1.4; uid=834b8faa-1161-3e42-974e-da7e4c5f32d2)
+	openEHR-EHR-EVALUATION.infectious_disease_summary.v0
+
+concept
+	[at0000]	-- Infectious disease summary
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			author = <
+				["name"] = <"Shinji KOBAYASHI">
+				["organisation"] = <"NPO openEHR Japan">
+				["email"] = <"skoba@moss.gr.jp">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Sistine Barretto-Daniels">
+		["organisation"] = <"Ocean Informatics Pty Ltd">
+		["email"] = <"Sistine.Barretto-Daniels@oceaninformatics.com">
+		["date"] = <"2012-10-10">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record summary details about an infectious disease and factors related to assessment of immunity.">
+			use = <"Use to record summary details about an infectious disease and factors related to assessment of immunity.">
+			misuse = <"">
+			copyright = <"© openEHR Foundation">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"感染症の要約と、免疫状態の評価に関わる因子を記録するため。">
+			use = <"感染症の要約と、免疫状態の評価に関わる因子を記録するために用いる。">
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	lifecycle_state = <"in_development">
+	other_contributors = <"Heather Leslie, Atomica Informatics, Australia", ...>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["current_contact"] = <"Heather Leslie, Atomica Informatics, heather.leslie@atomicainformatics.com">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"2101661D3025DCD4F2C7F9D60DD209A0">
+		["build_uid"] = <"24cacbf7-0836-4903-9a34-96e588c0645b">
+		["revision"] = <"0.0.1-alpha">
+	>
+
+definition
+	EVALUATION[at0000] matches {    -- Infectious disease summary
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Tree
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0002] matches {    -- Infectious disease
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {    -- Immune status
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0042] occurrences matches {0..1} matches {    -- Description of immune status
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0047] occurrences matches {0..1} matches {    -- Previous infection?
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0048,    -- Confirmed
+									at0049,    -- Suspected
+									at0050]    -- No Evidence
+								}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0046] occurrences matches {0..*} matches {    -- Evidence
+						include
+							archetype_id/value matches {/.*/}
+					}
+					ELEMENT[at0014] occurrences matches {0..1} matches {    -- Comment
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0020] matches {    -- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0021] occurrences matches {0..1} matches {    -- Last Updated
+						value matches {
+							DV_DATE_TIME matches {*}
+						}
+					}
+					allow_archetype CLUSTER[at0051] occurrences matches {0..*} matches {    -- Extension
+						include
+							archetype_id/value matches {/.*/}
+					}
+				}
+			}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Infectious disease summary">
+					description = <"Summary details about an infectious disease and factors related to assessment of immunity.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Infectious disease">
+					description = <"Name of the infectious disease.">
+				>
+				["at0003"] = <
+					text = <"Immune status">
+					description = <"Assertion about the immune status of the subject.">
+					comment = <"For example: confirmed immune; assumed immune; acute infection; chronic infection; carrier; not immune; and non-responder. This assessment will need to take into account any evidence re previous infection, diagnostic evidence (CLUSTER.diagnostic_evidence_summary) and immunisation history (EVALUATION.immunisation_summary).">
+				>
+				["at0014"] = <
+					text = <"Comment">
+					description = <"Narrative information about the infectious disease not captured in other fields.">
+				>
+				["at0020"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0021"] = <
+					text = <"Last Updated">
+					description = <"The date at which the infectious disease summary was last clinically asserted, affirmed or confirmed.">
+				>
+				["at0042"] = <
+					text = <"Description of immune status">
+					description = <"Narrative description about the assessment of immune status for the  infectious disease.">
+				>
+				["at0046"] = <
+					text = <"Evidence">
+					description = <"Details about evidence that supports the assertion of an immune status.">
+				>
+				["at0047"] = <
+					text = <"Previous infection?">
+					description = <"Has the subject been exposed through a previous infection to the same infectious disease?">
+				>
+				["at0048"] = <
+					text = <"Confirmed">
+					description = <"Previous infection has been confirmed by history or findings.">
+				>
+				["at0049"] = <
+					text = <"Suspected">
+					description = <"Previous infection is suspected from history or findings, but has not been confirmed.">
+				>
+				["at0050"] = <
+					text = <"No Evidence">
+					description = <"There is no history or findings to suggest that the subject has had a previous infection.">
+				>
+				["at0051"] = <
+					text = <"Extension">
+					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
+					comment = <"For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"感染症要約">
+					description = <"感染症と、免疫状態の評価に関わる因子についての要約情報。">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"感染症">
+					description = <"感染症の名称。">
+				>
+				["at0003"] = <
+					text = <"免疫状態">
+					description = <"本人の免疫状態についての判断。">
+					comment = <"例：免疫あり（確認済み）、免疫あり（推定）、急性感染、慢性感染、キャリア、免疫なし、不応答者。この評価では、過去の感染に関する根拠、診断上の根拠（CLUSTER.diagnostic_evidence_summary）、予防接種歴（EVALUATION.immunisation_summary）を考慮する必要がある。">
+				>
+				["at0014"] = <
+					text = <"コメント">
+					description = <"他の項目には収まらない、感染症についての叙述的な情報。">
+				>
+				["at0020"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0021"] = <
+					text = <"最終更新日">
+					description = <"この感染症要約が臨床的に最後に表明、確認、または確定された日付。">
+				>
+				["at0042"] = <
+					text = <"免疫状態の説明">
+					description = <"この感染症に対する免疫状態の評価についての叙述的な説明。">
+				>
+				["at0046"] = <
+					text = <"根拠">
+					description = <"免疫状態の判断を裏付ける根拠に関する詳細情報。">
+				>
+				["at0047"] = <
+					text = <"既往感染">
+					description = <"本人は、同じ感染症に過去に感染したことによって曝露しているか。">
+				>
+				["at0048"] = <
+					text = <"確認済み">
+					description = <"過去の感染が、病歴または所見により確認されている。">
+				>
+				["at0049"] = <
+					text = <"疑い">
+					description = <"過去の感染が病歴または所見から疑われるが、確認はされていない。">
+				>
+				["at0050"] = <
+					text = <"根拠なし">
+					description = <"本人が過去に感染したことを示唆する病歴や所見はない。">
+				>
+				["at0051"] = <
+					text = <"Extension">
+					description = <"ローカルコンテンツを捕捉するため、あるいは他の参照モデルや形式手法と整合させるために必要な追加情報。">
+					comment = <"例：病院の部門内で用いるローカルな情報や、FHIR または CIMI の相当するものに適合させるための追加メタデータ。">
+				>
+			>
+		>
+	>

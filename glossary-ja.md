@@ -396,6 +396,13 @@
 | regulatory bodies / clinical trial / specialist allergist or immunologist | 規制当局 / 臨床試験 / アレルギーや免疫学の専門医 | adverse_reaction_event.v1 use |
 | grading / media representation | 重症度分類 / 媒体による表現 | adverse_reaction_event.v1 at0014 comment。校正 2026-10-13 で「グレード分類」→「重症度分類」、「メディアによる表現」→「媒体による表現」に確定。anatomical_location.v1 の Multimedia representation＝マルチメディア表現とは別語 |
 | parent archetype / nested within (archetype) | 親archetype / 〜の中に入れ子にした | adverse_reaction_event.v1 use, at0001 comment |
+| Infectious disease summary (concept) | 感染症要約 | infectious_disease_summary.v0（0.0.1-alpha）。targets の訳語案。social_summary＝生活歴要約に揃えて「要約」（要確認。他候補: 感染症サマリー） |
+| immune status / description of immune status | 免疫状態 / 免疫状態の説明 | infectious_disease_summary.v0 at0003 / at0042。assertion は「判断」（要確認。他候補: 免疫の状態） |
+| confirmed immune / assumed immune / acute infection / chronic infection / carrier / not immune / non-responder | 免疫あり（確認済み） / 免疫あり（推定） / 急性感染 / 慢性感染 / キャリア / 免疫なし / 不応答者 | infectious_disease_summary.v0 at0003 comment の例示（要確認。他候補: 保菌者 / ワクチン不応答者） |
+| diagnostic evidence / immunisation history | 診断上の根拠 / 予防接種歴 | infectious_disease_summary.v0 at0003 comment。CLUSTER.diagnostic_evidence_summary / EVALUATION.immunisation_summary は英字のまま |
+| Evidence (slot) / No evidence | 根拠 / 根拠なし | infectious_disease_summary.v0 at0046 / at0050。adverse_reaction_risk.v2 の clinical evidence＝臨床的根拠に合わせる（要確認。他候補: 証拠、エビデンス） |
+| Previous infection? : confirmed / suspected / no evidence | 既往感染：確認済み / 疑い / 根拠なし | infectious_disease_summary.v0 at0047〜at0050。ラベルに「?」は付けない（要確認。他候補: 過去の感染、既感染） |
+| last clinically asserted, affirmed or confirmed | 臨床的に最後に表明、確認、または確定された | infectious_disease_summary.v0 at0021 description。他 archetype の Last updated（最後に更新された日付）とは原文が異なる |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -424,3 +431,4 @@
 | openEHR-EHR-EVALUATION.social_summary.v1 (1.1.1) | 生活歴要約 | Issue #44。校正済み（2026-09-25。社会歴要約→生活歴要約、社会的状況→生活状況、喫煙）。at0002 要約、at0003 詳細情報、at0006 最終更新日 |
 | openEHR-EHR-EVALUATION.adverse_reaction_risk.v2 (2.0.2) | 有害反応リスク | Issue #41。校正済み（2026-09-25。括弧書きなしで確定。at0101 重症度、at0063 検証状態、at0117 反応が起きた直近の日時、at0133 反応が最初に起きた日時） |
 | openEHR-EHR-CLUSTER.adverse_reaction_event.v1 (1.0.2) | 有害反応イベント | Issue #42。校正済み（2026-10-13。at0014 comment 重症度分類、媒体による表現）。adverse_reaction_risk.v2 の「反応イベントの要約」SLOT に入る。at0001 特定の物質、at0002 確度、at0006 症状、at0010 反応の重症度、at0015 初回曝露日時、at0020 臨床的対応の説明、at0023 情報源 |
+| openEHR-EHR-EVALUATION.infectious_disease_summary.v0 (0.0.1-alpha) | 感染症要約 | Issue #45。DRAFT・en のみ。翻訳のみ行い CKM へのアップロードは別途判断（docs/sprint-B.md）。at0002 感染症、at0003 免疫状態、at0047 既往感染、at0046 根拠 |
