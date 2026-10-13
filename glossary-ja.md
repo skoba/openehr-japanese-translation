@@ -383,6 +383,19 @@
 | re-challenge / under corticosteroid cover | 再負荷 / 副腎皮質ステロイドの予防的投与下 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 他候補は再投与／副腎皮質ステロイド併用下。 |
 | relative contra-indication / absolute contra-indication | 相対的禁忌 / 絶対的禁忌 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: 有害反応リスクの Low／High の説明。他候補は相対禁忌／絶対禁忌。 |
 | adverse / effect / chemical / supplement / medicine / natural remedies / immunological / non-immunological | 有害 / 作用 / 化学物質 / サプリメント / 医薬品 / 自然療法 / 免疫学的 / 非免疫学的 | adverse_reaction_risk.v2（2.0.2）。校正 2026-09-25 で確定: keywords の対応語。effect は修飾因子の影響とは文脈を区別する。 |
+| Adverse reaction event (concept) | 有害反応イベント | adverse_reaction_event.v1（1.0.2）。adverse_reaction_risk.v2 の「反応イベントの要約」に合わせる。校正 2026-10-13 で確定（他候補: 有害反応事象） |
+| Manifestation (element) | 症状 | adverse_reaction_event.v1 at0006。manifestation＝症状（既存行）に従う。description の symptoms and/or signs は「症状や徴候」。校正 2026-10-13 で確定（他候補: 発現症状、症状・徴候） |
+| certainty (reaction event): confirmed / unconfirmed / refuted | 確度：確認済み / 未確認 / 否定 | adverse_reaction_event.v1 at0002 / at0005 / at0026 / at0027。adverse_reaction_risk.v2 の検証状態の値と同じ語 |
+| Reaction description / Exposure description / Clinical management description | 反応の説明 / 曝露の説明 / 臨床的対応の説明 | adverse_reaction_event.v1 at0007 / at0018 / at0020。description (element)＝説明 に従う |
+| Onset of reaction / Duration of reaction / Severity of reaction | 反応の発症日時 / 反応の持続期間 / 反応の重症度 | adverse_reaction_event.v1 at0008 / at0009 / at0010。値が日時なので「日時」を付けた。校正 2026-10-13 で確定（他候補: 反応の発症） |
+| severity of reaction: mild / moderate / severe | 軽症 / 中等症 / 重症 | adverse_reaction_event.v1 at0011〜at0013。symptom_sign.v2 の重症度の値と同じ。description の mild / moderate / severe physiological effects は軽度 / 中等度 / 重度の生理的な影響 |
+| Initial exposure / Duration of exposure / Route of exposure | 初回曝露日時 / 曝露の持続期間 / 曝露経路 | adverse_reaction_event.v1 at0015 / at0016 / at0017。校正 2026-10-13 で確定（他候補: 初回曝露 / 曝露の経路） |
+| clinical management | 臨床的対応 | adverse_reaction_event.v1 at0020 / at0021。反応に対して行った処置・治療全般。校正 2026-10-13 で確定（他候補: 臨床管理、治療） |
+| Reaction details / Exposure details / Clinical management details / Reporting details (slots) | 反応の詳細情報 / 曝露の詳細情報 / 臨床的対応の詳細情報 / 報告の詳細情報 | adverse_reaction_event.v1 at0014 / at0019 / at0021 / at0022。Details (slot)＝詳細情報 に従う |
+| Information source (slot) / provenance | 情報源 / 情報の出所 | adverse_reaction_event.v1 at0023。校正 2026-10-13 で確定（他候補: 情報の出所） |
+| regulatory bodies / clinical trial / specialist allergist or immunologist | 規制当局 / 臨床試験 / アレルギーや免疫学の専門医 | adverse_reaction_event.v1 use |
+| grading / media representation | 重症度分類 / 媒体による表現 | adverse_reaction_event.v1 at0014 comment。校正 2026-10-13 で「グレード分類」→「重症度分類」、「メディアによる表現」→「媒体による表現」に確定。anatomical_location.v1 の Multimedia representation＝マルチメディア表現とは別語 |
+| parent archetype / nested within (archetype) | 親archetype / 〜の中に入れ子にした | adverse_reaction_event.v1 use, at0001 comment |
 
 ## アーキタイプ別の確定訳（概念名）
 
@@ -410,3 +423,4 @@
 | openEHR-EHR-CLUSTER.anatomical_location.v1 (1.5.1) | 解剖学的部位 | Issue #59。校正済み（2026-09-23。面、付属器、左右両側）。概念名は指定訳。方向・基準線などの要確認事項は共通語表と work/fill.rb の NOTES を参照 |
 | openEHR-EHR-EVALUATION.social_summary.v1 (1.1.1) | 生活歴要約 | Issue #44。校正済み（2026-09-25。社会歴要約→生活歴要約、社会的状況→生活状況、喫煙）。at0002 要約、at0003 詳細情報、at0006 最終更新日 |
 | openEHR-EHR-EVALUATION.adverse_reaction_risk.v2 (2.0.2) | 有害反応リスク | Issue #41。校正済み（2026-09-25。括弧書きなしで確定。at0101 重症度、at0063 検証状態、at0117 反応が起きた直近の日時、at0133 反応が最初に起きた日時） |
+| openEHR-EHR-CLUSTER.adverse_reaction_event.v1 (1.0.2) | 有害反応イベント | Issue #42。校正済み（2026-10-13。at0014 comment 重症度分類、媒体による表現）。adverse_reaction_risk.v2 の「反応イベントの要約」SLOT に入る。at0001 特定の物質、at0002 確度、at0006 症状、at0010 反応の重症度、at0015 初回曝露日時、at0020 臨床的対応の説明、at0023 情報源 |

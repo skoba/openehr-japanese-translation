@@ -1,0 +1,66 @@
+archetype	section	code	field	context	source	target	note
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	description	-	purpose		To record information about a specific adverse reaction event caused by exposure to a specific substance.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	description	-	use		Use to record information about a specific adverse reaction event caused by exposure to a specific substance. The substance may be recorded in the 'Specific substance' element in this archetype, or in an appropriate element in the parent archetype in which this archetype is nested.\n\nThis archetype is designed to be nested within the EVALUATION.adverse_reaction_risk or the OBSERVATION.adverse_reaction_monitoring archetypes, to record details about a specific reaction event, but it could also be nested within other archetypes where clinically appropriate.\n\nThe scope of this archetype has deliberately focused on identifying a pragmatic data set that are used in most clinical systems or will be suitable for most common clinical scenarios; however, it permits extension of the model when additional detail is required, using the 'Reaction details', 'Exposure details', and 'Reporting details' slots. An extension may be required if a specialist allergist or immunologist needed to record a more detailed assessment as part of a report to regulatory bodies or within the context of a clinical trial.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	description	-	misuse		Not to be used to record adverse events, including failures of clinical process, interventions or products. For example: abnormal use or mistakes/errors made in maladministration of an agent or substance; incorrect dosage; mislabelling; harm or injury caused by an intervention or procedure; overdose/poisoning etc. Use a specific archetype for this purpose.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	description	-	copyright		© openEHR Foundation		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0000	text	CLUSTER	Adverse reaction event		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0000	description	CLUSTER	Information about a specific adverse reaction event caused by exposure to a specific substance.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0001	text	CLUSTER > items/ELEMENT	Specific substance		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0001	description	CLUSTER > items/ELEMENT	The substance considered to be responsible for the specific adverse reaction event.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0001	comment	CLUSTER > items/ELEMENT	For example: 'Amoxycillin'. Only an individual substance is a valid entry in 'Specific substance'. A substance may be a compound of simpler substances, for example a medicinal product. If the 'Substance' recorded in the archetype in which this archetype is nested is an individual substance and not a substance class, then it may be duplicated in this data element, or this element may be redundant. It is strongly recommended that 'Specific substance' be coded with a terminology, for example: RxNorm, SNOMED CT, DM+D, NDFRT, ICD-9, ICD-10, UNI, ATC or CPT.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0002	text	CLUSTER > items/ELEMENT	Certainty		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0002	description	CLUSTER > items/ELEMENT	The degree of clinical certainty that the 'Manifestation' in this reaction event was caused by exposure to the identified 'Specific substance'.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0002	comment	CLUSTER > items/ELEMENT	The free text data type will allow for local variation by enabling other value sets to be applied to this data element in a template - in this situation it is recommended that values should be coded using a terminology.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0005	text		Confirmed		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0005	description		It has been objectively verified that the 'Manifestation' in this reaction event was caused by exposure to the identified 'Substance'. This may include clinical evidence by testing, re-challenge or observation.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0006	text	CLUSTER > items/ELEMENT	Manifestation		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0006	description	CLUSTER > items/ELEMENT	Clinical symptoms and/or signs that are observed or associated with the adverse reaction.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0006	comment	CLUSTER > items/ELEMENT	Manifestation can be expressed as a single word, phrase or brief description. For example: nausea, rash. 'No reaction' may be appropriate where a previous reaction has been noted but the reaction did not re-occur after further exposure. It is preferable that 'Manifestation' should be coded with a terminology, where possible. The values entered here may be used to display on an application screen as part of a list of adverse reactions.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0007	text	CLUSTER > items/ELEMENT	Reaction description		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0007	description	CLUSTER > items/ELEMENT	Narrative description about the adverse reaction as a whole, including details of the manifestation if required.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0008	text	CLUSTER > items/ELEMENT	Onset of reaction		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0008	description	CLUSTER > items/ELEMENT	The date and/or time of the onset of the reaction.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0009	text	CLUSTER > items/ELEMENT	Duration of reaction		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0009	description	CLUSTER > items/ELEMENT	The total amount of time that the manifestation of the adverse reaction persisted.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0010	text	CLUSTER > items/ELEMENT	Severity of reaction		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0010	description	CLUSTER > items/ELEMENT	Clinical assessment of the severity of the reaction event as a whole, potentially considering multiple different manifestations.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0010	comment	CLUSTER > items/ELEMENT	It is acknowledged that this assessment is very subjective. There may be some some specific practice domains where objective scales have been applied. Objective scales can be included in this model using the 'Reaction details' Cluster.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0011	text		Mild		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0011	description		Causes mild physiological effects.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0012	text		Moderate		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0012	description		Causes moderate physiological effects.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0013	text		Severe		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0013	description		Causes severe physiological effects.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0014	text	CLUSTER > items/CLUSTER	Reaction details		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0014	description	CLUSTER > items/CLUSTER	Additional details about the adverse reaction.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0014	comment	CLUSTER > items/CLUSTER	May include structured detail about symptoms; the anatomical location of the manifestation; grading, classification or formal severity assessments such as Common Terminology Criteria for Adverse Events; or a media representation.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0015	text	CLUSTER > items/ELEMENT	Initial exposure		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0015	description	CLUSTER > items/ELEMENT	The date and/or time of the first exposure to the Substance for this Reaction Event.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0015	comment	CLUSTER > items/ELEMENT	Exposure can be more complicated by more than one exposure events leading to a reaction. Further details about the nature of the exposure can be provided by use of additional archetypes in the 'Exposure details' SLOT or as text in the 'Exposure description'.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0016	text	CLUSTER > items/ELEMENT	Duration of exposure		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0016	description	CLUSTER > items/ELEMENT	The total amount of time the individual was exposed to the identified 'Specific substance'.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0017	text	CLUSTER > items/ELEMENT	Route of exposure		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0017	description	CLUSTER > items/ELEMENT	The route by which the subject was exposed to the identified 'Specific substance'.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0017	comment	CLUSTER > items/ELEMENT	Coding of the Route of Exposure with a terminology should be used wherever possible.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0018	text	CLUSTER > items/ELEMENT	Exposure description		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0018	description	CLUSTER > items/ELEMENT	Narrative description about the exposure to the identified 'Specific substance'.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0019	text	CLUSTER > items/CLUSTER	Exposure details		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0019	description	CLUSTER > items/CLUSTER	Additional details about exposure to the 'Specific substance'.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0020	text	CLUSTER > items/ELEMENT	Clinical management description		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0020	description	CLUSTER > items/ELEMENT	Narrative description about the clinical management provided.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0021	text	CLUSTER > items/CLUSTER	Clinical management details		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0021	description	CLUSTER > items/CLUSTER	Additional structured details about clinical management for this reaction event.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0022	text	CLUSTER > items/CLUSTER	Reporting details		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0022	description	CLUSTER > items/CLUSTER	Additional structured details required for reporting to regulatory bodies.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0023	text	CLUSTER > items/CLUSTER	Information source		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0023	description	CLUSTER > items/CLUSTER	Details about the provenance of the information.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0023	comment	CLUSTER > items/CLUSTER	This SLOT is intended to provide details about the source of information for this particular 'Reaction event'.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0024	text	CLUSTER > items/ELEMENT	Comment		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0024	description	CLUSTER > items/ELEMENT	Additional narrative about the adverse reaction event not captured in other fields.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0025	text	CLUSTER > items/ELEMENT	Supporting clinical record information		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0025	description	CLUSTER > items/ELEMENT	Link to further information about the presentation and findings that exist elsewhere in the health record, including allergy test reports.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0025	comment	CLUSTER > items/ELEMENT	For example, presenting symptoms, examination findings, diagnosis etc.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0026	text		Unconfirmed		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0026	description		It has not been objectively verified that the 'Manifestation' in this reaction event was caused by exposure to the identified 'Substance'.		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0027	text		Refuted		
+openEHR-EHR-CLUSTER.adverse_reaction_event.v1	term	at0027	description		It has been disputed or disproven that the 'Manifestation' in this reaction event was caused by exposure to the identified 'Substance', with a sufficient level of clinical certainty to justify invalidating the assertion. This may include clinical evidence by testing, re-challenge or observation.		
